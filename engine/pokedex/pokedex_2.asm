@@ -11,7 +11,7 @@ AnimateDexSearchSlowpoke:
 	ld a, [hli]
 .ok
 
-	ld [wDexSearchSlowpokeFrame], a
+	ld [sDexSearchSlowpokeFrame], a
 	ld a, [hli]
 	ld c, a
 	push bc
@@ -23,7 +23,7 @@ AnimateDexSearchSlowpoke:
 	dec b
 	jr nz, .loop
 	xor a
-	ld [wDexSearchSlowpokeFrame], a
+	ld [sDexSearchSlowpokeFrame], a
 	call DoDexSearchSlowpokeFrame
 	ld c, 32
 	call DelayFrames
@@ -39,7 +39,7 @@ AnimateDexSearchSlowpoke:
 	db -2
 
 DoDexSearchSlowpokeFrame:
-	ld a, [wDexSearchSlowpokeFrame]
+	ld a, [sDexSearchSlowpokeFrame]
 	ld hl, .SlowpokeSpriteData
 	ld de, wVirtualOAMSprite00
 .loop
@@ -51,7 +51,7 @@ DoDexSearchSlowpokeFrame:
 	ld a, [hli]
 	ld [de], a ; x
 	inc de
-	ld a, [wDexSearchSlowpokeFrame]
+	ld a, [sDexSearchSlowpokeFrame]
 	ld b, a
 	add a
 	add b

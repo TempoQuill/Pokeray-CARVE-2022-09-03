@@ -7,6 +7,7 @@ AUTO_INPUT EQU $ff
 	const DEBUG_FIELD_F
 
 ; wCurDexMode::
+; sCurDexMode::
 	const_def
 	const DEXMODE_NEW
 	const DEXMODE_OLD
