@@ -132,7 +132,7 @@ battle_struct: MACRO
 \1Type1::         db
 \1Type2::         db
 \1StructEnd::
-ENDM
+ENDM ; 34
 
 curbox: MACRO
 \1Count::           db                                           ; 1   1
@@ -271,7 +271,7 @@ trademon: MACRO
 \1DVs::         dw
 \1ID::          dw
 \1End::
-ENDM
+ENDM ; 50
 
 move_struct: MACRO
 \1Animation::    db

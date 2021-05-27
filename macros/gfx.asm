@@ -21,6 +21,8 @@ tile  EQUS "+ LEN_2BPP_TILE *"
 ; INCBIN "foo.gbcpal", middle_colors
 middle_colors EQUS "PAL_COLOR_SIZE, PAL_COLOR_SIZE * 2"
 
+top_colors EQUS "PAL_COLOR_SIZE, PAL_COLOR_SIZE * 3"
+
 dbpixel: MACRO
 if _NARG >= 4
 ; x tile, y tile, x pixel, y pixel

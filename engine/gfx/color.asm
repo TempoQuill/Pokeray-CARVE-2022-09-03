@@ -238,8 +238,7 @@ Intro_LoadMonPalette:
 .cgb
 	ld de, wOBPals1
 	call GetMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-	ret
+	jp Load3ColorPalette
 
 Function91b4: ; unreferenced
 	ldh a, [hCGB]
@@ -290,11 +289,10 @@ ApplyMonOrTrainerPals:
 
 .load_palettes
 	ld de, wBGPals1
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	call WipeAttrmap
 	call ApplyAttrmap
-	call ApplyPals
-	ret
+	jp ApplyPals
 
 ApplyHPBarPals:
 	ld a, [wWhichHPBar]
@@ -393,8 +391,7 @@ LoadMailPalettes:
 	ld hl, wSGBPals
 	call PushSGBPals
 	ld hl, BlkPacket_9ee5
-	call PushSGBPals
-	ret
+	jp PushSGBPals
 
 .cgb
 	ld de, wBGPals1
@@ -402,8 +399,7 @@ LoadMailPalettes:
 	call CopyBytes
 	call ApplyPals
 	call WipeAttrmap
-	call ApplyAttrmap
-	ret
+	jp ApplyAttrmap
 
 .MailPals:
 INCLUDE "gfx/mail/mail.pal"
@@ -534,15 +530,13 @@ WipeAttrmap:
 	hlcoord 0, 0, wAttrmap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	xor a
-	call ByteFill
-	ret
+	jp ByteFill
 
 ApplyPals:
 	ld hl, wBGPals1
 	ld de, wBGPals2
 	ld bc, 16 palettes
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 ApplyAttrmap:
 	ldh a, [rLCDC]

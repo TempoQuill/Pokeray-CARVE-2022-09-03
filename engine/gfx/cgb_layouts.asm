@@ -82,10 +82,10 @@ _CGB_BattleColors:
 	ld de, wBGPals1
 	call GetBattlemonBackpicPalettePointer
 	push hl
-	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_PLAYER
+	call Load3ColorPalette ; PAL_BATTLE_BG_PLAYER
 	call GetEnemyFrontpicPalettePointer
 	push hl
-	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_ENEMY
+	call Load3ColorPalette ; PAL_BATTLE_BG_ENEMY
 	ld a, [wEnemyHPPal]
 	ld l, a
 	ld h, $0
@@ -106,9 +106,9 @@ _CGB_BattleColors:
 	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_EXP
 	ld de, wOBPals1
 	pop hl
-	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_OB_ENEMY
+	call Load3ColorPalette ; PAL_BATTLE_OB_ENEMY
 	pop hl
-	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_OB_PLAYER
+	call Load3ColorPalette ; PAL_BATTLE_OB_PLAYER
 	ld a, SCGB_BATTLE_COLORS
 	ld [wDefaultSGBLayout], a
 	call ApplyPals
@@ -149,8 +149,7 @@ _CGB_FinishBattleScreenLayout:
 	ld de, wOBPals1 palette PAL_BATTLE_OB_GRAY
 	ld bc, 6 palettes
 	call CopyBytes
-	call ApplyAttrmap
-	ret
+	jp ApplyAttrmap
 
 _CGB_PokegearPals:
 	ld hl, PokegearPals
@@ -186,7 +185,7 @@ _CGB_StatsScreenHPPals:
 	ld b, a
 .okay
 	call GetPlayerOrMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black ; mon palette
+	call Load3ColorPalette ; mon palette
 	ld hl, ExpBarPalette
 	call LoadPalette_White_Col1_Col2_Black ; exp palette
 	ld hl, StatsScreenPagePals
@@ -268,10 +267,9 @@ _CGB_Pokedex_Init:
 
 .is_pokemon
 	call GetMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black ; mon palette
+	call Load3ColorPalette ; mon palette
 .got_palette
-	call WipeAttrmap
-	ret
+	jp WipeAttrmap
 
 _CGB_Pokedex_Resume:
 	call InitPartyMenuOBPals
@@ -309,7 +307,7 @@ _CGB_BillsPC:
 .GetMonPalette:
 	ld bc, wTempMonDVs
 	call GetPlayerOrMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 .GotPalette:
 	call WipeAttrmap
 	hlcoord 1, 4, wAttrmap
@@ -331,7 +329,7 @@ Function95a0:
 .GetMonPalette:
 	ld bc, wTempMonDVs
 	call GetPlayerOrMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 .GotPalette:
 	call WipeAttrmap
 	hlcoord 1, 1, wAttrmap
@@ -358,7 +356,7 @@ _CGB_PokedexUnownMode:
 	ld a, [wCurPartySpecies + 1]
 	ld b, a
 	call GetMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	call WipeAttrmap
 	hlcoord 7, 5, wAttrmap
 	lb bc, 7, 7
@@ -561,7 +559,7 @@ _CGB_Evolution:
 	ld b, h
 	ld a, [wPlayerHPPal]
 	call GetPlayerOrMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	ld hl, BattleObjectPals
 	ld de, wOBPals1 palette PAL_BATTLE_OB_GRAY
 	ld bc, 6 palettes
@@ -618,28 +616,28 @@ _CGB_TrainerCard:
 	ld de, wBGPals1
 	xor a ; CHRIS
 	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	ld a, FALKNER
 	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	ld a, BUGSY
 	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	ld a, WHITNEY
 	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	ld a, MORTY
 	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	ld a, CHUCK
 	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	ld a, JASMINE
 	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	ld a, PRYCE
 	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	ld a, PREDEFPAL_CGB_BADGE
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
@@ -853,11 +851,10 @@ _CGB_PlayerOrMonFrontpicPals:
 	ld bc, wTempMonDVs
 	call GetPlayerOrMonPalettePointer
 	pop hl
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	call WipeAttrmap
 	call ApplyAttrmap
-	call ApplyPals
-	ret
+	jp ApplyPals
 
 _CGB1e:
 	ld de, wBGPals1
@@ -866,10 +863,9 @@ _CGB1e:
 	ld a, [wCurPartySpecies + 1]
 	ld b, a
 	call GetMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	call WipeAttrmap
-	call ApplyAttrmap
-	ret
+	jp ApplyAttrmap
 
 _CGB_TradeTube:
 	ld hl, PalPacket_TradeTube + 1
@@ -895,11 +891,10 @@ _CGB_TrainerOrMonFrontpicPals:
 	ld bc, wTempMonDVs
 	call GetFrontpicPalettePointer
 	pop hl
-	call LoadPalette_White_Col1_Col2_Black
+	call Load3ColorPalette
 	call WipeAttrmap
 	call ApplyAttrmap
-	call ApplyPals
-	ret
+	jp ApplyPals
 
 _CGB_MysteryGift:
 	ld hl, .MysteryGiftPalette
