@@ -55,7 +55,6 @@ _GetVarAction::
 	dwb .UnownCaught,                   RETVAR_EXECUTE
 	dwb wEnvironment,                   RETVAR_STRBUF2
 	dwb .BoxFreeSpace,                  RETVAR_EXECUTE
-	dwb wLeftoversMinsRemaining,       RETVAR_STRBUF2
 	dwb wXCoord,                        RETVAR_STRBUF2
 	dwb wYCoord,                        RETVAR_STRBUF2
 	dwb wSpecialPhoneCallID,            RETVAR_STRBUF2

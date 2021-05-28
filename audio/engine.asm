@@ -1867,7 +1867,7 @@ MusicDummy:
 	ret
 
 Music_FrameSwap:
-; alternate between sprite $68-$6b and $6c-$6f, controlled by wFrameSwap
+; alternate between sprite $0-$3 and $4-$7, controlled by wFrameSwap
 ; only works on noise channels
 	ld a, [wCurChannel]
 	cp CHAN4

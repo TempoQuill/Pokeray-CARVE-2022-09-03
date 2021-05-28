@@ -41,6 +41,8 @@ LoadMenuMonIcon:
 	dw Trade_LoadMonIconGFX             ; MONICON_TRADE
 
 PartyMenu_InitAnimatedMonIcon:
+	ld hl, wVramState
+	set 5, [hl]
 	ld a, [wCurIconTile]
 	push af
 	ldh a, [hObjectStructIndexBuffer]
@@ -135,6 +137,8 @@ SetPartyMonIconAnimSpeed:
 	db $80 ; HP_RED
 
 NamingScreen_InitAnimatedMonIcon:
+	ld hl, wVramState
+	set 5, [hl]
 	ld hl, wTempIconSpecies
 	call ReadMonMenuIcon
 	ld [wCurIcon], a
@@ -149,6 +153,8 @@ NamingScreen_InitAnimatedMonIcon:
 	ret
 
 MoveList_InitAnimatedMonIcon:
+	ld hl, wVramState
+	set 5, [hl]
 	ld hl, wTempIconSpecies
 	call ReadMonMenuIcon
 	ld [wCurIcon], a
@@ -164,6 +170,8 @@ MoveList_InitAnimatedMonIcon:
 	ret
 
 Trade_LoadMonIconGFX:
+	ld hl, wVramState
+	set 5, [hl]
 	ld hl, wTempIconSpecies
 	call ReadMonMenuIcon
 	ld [wCurIcon], a

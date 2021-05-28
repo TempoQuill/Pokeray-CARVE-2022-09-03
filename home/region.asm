@@ -18,7 +18,7 @@ IsInJohto::
 Function2ffe::
 	push hl
 	xor a
-	ld hl, wd17c
+	ld hl, wd17e
 	ld [hli], a
 	ld [hli], a
 	ld [hli], a
@@ -52,7 +52,7 @@ Function2ffe::
 	ld a, e
 	cp [hl]
 	jr nz, .next
-	ld hl, wd17c
+	ld hl, wd17e
 	ld b, SET_FLAG
 	push de
 	push bc

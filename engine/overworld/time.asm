@@ -5,7 +5,6 @@ _InitializeStartDay:
 ClearDailyTimers:
 	xor a
 	ld [wLuckyNumberDayBuffer], a
-	ld [wUnusedTwoDayTimer], a
 	ld [wDailyResetTimer], a
 	ret
 
@@ -112,23 +111,6 @@ CheckPokerusTick::
 	farcall ApplyPokerusTick
 .done
 	xor a
-	ret
-
-SetUnusedTwoDayTimer:
-	ld a, 2
-	ld hl, wUnusedTwoDayTimer
-	ld [hl], a
-	call UpdateTime
-	ld hl, wUnusedTwoDayTimerStartDate
-	call CopyDayToHL
-	ret
-
-CheckUnusedTwoDayTimer:
-	ld hl, wUnusedTwoDayTimerStartDate
-	call CalcDaysSince
-	call GetDaysSince
-	ld hl, wUnusedTwoDayTimer
-	call UpdateTimeRemaining
 	ret
 
 ; unused

@@ -294,6 +294,8 @@ Cut_Headbutt_GetPixelFacing:
 FlyFromAnim:
 	call DelayFrame
 	ld a, [wVramState]
+	res 5, a
+	ld [wVramState], a
 	push af
 	xor a
 	ld [wVramState], a
@@ -328,6 +330,8 @@ FlyFromAnim:
 FlyToAnim:
 	call DelayFrame
 	ld a, [wVramState]
+	res 5, a
+	ld [wVramState], a
 	push af
 	xor a
 	ld [wVramState], a

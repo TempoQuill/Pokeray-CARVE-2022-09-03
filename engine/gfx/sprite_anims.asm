@@ -1451,6 +1451,9 @@ DoAnimFrame:
 	ret
 
 .YoshiFrameSwap:
+	ld a, [wVramState]
+	bit 5, a
+	ret z
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld [hl], SPRITE_ANIM_FRAMESET_SWAP_1

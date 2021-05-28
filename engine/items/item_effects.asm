@@ -556,6 +556,10 @@ PokeBallEffect:
 	ld a, FRIEND_BALL_HAPPINESS
 	ld [hl], a
 	pop af
+
+.SkipPartyMonFriendBall:
+	ld a, [wPartyCount]
+	dec a
 	ld hl, wPartyMon1CaughtItem
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
@@ -564,7 +568,6 @@ PokeBallEffect:
 	xor a
 	ld [wBallUsedBuffer], a
 
-.SkipPartyMonFriendBall:
 	ld hl, AskGiveNicknameText
 	call PrintText
 

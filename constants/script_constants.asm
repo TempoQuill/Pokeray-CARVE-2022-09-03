@@ -60,7 +60,6 @@ NUM_STRING_BUFFERS EQU const_value
 	const VAR_UNOWNCOUNT       ; 0e
 	const VAR_ROOFPALETTE      ; 0f
 	const VAR_BOXSPACE         ; 10
-	const VAR_CONTESTMINUTES   ; 11
 	const VAR_XCOORD           ; 12
 	const VAR_YCOORD           ; 13
 	const VAR_SPECIALPHONECALL ; 14

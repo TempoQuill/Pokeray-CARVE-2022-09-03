@@ -293,7 +293,7 @@ ENDM
 
 ; only present in ray/shade/chaos
 ; uses wFrameSwap
-; animates sprite $68/$6c to music
+; animates sprite $0/$4 to music
 frame_swap: MACRO
 	db frame_swap_cmd
 ENDM

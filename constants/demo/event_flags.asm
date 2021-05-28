@@ -11,7 +11,7 @@
 	const EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 	const EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 ; other general map flags
-	const EVENT_INITIALIZED_EVENTS
+	const EVENT_INITIALIZED_EVENTS           ; 8
 	const_skip 7
 ; Rods
 	const EVENT_GOT_OLD_ROD                  ; 10
@@ -23,7 +23,7 @@
 	const EVENT_GOT_FLAMBEAR
 	const EVENT_GOT_CRUZ
 	const EVENT_GOT_ORKID
-	const EVENT_GOT_OLD_AMBER
+	const EVENT_GOT_OLD_AMBER                ; 18
 	const EVENT_SHOWED_OLD_AMBER
 	const EVENT_LARCH_GIFTS_RIVAL_MON
 	const EVENT_RIVAL_GOT_FLAMBEAR
@@ -40,5 +40,5 @@
 	const EVENT_ROUTE_49_ANTIDOTE
 ; people
 	const EVENT_PLAYERS_HOUSE_MOM_1
-	const EVENT_PLAYERS_HOUSE_MOM_2
+	const EVENT_PLAYERS_HOUSE_MOM_2          ; 27
 NUM_EVENTS EQU const_value
