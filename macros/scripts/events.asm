@@ -615,7 +615,7 @@ ENDM
 	const catchtutorial_command ; $60
 catchtutorial: MACRO
 	db catchtutorial_command
-	db \1 ; byte
+	db \1 ; text_id
 ENDM
 
 	const trainertext_command ; $61

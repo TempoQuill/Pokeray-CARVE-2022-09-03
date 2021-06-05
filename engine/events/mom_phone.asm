@@ -14,7 +14,6 @@ MomTriesToBuySomething::
 	ret nz
 	xor a
 	ld [wWhichMomItemSet], a
-	call CheckBalance_MomItem2
 	ret nc
 	call Mom_GiveItemOrDoll
 	ret nc
@@ -29,7 +28,7 @@ MomTriesToBuySomething::
 	farsjump Script_ReceivePhoneCall
 
 .ASMFunction:
-	call MomBuysItem_DeductFunds
+	call GetItemFromMom
 	call Mom_GetScriptPointer
 	ld a, [wWhichMomItemSet]
 	and a
@@ -53,79 +52,6 @@ MomTriesToBuySomething::
 	ld [hli], a
 	ld a, d
 	ld [hl], a
-	ret
-
-CheckBalance_MomItem2:
-	ld a, [wWhichMomItem]
-	cp NUM_MOM_ITEMS_2
-	jr nc, .nope
-	call GetItemFromMom
-	ld a, [hli]
-	ldh [hMoneyTemp], a
-	ld a, [hli]
-	ldh [hMoneyTemp + 1], a
-	ld a, [hli]
-	ldh [hMoneyTemp + 2], a
-	ld de, wMomsMoney
-	ld bc, hMoneyTemp
-	farcall CompareMoney
-	jr nc, .have_enough_money
-
-.nope
-	jr .check_have_2300
-
-.have_enough_money
-	scf
-	ret
-
-.check_have_2300
-	ld hl, hMoneyTemp
-	ld [hl], HIGH(MOM_MONEY >> 8)
-	inc hl
-	ld [hl], HIGH(MOM_MONEY) ; mid
-	inc hl
-	ld [hl], LOW(MOM_MONEY)
-.loop
-	ld de, wMomItemTriggerBalance
-	ld bc, wMomsMoney
-	farcall CompareMoney
-	jr z, .exact
-	jr nc, .less_than
-	call .AddMoney
-	jr .loop
-
-.less_than
-	xor a
-	ret
-
-.exact
-	call .AddMoney
-	ld a, NUM_MOM_ITEMS_1
-	call RandomRange
-	inc a
-	ld [wWhichMomItemSet], a
-	scf
-	ret
-
-.AddMoney:
-	ld de, wMomItemTriggerBalance
-	ld bc, hMoneyTemp
-	farcall AddMoney
-	ret
-
-MomBuysItem_DeductFunds:
-	call GetItemFromMom
-	ld de, 3 ; cost
-	add hl, de
-	ld a, [hli]
-	ldh [hMoneyTemp], a
-	ld a, [hli]
-	ldh [hMoneyTemp + 1], a
-	ld a, [hli]
-	ldh [hMoneyTemp + 2], a
-	ld de, wMomsMoney
-	ld bc, hMoneyTemp
-	farcall TakeMoney
 	ret
 
 Mom_GiveItemOrDoll:
@@ -196,9 +122,9 @@ GetItemFromMom:
 .GetFromList1:
 	ld l, a
 	ld h, 0
-rept 3 ; multiply hl by 8
 	add hl, hl
-endr
+	add hl, hl
+	add hl, hl
 	add hl, de
 	ret
 

@@ -27,7 +27,7 @@ UpdateJoypad::
 ; hJoypadSum: pressed so far
 
 ; Any of these three bits can be used to disable input.
-	ld a, [wd895]
+	ld a, [wd8ce]
 	and %11010000
 	ret nz
 

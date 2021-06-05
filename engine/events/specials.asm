@@ -338,7 +338,7 @@ SelectApricornForKurt:
 	ld [wCurItem], a
 	ld a, 1
 	ld [wItemQuantityChangeBuffer], a
-	ld hl, wNumItems
+	ld hl, wNumFruit
 	call TossItem
 	ret
 

@@ -16,6 +16,26 @@ _ReceiveItem::
 	dw .KeyItem
 	dw .Ball
 	dw .TMHM
+	dw .Medicine
+	dw .Fruit
+	dw .Assembly
+	dw .Evolution
+
+.Medicine
+	ld hl, wNumMedicine
+	jp PutItemInPocket
+
+.Fruit
+	ld hl, wNumFruit
+	jp PutItemInPocket
+
+.Assembly
+	ld hl, wNumAssemblyItems
+	jp PutItemInPocket
+
+.Evolution
+	ld hl, wNumEvolutionItems
+	jp PutItemInPocket
 
 .Item:
 	ld h, d
@@ -57,6 +77,26 @@ _TossItem::
 	dw .KeyItem
 	dw .Ball
 	dw .TMHM
+	dw .Medicine
+	dw .Fruit
+	dw .Assembly
+	dw .Evolution
+
+.Medicine
+	ld hl, wNumMedicine
+	jp RemoveItemFromPocket
+
+.Fruit
+	ld hl, wNumFruit
+	jp RemoveItemFromPocket
+
+.Assembly
+	ld hl, wNumAssemblyItems
+	jp RemoveItemFromPocket
+
+.Evolution
+	ld hl, wNumEvolutionItems
+	jp RemoveItemFromPocket
 
 .Ball:
 	ld hl, wNumBalls
@@ -100,6 +140,27 @@ _CheckItem::
 	dw .KeyItem
 	dw .Ball
 	dw .TMHM
+	dw .Medicine
+	dw .Fruit
+	dw .Assembly
+	dw .Evolution
+
+.Medicine
+	ld hl, wNumMedicine
+	jp CheckTheItem
+
+.Fruit
+	ld hl, wNumFruit
+	jp CheckTheItem
+
+.Assembly
+	ld hl, wNumAssemblyItems
+	jp CheckTheItem
+
+.Evolution
+	ld hl, wNumEvolutionItems
+	jp CheckTheItem
+
 
 .Ball:
 	ld hl, wNumBalls
@@ -137,9 +198,36 @@ GetPocketCapacity:
 	ld c, MAX_ITEMS
 	ld a, e
 	cp LOW(wNumItems)
-	jr nz, .not_bag
+	jr z, .check_item_high_byte
+	cp LOW(wNumMedicine)
+	jr z, .check_med_high_byte
+	cp LOW(wNumAssemblyItems)
+	jr z, .check_asm_high_byte
+	cp LOW(wNumEvolutionItems)
+	jr z, .check_evo_high_byte
+	jr .not_bag
+
+.check_item_high_byte
 	ld a, d
 	cp HIGH(wNumItems)
+	ret z
+	jr .not_bag
+
+.check_med_high_byte
+	ld a, d
+	cp HIGH(wNumMedicine)
+	ret z
+	jr .not_bag
+
+.check_asm_high_byte
+	ld a, d
+	cp HIGH(wNumAssemblyItems)
+	ret z
+	jr .not_bag
+
+.check_evo_high_byte
+	ld a, d
+	cp HIGH(wNumEvolutionItems)
 	ret z
 
 .not_bag
@@ -152,6 +240,15 @@ GetPocketCapacity:
 	ret z
 
 .not_pc
+	ld c, MAX_FRUIT
+	ld a, e
+	cp LOW(wNumFruit)
+	jr nz, .not_fruit
+	ld a, d
+	cp HIGH(wNumFruit)
+	ret z
+
+.not_fruit
 	ld c, MAX_BALLS
 	ret
 
@@ -402,9 +499,12 @@ CheckKeyItems:
 	ret
 
 ReceiveTMHM:
+	ld a, c
+	cp HM01 - (TM01 - 1)
+	jr nc, .recieve_hm
 	dec c
 	ld b, 0
-	ld hl, wTMsHMs
+	ld hl, wTMs
 	add hl, bc
 	ld a, [wItemQuantityChangeBuffer]
 	add [hl]
@@ -418,10 +518,61 @@ ReceiveTMHM:
 	and a
 	ret
 
+.recieve_hm
+	ld hl, .hm_flags
+	ld c, HM01 - (TM01 - 1)
+	sub c
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld bc, wHMs
+	ld a, [bc]
+	jp hl
+
+.hm_flags
+	dw .cut
+	dw .fly
+	dw .surf
+	dw .strength
+	dw .flash
+
+.cut
+	bit CUT_F, a
+	ret nz
+	set CUT_F, a
+	jr .done
+
+.fly
+	bit FLY_F, a
+	ret nz
+	set FLY_F, a
+	jr .done
+
+.surf
+	bit SURF_F, a
+	ret nz
+	set SURF_F, a
+	jr .done
+
+.strength
+	bit STRENGTH_F, a
+	ret nz
+	set STRENGTH_F, a
+	jr .done
+
+.flash
+	bit FLASH_F, a
+	ret nz
+	set FLASH_F, a
+
+.done
+	ld [bc], a
+	ret
+
 TossTMHM:
 	dec c
 	ld b, 0
-	ld hl, wTMsHMs
+	ld hl, wTMs
 	add hl, bc
 	ld a, [wItemQuantityChangeBuffer]
 	ld b, a
@@ -448,7 +599,7 @@ TossTMHM:
 CheckTMHM:
 	dec c
 	ld b, $0
-	ld hl, wTMsHMs
+	ld hl, wTMs
 	add hl, bc
 	ld a, [hl]
 	and a

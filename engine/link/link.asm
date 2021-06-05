@@ -1306,7 +1306,7 @@ Function289cd:
 	jr nz, .loop1
 Function28a04:
 	xor a
-	ld [wd893], a
+	ld [wd8cc], a
 	xor a
 	ldh [rSB], a
 	ldh [hSerialSend], a

@@ -732,13 +732,13 @@ endr
 	ret
 
 PushSGBPals:
-	ld a, [wd895]
+	ld a, [wd8ce]
 	push af
 	set 7, a
-	ld [wd895], a
+	ld [wd8ce], a
 	call _PushSGBPals
 	pop af
-	ld [wd895], a
+	ld [wd8ce], a
 	ret
 
 _PushSGBPals:
@@ -786,10 +786,10 @@ InitSGBBorder:
 	ret nz
 ; SGB/DMG only
 	di
-	ld a, [wd895]
+	ld a, [wd8ce]
 	push af
 	set 7, a
-	ld [wd895], a
+	ld [wd8ce], a
 	xor a
 	ldh [rJOYP], a
 	ldh [hSGB], a
@@ -809,7 +809,7 @@ InitSGBBorder:
 
 .skip
 	pop af
-	ld [wd895], a
+	ld [wd8ce], a
 	ei
 	ret
 

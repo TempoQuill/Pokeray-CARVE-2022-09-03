@@ -47,7 +47,6 @@ ROMX $07
 ROMX $08
 	"Clock Reset"
 	"Tileset Data 3"
-	"Catch Tutorial"
 	"Egg Moves"
 ROMX $09
 	"bank9"

@@ -387,11 +387,11 @@ wDummyGameEnd::                     ; 58 3a
 NEXTU ; c5d0
 ; beta poker game
 	ds 50
-wBetaPokerSGBPals:: db
+wBetaPokerSGBPals:: db ; 50 32
 	ds 2
-wBetaPokerSGBAttr:: db
-wBetaPokerSGBCol:: db
-wBetaPokerSGBRow:: db
+wBetaPokerSGBAttr:: db ; 53 35
+wBetaPokerSGBCol:: db  ; 54 36
+wBetaPokerSGBRow:: db  ; 55 37
 ENDU ; c700
 
 ENDU ; c700
@@ -1244,22 +1244,21 @@ wMenuCursorX:: db ; cee1
 wCursorOffCharacter:: db ; cee2
 wCursorCurrentTile:: dw ; cee3
 
-	ds 1
 wLinkMusic:: dw
 
-wOverworldDelay:: db ; cee8
-wTextDelayFrames:: db ; cee9
-wVBlankOccurred:: db ; ceea
+wOverworldDelay:: db ; cee7
+wTextDelayFrames:: db ; cee8
+wVBlankOccurred:: db ; cee9
 
-wceeb:: db
+wceea:: db
 
-wDefaultSpawnpoint:: db ; ceec
+wDefaultSpawnpoint:: db ; ceeb
 
-UNION ; ceed
+UNION ; ceec
 ; mail temp storage
 wTempMail:: mailmsg wTempMail
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; magnet train
 wMagnetTrain:: ; used only for BANK(wMagnetTrain)
 wMagnetTrainDirection:: db
@@ -1268,19 +1267,19 @@ wMagnetTrainHoldPosition:: db
 wMagnetTrainFinalPosition:: db
 wMagnetTrainPlayerSpriteInitX:: db
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; credits
 wCreditsPos:: dw
 wCreditsTimer:: db
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; mon buffer
 wBufferMonNick:: ds MON_NAME_LENGTH
 wBufferMonOT:: ds NAME_LENGTH
 wBufferMon:: party_struct wBufferMon
 	ds 8
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; mart items
 wMartItem1BCD:: ds 3
 wMartItem2BCD:: ds 3
@@ -1293,22 +1292,22 @@ wMartItem8BCD:: ds 3
 wMartItem9BCD:: ds 3
 wMartItem10BCD:: ds 3
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; town map data
 wTownMapPlayerIconLandmark:: db
-UNION ; ceee
+UNION ; ceed
 wTownMapCursorLandmark:: db
 wTownMapCursorObjectPointer:: dw
-NEXTU ; ceee
-wTownMapCursorCoordinates:: dw
-ENDU ; cef1
-
 NEXTU ; ceed
+wTownMapCursorCoordinates:: dw
+ENDU ; cef0
+
+NEXTU ; ceec
 ; phone call data
 wPhoneScriptBank:: db
 wPhoneCaller:: dw
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; radio data
 wCurRadioLine:: db
 wNextRadioLine:: db
@@ -1319,11 +1318,11 @@ wOaksPKMNTalkSegmentCounter:: db
 wRadioText:: ds 2 * SCREEN_WIDTH
 wRadioTextEnd::
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; lucky number show
 wLuckyNumberDigitsBuffer:: ds 5
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; movement buffer data
 wMovementBufferCount:: db
 wMovementBufferObject:: db
@@ -1331,7 +1330,7 @@ wUnusedMovementBufferBank:: db
 wUnusedMovementBufferPointer:: dw
 wMovementBuffer:: ds 55
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; box printing
 wWhichBoxMonToPrint:: db
 wFinishedPrintingBox:: db
@@ -1339,17 +1338,17 @@ wAddrOfBoxToPrint:: dw
 wBankOfBoxToPrint:: db
 wWhichBoxToPrint:: db
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; trainer HUD data
 	ds 1
 wPlaceBallsDirection:: db
 wTrainerHUDTiles:: ds 4
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; earthquake data buffer
 wEarthquakeMovementDataBuffer:: ds 5
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; miscellaneous
 wTempDayOfWeek::
 wKeepSevenBiasChance:: ; used in the slots to handle the favoring of 7 symbol streaks
@@ -1358,7 +1357,7 @@ wKeepSevenBiasChance:: ; used in the slots to handle the favoring of 7 symbol st
 wStartFlypoint:: db
 wEndFlypoint:: db
 
-NEXTU ; ceed
+NEXTU ; ceec
 ; unidentified
 wceed:: db
 wceee:: db
@@ -1368,7 +1367,7 @@ wcefa:: ds 2
 wcefc:: ds 1
 wcefd:: ds 44
 
-UNION ; cf29
+UNION ; cf28
 ; trainer data
 wSeenTrainerBank:: db
 wSeenTrainerDistance:: db
@@ -1384,31 +1383,31 @@ wScriptAfterPointer:: dw
 wRunningTrainerBattleScript:: db
 wTempTrainerEnd::
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; menu items list
 wMenuItemsList:: ds 16
 wMenuItemsListEnd::
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; fruit tree data
 wCurFruitTree:: db
 wCurFruit:: db
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; item ball data
 wItemBallData::
 wItemBallItemID:: db
 wItemBallQuantity:: db
 wItemBallDataEnd::
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; hidden item data
 wHiddenItemData::
 wHiddenItemEvent:: dw
 wHiddenItemID:: db
 wHiddenItemDataEnd::
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; elevator data
 wElevatorData::
 wElevatorPointerBank:: db
@@ -1416,7 +1415,7 @@ wElevatorPointer:: dw
 wElevatorOriginFloor:: db
 wElevatorDataEnd::
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; coord event data
 wCurCoordEvent::
 wCurCoordEventSceneID:: db
@@ -1425,7 +1424,7 @@ wCurCoordEventMapX:: db
 	ds 1
 wCurCoordEventScriptAddr:: dw
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; BG event data
 wCurBGEvent::
 wCurBGEventYCoord:: db
@@ -1433,7 +1432,7 @@ wCurBGEventXCoord:: db
 wCurBGEventType:: db
 wCurBGEventScriptAddr:: dw
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; mart data
 wMartType:: db
 wMartPointerBank:: db
@@ -1441,7 +1440,7 @@ wMartPointer:: dw
 wMartJumptableIndex:: db
 wBargainShopFlags:: db
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; player movement data
 wCurInput::
 wFacingTileID:: db
@@ -1457,102 +1456,105 @@ wWalkingTile:: db
 	ds 6
 wPlayerTurningDirection:: db
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; std script buffer
 	ds 1
 wJumpStdScriptBuffer:: ds 3
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; phone script data
 wCheckedTime:: db
 wEMailListIndex:: db
 wNumAvailableCallers:: db
 wAvailableCallers:: ds CONTACT_LIST_SIZE
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; phone caller contact
 	ds 1
 wCallerContact:: ds EMAIL_CONTACT_SIZE
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; backup menu data
 	ds 7
 wMenuCursorBufferBackup:: db
 wMenuScrollPositionBackup:: db
 
-NEXTU ; cf29
+NEXTU ; cf28
 ; poison step data
 wPoisonStepData::
 wPoisonStepFlagSum:: db
 wPoisonStepPartyFlags:: ds PARTY_LENGTH
 wPoisonStepDataEnd::
-ENDU ; cf3b
+ENDU ; cf3a
 
 wBoxAlignment:: db
 wUnusedBufferCF3C:: dw
 wFXAnimID:: dw
-ENDU ; cf40
+ENDU ; cf3f
 
-wPlaceBallsX:: db ; cf40
-wPlaceBallsY:: db ; cf41
-wTileAnimationTimer:: db ; cf42
+wPlaceBallsX:: db ; cf3f
+wPlaceBallsY:: db ; cf40
+wTileAnimationTimer:: db ; cf41
 
 ; palette backups?
-wBGP:: db ; cf43
-wOBP0:: db ; cf44
-wOBP1:: db ; cf45
+wBGP:: db ; cf42
+wOBP0:: db ; cf43
+wOBP1:: db ; cf44
 
-wNumHits:: db ; cf46
+wNumHits:: db ; cf45
 
-	ds 1
+wMonOrItemNameBuffer:: ds 22 ; cf46
+wTMHMMoveNameBackup:: ds MOVE_NAME_LENGTH ; cf5c
 
-wMonOrItemNameBuffer:: ds 22 ; cf48
-wTMHMMoveNameBackup:: ds MOVE_NAME_LENGTH ; cf5e
+wStringBuffer1:: ds 19 ; cf69
+wStringBuffer2:: ds 19 ; cf7c
+wStringBuffer3:: ds 19 ; cf8f
+wStringBuffer4:: ds 19 ; cfa2
+wStringBuffer5:: ds 13 ; cfb5
 
-wStringBuffer1:: ds 19 ; cf6b
-wStringBuffer2:: ds 19 ; cf7e
-wStringBuffer3:: ds 19 ; cf91
-wStringBuffer4:: ds 19 ; cfa4
-wStringBuffer5:: ds 13 ; cfb7
+wBattleMenuCursorBuffer:: dw ; cfc2
+wCurBattleMon:: db ; cfc4
+wCurMoveNum:: db ; cfc5
+wLastPocket:: db ; cfc6
 
-wBattleMenuCursorBuffer:: dw ; cfc4
-wCurBattleMon:: db ; cfc6
-wCurMoveNum:: db ; cfc7
-wLastPocket:: db ; cfc8
+wPartyMenuCursor:: db ; cfc7
+wItemsPocketCursor:: db ; cfc8
+wKeyItemsPocketCursor:: db ; cfc9
+wBallsPocketCursor:: db ; cfca
+wTMHMPocketCursor:: db ; cfcb
+wMedicinePocketCursor:: db ; cfcc
+wFruitPocketCursor:: db ; cfcd
+wAssemblyPocketCursor:: db ; cfce
+wEvolutionPocketCursor:: db ; cfcf
 
-wPartyMenuCursor:: db ; cfc9
-wItemsPocketCursor:: db ; cfca
-wKeyItemsPocketCursor:: db ; cfcb
-wBallsPocketCursor:: db ; cfcc
-wTMHMPocketCursor:: db ; cfcd
+wItemsPocketScrollPosition:: db ; cfd0
+wKeyItemsPocketScrollPosition:: db ; cfd1
+wBallsPocketScrollPosition:: db ; cfd2
+wTMHMPocketScrollPosition:: db ; cfd3
+wMedicinePocketScrollPosition:: db ; cfd4
+wFruitPocketScrollPosition:: db ; cfd5
+wAssemblyPocketScrollPosition:: db ; cfd6
+wEvolutionPocketScrollPosition:: db ; cfd7
 
-	ds 1
-
-wItemsPocketScrollPosition:: db ; cfcf
-wKeyItemsPocketScrollPosition:: db ; cfd0
-wBallsPocketScrollPosition:: db ; cfd1
-wTMHMPocketScrollPosition:: db ; cfd2
-
-; cfd3
+; cfd8
 wSwitchMon::
 wSwitchItem::
 wMoveSwapBuffer::
 	db
 
-wMenuScrollPosition:: ds 4 ; cfd4
+wMenuScrollPosition:: ds 4 ; cfd9
 
-wQueuedScriptBank:: db ; cfd8
-wQueuedScriptAddr:: dw ; cfd9
+wQueuedScriptBank:: db ; cfdd
+wQueuedScriptAddr:: dw ; cfde
 
-wPredefID:: db ; cfdb
-wPredefTemp:: dw ; cfdc
-wPredefAddress:: dw ; cfde
-wFarCallBCBuffer:: dw ; cfe0
-	ds 1
+wPredefID:: db ; cfe0
+wPredefTemp:: dw ; cfe1
+wPredefAddress:: dw ; cfe3
+wFarCallBCBuffer:: dw ; cfe5
 
-wNumMoves:: db ; cfe3
+wNumMoves:: db ; cfe7
 
-; cfe4
+; cfe8
 wFieldMoveSucceeded::
 wItemEffectSucceeded::
 wBattlePlayerAction::
@@ -1560,7 +1562,7 @@ wBattlePlayerAction::
 wSolvedUnownPuzzle::
 	db
 
-wVramState:: ; cfe5
+wVramState:: ; cfe9
 ; bit 0: overworld sprite updating on/off
 ; bit 5: can animate object $0/$4 to music
 ; bit 6: something to do with text
@@ -1568,14 +1570,11 @@ wVramState:: ; cfe5
 ;        flickers when climbing waterfall
 	db
 
-	ds 3
-
-wBattleResult:: ; cfe9
+wBattleResult:: ; cfea
 ; WIN, LOSE, or DRAW
 ; bit 7: box full
 	db
 
-	ds 1
 
 wUsingItemWithSelect:: db ; cfeb
 
@@ -1636,37 +1635,33 @@ wSpriteFlags:: db ; d037
 
 wHandlePlayerStep:: db ; d038
 
-	ds 5
+wPartyMenuActionText:: db ; d039
 
-wPartyMenuActionText:: db ; d03e
+wItemAttributeParamBuffer:: db ; d03a
 
-wItemAttributeParamBuffer:: db ; d03f
+wCurPartyLevel:: db ; d03b
 
-wCurPartyLevel:: db ; d040
+wScrollingMenuListSize:: db ; d03c
 
-wScrollingMenuListSize:: db ; d041
-
-wLinkMode:: db ; d042
+wLinkMode:: db ; d03d
 ; 0 not in link battle
 ; 1 link battle
 
 ; used when following a map warp
-wNextWarp:: db ; d043
-wNextMapGroup:: db ; d044
-wNextMapNumber:: db ; d045
-wPrevWarp:: db ; d046
-wPrevMapGroup:: db ; d047
-wPrevMapNumber:: db ; d048
+wNextWarp:: db ; d03e
+wNextMapGroup:: db ; d03f
+wNextMapNumber:: db ; d040
+wPrevWarp:: db ; d041
+wPrevMapGroup:: db ; d042
+wPrevMapNumber:: db ; d043
 
-	ds 17
+wUnusedD05A:: db ; d044
 
-wUnusedD05A:: db ; d05a
+wBGMapAnchor:: dw ; d045
 
-wBGMapAnchor:: dw ; d05b
-
-wUsedSprites:: ds SPRITE_GFX_LIST_CAPACITY * 2 ; d05d
-wUsedSpritesEnd:: ; d075
-	ds 8
+wUsedSprites:: ds SPRITE_GFX_LIST_CAPACITY * 2 ; d047
+wUsedSpritesEnd:: ; d05f
+	ds 30
 
 wOverworldMapAnchor:: dw ; d07d
 wMetatileStandingY:: db ; d07f
@@ -1910,7 +1905,6 @@ wXYComparePointer:: dw ; c17c
 wd17e:: flag_array 32
 
 wBattleScriptFlags:: db ; d182
-	ds 1
 wPlayerSpriteSetupFlags:: ; d183
 	db
 
@@ -1919,19 +1913,14 @@ wMapReentryScriptBank:: db ; d185
 wMapReentryScriptAddress:: dw ; d186
 
 wNamedObjectIndexBuffer:: dw ; d188
-	ds 2
 
-wTimeCyclesSinceLastCall:: db ; d18c
-wReceiveCallDelay_MinsRemaining:: db ; d18d
-wReceiveCallDelay_StartTime:: ds 3 ; d18e
+wTimeCyclesSinceLastCall:: db ; d18a
+wReceiveCallDelay_MinsRemaining:: db ; d18b
+wReceiveCallDelay_StartTime:: ds 3 ; d18c
 
-	ds 6
+wMapStatusEnd::
 
-wMapStatusEnd:: ; d197
-
-	ds 2
-
-wOptions:: ; d199
+wOptions:: ; d18f
 ; bit 0-2: number of frames to delay when printing text
 ;   fast 1; mid 3; slow 5
 ; bit 3: ?
@@ -1941,16 +1930,16 @@ wOptions:: ; d199
 ; bit 7: battle scene off/on
 	db
 
-wSaveFileExists:: db ; d19a
-wTextboxFrame:: ; d19b
+wSaveFileExists:: db ; d190
+wTextboxFrame:: ; d191
 ; bits 0-2: textbox frame 0-7
 	db
 
-wTextboxFlags:: ; d19c
+wTextboxFlags:: ; d192
 ; bit 0: 1-frame text delay
 ; bit 1: when unset, no text delay
 	db
-wGBPrinterBrightness:: ; d19d
+wGBPrinterBrightness:: ; d193
 ; bit 0-6: brightness
 ;   lightest: $00
 ;   lighter:  $20
@@ -1958,98 +1947,91 @@ wGBPrinterBrightness:: ; d19d
 ;   darker:   $60
 ;   darkest:  $7F
 	db
-wOptions2:: ; d19e
+wOptions2:: ; d194
 ; bit 0: menu account off/on
 	db
 
-	ds 2
-
-wOptionsEnd:: ; d1a1
+wOptionsEnd:: ; d195
 
 
 SECTION "Game Data", WRAMX
 
-; d1a1
+; d195
 wGameData::
 wPlayerData::
 wPlayerData1::
 wPlayerID:: dw
 
-wPlayerName:: ds NAME_LENGTH ; d1a3
-wMomsName::   ds NAME_LENGTH ; d1ae
-wRivalName::  ds NAME_LENGTH ; d1b9
-wRedsName::   ds NAME_LENGTH ; d1c4
-wGreensName:: ds NAME_LENGTH ; d1cf
+wPlayerName:: ds NAME_LENGTH ; d197
+wMomsName::   ds NAME_LENGTH ; d1a2
+wRivalName::  ds NAME_LENGTH ; d1ad
+wRedsName::   ds NAME_LENGTH ; d1b8
+wGreensName:: ds NAME_LENGTH ; d1c3
 
-wSavedAtLeastOnce:: db ; d1da
-wSpawnAfterChampion:: db ; d1db
+wSavedAtLeastOnce:: db ; d1ce
+wSpawnAfterChampion:: db ; d1cf
 
 ; init time set at newgame
-wStartDay:: db ; d1dc
-wStartHour:: db ; d1dd
-wStartMinute:: db ; d1de
-wStartSecond:: db ; d1df
+wStartDay:: db ; d1d0
+wStartHour:: db ; d1d1
+wStartMinute:: db ; d1d2
+wStartSecond:: db ; d1d3
 
-wRTC:: ds 4 ; d1e0
+wRTC:: ds 4 ; d1d4
 
-wDSTBackupDay:: db ; d1e4
-wDSTBackupHours:: db ; d1e5
-wDSTBackupMinutes:: db ; d1e6
-wDSTBackupSeconds:: db ; d1e7
+wDSTBackupDay:: db ; d1d8
+wDSTBackupHours:: db ; d1d9
+wDSTBackupMinutes:: db ; d1da
+wDSTBackupSeconds:: db ; d1db
 
-wDST:: ; d1e8
+wDST:: ; d1dc
 ; bit 7: dst
 	db
 
 ; used to temporarily store wCurItem before going to \1CaughtItem
-wBallUsedBuffer:: db ; d1e9
+wBallUsedBuffer:: db ; d1dd
 
-wGameTimeCap::     db ; d1ea
-wGameTimeHours::   dw ; d1eb
-wGameTimeMinutes:: db ; d1ed
-wGameTimeSeconds:: db ; d1ee
-wGameTimeFrames::  db ; d1ef
+wGameTimeCap::     db ; d1de
+wGameTimeHours::   dw ; d1df
+wGameTimeMinutes:: db ; d1e1
+wGameTimeSeconds:: db ; d1e2
+wGameTimeFrames::  db ; d1e3
 
-	ds 2
+wCurDay:: db ; d1e4
 
-wCurDay:: db ; d1f2
-
-	ds 1
-
-wObjectFollow_Leader:: db ; d1f4
-wObjectFollow_Follower:: db ; d1f5
-wCenteredObject:: db ; d1f6
-wFollowerMovementQueueLength:: db ; d1f7
-wFollowMovementQueue:: ds 5 ; d1f8
+wObjectFollow_Leader:: db ; d1e5
+wObjectFollow_Follower:: db ; d1e6
+wCenteredObject:: db ; d1e7
+wFollowerMovementQueueLength:: db ; d1e8
+wFollowMovementQueue:: ds 5 ; d1e9
 
 wObjectStructs::
-wPlayerStruct::   object_struct wPlayer   ; d1fd
-wObject1Struct::  object_struct wObject1  ; d225
-wObject2Struct::  object_struct wObject2  ; d24d
-wObject3Struct::  object_struct wObject3  ; d275
-wObject4Struct::  object_struct wObject4  ; d29d
-wObject5Struct::  object_struct wObject5  ; d2c5
-wObject6Struct::  object_struct wObject6  ; d2ed
-wObject7Struct::  object_struct wObject7  ; d315
-wObject8Struct::  object_struct wObject8  ; d33d
-wObject9Struct::  object_struct wObject9  ; d365
-wObject10Struct:: object_struct wObject10 ; d38d
-UNION ; d3b5
+wPlayerStruct::   object_struct wPlayer   ; d1ee
+wObject1Struct::  object_struct wObject1  ; d216
+wObject2Struct::  object_struct wObject2  ; d23e
+wObject3Struct::  object_struct wObject3  ; d266
+wObject4Struct::  object_struct wObject4  ; d28e
+wObject5Struct::  object_struct wObject5  ; d2b6
+wObject6Struct::  object_struct wObject6  ; d2de
+wObject7Struct::  object_struct wObject7  ; d306
+wObject8Struct::  object_struct wObject8  ; d32e
+wObject9Struct::  object_struct wObject9  ; d356
+wObject10Struct:: object_struct wObject10 ; d38e
+
+UNION ; d3a6
 	ds 18
-wPlayerData1End::
+wPlayerData1End:: ; d3b8
 wPlayerData2::
-NEXTU ; d3b5
+NEXTU ; d3a6
 wObject11Struct:: object_struct wObject11
 wObject12Struct:: object_struct wObject12
 wObjectStructsEnd::
-ENDU ; d405
+ENDU ; d3f6
 
-wCmdQueue:: ds CMDQUEUE_CAPACITY * CMDQUEUE_ENTRY_SIZE ; d405
-
-	ds 40
+wCmdQueue:: ds CMDQUEUE_CAPACITY * CMDQUEUE_ENTRY_SIZE ; d3f6
 
 wMapObjects::
-wPlayerObject:: map_object wPlayer ; d445
+wPlayerObject:: map_object wPlayer ; d40e
 wMap1Object::   map_object wMap1
 wMap2Object::   map_object wMap2
 wMap3Object::   map_object wMap3
@@ -2067,166 +2049,158 @@ wMap14Object::  map_object wMap14
 wMap15Object::  map_object wMap15
 wMapObjectsEnd::
 
-wObjectMasks:: ds NUM_OBJECTS ; d545
+wObjectMasks:: ds NUM_OBJECTS ; d51e
 
-wVariableSprites:: ds $10 ; d555
+wVariableSprites:: ds $10 ; d52e
 
-wEnteredMapFromContinue:: db ; d565
-	ds 2
-wTimeOfDayPal:: db ; d568
-	ds 4
-wTimeOfDayPalFlags:: db ; d56d
-wTimeOfDayPalset:: db ; d56e
-wCurTimeOfDay:: db ; d56f
+wEnteredMapFromContinue:: db ; d53e
+wTimeOfDayPal:: db ; d53f
+wTimeOfDayPalFlags:: db ; d530
+wTimeOfDayPalset:: db ; d531
+wCurTimeOfDay:: db ; d532
 
-	ds 1
-
-; d571
+; d533
 wPlayerData2End::
 wPlayerData3::
 wStatusFlags::
 	db
-wStatusFlags2:: db ; d572
+wStatusFlags2:: db ; d534
 
-wMoney:: ds 3 ; d573
-wMomsMoney:: ds 3 ; d576
+wMoney:: ds 3 ; d535
 
-; unused
-wMomSavingMoney:: ; d579
-; bit 0: saving some money
-; bit 1: saving half money
-; bit 2: saving all money
-; bit 7: active
-	db
-
-wCoins:: dw ; d57a
+wCoins:: dw ; d538
 
 wBadges::
-wEquintoBadges:: flag_array NUM_EQUINTO_BADGES ; d57c
-	ds 2
+wEquintoBadges:: flag_array NUM_EQUINTO_BADGES ; d53a
 
-wTMsHMs:: ds NUM_TMS + NUM_HMS ; d57f
-wTMsHMsEnd:: ; d5b6
+wTMs:: ds NUM_TMS ; d53b
+wHMs:: flag_array NUM_HMS ; d56d
+wMoveItemsEnd:: ; d56e
 
-wNumItems:: db ; d5b6
-wItems:: ds MAX_ITEMS * 2 + 1 ; d5b7
-wItemsEnd::
+wNumItems:: db ; d56e
+wItems:: ds MAX_ITEMS * 2 + 1 ; d56f
+wItemsEnd:: ; d598
 
-wNumKeyItems:: db ; d5e0
-wKeyItems:: ds MAX_KEY_ITEMS + 1 ; d5e1
-wKeyItemsEnd::
+wNumKeyItems:: db ; d598
+wKeyItems:: ds MAX_KEY_ITEMS + 1 ; d599
+wKeyItemsEnd:: ; d5af
 
-wNumBalls:: db ; d5fb
-wBalls:: ds MAX_BALLS * 2 + 1 ; d5fc
-wBallsEnd::
+wNumBalls:: db ; d5af
+wBalls:: ds MAX_BALLS * 2 + 1 ; d5b0
+wBallsEnd:: ; d5c9
 
-wNumPCItems:: db ; d615
-wPCItems:: ds MAX_PC_ITEMS * 2 + 1 ; d616
+wNumMedicine:: db ; d5c9
+wMedicine:: ds MAX_MEDICINE * 2 + 1 ; d5ca
+wMedicineEnd::
+
+wNumFruit:: db ; d5f3
+wFruit:: ds MAX_FRUIT * 2 + 1 ; d5f4
+wFruitEnd::
+
+wNumAssemblyItems:: db ; d609
+wAssemblyItems:: ds MAX_ASM_ITEMS * 2 + 1 ; d60a
+wAssemblyItemsEnd::
+
+wNumEvolutionItems:: db ; d633
+wEvolutionItems:: ds MAX_EVO_ITEMS * 2 + 1 ; d634
+wEvolutionItemsEnd::
+
+wNumPCItems:: db ; d65d
+wPCItems:: ds MAX_PC_ITEMS * 2 + 1 ; d65e
 wPCItemsEnd::
 
-	ds 1
-
-wPokegearFlags:: ; d67c
+wPokegearFlags:: ; d6c3
 ; bit 0: map
 ; bit 1: radio
 ; bit 2: phone
 ; bit 3: expn
 ; bit 7: on/off
 	db
-wRadioTuningKnob:: db ; d67d
-wLastDexMode:: db ; d67e
-	ds 1
-wWhichRegisteredItem:: db ; d680
-wRegisteredItem:: db ; d681
 
-wPlayerState:: db ; d682
+wRadioTuningKnob:: db ; d6c4
+wLastDexMode:: db ; d6c5
+wWhichRegisteredItem:: db ; d6c6
+wRegisteredItem:: db ; d6c7
 
-wHallOfFameCount:: db ; d683
-	ds 1
-wTradeFlags:: flag_array NUM_NPC_TRADES ; d685
+wPlayerState:: db ; d6c8
 
+wHallOfFameCount:: db ; d6c9
+wTradeFlags:: flag_array NUM_NPC_TRADES ; d6ca
 
-wMooMooBerries:: db ; d686
-	ds 1
+wCottageTownSceneID::                             db ; d6cb
+wPlayersHouse1FSceneID::                          db ; d6cc
+wLarchesHouseSceneID::                            db ; d6cd
+wRoute49HouseSceneID::                            db ; d6ce
 
+	ds $120
 
-wCottageTownSceneID::                             db ; d688
-wPlayersHouse1FSceneID::                          db ; d689
-wLarchesHouseSceneID::                            db ; d68a
-wRoute49HouseSceneID::                            db ; d68b
+wEventFlags:: flag_array NUM_EVENTS ; d7ef
 
-	ds $12a
+	ds $d8 ; d7be
 
-wEventFlags:: flag_array NUM_EVENTS ; d7b6
+wd8cc:: db
 
-	ds $d8 ; d7bb
+wGameTimerPause:: db ; d8cd
 
-wd893:: db
-
-wGameTimerPause:: db ; d894
-
-wd895::
+wd8ce::
 ; bits 4, 6, or 7 can be used to disable joypad input
 ; bit 4
 ; bit 6: mon fainted?
 ; bit 7: SGB flag?
 	db
 
-wCurBox:: db ; d896
+wCurBox:: db ; d8cf
 
 ; 8 chars + $50
-wBoxNames:: ds BOX_NAME_LENGTH * NUM_BOXES ; d897
+wBoxNames:: ds BOX_NAME_LENGTH * NUM_BOXES ; d8d0
 
-wBikeFlags:: ; d954
+wBikeFlags:: ; d98d
 ; bit 0: using strength
 ; bit 1: always on bike
 ; bit 2: downhill
 	db
 
-wCurMapSceneScriptPointer:: dw ; d955
+wCurMapSceneScriptPointer:: dw ; d98e
 
-wCurCaller:: dw ; d957
-wCurMapWarpCount:: db ; d959
-wCurMapWarpsPointer:: dw ; d95a
-wCurMapCoordEventCount:: db ; d95c
-wCurMapCoordEventsPointer:: dw ; d95d
-wCurMapBGEventCount:: db ; d95f
-wCurMapBGEventsPointer:: dw ; d960
-wCurMapObjectEventCount:: db ; d962
-wCurMapObjectEventsPointer:: dw ; d963
-wCurMapSceneScriptCount:: db ; d965
-wCurMapSceneScriptsPointer:: dw ; d966
-wCurMapCallbackCount:: db ; d968
-wCurMapCallbacksPointer:: dw ; d969
+wCurCaller:: dw ; d990
+wCurMapWarpCount:: db ; d992
+wCurMapWarpsPointer:: dw ; d993
+wCurMapCoordEventCount:: db ; d995
+wCurMapCoordEventsPointer:: dw ; d996
+wCurMapBGEventCount:: db ; d998
+wCurMapBGEventsPointer:: dw ; d999
+wCurMapObjectEventCount:: db ; d99b
+wCurMapObjectEventsPointer:: dw ; d99c
+wCurMapSceneScriptCount:: db ; d99e
+wCurMapSceneScriptsPointer:: dw ; d99f
+wCurMapCallbackCount:: db ; d9a1
+wCurMapCallbacksPointer:: dw ; d9a2
 
 ; Sprite id of each decoration
-wDecoBed::           db ; d96b
-wDecoCarpet::        db ; d96c
-wDecoPlant::         db ; d96d
-wDecoPoster::        db ; d96e
-wDecoConsole::       db ; d96f
-wDecoLeftOrnament::  db ; d970
-wDecoRightOrnament:: db ; d971
-wDecoBigDoll::       db ; d972
+wDecoBed::           db ; d9a4
+wDecoCarpet::        db ; d9a5
+wDecoPlant::         db ; d9a6
+wDecoPoster::        db ; d9a7
+wDecoConsole::       db ; d9a8
+wDecoLeftOrnament::  db ; d9a9
+wDecoRightOrnament:: db ; d9aa
+wDecoBigDoll::       db ; d9ab
 
 ; Items bought from Mom
-wWhichMomItem:: db ; d973
-wWhichMomItemSet:: db ; d974
-wMomItemTriggerBalance:: ds 3 ; d975
+wWhichMomItem:: db ; d9ac
+wWhichMomItemSet:: db ; d9ad
 
-wDailyResetTimer:: dw ; d978
-wDailyFlags1:: db ; d97a
-wDailyFlags2:: db ; d97b
-wTimerEventStartDay:: db ; d97c
+wDailyResetTimer:: dw ; d9ae
+wDailyFlags1:: db ; d9b0
+wDailyFlags2:: db ; d9b1
+wTimerEventStartDay:: db ; d9b2
 
-wFruitTreeFlags:: flag_array NUM_FRUIT_TREES ; d97d
+wFruitTreeFlags:: flag_array NUM_FRUIT_TREES ; d9b3
 
 	ds 6
 
-wLuckyNumberDayBuffer:: dw ; d984
-	ds 2
-wSpecialPhoneCallID:: db ; d988
-	ds 52
+wLuckyNumberDayBuffer:: dw ; d9ba
+wSpecialPhoneCallID:: db ; d9bc
 
 wStepCount:: db ; d9bd
 wPoisonStepCount:: db ; d9be

@@ -105,13 +105,13 @@ MomYouveSavedText:
 	done
 
 MomOKIllSaveText:
-	text "OK. I'll save your"
-	line "money."
+	text "OK. I'll put it in"
+	line "the PC."
 	done
 
 MomPhoneStopSavingMoneyText:
-	text "OK. I'll stop"
-	line "saving your money."
+	text "OK. I'll have to"
+	line "toss it out then."
 	done
 
 MomPhoneHangUpText:
@@ -149,17 +149,18 @@ MomPhoneNoGymQuestText:
 	done
 
 MomPhoneLectureText:
-	text "?"
+	text "<PLAYER>? Where are"
+	line "you?"
 
-	para "…… <PLAYER>?"
-	line "I heard from PROF."
+	para "PROF LARCH told me"
+	line "you want on a long"
 
-	para "ELM that you went"
-	line "on a long trip."
+	para "trip. You should've"
+	line "told me about it."
 
-	para "I wish you would"
-	line "have told me…"
+	para "I bought a POTION"
+	line "for your #MON."
 
-	para "What about money?"
-	line "Should I save it?"
+	para "Should I store it"
+	line "in your PC?"
 	done

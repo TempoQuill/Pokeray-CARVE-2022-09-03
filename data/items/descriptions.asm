@@ -753,8 +753,8 @@ MetalCoatDesc:
 	next "type moves.@"
 
 DragonFangDesc:
-	db   "Powers up dragon-"
-	next "type moves.@"
+	db   "A valuable, though"
+	next "useless canine.@"
 
 LeftoversDesc:
 	db   "Recovers Hit"
@@ -765,8 +765,8 @@ MysteryBerryDesc:
 	next "Power Points.@"
 
 DragonScaleDesc:
-	db   "A rare dragon-type"
-	next "item.@"
+	db   "Powers up dragon-"
+	next "type moves.@"
 
 BerserkGeneDesc:
 	db   "Aids ATTACK but"

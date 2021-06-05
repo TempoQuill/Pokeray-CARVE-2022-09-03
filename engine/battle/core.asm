@@ -2297,66 +2297,21 @@ WinTrainerBattle:
 	ld a, [wAmuletCoin]
 	and a
 	call nz, .DoubleReward
-	call .CheckMaxedOutMomMoney
-	push af
-	ld a, FALSE
-	jr nc, .okay
-	ld a, [wMomSavingMoney]
-	and MOM_SAVING_MONEY_MASK
-	cp (1 << MOM_SAVING_SOME_MONEY_F) | (1 << MOM_SAVING_HALF_MONEY_F)
-	jr nz, .okay
-	inc a ; TRUE
-
-.okay
-	ld b, a
-	ld c, 4
 .loop
-	ld a, b
-	and a
-	jr z, .loop2
-	call .AddMoneyToMom
-	dec c
-	dec b
-	jr .loop
-
-.loop2
 	ld a, c
 	and a
 	jr z, .done
 	call .AddMoneyToWallet
 	dec c
-	jr .loop2
+	jr .loop
 
 .done
 	call .DoubleReward
 	call .DoubleReward
 	pop af
 	jr nc, .KeepItAll
-	ld a, [wMomSavingMoney]
-	and MOM_SAVING_MONEY_MASK
-	jr z, .KeepItAll
-	ld hl, .SentToMomTexts
-	dec a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	jp StdBattleTextbox
-
-.KeepItAll:
 	ld hl, GotMoneyForWinningText
 	jp StdBattleTextbox
-
-.AddMoneyToMom:
-	push bc
-	ld hl, wBattleReward + 2
-	ld de, wMomsMoney + 2
-	call AddBattleMoneyToAccount
-	pop bc
-	ret
 
 .AddMoneyToWallet:
 	push bc
@@ -2378,22 +2333,6 @@ WinTrainerBattle:
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a
-	ret
-
-.SentToMomTexts:
-; entries correspond to MOM_SAVING_* constants
-	dw SentSomeToMomText
-	dw SentHalfToMomText
-	dw SentAllToMomText
-
-.CheckMaxedOutMomMoney:
-	ld hl, wMomsMoney + 2
-	ld a, [hld]
-	cp LOW(MAX_MONEY)
-	ld a, [hld]
-	sbc HIGH(MAX_MONEY) ; mid
-	ld a, [hl]
-	sbc HIGH(MAX_MONEY >> 8)
 	ret
 
 AddBattleMoneyToAccount:
@@ -2460,7 +2399,6 @@ PlayVictoryMusic:
 
 IsGymLeader:
 	ld hl, GymLeaders
-IsGymLeaderCommon:
 	push de
 	ld a, [wOtherTrainerClass]
 	ld de, 1
@@ -2793,10 +2731,10 @@ PlayerMonFaintedAnimation:
 	jp MonFaintedAnimation
 
 MonFaintedAnimation:
-	ld a, [wd895]
+	ld a, [wd8ce]
 	push af
 	set 6, a
-	ld [wd895], a
+	ld [wd8ce], a
 	ld b, 7
 
 .OuterLoop:
@@ -2839,7 +2777,7 @@ MonFaintedAnimation:
 	jr nz, .OuterLoop
 
 	pop af
-	ld [wd895], a
+	ld [wd8ce], a
 	ret
 
 .Spaces:
@@ -4699,31 +4637,10 @@ BattleMenu_Pack:
 
 	call LoadStandardMenuHeader
 
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial
-	cp BATTLETYPE_CONTEST
-	jr z, .contest
-
 	farcall BattlePack
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	jr z, .didnt_use_item
-	jr .got_item
-
-.tutorial
-	farcall TutorialPack
-	ld a, POKE_BALL
-	ld [wCurItem], a
-	call DoItemEffect
-	jr .got_item
-
-.contest
-	ld a, PARK_BALL
-	ld [wCurItem], a
-	call DoItemEffect
-
-.got_item
 	call .UseItem
 	ret
 

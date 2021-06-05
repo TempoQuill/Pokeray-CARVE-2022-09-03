@@ -418,10 +418,6 @@ BuyMenuLoop:
 	ld a, [wMenuJoypad]
 	cp B_BUTTON
 	jr z, .set_carry
-	cp A_BUTTON
-	jr z, .useless_pointer
-
-.useless_pointer
 	call MartAskPurchaseQuantity
 	jr c, .cancel
 	call MartConfirmPurchase

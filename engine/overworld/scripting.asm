@@ -159,7 +159,7 @@ ScriptCommandTable:
 	dw Script_loadtrainer                ; 5d
 	dw Script_startbattle                ; 5e
 	dw Script_reloadmapafterbattle       ; 5f
-	dw Script_catchtutorial              ; 60
+	dw Script_trainertext                ; 60
 	dw Script_trainertext                ; 61
 	dw Script_trainerflagaction          ; 62
 	dw Script_winlosstext                ; 63
@@ -1104,13 +1104,6 @@ Script_startbattle:
 	ld [wScriptVar], a
 	ret
 
-Script_catchtutorial:
-	call GetScriptByte
-	ld [wBattleType], a
-	call BufferScreen
-	farcall CatchTutorial
-	jp Script_reloadmap
-
 Script_reloadmapafterbattle:
 	ld hl, wBattleScriptFlags
 	ld d, [hl]
@@ -1721,10 +1714,7 @@ CompareMoneyAction:
 
 GetMoneyAccount:
 	call GetScriptByte
-	and a
 	ld de, wMoney ; YOUR_MONEY
-	ret z
-	ld de, wMomsMoney ; MOMS_MONEY
 	ret
 
 LoadMoneyAmountToMem:

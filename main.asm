@@ -105,10 +105,6 @@ SECTION "Clock Reset", ROMX
 INCLUDE "engine/rtc/restart_clock.asm"
 
 
-SECTION "Catch Tutorial", ROMX
-
-INCLUDE "engine/events/catch_tutorial.asm"
-
 
 SECTION "bank9", ROMX
 
@@ -408,7 +404,6 @@ SECTION "bank70_2", ROMX
 
 INCLUDE "engine/rtc/print_hours_mins.asm"
 INCLUDE "engine/pokedex/pokedex_3.asm"
-INCLUDE "engine/events/catch_tutorial_input.asm"
 INCLUDE "engine/pokegear/townmap_convertlinebreakcharacters.asm"
 
 PokegearGFX:

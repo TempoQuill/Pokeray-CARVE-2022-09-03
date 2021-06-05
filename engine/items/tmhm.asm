@@ -10,7 +10,7 @@ TMHMPocket:
 	ld a, [wCurItem]
 	dec a
 	ld [wCurItemQuantity], a
-	ld hl, wTMsHMs
+	ld hl, wTMs
 	ld c, a
 	ld b, 0
 	add hl, bc
@@ -456,7 +456,7 @@ TMHM_CancelString:
 	db "CANCEL@"
 
 TMHM_GetCurrentPocketPosition:
-	ld hl, wTMsHMs
+	ld hl, wTMs
 	ld a, [wTMHMPocketScrollPosition]
 	ld b, a
 	inc b
@@ -507,7 +507,7 @@ Function2c8e4: ; unreferenced
 .CheckHaveRoomForTMHM:
 	ld a, [wTempTMHM]
 	dec a
-	ld hl, wTMsHMs
+	ld hl, wTMs
 	ld b, 0
 	ld c, a
 	add hl, bc
@@ -522,7 +522,7 @@ ConsumeTM:
 	call ConvertCurItemIntoCurTMHM
 	ld a, [wTempTMHM]
 	dec a
-	ld hl, wTMsHMs
+	ld hl, wTMs
 	ld b, 0
 	ld c, a
 	add hl, bc
@@ -542,7 +542,7 @@ ConsumeTM:
 CountTMsHMs:
 	ld b, 0
 	ld c, NUM_TMS + NUM_HMS
-	ld hl, wTMsHMs
+	ld hl, wTMs
 .loop
 	ld a, [hli]
 	and a

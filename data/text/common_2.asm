@@ -1168,20 +1168,18 @@ _ReceivedItemText::
 	done
 
 _PutItemInPocketText::
-	text "<PLAYER> put the"
-	line "@"
+	text "<PLAYER> inserted"
+	line "the @"
 	text_ram wStringBuffer1
-	text " in"
-	cont "the @"
+	cont "into the"
+	cont "@"
 	text_ram wStringBuffer3
 	text "."
 	prompt
 
 _PocketIsFullText::
-	text "The @"
-	text_ram wStringBuffer3
-	text_start
-	line "is full…"
+	text "But the respective"
+	line "pocket is full…"
 	prompt
 
 _CongratulationsYourPokemonText::

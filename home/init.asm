@@ -5,7 +5,7 @@ Reset::
 	call ClearPalettes
 	ei
 
-	ld hl, wd895
+	ld hl, wd8ce
 	set 7, [hl]
 
 	ld c, 32
@@ -43,7 +43,7 @@ Init::
 	ldh [rOBP1], a
 	ldh [rTMA], a
 	ldh [rTAC], a
-	ld [wceeb], a
+	ld [wceea], a
 
 	ld a, %100 ; Start timer at 4096Hz
 	ldh [rTAC], a

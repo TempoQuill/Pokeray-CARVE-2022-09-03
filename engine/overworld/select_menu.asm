@@ -32,9 +32,30 @@ CheckRegisteredItem:
 	dw .CheckBall
 	dw .CheckKeyItem
 	dw .CheckTMHM
+	dw .CheckMedicine
+	dw .CheckFruit
+	dw .CheckAssembly
+	dw .CheckEvolution
+
+.CheckMedicine
+	ld hl, wNumMedicine
+	jr .Standard
+
+.CheckFruit
+	ld hl, wNumFruit
+	jr .Standard
+
+.CheckAssembly
+	ld hl, wNumAssemblyItems
+	jr .Standard
+
+.CheckEvolution
+	ld hl, wNumEvolutionItems
+	jr .Standard
 
 .CheckItem:
 	ld hl, wNumItems
+.Standard
 	call .CheckRegisteredNo
 	jr c, .NoRegisteredItem
 	inc hl
@@ -43,7 +64,7 @@ CheckRegisteredItem:
 	add hl, de
 	add hl, de
 	call .IsSameItem
-	jr c, .NoRegisteredItem
+	jr c, .CheckTMHM
 	and a
 	ret
 
@@ -52,7 +73,7 @@ CheckRegisteredItem:
 	ld hl, wKeyItems
 	ld de, 1
 	call IsInArray
-	jr nc, .NoRegisteredItem
+	jr nc, .CheckTMHM
 	ld a, [wRegisteredItem]
 	ld [wCurItem], a
 	and a
@@ -61,20 +82,17 @@ CheckRegisteredItem:
 .CheckBall:
 	ld hl, wNumBalls
 	call .CheckRegisteredNo
-	jr nc, .NoRegisteredItem
+	jr nc, .CheckTMHM
 	inc hl
 	ld e, a
 	ld d, 0
 	add hl, de
 	add hl, de
 	call .IsSameItem
-	jr c, .NoRegisteredItem
+	jr c, .CheckTMHM
 	ret
 
 .CheckTMHM:
-	jr .NoRegisteredItem
-
-.NoRegisteredItem:
 	xor a
 	ld [wWhichRegisteredItem], a
 	ld [wRegisteredItem], a

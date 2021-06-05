@@ -9,12 +9,24 @@
 	const ITEMATTR_HELP
 ITEMATTR_STRUCT_LENGTH EQU const_value
 
+; HM flags
+	const_def
+	const CUT_F
+	const FLY_F
+	const SURF_F
+	const STRENGTH_F
+	const FLASH_F
+
 ; item types
 	const_def 1
 	const ITEM     ; 1
 	const KEY_ITEM ; 2
 	const BALL     ; 3
 	const TM_HM    ; 4
+	const MEDICINE ; 5
+	const FRUIT    ; 6
+	const ASM_ITEM ; 7
+	const EVO_ITEM ; 8
 
 ; item menu types
 ; UseItem.dw indexes (see engine/items/pack.asm)
@@ -40,12 +52,20 @@ CANT_TOSS   EQU 1 << CANT_TOSS_F
 	const BALL_POCKET     ; 1
 	const KEY_ITEM_POCKET ; 2
 	const TM_HM_POCKET    ; 3
+	const MEDICINE_POCKET ; 4
+	const FRUIT_POCKET    ; 5
+	const ASM_ITEM_POCKET ; 6
+	const EVO_ITEM_POCKET ; 7
 NUM_POCKETS EQU const_value
 
 MAX_ITEMS     EQU 20
 MAX_BALLS     EQU 12
 MAX_KEY_ITEMS EQU 25
 MAX_PC_ITEMS  EQU 50
+MAX_MEDICINE  EQU 20
+MAX_FRUIT     EQU 10
+MAX_ASM_ITEMS EQU 20
+MAX_EVO_ITEMS EQU 20
 
 MAX_ITEM_STACK EQU 99
 
@@ -95,9 +115,7 @@ MAIL_STRUCT_LENGTH EQU $30 ; mailmsg struct
 	const HELD_EVASION_UP
 	const HELD_38
 
-	const_next 40
-	const_skip
-	const_skip
+	const_next 42
 	const HELD_METAL_POWDER
 
 	const_next 50

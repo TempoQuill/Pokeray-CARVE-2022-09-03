@@ -169,6 +169,7 @@ AskNumber2MText:
 	done
 
 RegisteredNumberMText:
+RegisteredNumberFText:
 	text "<PLAYER> registered"
 	line "@"
 	text_ram wStringBuffer3
@@ -213,13 +214,6 @@ AskNumber1FText:
 AskNumber2FText:
 	text "Register the e-"
 	line "mail address?"
-	done
-
-RegisteredNumberFText:
-	text "<PLAYER> registered"
-	line "@"
-	text_ram wStringBuffer3
-	text "'s number."
 	done
 
 NumberAcceptedFText:

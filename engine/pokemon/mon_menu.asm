@@ -8,7 +8,19 @@ HasNoItems:
 	ld a, [wNumBalls]
 	and a
 	ret nz
-	ld hl, wTMsHMs
+	ld a, [wNumMedicine]
+	and a
+	ret nz
+	ld a, [wNumFruit]
+	and a
+	ret nz
+	ld a, [wNumAssemblyItems]
+	and a
+	ret nz
+	ld a, [wNumEvolutionItems]
+	and a
+	ret nz
+	ld hl, wTMs
 	ld b, NUM_TMS + NUM_HMS
 .loop
 	ld a, [hli]
