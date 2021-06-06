@@ -7,7 +7,7 @@ Music_AzaleaTown:
 
 Music_AzaleaTown_Ch1:
 	tempo 160
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	stereo_panning FALSE, TRUE
 	note_type 12, 10, 1

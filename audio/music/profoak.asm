@@ -6,7 +6,7 @@ Music_ProfOak:
 
 Music_ProfOak_Ch1:
 	tempo 118
-	volume 7, 7
+	volume 7
 	vibrato 18, 3, 4
 	pitch_inc_switch
 	stereo_panning TRUE, FALSE

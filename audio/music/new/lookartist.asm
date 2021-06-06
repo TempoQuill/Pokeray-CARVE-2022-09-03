@@ -7,7 +7,7 @@ Music_LookArtist:
 
 Music_LookArtist_Ch1:
 	tempo 165
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	note_type 6, 10, 1
 	octave 2

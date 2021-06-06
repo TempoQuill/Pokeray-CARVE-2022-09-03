@@ -8,7 +8,7 @@ Music_Mum:
 
 Music_Mum_Ch2:
 	tempo 146
-	volume 7, 7
+	volume 7
 	pitch_inc_switch
 	duty_cycle 2
 	note_type 6, 10, 1

@@ -7,7 +7,7 @@ Music_KantoWildBattle:
 
 Music_KantoWildBattle_Ch1:
 	tempo 112
-	volume 7, 7
+	volume 7
 	vibrato 18, 2, 3
 	duty_cycle 2
 	note_type 12, 11, 7

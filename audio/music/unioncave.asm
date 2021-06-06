@@ -7,7 +7,7 @@ Music_UnionCave:
 
 Music_UnionCave_Ch1:
 	tempo 160
-	volume 7, 7
+	volume 7
 	duty_cycle 1
 	pitch_offset 2
 	vibrato 24, 3, 4

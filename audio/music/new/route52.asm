@@ -9,7 +9,7 @@ Music_Route52:
 
 Music_Route52_Ch1:
 	tempo 160
-	volume 7, 7
+	volume 7
 	pitch_offset -1
 	duty_cycle 2
 	note_type 12, 10, 2

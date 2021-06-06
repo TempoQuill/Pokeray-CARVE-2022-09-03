@@ -7,7 +7,7 @@ Music_AfterTheRivalFight:
 
 Music_AfterTheRivalFight_Ch1:
 	tempo 112
-	volume 7, 7
+	volume 7
 	duty_cycle 0
 	pitch_inc_switch
 	vibrato 8, 1, 4

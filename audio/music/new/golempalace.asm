@@ -8,7 +8,7 @@ Music_GolemPalace:
 
 Music_GolemPalace_Ch1:
 	tempo 176
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	note_type 12, 7, 7
 	rest 2

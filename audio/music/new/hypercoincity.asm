@@ -8,7 +8,7 @@ Music_HypercoinCity:
 
 Music_HypercoinCity_Ch1:
 	tempo 154
-	volume 7, 7
+	volume 7
 	duty_cycle 1
 	note_type 6, 0, 0
 	rest 12

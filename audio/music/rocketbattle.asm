@@ -6,7 +6,7 @@ Music_RocketBattle:
 
 Music_RocketBattle_Ch1:
 	tempo 101
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	pitch_offset 2
 	vibrato 16, 1, 5

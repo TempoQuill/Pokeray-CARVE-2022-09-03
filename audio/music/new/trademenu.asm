@@ -18,7 +18,7 @@ Music_TradeMenuPart2:
 
 Music_TradeMenu_Ch1:
 	tempo 139
-	volume 7, 7
+	volume 7
 	old_panning %1111, %0110
 	pitch_inc_switch
 	duty_cycle 1
@@ -59,7 +59,7 @@ Music_TradeMenu_Ch1:
 
 Music_TradeMenu_Ch2:
 	tempo 139
-	volume 7, 7
+	volume 7
 	old_panning %0110, %1111
 	pitch_inc_switch
 	duty_cycle 1

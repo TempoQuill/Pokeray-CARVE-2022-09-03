@@ -9,7 +9,7 @@ Music_TeamHavocTheme:
 
 Music_TeamHavocTheme_Ch1:
 	tempo 267
-	volume 7, 7
+	volume 7
 .mainloop:
 	sound_call .sub1
 	sound_call .sub2

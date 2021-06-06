@@ -7,7 +7,7 @@ Music_TinTower:
 
 Music_TinTower_Ch1:
 	tempo 208
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	pitch_offset 4
 	vibrato 8, 4, 5

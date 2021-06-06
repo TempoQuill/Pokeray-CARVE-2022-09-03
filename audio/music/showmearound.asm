@@ -7,7 +7,7 @@ Music_ShowMeAround:
 
 Music_ShowMeAround_Ch1:
 	tempo 144
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	duty_cycle 2
 	note_type 12, 11, 1

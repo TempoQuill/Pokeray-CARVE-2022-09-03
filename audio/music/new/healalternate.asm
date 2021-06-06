@@ -9,7 +9,7 @@ Music_HealAlternate:
 
 Music_HealAlternate_Ch1:
 	tempo 142
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 4, 1, 3
 	note_type 12, 10, 7

@@ -7,7 +7,7 @@ Music_RBYTradeFanMade:
 
 Music_RBYTradeFanMade_Ch1:
 	tempo 144
-	volume 7, 7
+	volume 7
 	duty_cycle 1
 	vibrato 5, 1, 6
 .mainloop:

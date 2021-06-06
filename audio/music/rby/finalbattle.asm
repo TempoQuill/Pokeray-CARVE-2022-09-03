@@ -6,7 +6,7 @@ Music_FinalBattle:
 
 Music_FinalBattle_Ch1:
 	tempo 112
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	vibrato 6, 3, 4
 	toggle_perfect_pitch

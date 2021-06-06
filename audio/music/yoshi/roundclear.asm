@@ -7,7 +7,7 @@ Music_RoundClear_Ch5:
 	sfx_priority_on
 	set_music
 	tempo 128
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	toggle_perfect_pitch
 	vibrato 1, 2, 3

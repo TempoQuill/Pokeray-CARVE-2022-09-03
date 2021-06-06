@@ -9,7 +9,7 @@ Music_LookLunatic:
 
 Music_LookLunatic_Ch1:
 	tempo 267
-	volume 7, 7
+	volume 7
 	pitch_offset -1
 	duty_cycle 2
 	vibrato 7, 5, 2

@@ -7,7 +7,7 @@ Music_Route2:
 
 Music_Route2_Ch1:
 	tempo 151
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	vibrato 6, 2, 3
 	note_type 12, 11, 1

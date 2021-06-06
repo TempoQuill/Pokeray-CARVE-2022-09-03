@@ -9,7 +9,7 @@ Music_HouseEnroute:
 
 Music_HouseEnroute_Ch1:
 	tempo 160
-	volume 7, 7
+	volume 7
 	pitch_offset -1
 .mainloop:
 	sound_call .sub1

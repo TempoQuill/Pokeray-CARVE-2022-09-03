@@ -8,7 +8,7 @@ Music_TrainerVictory:
 
 Music_TrainerVictory_Ch1:
 	tempo 149
-	volume 7, 7
+	volume 7
 	pitch_inc_switch
 	duty_cycle 2
 	vibrato 18, 5, 4

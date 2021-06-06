@@ -6,7 +6,7 @@ Music_Mom:
 
 Music_Mom_Ch2:
 	tempo 144
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	duty_cycle 2
 	note_type 6, 11, 3

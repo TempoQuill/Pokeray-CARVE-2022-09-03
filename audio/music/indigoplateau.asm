@@ -7,7 +7,7 @@ Music_IndigoPlateau:
 
 Music_IndigoPlateau_Ch1:
 	tempo 128
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	pitch_offset 2
 	stereo_panning FALSE, TRUE

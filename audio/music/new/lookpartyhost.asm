@@ -9,7 +9,7 @@ Music_LookPartyHost:
 
 Music_LookPartyHost_Ch1:
 	tempo 251
-	volume 7, 7
+	volume 7
 	pitch_inc_switch
 	duty_cycle 3
 	note_type 12, 10, 1

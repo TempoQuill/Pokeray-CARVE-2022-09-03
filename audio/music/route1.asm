@@ -8,7 +8,7 @@ Music_Route1:
 Music_Route1_Ch1:
 	stereo_panning FALSE, TRUE
 	tempo 184
-	volume 7, 7
+	volume 7
 	vibrato 22, 1, 1
 	duty_cycle 3
 	note_type 12, 8, 3

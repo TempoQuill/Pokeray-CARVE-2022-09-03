@@ -7,7 +7,7 @@ Music_Bicycle:
 
 Music_Bicycle_Ch1:
 	tempo 140
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	pitch_inc_switch
 	stereo_panning FALSE, TRUE

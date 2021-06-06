@@ -14,7 +14,7 @@ Music_FireFlowerMenu:
 
 Music_FireFlower_Ch1:
 	tempo 224
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	toggle_perfect_pitch
 	note_type 12, 11, 3
@@ -29,7 +29,7 @@ Music_FireFlower_Ch1:
 	note G_, 10
 Music_FireFlowerMenu_Ch1:
 	tempo 224
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	toggle_perfect_pitch
 	note_type 12, 11, 3

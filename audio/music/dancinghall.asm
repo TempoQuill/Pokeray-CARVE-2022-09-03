@@ -7,7 +7,7 @@ Music_DancingHall:
 
 Music_DancingHall_Ch1:
 	tempo 208
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	note_type 6, 11, 7
 	rest 3

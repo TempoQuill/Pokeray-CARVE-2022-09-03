@@ -9,7 +9,7 @@ Music_LookHavoc:
 
 Music_LookHavoc_Ch1:
 	tempo 245
-	volume 7, 7
+	volume 7
 .mainloop:
 	transpose 0, 2
 	sound_call Music_TeamHavocTheme_Ch1.sub1

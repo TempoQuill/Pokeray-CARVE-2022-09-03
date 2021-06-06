@@ -8,7 +8,7 @@ Music_Bicycle:
 
 Music_Bicycle_Ch1:
 	tempo 144
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	note_type 12, 10, 3
 	rest 4

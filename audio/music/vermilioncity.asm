@@ -8,7 +8,7 @@ Music_VermilionCity:
 Music_VermilionCity_Ch1:
 	stereo_panning FALSE, TRUE
 	tempo 176
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	note_type 12, 6, 5
 	octave 4

@@ -9,7 +9,7 @@ Music_LookWoman:
 
 Music_LookWoman_Ch1:
 	tempo 256
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	note_type 3, 10, 4
 	rest 8

@@ -7,7 +7,7 @@ Music_TrainerBattle:
 
 Music_TrainerBattle_Ch1:
 	tempo 203
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	note_type 6, 10, 2
 	octave 3

@@ -8,7 +8,7 @@ Music_GoldenrodCity:
 Music_GoldenrodCity_Ch1:
 	stereo_panning FALSE, TRUE
 	tempo 176
-	volume 7, 7
+	volume 7
 	note_type 12, 9, 7
 	rest 16
 	rest 16

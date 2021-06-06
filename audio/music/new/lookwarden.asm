@@ -7,7 +7,7 @@ Music_LookWarden:
 
 Music_LookWarden_Ch1:
 	tempo 235
-	volume 7, 7
+	volume 7
 	duty_cycle 1
 	vibrato 11, 3, 2
 	note_type 6, 10, 7

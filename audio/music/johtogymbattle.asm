@@ -6,7 +6,7 @@ Music_JohtoGymBattle:
 
 Music_JohtoGymBattle_Ch1:
 	tempo 101
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	pitch_offset 2
 	vibrato 18, 1, 5

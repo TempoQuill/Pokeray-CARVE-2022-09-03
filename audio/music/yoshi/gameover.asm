@@ -8,7 +8,7 @@ Music_GameOver_Ch5:
 	sfx_priority_on
 	set_music
 	tempo 144
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	toggle_perfect_pitch
 	vibrato 5, 2, 5

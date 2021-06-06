@@ -6,7 +6,7 @@ Music_TrainerVictory:
 
 Music_TrainerVictory_Ch1:
 	tempo 120
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	pitch_inc_switch
 	note_type 8, 11, 1

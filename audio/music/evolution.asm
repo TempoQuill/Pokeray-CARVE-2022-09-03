@@ -7,7 +7,7 @@ Music_Evolution:
 
 Music_Evolution_Ch1:
 	tempo 132
-	volume 7, 7
+	volume 7
 	vibrato 6, 3, 4
 	pitch_inc_switch
 	duty_cycle 2

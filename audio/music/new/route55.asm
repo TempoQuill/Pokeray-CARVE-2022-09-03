@@ -9,7 +9,7 @@ Music_Route55:
 
 Music_Route55_Ch1:
 	tempo 158
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 0, 1, 4
 	note_type 6, 10, 1

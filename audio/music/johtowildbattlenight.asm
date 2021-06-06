@@ -6,7 +6,7 @@ Music_JohtoWildBattleNight:
 
 Music_JohtoWildBattleNight_Ch1:
 	tempo 107
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	pitch_offset 2
 	vibrato 16, 2, 5

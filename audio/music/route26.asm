@@ -9,7 +9,7 @@ Music_Route26_Ch1:
 	stereo_panning FALSE, TRUE
 	vibrato 18, 2, 3
 	tempo 151
-	volume 7, 7
+	volume 7
 	vibrato 20, 2, 3
 	duty_cycle 0
 	note_type 12, 10, 7

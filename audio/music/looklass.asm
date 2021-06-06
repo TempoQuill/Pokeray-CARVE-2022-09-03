@@ -7,7 +7,7 @@ Music_LookLass:
 
 Music_LookLass_Ch1:
 	tempo 132
-	volume 7, 7
+	volume 7
 	pitch_inc_switch
 	duty_cycle 2
 	note_type 12, 12, 7

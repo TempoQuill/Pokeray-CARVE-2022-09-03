@@ -7,7 +7,7 @@ Music_PokemonChannel:
 
 Music_PokemonChannel_Ch1:
 	tempo 128
-	volume 7, 7
+	volume 7
 	vibrato 8, 3, 8
 	duty_cycle 1
 	stereo_panning FALSE, TRUE

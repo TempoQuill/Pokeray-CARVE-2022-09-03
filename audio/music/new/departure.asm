@@ -8,7 +8,7 @@ Music_Departure:
 
 Music_Departure_Ch1:
 	tempo 192
-	volume 7, 7
+	volume 7
 	note_type 12, 10, 7
 	rest 12
 	duty_cycle 3

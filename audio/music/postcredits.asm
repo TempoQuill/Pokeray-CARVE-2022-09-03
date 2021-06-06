@@ -6,7 +6,7 @@ Music_PostCredits:
 
 Music_PostCredits_Ch1:
 	tempo 271
-	volume 7, 7
+	volume 7
 	transpose 0, 3
 	duty_cycle 2
 	note_type 12, 9, 3

@@ -10,7 +10,7 @@ Music_LookBeauty_Ch1:
 	vibrato 18, 2, 5
 	duty_cycle 2
 	tempo 128
-	volume 7, 7
+	volume 7
 	note_type 12, 10, 3
 	rest 16
 	rest 8

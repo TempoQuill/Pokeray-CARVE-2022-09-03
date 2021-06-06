@@ -6,7 +6,7 @@ Music_SafariZone:
 
 Music_SafariZone_Ch1:
 	tempo 132
-	volume 7, 7
+	volume 7
 	vibrato 6, 3, 4
 	toggle_perfect_pitch
 	duty_cycle 2

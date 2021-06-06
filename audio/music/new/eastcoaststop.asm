@@ -9,7 +9,7 @@ Music_EastCoastStop:
 
 Music_EastCoastStop_Ch1:
 	tempo 192
-	volume 7, 7
+	volume 7
 	pitch_offset 2
 	duty_cycle 1
 	vibrato 5, 6, 3

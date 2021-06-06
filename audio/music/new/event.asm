@@ -9,7 +9,7 @@ Music_Event:
 
 Music_Event_Ch1:
 	tempo 128
-	volume 7, 7
+	volume 7
 	vibrato 6, 3, 4
 	pitch_inc_switch
 	duty_cycle 2

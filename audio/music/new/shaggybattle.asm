@@ -7,7 +7,7 @@ Music_ShaggyBattle:
 
 Music_ShaggyBattle_Ch1:
 	tempo 235
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 11, 1, 2
 	note_type 3, 10, 3

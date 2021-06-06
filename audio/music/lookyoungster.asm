@@ -6,7 +6,7 @@ Music_LookYoungster:
 
 Music_LookYoungster_Ch1:
 	tempo 118
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	duty_cycle 3
 	note_type 12, 10, 3

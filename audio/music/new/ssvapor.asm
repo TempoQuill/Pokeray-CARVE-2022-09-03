@@ -9,7 +9,7 @@ Music_SSVapor:
 	
 Music_SSVapor_Ch1:
 	tempo 235
-	volume 7, 7
+	volume 7
 	pitch_offset -1
 	duty_cycle 3
 	vibrato 11, 2, 2

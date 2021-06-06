@@ -9,7 +9,7 @@ Music_MainMenu:
 
 Music_MainMenu_Ch1:
 	tempo 160
-	volume 7, 7
+	volume 7
 	pitch_inc_switch
 	duty_cycle 3
 	vibrato 8, 3, 2

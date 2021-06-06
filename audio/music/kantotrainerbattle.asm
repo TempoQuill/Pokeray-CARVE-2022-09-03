@@ -7,7 +7,7 @@ Music_KantoTrainerBattle:
 
 Music_KantoTrainerBattle_Ch1:
 	tempo 114
-	volume 7, 7
+	volume 7
 	transpose 1, 11
 	note_type 12, 11, 3
 	vibrato 18, 2, 4

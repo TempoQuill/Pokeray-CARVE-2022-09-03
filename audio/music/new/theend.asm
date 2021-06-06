@@ -6,7 +6,7 @@ Music_TheEnd:
 
 Music_TheEnd_Ch1:
 	tempo 139
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	note_type 12, 8, 3
 	rest 16

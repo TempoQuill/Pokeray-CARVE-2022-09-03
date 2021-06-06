@@ -8,7 +8,7 @@ Music_PartyHostBattle:
 
 Music_PartyHostBattle_Ch1:
 	tempo 203
-	volume 7, 7
+	volume 7
 	pitch_offset 2
 	duty_cycle 3
 	note_type 6, 12, 1

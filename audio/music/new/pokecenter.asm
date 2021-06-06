@@ -9,7 +9,7 @@ Music_PokemonCenter:
 
 Music_PokemonCenter_Ch1:
 	tempo 145
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	note_type 6, 10, 2
 	octave 3

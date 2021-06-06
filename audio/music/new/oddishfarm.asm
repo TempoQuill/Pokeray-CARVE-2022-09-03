@@ -8,7 +8,7 @@ Music_OddishFarm:
 
 Music_OddishFarm_Ch1:
 	tempo 181
-	volume 7, 7
+	volume 7
 	note_type 6, 10, 5
 	rest 4
 	duty_cycle 1

@@ -16,7 +16,7 @@ Music_CatchVictory:
 
 Music_WildVictory_Ch1:
 	tempo 251
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	note_type 6, 10, 1
 	octave 4
@@ -37,7 +37,7 @@ Music_WildVictory_Ch1:
 	rest 3
 Music_CatchVictory_Ch1:
 	tempo 251
-	volume 7, 7
+	volume 7
 .mainloop:
 	sound_call .sub2
 	sound_call .sub1

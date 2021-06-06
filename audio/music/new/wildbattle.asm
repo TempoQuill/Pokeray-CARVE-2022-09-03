@@ -8,7 +8,7 @@ Music_WildBattle:
 
 Music_WildBattle_Ch1:
 	tempo 209
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 3, 1, 1
 	note_type 6, 10, 1

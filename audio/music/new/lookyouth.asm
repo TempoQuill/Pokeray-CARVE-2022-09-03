@@ -7,7 +7,7 @@ Music_LookYouth:
 
 Music_LookYouth_Ch1:
 	tempo 137
-	volume 7, 7
+	volume 7
 	pitch_offset -1
 	duty_cycle 3
 	note_type 12, 10, 4

@@ -7,7 +7,7 @@ Music_LookRival:
 
 Music_LookRival_Ch1:
 	tempo 112
-	volume 7, 7
+	volume 7
 	duty_cycle 1
 	pitch_inc_switch
 	vibrato 18, 1, 5

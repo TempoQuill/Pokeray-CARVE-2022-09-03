@@ -7,7 +7,7 @@ Music_LavenderTown:
 
 Music_LavenderTown_Ch1:
 	tempo 160
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	vibrato 6, 2, 4
 	duty_cycle 0

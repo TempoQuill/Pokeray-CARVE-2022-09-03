@@ -14,7 +14,7 @@ Music_MushroomMenu:
 
 Music_Mushroom_Ch1:
 	tempo 146
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	toggle_perfect_pitch
 	note_type 8, 11, 2
@@ -41,7 +41,7 @@ Music_Mushroom_Ch1:
 	note D_, 6
 Music_MushroomMenu_Ch1:
 	tempo 146
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	toggle_perfect_pitch
 	note_type 8, 11, 2

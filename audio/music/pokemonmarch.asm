@@ -7,7 +7,7 @@ Music_PokemonMarch:
 
 Music_PokemonMarch_Ch1:
 	tempo 144
-	volume 7, 7
+	volume 7
 	stereo_panning TRUE, FALSE
 	duty_cycle 3
 	pitch_inc_switch

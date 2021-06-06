@@ -8,7 +8,7 @@ Music_LookSibs:
 
 Music_LookSibs_Ch1:
 	tempo 245
-	volume 7, 7
+	volume 7
 	pitch_inc_switch
 	duty_cycle 2
 	vibrato 9, 5, 3

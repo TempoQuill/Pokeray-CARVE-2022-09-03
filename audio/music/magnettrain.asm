@@ -7,7 +7,7 @@ Music_MagnetTrain:
 
 Music_MagnetTrain_Ch1:
 	tempo 110
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	vibrato 20, 2, 3
 	duty_cycle 2

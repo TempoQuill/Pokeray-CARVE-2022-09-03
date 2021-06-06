@@ -6,7 +6,7 @@ Music_Pokecenter:
 
 Music_Pokecenter_Ch1:
 	tempo 144
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	vibrato 10, 2, 2
 	toggle_perfect_pitch

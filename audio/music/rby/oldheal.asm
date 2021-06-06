@@ -6,7 +6,7 @@ Music_RGOldHeal:
 
 Music_RGOldHeal_Ch1:
 	tempo 144
-	volume 7, 7
+	volume 7
 	vibrato 8, 2, 4
 	note_type 12, 8, 2
 	duty_cycle 2

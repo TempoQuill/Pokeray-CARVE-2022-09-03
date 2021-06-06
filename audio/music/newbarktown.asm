@@ -7,7 +7,7 @@ Music_NewBarkTown: ; leftover from Gold, unused
 
 Music_NewBarkTown_Ch1:
 	tempo 187
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	vibrato 18, 2, 3
 	note_type 12, 8, 7

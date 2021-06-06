@@ -7,7 +7,7 @@ Music_Route12:
 
 Music_Route12_Ch1:
 	tempo 148
-	volume 7, 7
+	volume 7
 	vibrato 18, 3, 4
 	pitch_inc_switch
 	stereo_panning FALSE, TRUE

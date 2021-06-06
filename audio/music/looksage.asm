@@ -6,7 +6,7 @@ Music_LookSage:
 Music_LookSage_Ch1:
 	tempo 144
 	stereo_panning FALSE, TRUE
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	note_type 12, 11, 3
 	rest 2

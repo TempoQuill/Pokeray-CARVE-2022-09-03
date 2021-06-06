@@ -7,7 +7,7 @@ Music_CottageTown:
 
 Music_CottageTown_Ch1:
 	tempo 175
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 9, 3, 2
 	note_type 6, 10, 5

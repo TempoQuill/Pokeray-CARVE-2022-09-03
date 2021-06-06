@@ -9,7 +9,7 @@ Music_GameCorner:
 
 Music_GameCorner_Ch1:
 	tempo 165
-	volume 7, 7
+	volume 7
 	note_type 12, 0, 0
 .loop1:
 	rest 16

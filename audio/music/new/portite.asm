@@ -8,7 +8,7 @@ Music_Portite:
 
 Music_Portite_Ch1:
 	tempo 153
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	vibrato 8, 2, 2
 	note_type 6, 10, 3

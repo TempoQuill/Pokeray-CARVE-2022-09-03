@@ -7,7 +7,7 @@ Music_LookHiker:
 
 Music_LookHiker_Ch1:
 	tempo 132
-	volume 7, 7
+	volume 7
 	pitch_inc_switch
 	vibrato 18, 2, 4
 	duty_cycle 2

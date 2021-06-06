@@ -7,7 +7,7 @@ Music_RocketTheme:
 
 Music_RocketTheme_Ch1:
 	tempo 128
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	stereo_panning FALSE, TRUE
 	vibrato 5, 6, 4

@@ -7,7 +7,7 @@ Music_CherrygroveCity:
 
 Music_CherrygroveCity_Ch1:
 	tempo 152
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	pitch_inc_switch
 	vibrato 8, 1, 5

@@ -18,12 +18,12 @@ Music_AfterTheRivalFight:
 
 Music_AfterTheRivalFight:
 	tempo 203
-	volume 7, 7
+	volume 7
 	sound_jump Music_LookRival_Ch1.body
 
 Music_LookRival_Ch1:
 	tempo 203
-	volume 7, 7
+	volume 7
 	note_type 6, 8, 7
 	octave 4
 	note C_, 1

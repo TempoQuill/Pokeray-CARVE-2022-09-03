@@ -7,7 +7,7 @@ Music_SSAqua:
 
 Music_SSAqua_Ch1:
 	tempo 117
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	pitch_inc_switch
 	vibrato 18, 3, 3

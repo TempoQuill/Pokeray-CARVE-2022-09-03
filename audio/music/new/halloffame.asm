@@ -9,7 +9,7 @@ Music_HallOfFame:
 
 Music_HallOfFame_Ch1:
 	tempo 197
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	vibrato 6, 2, 2
 	note_type 6, 10, 7

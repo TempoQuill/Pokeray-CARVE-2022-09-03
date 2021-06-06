@@ -6,7 +6,7 @@ Music_LakeOfRageRocketRadio:
 
 Music_LakeOfRageRocketRadio_Ch1:
 	tempo 160
-	volume 7, 7
+	volume 7
 	duty_cycle 1
 	pitch_offset 4376
 	vibrato 0, 15, 0

@@ -8,7 +8,7 @@ Music_LookGirl:
 
 Music_LookGirl_Ch1:
 	tempo 267
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 0, 1, 2
 	note_type 3, 10, 7

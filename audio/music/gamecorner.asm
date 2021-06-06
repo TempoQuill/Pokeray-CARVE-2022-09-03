@@ -7,7 +7,7 @@ Music_GameCorner:
 
 Music_GameCorner_Ch1:
 	tempo 147
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	note_type 12, 9, 1
 	rest 8

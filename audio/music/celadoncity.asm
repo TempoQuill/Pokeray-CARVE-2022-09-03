@@ -6,7 +6,7 @@ Music_CeladonCity:
 
 Music_CeladonCity_Ch1:
 	tempo 146
-	volume 7, 7
+	volume 7
 	pitch_inc_switch
 .mainloop:
 	stereo_panning FALSE, TRUE

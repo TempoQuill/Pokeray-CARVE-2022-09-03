@@ -6,7 +6,7 @@ Music_RuinsOfAlphInterior:
 
 Music_RuinsOfAlphInterior_Ch1:
 	tempo 224
-	volume 7, 7
+	volume 7
 	duty_cycle 0
 	stereo_panning TRUE, FALSE
 	note_type 12, 4, 4

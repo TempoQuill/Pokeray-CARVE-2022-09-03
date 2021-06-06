@@ -7,7 +7,7 @@ Music_GymBattle:
 
 Music_GymBattle_Ch1:
 	tempo 219
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	note_type 6, 10, 1
 	rest 16

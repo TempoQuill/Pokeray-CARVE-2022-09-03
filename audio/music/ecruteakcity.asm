@@ -6,7 +6,7 @@ Music_EcruteakCity:
 
 Music_EcruteakCity_Ch1:
 	tempo 197
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	vibrato 18, 2, 5
 	duty_cycle 2

@@ -488,7 +488,7 @@ Sfx_Item:
 Sfx_Item_Ch5:
 	toggle_music
 	tempo 120
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	note_type 8, 11, 1
 	octave 3
@@ -546,7 +546,7 @@ Sfx_KeyItem:
 Sfx_KeyItem_Ch5:
 	toggle_music
 	tempo 120
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	note_type 6, 11, 1
 	octave 3
@@ -612,7 +612,7 @@ Sfx_Gen1DexReward:
 Sfx_Gen1DexReward_Ch5:
 	toggle_music
 	tempo 104
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	note_type 12, 8, 8
 	octave 3
@@ -692,7 +692,7 @@ Sfx_LevelUp:
 Sfx_LevelUp_Ch5:
 	toggle_music
 	tempo 108
-	volume 7, 7
+	volume 7
 	vibrato 8, 2, 7
 	duty_cycle 2
 	note_type 8, 11, 2
@@ -767,7 +767,7 @@ Sfx_EvoDitty:
 Sfx_EvoDitty_Ch5:
 	toggle_music
 	tempo 112
-	volume 7, 7
+	volume 7
 	vibrato 8, 2, 7
 	duty_cycle 2
 	note_type 8, 11, 3
@@ -845,7 +845,7 @@ Sfx_TradeComplete:
 Sfx_TradeComplete_Ch5:
 	toggle_music
 	tempo 112
-	volume 7, 7
+	volume 7
 	vibrato 8, 2, 7
 	duty_cycle 2
 	note_type 12, 11, 1
@@ -942,7 +942,7 @@ Sfx_CaughtMon:
 Sfx_CaughtMon_Ch5:
 	toggle_music
 	tempo 124
-	volume 7, 7
+	volume 7
 	vibrato 8, 2, 7
 	duty_cycle 2
 	note_type 12, 11, 1
@@ -1026,7 +1026,7 @@ Sfx_RegisterPhoneNumber:
 Sfx_RegisterPhoneNumber_Ch5:
 	toggle_music
 	tempo 124
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	note_type 12, 10, 2
 	rest 2
@@ -1106,7 +1106,7 @@ Sfx_3rdPlace:
 Sfx_3rdPlace_Ch5:
 	toggle_music
 	tempo 120
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	note_type 12, 10, 4
 	octave 4
@@ -1160,7 +1160,7 @@ Sfx_GetEgg:
 Sfx_GetEgg_Ch5:
 	toggle_music
 	tempo 120
-	volume 7, 7
+	volume 7
 	vibrato 18, 3, 4
 	duty_cycle 2
 	note_type 8, 10, 1
@@ -1251,7 +1251,7 @@ Sfx_MoveDeleted:
 Sfx_MoveDeleted_Ch5:
 	toggle_music
 	tempo 116
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 12, 4, 4
 	note_type 12, 10, 4
@@ -1355,7 +1355,7 @@ Sfx_2ndPlace:
 Sfx_2ndPlace_Ch5:
 	toggle_music
 	tempo 116
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 12, 3, 4
 	note_type 8, 10, 1
@@ -1465,7 +1465,7 @@ Sfx_1stPlace:
 Sfx_1stPlace_Ch5:
 	toggle_music
 	tempo 124
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	vibrato 12, 3, 4
 	note_type 12, 10, 1
@@ -1574,7 +1574,7 @@ Sfx_ChooseACard:
 Sfx_ChooseACard_Ch5:
 	toggle_music
 	tempo 152
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	note_type 6, 10, 4
 	octave 3
@@ -1712,7 +1712,7 @@ Sfx_GetTm:
 Sfx_GetTm_Ch5:
 	toggle_music
 	tempo 144
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	vibrato 8, 2, 4
 	note_type 12, 10, 3
@@ -1811,7 +1811,7 @@ Sfx_GetBadge:
 Sfx_GetBadge_Ch5:
 	toggle_music
 	tempo 120
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 8, 2, 4
 	note_type 6, 9, 2
@@ -1967,7 +1967,7 @@ Sfx_QuitSlots:
 Sfx_QuitSlots_Ch5:
 	toggle_music
 	tempo 144
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	note_type 8, 8, 2
 	octave 3
@@ -2925,7 +2925,7 @@ Sfx_Fail:
 Sfx_Fail_Ch5:
 	toggle_music
 	tempo 124
-	volume 7, 7
+	volume 7
 	note_type 8, 11, 1
 	octave 3
 	note A_, 4
@@ -3003,7 +3003,7 @@ Sfx_KeepAtIt:
 Sfx_KeepAtIt_Ch5:
 	toggle_music
 	tempo 120
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	vibrato 18, 3, 4
 	note_type 6, 11, 1
@@ -3108,7 +3108,7 @@ Sfx_NotTooShabby:
 Sfx_NotTooShabby_Ch5:
 	toggle_music
 	tempo 112
-	volume 7, 7
+	volume 7
 	vibrato 18, 3, 4
 	duty_cycle 3
 	note_type 8, 11, 4
@@ -3214,7 +3214,7 @@ Sfx_AlmostFinished:
 Sfx_AlmostFinished_Ch5:
 	toggle_music
 	tempo 124
-	volume 7, 7
+	volume 7
 	vibrato 18, 3, 4
 	duty_cycle 3
 	note_type 8, 11, 2
@@ -3336,7 +3336,7 @@ Sfx_DexComplete:
 Sfx_DexComplete_Ch5:
 	toggle_music
 	tempo 112
-	volume 7, 7
+	volume 7
 	vibrato 18, 3, 4
 	duty_cycle 3
 	note_type 8, 10, 5
@@ -3721,7 +3721,7 @@ Sfx_Menu_Ch8:
 
 Sfx_Pokeflute_Ch7:
 	tempo 256
-	volume 7, 7
+	volume 7
 	toggle_music
 	vibrato 16, 1, 4
 	note_type 12, 1, 0
@@ -4837,7 +4837,7 @@ Sfx_PLShort_Ch5:
 	sfx_priority_on
 	toggle_music
 	tempo 256
-	volume 7, 7
+	volume 7
 	pitch_inc_switch
 	duty_cycle 3
 	note_type 6, 11, 5
@@ -4900,7 +4900,7 @@ SFX_PLLong_Ch5:
 	sfx_priority_on
 	toggle_music
 	tempo 256
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	pitch_inc_switch
 	note_type 6, 11, 3

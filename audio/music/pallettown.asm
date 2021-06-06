@@ -6,7 +6,7 @@ Music_PalletTown:
 
 Music_PalletTown_Ch1:
 	tempo 188
-	volume 7, 7
+	volume 7
 	vibrato 18, 2, 4
 	pitch_inc_switch
 	stereo_panning FALSE, TRUE

@@ -8,7 +8,7 @@ Music_Surf:
 
 Music_Surf_Ch1:
 	tempo 245
-	volume 7, 7
+	volume 7
 	note_type 12, 10, 4
 	rest 3
 .mainloop:

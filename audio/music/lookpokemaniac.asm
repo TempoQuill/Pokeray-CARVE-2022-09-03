@@ -7,7 +7,7 @@ Music_LookPokemaniac:
 Music_LookPokemaniac_Ch1:
 	stereo_panning FALSE, TRUE
 	tempo 144
-	volume 7, 7
+	volume 7
 	vibrato 2, 3, 3
 	pitch_offset 2
 	note_type 12, 11, 3

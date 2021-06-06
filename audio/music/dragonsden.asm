@@ -7,7 +7,7 @@ Music_DragonsDen:
 
 Music_DragonsDen_Ch1:
 	tempo 144
-	volume 7, 7
+	volume 7
 	duty_cycle 0
 	pitch_offset 4
 	stereo_panning TRUE, FALSE

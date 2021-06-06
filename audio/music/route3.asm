@@ -8,7 +8,7 @@ Music_Route3:
 Music_Route3_Ch1:
 	stereo_panning FALSE, TRUE
 	tempo 160
-	volume 7, 7
+	volume 7
 	note_type 12, 9, 1
 	rest 10
 	duty_cycle 0

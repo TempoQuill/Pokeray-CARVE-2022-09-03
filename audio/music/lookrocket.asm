@@ -7,7 +7,7 @@ Music_LookRocket:
 
 Music_LookRocket_Ch1:
 	tempo 123
-	volume 7, 7
+	volume 7
 	transpose 0, 2
 	stereo_panning FALSE, TRUE
 	duty_cycle 3

@@ -5,7 +5,7 @@ Music_JigglypuffSong:
 
 Music_JigglypuffSong_Ch1:
 	tempo 144
-	volume 7, 7
+	volume 7
 	vibrato 8, 2, 4
 	duty_cycle 2
 	duty_cycle_pattern 2, 2, 1, 1

@@ -7,7 +7,7 @@ Music_BurnedTower:
 
 Music_BurnedTower_Ch1:
 	tempo 168
-	volume 7, 7
+	volume 7
 	duty_cycle 1
 	pitch_offset 4
 	vibrato 8, 4, 5

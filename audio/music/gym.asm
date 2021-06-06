@@ -7,7 +7,7 @@ Music_Gym:
 
 Music_Gym_Ch1:
 	tempo 156
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	vibrato 18, 2, 4
 	duty_cycle 1

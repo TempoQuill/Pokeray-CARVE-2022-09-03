@@ -6,7 +6,7 @@ Music_RivalBattle:
 
 Music_RivalBattle_Ch1:
 	tempo 102
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	pitch_offset 2
 	vibrato 8, 1, 5

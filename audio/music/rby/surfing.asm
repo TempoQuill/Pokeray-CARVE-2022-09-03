@@ -6,7 +6,7 @@ Music_RBYSurf:
 
 Music_RBYSurf_Ch1:
 	tempo 160
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	vibrato 12, 3, 4
 	toggle_perfect_pitch

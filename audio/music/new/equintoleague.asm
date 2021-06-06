@@ -8,7 +8,7 @@ Music_EquintoLeague:
 
 Music_EquintoLeague_Ch1:
 	tempo 245
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	vibrato 6, 3, 2
 	note_type 12, 10, 2

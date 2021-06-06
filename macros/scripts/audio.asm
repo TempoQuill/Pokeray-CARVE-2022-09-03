@@ -204,6 +204,8 @@ volume: MACRO
 	db volume_cmd
 	IF _NARG > 1
 		dn \1, \2 ; left volume, right volume
+	ELIF \1 < 8
+		dn \1, \1 ; each speaker must match
 	ELSE
 		db \1 ; LEGACY: Support for 1-arg volume
 	ENDC

@@ -9,7 +9,7 @@ Music_TraversalCity:
 
 Music_TraversalCity_Ch1:
 	tempo 239
-	volume 7, 7
+	volume 7
 	note_type 12, 10, 3
 	rest 6
 	pitch_inc_switch

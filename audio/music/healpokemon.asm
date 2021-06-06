@@ -6,7 +6,7 @@ Music_HealPokemon:
 
 Music_HealPokemon_Ch1:
 	tempo 144
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	pitch_inc_switch
 	note_type 12, 8, 1

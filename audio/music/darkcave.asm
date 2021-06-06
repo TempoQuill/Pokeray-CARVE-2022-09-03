@@ -7,7 +7,7 @@ Music_DarkCave:
 
 Music_DarkCave_Ch1:
 	tempo 128
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	pitch_inc_switch
 	vibrato 17, 1, 5

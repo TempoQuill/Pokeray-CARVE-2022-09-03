@@ -9,7 +9,7 @@ Music_StampTown:
 
 Music_StampTown_Ch1:
 	tempo 142
-	volume 7, 7
+	volume 7
 	pitch_offset -1
 	duty_cycle 3
 	vibrato 14, 4, 4

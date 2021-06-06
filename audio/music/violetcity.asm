@@ -7,7 +7,7 @@ Music_VioletCity:
 
 Music_VioletCity_Ch1:
 	tempo 164
-	volume 7, 7
+	volume 7
 	vibrato 18, 2, 5
 	duty_cycle 2
 	note_type 12, 9, 5

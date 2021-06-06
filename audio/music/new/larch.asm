@@ -9,7 +9,7 @@ Music_Larch:
 
 Music_Larch_Ch1:
 	tempo 145
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	note_type 12, 8, 2
 	rest 8

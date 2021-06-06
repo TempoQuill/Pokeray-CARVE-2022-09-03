@@ -9,7 +9,7 @@ Music_GymVictory:
 
 Music_GymVictory_Ch1:
 	tempo 235
-	volume 7, 7
+	volume 7
 	pitch_offset -1
 	duty_cycle 3
 	note_type 3, 10, 5

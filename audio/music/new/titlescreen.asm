@@ -9,7 +9,7 @@ Music_TitleScreen:
 
 Music_TitleScreen_Ch1:
 	tempo 145
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	vibrato 7, 2, 2
 	note_type 6, 7, 7

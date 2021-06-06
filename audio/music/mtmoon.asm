@@ -7,7 +7,7 @@ Music_MtMoon:
 
 Music_MtMoon_Ch1:
 	tempo 208
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	pitch_inc_switch
 	vibrato 8, 1, 4

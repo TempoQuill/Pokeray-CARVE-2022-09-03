@@ -9,7 +9,7 @@ Music_Gym:
 
 Music_Gym_Ch1:
 	tempo 153
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 8, 2, 4
 .mainloop:

@@ -7,7 +7,7 @@ Music_DilapPokeCenter:
 
 Music_DilapPokeCenter_Ch1:
 	tempo 245
-	volume 7, 7
+	volume 7
 	note_type 6, 3, -7
 	rest 1
 	duty_cycle 3

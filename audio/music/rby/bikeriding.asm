@@ -7,7 +7,7 @@ Music_RBYBike:
 
 Music_RBYBike_Ch1:
 	tempo 144
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	vibrato 8, 1, 4
 	note_type 12, 11, 5

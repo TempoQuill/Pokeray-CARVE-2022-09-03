@@ -7,7 +7,7 @@ Music_Surf:
 
 Music_Surf_Ch1:
 	tempo 108
-	volume 7, 7
+	volume 7
 	note_type 12, 10, 7
 	stereo_panning FALSE, TRUE
 .mainloop:

@@ -14,7 +14,7 @@ Music_StarmanMenu:
 
 Music_Starman_Ch1:
 	tempo 128
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 7, 2, 3
 	toggle_perfect_pitch
@@ -46,7 +46,7 @@ Music_Starman_Ch1:
 	note E_, 4
 Music_StarmanMenu_Ch1:
 	tempo 128
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 7, 2, 3
 	toggle_perfect_pitch

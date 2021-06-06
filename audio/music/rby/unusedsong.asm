@@ -8,7 +8,7 @@ Music_UnusedSong2:
 
 Music_UnusedSong_Ch1:
 	tempo 144
-	volume 7, 7
+	volume 7
 	vibrato 5, 1, 6
 .mainloop:
 	note_type 12, 1, 0
@@ -189,7 +189,7 @@ Music_UnusedSong_Ch1:
 
 Music_UnusedSong_Ch2:
 	tempo 144
-	volume 7, 7
+	volume 7
 	toggle_perfect_pitch
 	vibrato 6, 1, 5
 .mainloop:

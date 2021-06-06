@@ -6,7 +6,7 @@ Music_LookOfficer:
 
 Music_LookOfficer_Ch1:
 	tempo 116
-	volume 7, 7
+	volume 7
 	pitch_inc_switch
 	vibrato 18, 3, 4
 	stereo_panning FALSE, TRUE

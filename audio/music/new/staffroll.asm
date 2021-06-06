@@ -9,7 +9,7 @@ Music_StaffRoll:
 
 Music_StaffRoll_Ch1:
 	tempo 153
-	volume 7, 7
+	volume 7
 	vibrato 8, 2, 2
 	sound_call .sub1
 	volume_envelope 10, 7

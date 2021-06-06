@@ -7,7 +7,7 @@ Music_NationalPark:
 
 Music_NationalPark_Ch1:
 	tempo 192
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	vibrato 24, 2, 4
 	duty_cycle 1

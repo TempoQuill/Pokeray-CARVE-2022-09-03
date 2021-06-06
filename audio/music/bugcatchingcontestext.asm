@@ -7,7 +7,7 @@ Music_BugCatchingContestExt:
 
 Music_BugCatchingContestExt_Ch1:
 	tempo 144
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	vibrato 8, 2, 4
 	duty_cycle 2

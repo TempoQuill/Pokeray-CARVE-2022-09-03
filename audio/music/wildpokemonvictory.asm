@@ -6,7 +6,7 @@ Music_WildPokemonVictory:
 
 Music_WildPokemonVictory_Ch1:
 	tempo 126
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	pitch_inc_switch
 	note_type 12, 11, 1

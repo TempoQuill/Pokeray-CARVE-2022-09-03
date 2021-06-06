@@ -248,7 +248,7 @@ NOTE: This variables need to match
 
 USAGE:
 ```
-	volume 7, 7
+	volume 7
 ```
 
 ## `E6` **Raw Pitch Modifier**

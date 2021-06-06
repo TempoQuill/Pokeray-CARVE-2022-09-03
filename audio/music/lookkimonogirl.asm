@@ -7,7 +7,7 @@ Music_LookKimonoGirl:
 
 Music_LookKimonoGirl_Ch1:
 	tempo 160
-	volume 7, 7
+	volume 7
 	stereo_panning FALSE, TRUE
 	duty_cycle 1
 	note_type 6, 8, 7

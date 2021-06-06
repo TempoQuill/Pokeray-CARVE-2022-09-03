@@ -7,7 +7,7 @@ Music_GymLeaderVictory:
 
 Music_GymLeaderVictory_Ch1:
 	tempo 116
-	volume 7, 7
+	volume 7
 	vibrato 18, 3, 4
 	duty_cycle 3
 	pitch_inc_switch

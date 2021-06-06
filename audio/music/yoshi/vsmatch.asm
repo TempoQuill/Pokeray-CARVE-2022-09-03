@@ -14,7 +14,7 @@ Music_VSMatchPlayer2:
 
 Music_VSMatchPlayer1_Ch1:
 	tempo 132
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 7, 2, 3
 	toggle_perfect_pitch

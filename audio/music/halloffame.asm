@@ -7,7 +7,7 @@ Music_HallOfFame:
 
 Music_HallOfFame_Ch1:
 	tempo 112
-	volume 7, 7
+	volume 7
 	duty_cycle 2
 	vibrato 12, 2, 2
 	pitch_inc_switch
