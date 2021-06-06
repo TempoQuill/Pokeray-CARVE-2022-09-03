@@ -178,7 +178,7 @@ ItemDescriptions:
 	dw TeruSama27Desc
 	dw ParkBallDesc
 	dw RainbowWingDesc
-	dw TeruSama28Desc
+	dw SurfBoardDesc
 	dw BrickPieceDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
@@ -304,7 +304,6 @@ TeruSama24Desc:
 TeruSama25Desc:
 TeruSama26Desc:
 TeruSama27Desc:
-TeruSama28Desc:
 TeruSama29Desc:
 TeruSama30Desc:
 TeruSama32Desc:
@@ -835,6 +834,10 @@ SquirtBottleDesc:
 RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
+
+SurfBoardDesc:
+	db   "Catch a ride with-"
+	next "out using #MON.@"
 
 BrickPieceDesc:
 	db   "A rare chunk of"

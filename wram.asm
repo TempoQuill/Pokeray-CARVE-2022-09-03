@@ -2205,7 +2205,7 @@ wStepCount:: db ; d9bd
 wPoisonStepCount:: db ; d9be
 wDeciramBuffer:: dw ; d9bf
 wHappinessStepCount:: db ; d9c1
-	ds 1
+wUsingSurfBoard:: db ; d9c2
 
 wParkBallsRemaining::
 wSafariBallsRemaining:: db ; d9c3

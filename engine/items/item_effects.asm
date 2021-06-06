@@ -191,7 +191,13 @@ ItemEffects:
 	dw NoEffect            ; ITEM_B0
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
-	dw NoEffect            ; ITEM_B3
+	dw NoEffect            ; SURF_BOARD
+
+SurfBoardEffect:
+	ld a, 1
+	ld [wUsingSurfBoard], a
+	farcall SurfFunction
+	ret
 
 PokeBallEffect:
 	ld a, [wBattleMode]

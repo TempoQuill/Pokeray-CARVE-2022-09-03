@@ -605,9 +605,17 @@ UseItem:
 	call DoItemEffect
 	ld a, [wItemEffectSucceeded]
 	and a
-	jr z, .Oak
+	ld hl, wUsingSurfBoard
+	ld a, [hl]
+	ld [hl], 0
+	jr z, .TryOak
 	ld a, PACKSTATE_QUITRUNSCRIPT
 	ld [wJumptableIndex], a
+	ret
+
+.TryOak
+	or a
+	jr z, .Oak
 	ret
 
 TossMenu:

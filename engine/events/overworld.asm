@@ -368,7 +368,7 @@ SurfFunction:
 	ret
 
 UsedSurfboardScript:
-	checkitem ITEM_B3
+	checkitem SURF_BOARD
 	iffalse CantSurfWOBoard
 	writetext _GotOnItemText ; "got on board"
 	sjump CommonSurf
@@ -429,6 +429,9 @@ GetSurfType:
 ; Surfing on Pikachu uses an alternate sprite.
 ; This is done by using a separate movement type.
 
+	ld a, [wCurItem]
+	cp SURF_BOARD
+	jr z, .board_surf
 	ld a, [wCurPartyMon]
 	ld e, a
 	ld d, 0
@@ -499,6 +502,8 @@ TrySurfOW::
 	cp PLAYER_SURF
 	jr z, .quit
 
+	call .TrySurfBoard
+
 	call GetSurfType
 	push af
 	; a surf board can't tell what badges you have
@@ -506,26 +511,26 @@ TrySurfOW::
 	jr z, .skip_badge_check
 	ld de, ENGINE_SCENERYBADGE
 	call CheckEngineFlag
-	jr c, .quit
+	jr c, .cleanup_quit
 
 .skip_badge_check
 ; Must be facing water.
 	ld a, [wFacingTileID]
 	call GetTileCollision
 	cp WATER_TILE
-	jr nz, .quit
+	jr nz, .cleanup_quit
 
 ; Check tile permissions.
 	call CheckDirection
-	jr c, .quit
+	jr c, .cleanup_quit
 
 	ld d, SURF
 	call CheckPartyMove
-	jr c, .quit
+	jr c, .cleanup_quit
 
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
-	jr nz, .quit
+	jr nz, .cleanup_quit
 
 	pop af
 	ld [wBuffer2], a
@@ -538,8 +543,33 @@ TrySurfOW::
 	scf
 	ret
 
+.cleanup_quit
+	pop af
+
 .quit
 	xor a
+	ret
+
+.TrySurfBoard:
+	push bc
+	push hl
+	ld b, 0
+	ld c, MAX_KEY_ITEMS - 1
+	ld hl, wKeyItems
+.SurfBoardLoop
+	ld a, [hli]
+	cp -1
+	jr nc, .cleanup
+	cp SURF_BOARD
+	jr z, .got_surf_board
+	dec b
+	jr nz, .SurfBoardLoop
+
+.got_surf_board
+	ld [wCurItem], a
+.cleanup
+	pop hl
+	pop bc
 	ret
 
 AskSurfScript:

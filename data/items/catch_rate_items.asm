@@ -41,7 +41,6 @@ TimeCapsule_CatchRateItems:
 	db ITEM_B0,      BERRY        ; CHORD_MAIL
 	db PARK_BALL,    BERRY
 	db RAINBOW_WING, BERRY
-	db ITEM_B3,      BERRY        ; SURF_BOARD
 	db ITEM_BE,      BERRY        ; HELIX_FOSSIL
 	db ITEM_C3,      BERRY        ; OUTLET
 	db -1,           BERRY
