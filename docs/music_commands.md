@@ -244,7 +244,7 @@ VARS:
 - Nybble 3 = Left Speaker
 - Nybble 4 = Right Speeker
 
-NOTE: This variables need to match
+NOTE: These variables need to match
 
 USAGE:
 ```
