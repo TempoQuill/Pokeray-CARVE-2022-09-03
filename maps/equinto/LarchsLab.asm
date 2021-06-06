@@ -61,11 +61,11 @@ LarchScript:
 	closetext
 	end
 .GotOldAmber:
-	checkitem ITEM_C0
+	checkitem OLD_AMBER
 	iffalse .ChoseMon
 	writetext LarchTalk3Text
 	promptbutton
-	takeitem ITEM_C0
+	takeitem OLD_AMBER
 .ShowedOldAmber:
 	writetext LarchTalk4Text
 	waitbutton

@@ -2,7 +2,7 @@ TimeCapsule_Gen2Items:
 ; when trading between Ray and Gold
 ; this table will convert constants that've been switched around
 	db ITEM_BF,         TM_DYNAMICPUNCH ; DOME_FOSSIL
-	db ITEM_C0,         TM_HEADBUTT     ; OLD_AMBER
+	db OLD_AMBER,       TM_HEADBUTT
 	db ITEM_C1,         TM_CURSE        ; FURNACE
 	db ITEM_C2,         TM_ROLLOUT      ; FRIDGE
 	db ITEM_C4,         TM_ROAR         ; STROBE_LIGHT

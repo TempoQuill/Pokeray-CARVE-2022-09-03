@@ -191,7 +191,7 @@ ItemDescriptions:
 	dw MirageMailDesc
 	dw TeruSama29Desc
 	dw TeruSama30Desc
-	dw TeruSama30Desc
+	dw OldAmberDesc
 	dw TeruSama30Desc
 	dw TeruSama30Desc
 	dw TeruSama30Desc
@@ -868,3 +868,7 @@ MusicMailDesc:
 
 MirageMailDesc:
 	db   "MEW-print MAIL.@"
+
+OldAmberDesc:
+	db   "An old fossil from"
+	next "the KANTO region.@"

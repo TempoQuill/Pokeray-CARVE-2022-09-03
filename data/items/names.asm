@@ -190,7 +190,7 @@ ItemNames::
 	db "MIRAGE MAIL@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"
-	db "TERU-SAMA@"
+	db "OLD AMBER@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"

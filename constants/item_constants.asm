@@ -197,7 +197,7 @@
 	const MIRAGE_MAIL  ; bd
 	const ITEM_BE      ; be
 	const ITEM_BF      ; bf
-	const ITEM_C0      ; c0
+	const OLD_AMBER    ; c0
 	const ITEM_C1      ; c1
 	const ITEM_C2      ; c2
 	const ITEM_C3      ; c3

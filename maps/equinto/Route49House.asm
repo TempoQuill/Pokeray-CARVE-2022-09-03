@@ -22,7 +22,7 @@ Route49House_MapScripts:
 	opentext
 	writetext InitialEntranceText2
 	playsound SFX_KEY_ITEM
-	giveitem ITEM_C0
+	giveitem OLD_AMBER
 	setevent EVENT_GOT_OLD_AMBER
 	writetext InitialEntranceText3
 	waitbutton
