@@ -302,19 +302,15 @@ CoinVendor_IntroText:
 	text "Do you need some"
 	line "game coins?"
 
-	para "It costs ¥1000 for"
-	line "50 coins. Do you"
-	cont "want some?"
+	para "Each coin is worth"
+	line "¥20."
 	done
 
-CoinVendor_Buy50CoinsText:
-	text "Thank you!"
-	line "Here are 50 coins."
-	done
-
-CoinVendor_Buy500CoinsText:
+CoinVendor_BuyCoinsText:
 	text "Thank you! Here"
-	line "are 500 coins."
+	line "are @"
+	text_decimal wDeciramBuffer 2, 4
+	text " coins."
 	done
 
 CoinVendor_NotEnoughMoneyText:

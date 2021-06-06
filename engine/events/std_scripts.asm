@@ -386,7 +386,7 @@ CoinVendor_IntroScript:
 	takemoney YOUR_MONEY, 1000
 	waitsfx
 	playsound SFX_TRANSACTION
-	writetext CoinVendor_Buy50CoinsText
+	writetext CoinVendor_BuyCoinsText
 	waitbutton
 	sjump .loop
 
@@ -399,7 +399,7 @@ CoinVendor_IntroScript:
 	takemoney YOUR_MONEY, 10000
 	waitsfx
 	playsound SFX_TRANSACTION
-	writetext CoinVendor_Buy500CoinsText
+	writetext CoinVendor_BuyCoinsText
 	waitbutton
 	sjump .loop
 

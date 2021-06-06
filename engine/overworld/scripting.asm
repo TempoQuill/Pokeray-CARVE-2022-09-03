@@ -705,14 +705,12 @@ Script_encountermusic:
 	ld hl, TrainerEncounterMusic
 	add hl, de
 	ld e, [hl]
-	call PlayMusic
-	ret
+	jp PlayMusic
 
 INCLUDE "data/trainers/encounter_music.asm"
 
 Script_playmapmusic:
-	call PlayMapMusic
-	ret
+	jp PlayMapMusic
 
 Script_playmusic:
 	ld de, MUSIC_NONE
@@ -724,8 +722,7 @@ Script_playmusic:
 	ld e, a
 	call GetScriptByte
 	ld d, a
-	call PlayMusic
-	ret
+	jp PlayMusic
 
 Script_musicfadeout:
 	call GetScriptByte
@@ -742,17 +739,14 @@ Script_playsound:
 	ld e, a
 	call GetScriptByte
 	ld d, a
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 Script_waitsfx:
-	call WaitSFX
-	ret
+	jp WaitSFX
 
 Script_warpsound:
 	farcall GetWarpSFX
-	call PlaySFX
-	ret
+	jp PlaySFX
 
 Script_cry:
 	call GetScriptByte
@@ -766,8 +760,7 @@ Script_cry:
 	ld a, [wScriptVar + 1]
 	ld b, a
 .ok
-	call PlayMonCry
-	ret
+	jp PlayMonCry
 
 Script_setlasttalked:
 	call GetScriptByte
@@ -1748,8 +1741,10 @@ Script_checkcoins:
 
 LoadCoinAmountToMem:
 	call GetScriptByte
+	ld [wDeciramBuffer + 1], a
 	ldh [hMoneyTemp + 1], a
 	call GetScriptByte
+	ld [wDeciramBuffer], a
 	ldh [hMoneyTemp], a
 	ld bc, hMoneyTemp
 	ret

@@ -1839,7 +1839,6 @@ wWildMon:: dw ; d151
 wBattleHasJustStarted:: db ; d153
 
 ; wd154 has many different short-term uses
-wDeciramBuffer::
 wTempByteValue::
 wNumSetBits::
 wTypeMatchup::
@@ -2204,7 +2203,7 @@ wSpecialPhoneCallID:: db ; d9bc
 
 wStepCount:: db ; d9bd
 wPoisonStepCount:: db ; d9be
-	ds 2
+wDeciramBuffer:: dw ; d9bf
 wHappinessStepCount:: db ; d9c1
 	ds 1
 
