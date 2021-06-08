@@ -204,7 +204,7 @@ Music_Bicycle_Ch2:
 	rest 3
 	sound_jump .mainloop
 
-.sub11:
+.sub1:
 	octave 2
 	note F_, 2
 	note A_, 2
