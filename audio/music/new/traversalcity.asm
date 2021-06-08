@@ -356,8 +356,8 @@ Music_TraversalCity_Ch3:
 	octave 5
 	note F#, 3
 	note A_, 3
-	octave 6
 .loop1:
+	octave 6
 	note D_, 2
 	note E_, 2
 	sound_loop 4, .loop1
