@@ -259,7 +259,6 @@ Music_EquintoLeague_Ch3:
 	sound_call .sub2
 	octave 5
 	note C_, 8
-	octave 4
 	sound_call .sub1
 	note B_, 8
 	sound_call .sub1
