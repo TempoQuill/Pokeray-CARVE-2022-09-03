@@ -227,11 +227,9 @@ Music_EquintoLeague_Ch3:
 	note D_, 8
 	note E_, 16
 	volume_envelope 1, 4
-	octave 4
 	sound_call .sub2
 	octave 5
 	note C_, 8
-	octave 4
 	sound_call .sub1
 	note B_, 8
 	volume_envelope 1, -3
@@ -258,7 +256,6 @@ Music_EquintoLeague_Ch3:
 	note G_, 8
 	note G#, 16
 	volume_envelope 1, 4
-	octave 4
 	sound_call .sub2
 	octave 5
 	note C_, 8
