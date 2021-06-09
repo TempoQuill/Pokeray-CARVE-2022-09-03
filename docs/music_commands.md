@@ -241,10 +241,10 @@ USAGE:
 ## `E5` **Global Volume**
 
 VARS:
-- Nybble 3 = Left Speaker
-- Nybble 4 = Right Speeker
+- Nybble 3 = Left Speaker  (0-7)
+- Nybble 4 = Right Speeker (0-7)
 
-NOTE: These variables need to match
+NOTE: These variables need to match.  Ray makes this easier on both ends by compressing both nybbles into one readable arguement.  PokeGold's more recent commitments gave each speaker its own arguement, which made it easy to read, and it is in fact still supported via legacy in Ray, but know that this way is redundant due to the arguements needing to match, and that PokeGold did the same with its older versions, which had raw byte arguments for many of its macros, which was only helpful for those who studied the way the original music worked.
 
 USAGE:
 ```
