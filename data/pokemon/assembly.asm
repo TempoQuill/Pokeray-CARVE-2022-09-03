@@ -8,5 +8,5 @@ endr
 ENDM
 
 ItemPokemonCombinations:
-	item_pokecombo MAGNEMITE, MAGNET,     3, SILVER_PEARL, 1
+	item_pokecombo MAGNEMITE, MAGNET,     2, SILVER_PEARL, 1
 	item_pokecombo STARYU,    STAR_PIECE, 6, PEARL,        1, STARDUST, 1
