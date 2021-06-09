@@ -1,8 +1,9 @@
-	const_def 1
-	const PINK_PAGE  ; 1
-	const GREEN_PAGE ; 2
-	const BLUE_PAGE  ; 3
-NUM_STAT_PAGES EQU const_value - 1
+	const_def
+	const PINK_PAGE   ; 0
+	const GREEN_PAGE  ; 1
+	const BLUE_PAGE   ; 2
+	const YELLOW_PAGE ; 3
+NUM_STAT_PAGES EQU const_value
 
 STAT_PAGE_MASK EQU %00000011
 
@@ -155,21 +156,23 @@ StatsScreen_LoadPage:
 
 .a_button
 	ld a, c
-	cp BLUE_PAGE ; last page
+	cp YELLOW_PAGE ; last page
 	jr z, StatsScreen_Exit
 
 .d_right
 	inc c
-	ld a, BLUE_PAGE ; last page
+	ld a, YELLOW_PAGE ; last page
 	cp c
 	jr nc, StatsScreen_JumpToLoadPageFunction
 	ld c, PINK_PAGE ; first page
 	jr StatsScreen_JumpToLoadPageFunction
 
 .d_left
+	ld a, c
 	dec c
+	and a
 	jr nz, StatsScreen_JumpToLoadPageFunction
-	ld c, BLUE_PAGE ; last page
+	ld c, YELLOW_PAGE ; last page
 ; fallthrough
 
 StatsScreen_JumpToLoadPageFunction:
@@ -275,6 +278,7 @@ StatsScreen_LoadPageJumptable:
 	dw LoadPinkPage
 	dw LoadGreenPage
 	dw LoadBluePage
+	dw LoadYellowPage
 
 StatsScreen_InitUpperHalf:
 	push bc
@@ -351,6 +355,86 @@ StatsScreen_InitUpperHalf:
 	dw wOTPartyMonNicknames
 	dw sBoxMonNicknames
 	dw wBufferMonNick
+
+LoadYellowPage:
+	push bc
+	push bc
+	xor a
+	ldh [hBGMapMode], a
+	ld b, YELLOW_PAGE
+	call StatsScreen_LoadPageIndicators
+	; show build stat
+	hlcoord 0, 9
+	ld de, .BuildStat
+	call PlaceString
+	hlcoord 4, 10
+	push hl
+	ld hl, .BuildStatTable
+	ld a, [wTempMonBuild]
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld e, a
+	ld d, h
+	pop hl
+	call PlaceString
+	; show happiness/bond
+	hlcoord 0, 14
+	ld de, .Happiness
+	call PlaceString
+	ld de, wTempMonHappiness
+	hlcoord 4, 15
+	lb bc, 1, 3
+	call PrintNum
+	; show quality of life/comfort
+	hlcoord 12, 14
+	ld de, .QualityOfLife
+	call PlaceString
+	ld de, wTempMonQualityOfLife
+	hlcoord 17, 15
+	lb bc, 1, 3
+	call PrintNum
+	; show caught item
+	hlcoord 8, 9
+	ld de, .CaughtItem
+	call PlaceString
+	ld a, [wTempMonCaughtItem]
+	and a
+	ld de, .ThreeDashes
+	jr z, .gift
+	call GetItemName
+.gift
+	hlcoord 8, 10
+	call PlaceString
+	pop bc
+	pop bc
+
+.BuildStatTable:
+	dw .NAT
+	dw .ASM
+
+.NAT:
+	db "NAT@"
+
+.ASM:
+	db "ASM@"
+
+.BuildStat:
+	db "BUILD/@"
+
+.Happiness:
+	db "BOND/@"
+
+.QualityOfLife:
+	db "COMFORT/@"
+
+.CaughtItem:
+	db "CAUGHT ITEM/@"
+
+.ThreeDashes:
+	db "---@"
 
 LoadPinkPage:
 	push bc
@@ -485,7 +569,6 @@ LoadPinkPage:
 	ld d, a
 	call CalcExpAtLevel
 	ld hl, wTempMonExp + 2
-	ld hl, wTempMonExp + 2
 	ldh a, [hQuotient + 3]
 	sub [hl]
 	dec hl
@@ -549,7 +632,7 @@ StatsScreen_PlaceHorizontalDivider:
 	ret
 
 StatsScreen_PlacePageSwitchArrows:
-	hlcoord 12, 6
+	hlcoord 10, 6
 	ld [hl], "◀"
 	hlcoord 19, 6
 	ld [hl], "▶"
@@ -841,8 +924,11 @@ EggALotMoreTimeString:
 	next "hatch.@"
 
 StatsScreen_LoadPageIndicators:
-	hlcoord 13, 5
+	hlcoord 11, 5
 	ld a, $36 ; first of 4 small square tiles
+	call .load_square
+	hlcoord 13, 5
+	ld a, $36 ; " " " "
 	call .load_square
 	hlcoord 15, 5
 	ld a, $36 ; " " " "
@@ -851,13 +937,19 @@ StatsScreen_LoadPageIndicators:
 	ld a, $36 ; " " " "
 	call .load_square
 	ld a, b
+	and a ; PINK_PAGE
+	hlcoord 11, 5
+	jr z, .load_highlighted_square
 	cp GREEN_PAGE
-	ld a, $3a ; first of 4 large square tiles
-	hlcoord 13, 5 ; PINK_PAGE (< GREEN_PAGE)
-	jr c, .load_square
-	hlcoord 15, 5 ; GREEN_PAGE (= GREEN_PAGE)
-	jr z, .load_square
-	hlcoord 17, 5 ; BLUE_PAGE (> GREEN_PAGE)
+	hlcoord 13, 5
+	jr z, .load_highlighted_square
+	cp BLUE_PAGE
+	hlcoord 15, 5
+	jr z, .load_highlighted_square
+	; must be YELLOW_PAGE
+	hlcoord 17, 5
+.load_highlighted_square
+	ld a, $3a ; first of four large square tiles
 .load_square
 	ld [hli], a
 	inc a

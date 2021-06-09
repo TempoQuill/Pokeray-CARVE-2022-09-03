@@ -22,6 +22,7 @@ box_struct: MACRO
 \1PokerusStatus::  db
 \1Build::          db
 \1QualityOfLife::  db
+\1CaughtItem::     db
 \1Level::          db
 \1BoxEnd::
 ENDM
