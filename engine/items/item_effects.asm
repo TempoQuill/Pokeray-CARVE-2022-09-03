@@ -218,10 +218,10 @@ PokeBallEffect:
 .room_in_party
 	xor a
 	ld [wWildMon], a
+	ld [wWildMon + 1], a
 	ld a, [wCurItem]
 	ld [wBallUsedBuffer], a
-	cp PARK_BALL
-	call nz, ReturnToBattle_UseBall
+	call ReturnToBattle_UseBall
 
 	ld hl, wOptions
 	res NO_TEXT_SCROLL, [hl]
@@ -233,10 +233,9 @@ PokeBallEffect:
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	jp z, .catch_without_fail
-	ld a, [wCurItem]
+	ld a, [wBallUsedBuffer]
 	cp MASTER_BALL
 	jp z, .catch_without_fail
-	ld a, [wCurItem]
 	ld c, a
 	ld hl, BallMultiplierFunctionTable
 
@@ -259,12 +258,11 @@ PokeBallEffect:
 	jp hl
 
 .skip_or_return_from_ball_fn
-	ld a, [wCurItem]
+	ld a, [wBallUsedBuffer]
 	cp LEVEL_BALL
 	ld a, b
 	jp z, .skip_hp_calc
 
-	ld a, b
 	ldh [hMultiplicand + 2], a
 
 	ld hl, wEnemyMonHP
@@ -385,7 +383,16 @@ PokeBallEffect:
 .not_kurt_ball
 	ld [wBattleAnimParam], a
 
+	push af
+	call Random
+	or 1
+	and a
+	pop af
 	ld de, ANIM_THROW_POKE_BALL
+	jr nz, .okay
+	ld de, ANIM_THROW_AND_MISS
+	call .miss
+.okay
 	ld a, e
 	ld [wFXAnimID], a
 	ld a, d
@@ -399,6 +406,9 @@ PokeBallEffect:
 	ld a, [wWildMon]
 	and a
 	jr nz, .caught
+	ld a, [wFXAnimID]
+	cp LOW(ANIM_THROW_AND_MISS)
+	jr z, .miss
 	ld a, [wBuffer2]
 	cp $1
 	ld hl, BallBrokeFreeText
@@ -700,6 +710,10 @@ PokeBallEffect:
 
 .FinishTutorial:
 	ld hl, Text_GotchaMonWasCaught
+	jr .shake_and_break_free
+
+.miss
+	ld hl, BallMissedText
 
 .shake_and_break_free
 	call PrintText
@@ -711,13 +725,14 @@ PokeBallEffect:
 	ret z
 	cp BATTLETYPE_DEBUG
 	ret z
-	cp BATTLETYPE_CONTEST
-	jr z, .used_park_ball
-
 	ld a, [wWildMon]
+	and a
+	jr nz, .dont_toss_yet
+	ld a, [wWildMon + 1]
 	and a
 	jr z, .toss
 
+.dont_toss_yet
 	call ClearBGPalettes
 	call ClearTilemap
 
@@ -726,11 +741,6 @@ PokeBallEffect:
 	inc a
 	ld [wItemQuantityChangeBuffer], a
 	jp TossItem
-
-.used_park_ball
-	ld hl, wParkBallsRemaining
-	dec [hl]
-	ret
 
 BallMultiplierFunctionTable:
 ; table of routines that increase or decrease the catch rate based on

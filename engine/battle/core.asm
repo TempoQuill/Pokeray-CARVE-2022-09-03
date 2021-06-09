@@ -4641,8 +4641,7 @@ BattleMenu_Pack:
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	jr z, .didnt_use_item
-	call .UseItem
-	ret
+	jp .UseItem
 
 .didnt_use_item
 	call ClearPalettes
@@ -4663,6 +4662,9 @@ BattleMenu_Pack:
 
 .UseItem:
 	ld a, [wWildMon]
+	and a
+	jr nz, .run
+	ld a, [wWildMon + 1]
 	and a
 	jr nz, .run
 	callfar CheckItemPocket
@@ -4697,6 +4699,7 @@ BattleMenu_Pack:
 .run
 	xor a
 	ld [wWildMon], a
+	ld [wWildMon + 1], a
 	ld a, [wBattleResult]
 	and BATTLERESULT_BITMASK
 	ld [wBattleResult], a ; WIN
@@ -5779,7 +5782,6 @@ LoadEnemyMon:
 ; Register a contains wBattleType
 
 ; Forced shiny battle type
-; Used by Red Gyarados at Lake of Rage
 	cp BATTLETYPE_SHINY
 	jr nz, .GenerateDVs
 
