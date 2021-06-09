@@ -148,23 +148,34 @@ Music_TraversalCity_Ch1:
 
 Music_TraversalCity_Ch2:
 	duty_cycle 2
-	note_type 3, 13, 2
+;	note_type 3, 13, 2
+;	octave 3
+;	note E_, 2
+;	rest 2
+;	note D_, 2
+;	rest 2
+;	note E_, 2
+;	rest 2
+	note_type 6, 12, 1
 	octave 3
 	note E_, 2
-	rest 2
 	note D_, 2
-	rest 2
 	note E_, 2
-	rest 2
+	note_type 3, 13, 2
 	note F#, 4
 	note G#, 4
 	note A_, 4
+;	note G#, 2
+;	rest 2
+;	note F#, 2
+;	rest 2
+;	note G#, 2
+;	rest 2
+	note_type 6, 12, 1
 	note G#, 2
-	rest 2
 	note F#, 2
-	rest 2
 	note G#, 2
-	rest 2
+	note_type 3, 13, 2
 	note G#, 4
 	note A_, 4
 	note B_, 4
