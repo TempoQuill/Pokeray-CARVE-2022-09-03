@@ -385,7 +385,7 @@ PokeBallEffect:
 
 	push af
 	call Random
-	or 1
+	and 1
 	and a
 	pop af
 	ld de, ANIM_THROW_POKE_BALL
