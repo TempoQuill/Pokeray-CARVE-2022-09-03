@@ -1,4 +1,5 @@
 PokeCenter:
+; wav
 	channel_count 4
 	channel 1, PokeCenter_Ch1
 	channel 2, PokeCenter_Ch2
