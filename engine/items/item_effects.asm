@@ -391,7 +391,6 @@ PokeBallEffect:
 	ld de, ANIM_THROW_POKE_BALL
 	jr nz, .okay
 	ld de, ANIM_THROW_AND_MISS
-	call .miss
 .okay
 	ld a, e
 	ld [wFXAnimID], a
@@ -408,7 +407,7 @@ PokeBallEffect:
 	jr nz, .caught
 	ld a, [wFXAnimID]
 	cp LOW(ANIM_THROW_AND_MISS)
-	jr z, .miss
+	jp z, .miss
 	ld a, [wBuffer2]
 	cp $1
 	ld hl, BallBrokeFreeText
