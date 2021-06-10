@@ -383,11 +383,13 @@ PokeBallEffect:
 .not_kurt_ball
 	ld [wBattleAnimParam], a
 
-	push af
 	call Random
-	and 1
-	and a
-	pop af
+	ld hl, wEnemyMonCatchRate
+	ld l, [hl]
+	swap l
+	ld h, 0
+	add l
+	and l
 	ld de, ANIM_THROW_POKE_BALL
 	jr nz, .okay
 	ld de, ANIM_THROW_AND_MISS
