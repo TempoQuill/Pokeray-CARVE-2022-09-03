@@ -721,10 +721,9 @@ GetPreEvolution:
 ; Return carry and the new species in wCurPartySpecies
 ; if a pre-evolution is found.
 
-	ld c, 0
+	ld bc, 0
 .loop ; For each Pokemon...
 	ld hl, EvosAttacksPointers
-	ld b, 0
 	add hl, bc
 	add hl, bc
 	ld a, [hli]
@@ -755,11 +754,20 @@ GetPreEvolution:
 
 .no_evolve
 	inc c
+	jr c, .pause
+.resume
+	ld a, b
+	cp HIGH(NUM_POKEMON) + 1
+	jr nc, .loop
 	ld a, c
-	cp NUM_POKEMON
+	cp LOW(NUM_POKEMON)
 	jr c, .loop
 	and a
 	ret
+
+.pause
+	inc b
+	jr .resume
 
 .found_preevo
 	inc c

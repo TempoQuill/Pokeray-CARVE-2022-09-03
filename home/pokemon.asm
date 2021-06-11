@@ -177,11 +177,17 @@ endr
 GetCryIndex::
 	and b
 	jr z, .no
+	cp HIGH(NUM_POKEMON + 1)
+	jr z, .check_low
+	jr nc, .no
+	jr .skip_check
+.check_low
 	and c
 	jr z, .no
-	cp NUM_POKEMON + 1
+	cp LOW(NUM_POKEMON + 1)
 	jr nc, .no
 
+.skip_check
 	dec a
 	ld c, l
 	ld b, h

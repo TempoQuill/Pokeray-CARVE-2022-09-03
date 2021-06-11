@@ -597,7 +597,10 @@ PokedexShow1:
 	call StartRadioStation
 .loop
 	call Random
-	cp NUM_POKEMON
+	cp HIGH(NUM_POKEMON)
+	jr nc, .loop
+	call Random
+	cp LOW(NUM_POKEMON)
 	jr nc, .loop
 	ld c, a
 	push bc

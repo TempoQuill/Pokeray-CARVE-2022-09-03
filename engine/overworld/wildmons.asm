@@ -256,7 +256,7 @@ ApplyMusicEffectOnEncounterRate::
 	ret
 
 ApplyCleanseTagEffectOnEncounterRate::
-; Cleanse Tag halves encounter rate.
+; Cleanse Tag quarters encounter rate.
 	ld hl, wPartyMon1Item
 	ld de, PARTYMON_STRUCT_LENGTH
 	ld a, [wPartyCount]
@@ -271,6 +271,7 @@ ApplyCleanseTagEffectOnEncounterRate::
 	ret
 
 .cleansetag
+	srl b
 	srl b
 	ret
 
@@ -348,9 +349,9 @@ ChooseWildEncounter:
 	and a
 	dec hl
 	ld c, [hl]
-	ld a, c
 	jr nz, .skip_unown
 
+	ld a, c
 	cp UNOWN
 	jr nz, .skip_unown
 
@@ -774,11 +775,15 @@ _BackUpMapIndices:
 INCLUDE "data/wild/roammon_maps.asm"
 
 ValidateTempWildMonSpecies:
-; Due to a development oversight, this function is called with the wild Pokemon's level, not its species, in a.
+	cp HIGH(NUM_POKEMON + 1) + 1
+	ld a, c
+	jr nc, .nowildmon
+	jr z, .goodwildmon
 	and a
 	jr z, .nowildmon ; = 0
-	cp NUM_POKEMON + 1 ; 252
+	cp LOW(NUM_POKEMON + 1) ; 252
 	jr nc, .nowildmon ; >= 252
+.goodwildmon
 	and a ; 1 <= Species <= 251
 	ret
 

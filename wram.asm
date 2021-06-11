@@ -126,12 +126,12 @@ wUnusedScriptByteBuffer::  db ; 11 b
 wMapTimeOfDay::            db ; 12 c
 wPrinterConnectionOpen::   db ; 13 d
 wPrinterOpcode::           db ; 14 e
-wPrevDexEntry::            db ; 15 f
-wDisableTextAcceleration:: db ; 16 10
-wPCItemsCursor::           db ; 17 11
-wPCItemsScrollPosition::   db ; 18 12
+wDisableTextAcceleration:: db ; 15 f
+wPCItemsCursor::           db ; 16 10
+wPCItemsScrollPosition::   db ; 17 11
+wPrevDexEntry::            dw ; 18 12
 
-	ds 43 ; 19 13
+	ds 42 ; 20 14
 
 
 SECTION "GBC Palettes", WRAM0

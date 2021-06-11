@@ -121,12 +121,19 @@ Pokedex_CheckUnlockedUnownMode:
 
 Pokedex_InitCursorPosition:
 	ld hl, sPokedexOrder
+	ld a, [wPrevDexEntry + 1]
+	and a
+	jr nz, .next
+	cp HIGH(NUM_POKEMON)
+	jr c, .next
+	jr nz, .done
 	ld a, [wPrevDexEntry]
 	and a
 	jr z, .done
-	cp NUM_POKEMON + 1
+	cp LOW(NUM_POKEMON + 1)
 	jr nc, .done
 
+.next
 	ld b, a
 	ld a, [sDexListingEnd]
 	cp $8
@@ -1740,8 +1747,12 @@ Pokedex_ABCMode:
 	ld a, [sDexListingEnd]
 	ld bc, 0
 .loop2abc
-	cp NUM_POKEMON
+	cp HIGH(NUM_POKEMON)
+	jr c, .next
+	jr z, .next
+	cp LOW(NUM_POKEMON)
 	jr z, .doneabc
+.next
 	ld [hl], c
 	inc hl
 	ld [hl], c
@@ -1941,7 +1952,7 @@ Pokedex_SearchForMons:
 	ld [sDexConvertedMonType], a
 	ld hl, sPokedexOrder
 	ld de, sPokedexOrder
-	ld c, NUM_POKEMON
+	ld bc, NUM_POKEMON
 	xor a
 	ld [sDexSearchResultCount], a
 .loop
@@ -1993,8 +2004,11 @@ Pokedex_SearchForMons:
 	ld c, 0
 
 .zero_remaining_mons
-	cp NUM_POKEMON
+	cp HIGH(NUM_POKEMON)
+	jr nz, .next
+	cp LOW(NUM_POKEMON)
 	jr z, .done
+.next
 	ld [hl], c
 	inc hl
 	inc a

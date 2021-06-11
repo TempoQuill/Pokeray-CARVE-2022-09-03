@@ -64,12 +64,14 @@ GetFrontpic:
 	ld [wCurSpecies + 1], a
 	cp HIGH(EGG)
 	jr z, .could_be_egg
+	cp HIGH(NUM_POKEMON + 1)
+	ret nc
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	and a
 	ret z
-	cp NUM_POKEMON + 1
-	jr nz, .is_a_pokemon
+	cp LOW(NUM_POKEMON + 1)
+	jr c, .is_a_pokemon
 	ret
 .could_be_egg
 	cp LOW(EGG)
@@ -138,12 +140,12 @@ Load2bppToSRAM:
 
 GetMonBackpic:
 	ld a, [wCurPartySpecies + 1]
-	cp 2
+	cp HIGH(NUM_POKEMON + 1)
 	ret nc
 	ld a, [wCurPartySpecies]
 	and a
 	ret z
-	cp NUM_POKEMON + 1
+	cp LOW(NUM_POKEMON + 1)
 	ret z
 	cp LOW(EGG + 1)
 	ret nc
