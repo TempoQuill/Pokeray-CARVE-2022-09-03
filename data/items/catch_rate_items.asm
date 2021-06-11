@@ -6,7 +6,6 @@
 ; some of these entries are unused because pokemon can't hold key items
 
 TimeCapsule_CatchRateItems:
-	db TOWN_MAP,     LEFTOVERS
 	db ITEM_19,      LEFTOVERS    ; METAL_WREATH
 	db ITEM_2D,      BITTER_BERRY ; BUDDING_SEED
 	db ITEM_32,      FILLINGBERRY ; NAPKIN

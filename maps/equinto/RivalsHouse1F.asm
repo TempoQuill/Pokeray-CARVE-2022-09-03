@@ -30,11 +30,39 @@ RH1f_FridgeScript:
 	jumptext RH1FText_Fridge
 
 RH1F_MomScript:
+	checkevent EVENT_RIVALS_MOM_GIVES_TOWN_MAP
+	iftrue .RivalLeft
 	checkevent EVENT_SHOWED_OLD_AMBER
 	iftrue .RivalLeft
+	checkevent EVENT_MOM_KNOWS_ABOUT_JOURNEY
+	iftrue .GiveTownMap
 	jumptextfaceplayer RH1FText_Mom1
 .RivalLeft:
 	jumptextfaceplayer RH1FText_Mom2
+.GiveTownMap:
+	setevent EVENT_RIVALS_MOM_GIVES_TOWN_MAP
+	faceplayer
+	opentext
+	writetext TownMapText
+	jumpstd ReceiveItemScript
+	verbosegiveitem TOWN_MAP
+	writetext TownMapAfterText
+	waitbutton
+	closetext
+	end
+
+TownMapAfterText:
+	text "I know it isn't"
+	line "much, but it'll do."
+	done
+
+TownMapText:
+	text "Oh! Hi, <PLAYER>!"
+
+	para "Going on a little"
+	line "adventure? This"
+	cont "might help you."
+	done
 
 RH1FText_Mom1:
 	text "Oh! Hi, <PLAYER>!"

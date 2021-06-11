@@ -2135,7 +2135,7 @@ wRoute49HouseSceneID::                            db ; d6ce
 
 wEventFlags:: flag_array NUM_EVENTS ; d7ef
 
-	ds $d8 ; d7be
+	ds $d7 ; d7f5
 
 wd8cc:: db
 

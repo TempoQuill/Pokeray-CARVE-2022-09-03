@@ -278,47 +278,8 @@ PokeBallDesc:
 	next "ing #MON.@"
 
 TeruSama1Desc:
-TeruSama2Desc:
-TeruSama3Desc:
-TeruSama4Desc:
-TeruSama5Desc:
-TeruSama6Desc:
-TeruSama7Desc:
-TeruSama8Desc:
-TeruSama9Desc:
-TeruSama10Desc:
-TeruSama11Desc:
-TeruSama12Desc:
-TeruSama13Desc:
-TeruSama14Desc:
-TeruSama15Desc:
-TeruSama16Desc:
-TeruSama17Desc:
-TeruSama18Desc:
-TeruSama19Desc:
-TeruSama20Desc:
-TeruSama21Desc:
-TeruSama22Desc:
-TeruSama23Desc:
-TeruSama24Desc:
-TeruSama25Desc:
-TeruSama26Desc:
-TeruSama27Desc:
-TeruSama29Desc:
-TeruSama30Desc:
-TeruSama32Desc:
-TeruSama33Desc:
-TeruSama34Desc:
-TeruSama35Desc:
-TeruSama36Desc:
-TeruSama37Desc:
-ParkBallDesc:
-PassDesc:
-MachinePartDesc:
-LostItemDesc:
-MysteryEggDesc:
-RedScaleDesc:
-	db   "?@"
+	db   "Shows your locale"
+	next "within any region.@"
 
 BicycleDesc:
 	db   "A collapsible bike"
@@ -387,6 +348,48 @@ RepelDesc:
 MaxElixerDesc:
 	db   "Restores a #-"
 	next "MON's Power Points.@"
+
+TeruSama2Desc:
+TeruSama3Desc:
+TeruSama4Desc:
+TeruSama5Desc:
+TeruSama6Desc:
+TeruSama7Desc:
+TeruSama8Desc:
+TeruSama9Desc:
+TeruSama10Desc:
+TeruSama11Desc:
+TeruSama12Desc:
+TeruSama13Desc:
+TeruSama14Desc:
+TeruSama15Desc:
+TeruSama16Desc:
+TeruSama17Desc:
+TeruSama18Desc:
+TeruSama19Desc:
+TeruSama20Desc:
+TeruSama21Desc:
+TeruSama22Desc:
+TeruSama23Desc:
+TeruSama24Desc:
+TeruSama25Desc:
+TeruSama26Desc:
+TeruSama27Desc:
+TeruSama29Desc:
+TeruSama30Desc:
+TeruSama32Desc:
+TeruSama33Desc:
+TeruSama34Desc:
+TeruSama35Desc:
+TeruSama36Desc:
+TeruSama37Desc:
+ParkBallDesc:
+PassDesc:
+MachinePartDesc:
+LostItemDesc:
+MysteryEggDesc:
+RedScaleDesc:
+	db   "?@"
 
 HPUpDesc:
 	db   "Aids a #MON's"
