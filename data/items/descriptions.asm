@@ -161,7 +161,7 @@ ItemDescriptions:
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw FastBallDesc
-	dw TeruSama25Desc
+	dw ToolBallDesc
 	dw LightBallDesc
 	dw FriendBallDesc
 	dw MoonBallDesc
@@ -445,7 +445,6 @@ TeruSama19Desc:
 TeruSama20Desc:
 TeruSama21Desc:
 TeruSama22Desc:
-TeruSama25Desc:
 TeruSama26Desc:
 TeruSama27Desc:
 TeruSama29Desc:
@@ -805,6 +804,10 @@ LureBallDesc:
 FastBallDesc:
 	db   "A BALL for fleeing"
 	next "#MON.@"
+
+ToolBallDesc:
+	db   "A special BALL for"
+	next "assembled #MON."
 
 LightBallDesc:
 	db   "PIKACHU's weapon"

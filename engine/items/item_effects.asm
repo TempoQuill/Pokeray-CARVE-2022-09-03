@@ -174,7 +174,7 @@ ItemEffects:
 	dw PokeBallEffect      ; LEVEL_BALL
 	dw PokeBallEffect      ; LURE_BALL
 	dw PokeBallEffect      ; FAST_BALL
-	dw PokeBallEffect      ; ITEM_A2
+	dw PokeBallEffect      ; TOOL_BALL
 	dw NoEffect            ; LIGHT_BALL
 	dw PokeBallEffect      ; FRIEND_BALL
 	dw PokeBallEffect      ; MOON_BALL
@@ -761,7 +761,7 @@ BallMultiplierFunctionTable:
 	dbw FAST_BALL,   FastBallMultiplier
 	dbw MOON_BALL,   MoonBallMultiplier
 	dbw LOVE_BALL,   LoveBallMultiplier
-	dbw ITEM_A2,     ToolBallMultiplier
+	dbw TOOL_BALL,   ToolBallMultiplier
 	dbw PARK_BALL,   ParkBallMultiplier
 	db -1 ; end
 
