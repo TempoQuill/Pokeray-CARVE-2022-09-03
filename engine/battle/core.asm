@@ -3740,6 +3740,7 @@ SendOutPlayerMon:
 	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
 	call CheckAmuletCoin
+	call CheckPowerBallFlag
 	call FinishBattleAnim
 	xor a
 	ld [wEnemyWrapCount], a
@@ -4969,6 +4970,41 @@ CheckAmuletCoin:
 	ld a, 1
 	ld [wAmuletCoin], a
 	ret
+
+CheckPowerBallFlag:
+	ld a, [wBattleMonBuild]
+	bit POWER_BALL_F, a
+	ret z
+	ld a, [wPowerBallMoney]
+	add 100
+	jr nc, .dont_write_to_high_byte
+	push af
+	ld a, [wPowerBallMoney + 1]
+	inc a
+	jr nc, .dont_write_to_third_byte
+	push af
+	ld a, [wPowerBallMoney + 2]
+	inc a
+	cp HIGH(MAX_MONEY << 8)
+	jr nc, .max
+	ld [wPowerBallMoney + 2], a
+	pop af
+.dont_write_to_third_byte
+	ld [wPowerBallMoney + 1], a
+	pop af
+.dont_write_to_high_byte
+	ld [wPowerBallMoney], a
+	ret
+
+.max
+	pop af
+	pop af
+	ld a, HIGH(MAX_MONEY << 8)
+	ld [wPowerBallMoney + 2], a
+	ld a, HIGH(MAX_MONEY)
+	ld [wPowerBallMoney + 1], a
+	ld a, LOW(MAX_MONEY)
+	jr .dont_write_to_high_byte
 
 MoveSelectionScreen:
 	ld hl, wEnemyMonMoves
@@ -6624,6 +6660,7 @@ GiveExperiencePoints:
 ; format:
 ; all yields are the highest two bits of the MON's base stats
 	ld a, [wTempMonPokerusStatus]
+	and a
 	jr z, .calc_wo_rus
 	ld hl, wBaseStats
 	ld de, wTempMonStatEv

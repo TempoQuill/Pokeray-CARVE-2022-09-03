@@ -42,6 +42,11 @@ BASE_ITEMS EQU const_value
 	const_skip 6
 BASE_DATA_SIZE EQU const_value
 
+; build flags
+	const_def
+	const NAT_OR_ASM_F
+	const POWER_BALL_F
+NUM_BUILD_FLAGS EQU const_value
 
 ; gender ratio constants
 GENDER_F0      EQU   0 percent

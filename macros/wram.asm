@@ -20,7 +20,7 @@ box_struct: MACRO
 \1PP::             ds NUM_MOVES
 \1Happiness::      db
 \1PokerusStatus::  db
-\1Build::          db
+\1Build::          flag_array NUM_BUILD_FLAGS
 \1QualityOfLife::  db
 \1CaughtItem::     db
 \1Level::          db

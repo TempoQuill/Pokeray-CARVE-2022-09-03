@@ -371,6 +371,7 @@ LoadYellowPage:
 	push hl
 	ld hl, .BuildStatTable
 	ld a, [wTempMonBuild]
+	rla
 	ld e, a
 	ld d, 0
 	add hl, de

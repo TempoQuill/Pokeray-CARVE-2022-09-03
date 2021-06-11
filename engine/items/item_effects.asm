@@ -166,7 +166,7 @@ ItemEffects:
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
 	dw NoEffect            ; ITEM_99
-	dw PokeBallEffect      ; ITEM_9A
+	dw PokeBallEffect      ; POWER_BALL
 	dw PokeBallEffect      ; ITEM_9B
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
@@ -216,6 +216,13 @@ PokeBallEffect:
 	jp z, Ball_BoxIsFullMessage
 
 .room_in_party
+	ld a, [wCurItem]
+	cp POWER_BALL
+	jr nz, .skip
+	ld a, [wEnemyMonBuild]
+	set POWER_BALL_F, a
+	ld [wEnemyMonBuild], a
+.skip
 	xor a
 	ld [wWildMon], a
 	ld [wWildMon + 1], a
@@ -761,7 +768,7 @@ BallMultiplierFunctionTable:
 ToolBallMultiplier:
 ; multiply catch rate by 6 for mon with active build stat
 	ld a, [wEnemyMonBuild]
-	and a
+	bit NAT_OR_ASM_F, a
 	ret z
 	push af
 	ld a, b

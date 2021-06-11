@@ -163,7 +163,7 @@ EvolveAfterBattle_MasterLoop:
 
 ; if the enemy pokemon's build stat is assembled, proceed
 	ld hl, wEnemyMonBuild
-	cp NAT ; natural
+	bit NAT_OR_ASM_F, [hl]
 	jp z, .dont_evolve_2
 
 ; if one of the enemy pokemon's types are steel, proceed

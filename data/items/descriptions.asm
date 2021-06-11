@@ -153,7 +153,7 @@ ItemDescriptions:
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
 	dw TeruSama22Desc
-	dw TeruSama23Desc
+	dw PowerBallDesc
 	dw TeruSama24Desc
 	dw SacredAshDesc
 	dw HeavyBallDesc
@@ -445,7 +445,6 @@ TeruSama19Desc:
 TeruSama20Desc:
 TeruSama21Desc:
 TeruSama22Desc:
-TeruSama23Desc:
 TeruSama24Desc:
 TeruSama25Desc:
 TeruSama26Desc:
@@ -776,6 +775,10 @@ DragonScaleDesc:
 BerserkGeneDesc:
 	db   "Aids ATTACK but"
 	next "confuses holder.@"
+
+PowerBallDesc:
+	db   "Allows earnings"
+	next "for all battles.@"
 
 SacredAshDesc:
 	db   "Revives #-"

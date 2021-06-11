@@ -672,8 +672,9 @@ wSurfWaveBGEffectEnd:: ; 64 40
 ENDU ; ca62
 
 wBattleMon:: battle_struct wBattleMon
+wBattleMonBuild:: flag_array NUM_BUILD_FLAGS
 
-	ds 100 ; 34  22
+	ds 99 ; 35  23
 
 wBattle::
 wEnemyMoveStruct:: move_struct wEnemyMoveStruct   ; 134 86
