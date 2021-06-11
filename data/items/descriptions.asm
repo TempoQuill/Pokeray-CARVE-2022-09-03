@@ -5,7 +5,7 @@ ItemDescriptions:
 	dw BrightpowderDesc
 	dw GreatBallDesc
 	dw PokeBallDesc
-	dw TeruSama1Desc
+	dw TownMapDesc
 	dw BicycleDesc
 	dw MoonStoneDesc
 	dw AntidoteDesc
@@ -24,7 +24,7 @@ ItemDescriptions:
 	dw FireStoneDesc
 	dw ThunderStoneDesc
 	dw WaterStoneDesc
-	dw TeruSama2Desc
+	dw MetalWreathDesc
 	dw HPUpDesc
 	dw ProteinDesc
 	dw IronDesc
@@ -277,7 +277,7 @@ PokeBallDesc:
 	db   "An item for catch-"
 	next "ing #MON.@"
 
-TeruSama1Desc:
+TownMapDesc:
 	db   "Shows your locale"
 	next "within any region.@"
 
@@ -349,47 +349,9 @@ MaxElixerDesc:
 	db   "Restores a #-"
 	next "MON's Power Points.@"
 
-TeruSama2Desc:
-TeruSama3Desc:
-TeruSama4Desc:
-TeruSama5Desc:
-TeruSama6Desc:
-TeruSama7Desc:
-TeruSama8Desc:
-TeruSama9Desc:
-TeruSama10Desc:
-TeruSama11Desc:
-TeruSama12Desc:
-TeruSama13Desc:
-TeruSama14Desc:
-TeruSama15Desc:
-TeruSama16Desc:
-TeruSama17Desc:
-TeruSama18Desc:
-TeruSama19Desc:
-TeruSama20Desc:
-TeruSama21Desc:
-TeruSama22Desc:
-TeruSama23Desc:
-TeruSama24Desc:
-TeruSama25Desc:
-TeruSama26Desc:
-TeruSama27Desc:
-TeruSama29Desc:
-TeruSama30Desc:
-TeruSama32Desc:
-TeruSama33Desc:
-TeruSama34Desc:
-TeruSama35Desc:
-TeruSama36Desc:
-TeruSama37Desc:
-ParkBallDesc:
-PassDesc:
-MachinePartDesc:
-LostItemDesc:
-MysteryEggDesc:
-RedScaleDesc:
-	db   "?@"
+MetalWreathDesc:
+	db   "For STARYU, sell"
+	next "very high.@"
 
 HPUpDesc:
 	db   "Aids a #MON's"
@@ -462,6 +424,47 @@ MaxRepelDesc:
 DireHitDesc:
 	db   "Raises critical"
 	next "hit ratio.@"
+
+TeruSama3Desc:
+TeruSama4Desc:
+TeruSama5Desc:
+TeruSama6Desc:
+TeruSama7Desc:
+TeruSama8Desc:
+TeruSama9Desc:
+TeruSama10Desc:
+TeruSama11Desc:
+TeruSama12Desc:
+TeruSama13Desc:
+TeruSama14Desc:
+TeruSama15Desc:
+TeruSama16Desc:
+TeruSama17Desc:
+TeruSama18Desc:
+TeruSama19Desc:
+TeruSama20Desc:
+TeruSama21Desc:
+TeruSama22Desc:
+TeruSama23Desc:
+TeruSama24Desc:
+TeruSama25Desc:
+TeruSama26Desc:
+TeruSama27Desc:
+TeruSama29Desc:
+TeruSama30Desc:
+TeruSama32Desc:
+TeruSama33Desc:
+TeruSama34Desc:
+TeruSama35Desc:
+TeruSama36Desc:
+TeruSama37Desc:
+ParkBallDesc:
+PassDesc:
+MachinePartDesc:
+LostItemDesc:
+MysteryEggDesc:
+RedScaleDesc:
+	db   "?@"
 
 SodaPopDesc:
 	db   "Recovers 60 Hit"
