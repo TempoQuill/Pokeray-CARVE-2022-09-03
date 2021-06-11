@@ -153,7 +153,7 @@ ItemNames::
 	db "BERSERK GENE@"
 	db "TERU-SAMA@"
 	db "POWER BALL@"
-	db "TERU-SAMA@"
+	db "COMFY BALL@"
 	db "SACRED ASH@"
 	db "HEAVY BALL@"
 	db "FLOWER MAIL@"

@@ -167,7 +167,7 @@ ItemEffects:
 	dw NoEffect            ; BERSERK_GENE
 	dw NoEffect            ; ITEM_99
 	dw PokeBallEffect      ; POWER_BALL
-	dw PokeBallEffect      ; ITEM_9B
+	dw PokeBallEffect      ; COMFY_BALL
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
 	dw NoEffect            ; FLOWER_MAIL
@@ -557,7 +557,7 @@ PokeBallEffect:
 	ld a, [wCurItem]
 	cp FRIEND_BALL
 	jr z, .party_friend_ball
-	cp ITEM_9B
+	cp COMFY_BALL
 	jr nz, .SkipPartyMonFriendBall
 
 	ld a, [wPartyCount]
@@ -646,7 +646,7 @@ PokeBallEffect:
 	ld a, [wCurItem]
 	cp FRIEND_BALL
 	jr z, .friend_ball
-	cp ITEM_9B
+	cp COMFY_BALL
 	jr nz, .SkipBoxMonFriendBall
 	; The captured mon is now first in the box
 	ld a, COMFY_BALL_QUALITY_OF_LIFE

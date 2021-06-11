@@ -154,7 +154,7 @@ ItemDescriptions:
 	dw BerserkGeneDesc
 	dw TeruSama22Desc
 	dw PowerBallDesc
-	dw TeruSama24Desc
+	dw ComfyBallDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
 	dw FlowerMailDesc
@@ -445,7 +445,6 @@ TeruSama19Desc:
 TeruSama20Desc:
 TeruSama21Desc:
 TeruSama22Desc:
-TeruSama24Desc:
 TeruSama25Desc:
 TeruSama26Desc:
 TeruSama27Desc:
@@ -779,6 +778,10 @@ BerserkGeneDesc:
 PowerBallDesc:
 	db   "Allows earnings"
 	next "for all battles.@"
+
+ComfyBallDesc:
+	db   "A BALL that boosts"
+	next "base life quality.@"
 
 SacredAshDesc:
 	db   "Revives #-"

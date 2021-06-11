@@ -33,7 +33,6 @@ TimeCapsule_CatchRateItems:
 	db ITEM_94,      BERRY        ; GOLDAPRICORN
 	db ITEM_95,      BERRY        ; HEAVY_GENE
 	db ITEM_99,      BERRY        ; SLEAK_GENE
-	db ITEM_9B,      BERRY        ; COMFY_BALL
 	db ITEM_A2,      BERRY        ; TOOL_BALL
 	db ITEM_AB,      BERRY        ; VINE_MAIL
 	db ITEM_B0,      BERRY        ; CHORD_MAIL
