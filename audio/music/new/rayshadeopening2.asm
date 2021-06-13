@@ -53,7 +53,7 @@ Music_RayShadeOpening2_Ch1:
 	octave 4
 	note D#, 2
 .sub2:
-	dutycycle 3
+	duty_cycle 3
 	vibrato 0, 0, 0
 	volume_envelope 12, 1
 	octave 3
@@ -64,7 +64,7 @@ Music_RayShadeOpening2_Ch1:
 	sound_ret
 
 Music_RayShadeOpening2_Ch2:
-	dutycycle 3
+	duty_cycle 3
 	note_type 12, 5, 0
 	octave 3
 	note A_, 1

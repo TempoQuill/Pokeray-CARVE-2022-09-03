@@ -185,7 +185,7 @@ Music_NorgeoTown_Ch1:
 	note G#, 2
 	note F#, 2
 	note D#, 2
-	note F_, 12
+	note F_, 6
 .sub4:
 	volume_envelope 10, 1
 	octave 4

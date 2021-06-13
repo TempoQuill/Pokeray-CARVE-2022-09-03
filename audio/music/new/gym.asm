@@ -392,6 +392,7 @@ Music_Gym_Ch3:
 	note A_, 1
 	rest 1
 	volume_envelope 1, -2
+	octave 6
 	note C#, 1
 	note C#, 1
 	note C#, 4

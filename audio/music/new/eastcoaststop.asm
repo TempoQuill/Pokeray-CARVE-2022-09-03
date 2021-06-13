@@ -122,15 +122,12 @@ Music_EastCoastStop_Ch2:
 	note A_, 2
 	sound_call .sub2
 	sound_call .sub3
-	octave 3
-	note A_, 2
 	sound_call .sub2
 	volume_envelope 10, 2
 	note F#, 4
 	note A_, 6
 	note E_, 12
 	volume_envelope 11, 1
-	note A_, 2
 	sound_call .sub2
 	sound_call .sub3
 	volume_envelope 10, 3

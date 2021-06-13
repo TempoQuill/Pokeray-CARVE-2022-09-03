@@ -300,10 +300,10 @@ UpdateChannels:
 
 	bit NOTE_FREQ_OVERRIDE, [hl]
 	jr nz, .ch1_frequency_override
-
+	; new_start
 	bit NOTE_ENV_OVERRIDE, [hl]
 	jr nz, .ch1_env_override
-
+	; new_end + 4
 	bit NOTE_VIBRATO_OVERRIDE, [hl]
 	jr nz, .ch1_vibrato_override
 
@@ -329,11 +329,13 @@ UpdateChannels:
 	ldh [rNR11], a
 	ret
 
+	; new_start
 .ch1_env_override
 
 	ld a, [wCurTrackVolumeEnvelope]
 	ldh [rNR12], a
 	ret
+	; new_end + 6 (10)
 
 .ch1_vibrato_override
 
@@ -381,13 +383,13 @@ UpdateChannels:
 
 	bit NOTE_NOISE_SAMPLING, [hl]
 	jr nz, .ch2_noise_sampling
-
+	; new_start
 	bit NOTE_FREQ_OVERRIDE, [hl]
 	jr nz, .ch2_frequency_override
 
 	bit NOTE_ENV_OVERRIDE, [hl]
 	jr nz, .ch2_env_override
-
+	; new_end + 8 (18)
 	bit NOTE_VIBRATO_OVERRIDE, [hl]
 	jr nz, .ch2_vibrato_override
 
@@ -410,12 +412,14 @@ UpdateChannels:
 	ldh [rNR24], a
 	ret
 
+	; new_start
 .ch2_env_override
 
 	ld a, [wCurTrackVolumeEnvelope]
 	ldh [rNR22], a
 	ret
 
+	; new_end + 6 (24)
 .ch2_vibrato_override
 
 	ld a, [wCurTrackDuty]
@@ -462,16 +466,17 @@ UpdateChannels:
 
 	bit NOTE_NOISE_SAMPLING, [hl]
 	jr nz, .ch3_noise_sampling
-
+	; new_start
 	bit NOTE_ENV_OVERRIDE, [hl]
 	jr nz, .ch3_env_override
-
+	; new_end + 4 (28)
 	bit NOTE_VIBRATO_OVERRIDE, [hl]
 	jr nz, .ch3_vibrato_override
-
+	; opt 0 - 1 (27)
+	; new_start
 	bit NOTE_FREQ_OVERRIDE, [hl]
 	ret z
-
+	; new_end + 3 (30)
 	ld a, [wCurTrackFrequency]
 	ldh [rNR33], a
 	ld a, [wCurTrackFrequency + 1]
@@ -522,9 +527,10 @@ UpdateChannels:
 	; 0-f are technically valid
 	; f is filler made of 0's to avoid garbage
 	and WAVE_TABLE_MASK
+	; opt 4 - 7 (27)
 	swap a
-	ld e, a
-	ld d, 0
+	ld l, a
+	ld h, 0
 
 	; hl << 4
 	; each wavetable is fixed at 16 bytes
@@ -576,6 +582,7 @@ UpdateChannels:
 
 	bc_offset CHANNEL_NOTE_FLAGS
 
+	; opt 7 - 15 (19)
 	bit NOTE_NOISE_SAMPLING, [hl]
 	jr nz, .ch4_noise_sampling
 
@@ -851,7 +858,10 @@ LoadNote:
 	; wait for pitch slide to finish
 	bc_offset CHANNEL_FLAGS2
 	bit SOUND_PITCH_SLIDE, [hl]
+	; opt 0 - 1 (18)
+	; new_start
 	jp z, .relative_pitch
+	; new_end + 3 (21)
 
 	; get note duration
 	bc_offset CHANNEL_NOTE_DURATION
@@ -972,7 +982,8 @@ LoadNote:
 	bc_offset CHANNEL_PITCH_SLIDE_TEMPO
 	xor a
 	ld [hl], a
-
+	; opt 0 - 1 (20)
+	; new_start
 .relative_pitch
 
 	bc_offset CHANNEL_FLAGS2
@@ -1010,6 +1021,7 @@ LoadNote:
 	bc_offset CHANNEL_MUTE
 	ld [hl], a
 	ret
+	; new_start 52 (72)
 
 
 GeneralHandler:
@@ -1030,6 +1042,7 @@ GeneralHandler:
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_DUTY_OVERRIDE, [hl]
 
+	; new_start
 .relative_pitch
 
 	bc_offset CHANNEL_FLAGS2
@@ -1043,6 +1056,7 @@ GeneralHandler:
 
 	set SOUND_REL_PITCH_FLAG, [hl]
 	jr .skip_pitch
+	; 20
 
 .on
 
@@ -1069,6 +1083,7 @@ GeneralHandler:
 	ld [hl], e
 	inc hl
 	ld [hl], d
+	; 30 + 20
 
 ; interesting notes:
 ;	$d9 and $e7 can stack with each other
@@ -1080,6 +1095,7 @@ GeneralHandler:
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_FREQ_OVERRIDE, [hl]
 
+	; new_end 56 (128)
 .pitch_offset
 
 	bc_offset CHANNEL_FLAGS2
@@ -1103,6 +1119,7 @@ GeneralHandler:
 	inc hl
 	ld [hl], d
 
+	; new_start
 .pitch_inc
 
 	; is pitch inc on?
@@ -1133,6 +1150,7 @@ GeneralHandler:
 	inc hl
 	ld [hl], d
 
+	; new_end 26 (154)
 .vibrato
 
 	; is vibrato on?
@@ -1220,6 +1238,8 @@ GeneralHandler:
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_VIBRATO_OVERRIDE, [hl]
 
+	; opt 0 - 1 (153)
+	; new_start
 .env_ptrn
 
 	bc_offset CHANNEL_FLAGS2
@@ -1294,7 +1314,7 @@ GeneralHandler:
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_REST, [hl]
 	ret
-
+	; new_end + 104 (257)
 
 ApplyPitchSlide:
 
@@ -1677,7 +1697,7 @@ ParseSFXOrRest:
 	ld [hl], a
 	ret
 
-
+	; new_start
 GetByteInEnvelopeGroup:
 
 	; get pointer
@@ -1718,6 +1738,7 @@ GetByteInEnvelopeGroup:
 .quit
 	scf
 	ret
+	; new_end + 32 (289)
 
 GetNoiseSample:
 ; load ptr to sample header in wNoiseSampleAddress
@@ -1866,6 +1887,7 @@ MusicCommands:
 MusicDummy:
 	ret
 
+	; new_start
 Music_FrameSwap:
 ; alternate between sprite $0-$3 and $4-$7, controlled by wFrameSwap
 ; only works on noise channels
@@ -1908,12 +1930,14 @@ Music_SetMusic:
 	bc_offset CHANNEL_FLAGS1
 	set SOUND_SFX, [hl]
 	ret
+	; new_end + 45 (334)
 
 Music_Ret:
 ; called when $ff is encountered w/(o) subroutine flag set
 ; end music stream
 ; return to source address (if possible)
 
+	; halves of the old code are reversed to apply a stack check
 	; copy LastMusicAddress to MusicAddress
 	bc_offset CHANNEL_LAST_MUSIC_ADDRESS
 	xor a
@@ -1927,14 +1951,17 @@ Music_Ret:
 	inc hl
 	ld [hl], d
 
+	; new_start
 	bc_offset CHNANEL_DEEP_MUSIC_ADDRESS
 	ld a, [hl]
 	and a
 	jr nz, .skip_flag
+	; new_end 8 (342)
 
 	; reset subroutine flag
 	bc_offset CHANNEL_FLAGS1
 	res SOUND_SUBROUTINE, [hl]
+	; new_start
 	jr .skip_deep_move
 
 .skip_flag
@@ -1949,6 +1976,7 @@ Music_Ret:
 	ld [hl], e
 	inc hl
 	ld [hl], d
+	; new_end 13 (355)
 
 .skip_deep_move
 
@@ -1965,31 +1993,30 @@ Music_Call:
 	ld d, a
 	push de
 
+	; new_start
 	bc_offset CHANNEL_LAST_MUSIC_ADDRESS
-	ld a, [hl]
+	ld a, [hli]
 	and a
 	jr z, .next_stack
 
 	; copy LastMusicAddress to DeepMusicAddress
-	ld e, [hl]
-	inc hl
 	ld d, [hl]
 
 	bc_offset CHNANEL_DEEP_MUSIC_ADDRESS
-	ld [hl], e
-	inc hl
+	ld [hli], a
 	ld [hl], d
 
 .next_stack
+	; new_end 15 (370)
 	; copy MusicAddress to LastMusicAddress
 	bc_offset CHANNEL_MUSIC_ADDRESS
-	ld e, [hl]
-	inc hl
+	; opt 2 - 3 (369)
+	ld a, [hli]
 	ld d, [hl]
 
 	bc_offset CHANNEL_LAST_MUSIC_ADDRESS
-	ld [hl], e
-	inc hl
+	; opt 2 - 3 (368)
+	ld [hli], a
 	ld [hl], d
 
 	; load pointer into MusicAddress
@@ -2014,12 +2041,11 @@ Music_Jump:
 	call GetMusicByte
 	ld e, a
 	call GetMusicByte
-	ld d, a
+	; opt 6 - 8 (366)
 
-	bc_offset CHANNEL_MUSIC_ADDRESS
+	bc_offset CHANNEL_MUSIC_ADDRESS + 1
+	ld [hld], a
 	ld [hl], e
-	inc hl
-	ld [hl], d
 	ret
 
 
@@ -2463,6 +2489,7 @@ Music_SFXToggleNoise:
 	ld [wSFXNoiseSampleSet], a
 	ret
 
+; Music_NoteType is moved for optimization
 Music_PitchSweep:
 ; update pitch sweep
 ; params: 1
@@ -2503,6 +2530,7 @@ Music_NoteType:
 	ld a, [wCurChannel]
 	maskbits NUM_MUSIC_CHANS
 	cp CHAN4
+	; opt 1 - 5 (362)
 	ret z
 
 
@@ -2562,9 +2590,9 @@ Music_StereoPanning:
 	bit STEREO, a
 	jr nz, .pan_channel
 
+	; opt 3 - 4 (361)
 	; skip param
-	call GetMusicByte
-	ret
+	jp GetMusicByte
 
 .pan_channel
 
@@ -2583,10 +2611,11 @@ Music_OldPanning:
 ; only used in red
 ; params: 1
 
+	; new_start
 	call GetMusicByte
 	ld [wStereoPanningMask], a
 	ret
-
+	; new_end 6 (367)
 
 Music_Volume:
 ; set volume
@@ -3009,7 +3038,9 @@ _PlayMusic::
 	ld [wNoiseSampleAddress + 1], a
 	ld [wNoiseSampleDelay], a
 	ld [wMusicNoiseSampleSet], a
+	; new_start
 	ld [wFrameSwap], a
+	; new_end + 3 (370)
 	call MusicOn
 	ret
 
@@ -3023,8 +3054,10 @@ _PlayCry::
 
 ; reset sweep
 
+	; new_start
 	xor a
 	ld [wPitchSweep], a
+	; new_end + 4 (374)
 
 ; Overload the music id with the cry id
 
@@ -3133,14 +3166,18 @@ _PlayCry::
 ; edit: cries will only mute music if not playing at MAX_VOLUME
 ; to achieve this, check for non-MAX_VOLUME before muting
 
+	; new_start
 	cp MAX_VOLUME
 	jr z, .end
 
 	; stop playing music
 	push af
+	; new_end 5 (379)
 	ld a, 1 << SOUND_PRIORITY_F
 	ld [wSFXPriority], a
+	; new_start
 	pop af
+	; new_end 1 (380)
 
 .end
 
@@ -3287,8 +3324,10 @@ PlayStereoSFX::
 ; else, let's go ahead with this
 ; reset sweep
 
+	; new_start
 	xor a
 	ld [wPitchSweep], a
+	; new end 4 (384)
 
 	ld hl, wMusicID
 	ld [hl], e
@@ -3412,7 +3451,7 @@ LoadChannel:
 ; set default tempo and note length in case nothing is loaded
 ; input:
 ;   bc = channel struct pointer
-
+	; from_sub 0 - 4 (380)
 	push de
 	xor a
 	; get channel struct location and length
@@ -3473,7 +3512,11 @@ LoadMusicByte::
 	ld a, [wCurMusicByte]
 	ret
 
+; notes moved to after engine - 50  (330)  56
+; wav moved to after engine   - 160 (170)  256
+; drums moved to after engine - 367 (-197) 519
 
+	; opt 4 - 23 (-216)
 SpeakerTracks:
 ; bit corresponds to track #
 ; hi: left channel
@@ -3535,3 +3578,9 @@ ClearChannel:
 	ld a, $80
 	ld [hli], a ; rNR14, rNR24, rNR34, rNR44 ; restart sound (freq hi = 0)
 	ret
+	; opt 0 - 100  (-316)
+	; missing 1011 (695)
+	; nothing reduced to just one channel (-9) (686)
+	; music pointer opt (-78) (608)
+	; three extra cries (+9) (617)
+	; 41 extra SFX (+123) (740)
