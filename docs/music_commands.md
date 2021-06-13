@@ -1,6 +1,6 @@
 # Music Commands
 
-NOTE: The music contained in `audio/music/new/` is hand-converted from files composed on a music tracker only specified on the Rarity prototype.  Immediately following respective labels within these music files is the necessary upgrades (if any) utilized throughout each file.  Below that is the creation date of the source files.  Some of these date as far back as July of 2019 as that was when the idea of Pokemon Ray was first concieved.
+NOTE: The music contained in `audio/music/new/` is hand-converted from files composed on a music tracker only specified on the Rarity prototype.  Immediately following respective labels within these music files is the necessary upgrades (if any) utilized throughout each file.  This aspect is also applicable to `audio/music/protos/`.  Below that is the creation date of the source files.  `audio/music/protos/` does NOT have these due to the source files matching that of the their final counterpart.  Some of these date as far back as July of 2019 as that was when the idea of Pokemon Ray was first concieved.
 
 ## **Header Commands**
 
