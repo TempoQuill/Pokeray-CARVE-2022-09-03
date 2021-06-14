@@ -1,5 +1,5 @@
 
-SECTION "Demo Map Scripts 1" ROMX
+SECTION "Demo Map Scripts 1", ROMX
 
 INCLUDE "maps/equinto/CottageTown.asm"
 INCLUDE "maps/equinto/PlayersHouse1F.asm"
@@ -15,3 +15,8 @@ INCLUDE "maps/equinto/Route49VacuumGate.asm"
 INCLUDE "maps/equinto/Route4950Gate.asm"
 INCLUDE "maps/equinto/Route4951Gate.asm"
 INCLUDE "maps/equinto/CottageRoute55Gate.asm"
+
+SECTION "Demo Map Scripts 2", ROMX
+
+INCLUDE "maps/equinto/Route50.asm"
+INCLUDE "maps/equinto/TraversalCity.asm"

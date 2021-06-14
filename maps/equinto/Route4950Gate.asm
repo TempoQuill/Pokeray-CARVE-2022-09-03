@@ -123,6 +123,8 @@ Route4950Gate_MapEvents:
 	def_warp_events
 	warp_event 3, 7, ROUTE_49, 3
 	warp_event 4, 7, ROUTE_49, 3
+	warp_event 3, 0, ROUTE_50, 1
+	warp_event 4, 0, ROUTE_50, 2
 
 	def_coord_events
 

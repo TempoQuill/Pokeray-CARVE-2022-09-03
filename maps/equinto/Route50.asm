@@ -69,8 +69,8 @@ Route50_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  1, 17, ROUTE_49_50_GATE, 1
-	warp_event  2, 17, ROUTE_49_50_GATE, 2
+	warp_event  1, 17, ROUTE_49_50_GATE, 3
+	warp_event  2, 17, ROUTE_49_50_GATE, 4
 
 	def_coord_events
 

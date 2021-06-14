@@ -204,6 +204,7 @@ ROMX $42
 ;	62
 ROMX $63
 	"Demo Map Blocks 1"
+	"Demo Map Blocks 2"
 ROMX $64
 	"Text 1"
 ROMX $65

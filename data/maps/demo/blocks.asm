@@ -1,4 +1,3 @@
-
 SECTION "Demo Map Blocks 1", ROMX
 
 CottageTown_Blocks:
@@ -40,3 +39,11 @@ Route4951Gate_Blocks:
 
 CottageRoute55Gate_Blocks:
 	INCBIN "maps/equinto/CottageRoute55Gate.blk"
+
+SECTION "Demo Map Blocks 2", ROMX
+
+Route50_Blocks:
+	INCBIN "maps/equinto/Route50.blk
+
+TraversalCity_Blacks:
+	INCBIN "maps/equinto/TraversalCity.blk
