@@ -72,6 +72,7 @@ const_value = -1
 	const SPAWN_DEBUG
 ; equinto
 	const SPAWN_COTTAGE
+	const SPAWN_TRAVERSAL
 NUM_SPAWNS EQU const_value
 
 ; Flypoints indexes (see data/maps/demo/flypoints.asm)

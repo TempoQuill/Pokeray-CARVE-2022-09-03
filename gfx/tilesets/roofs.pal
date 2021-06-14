@@ -1,13 +1,14 @@
+; unused
 	RGB 21, 21, 21
 	RGB 11, 11, 11
 	RGB 21, 21, 21
 	RGB 11, 11, 11
-
+; cottage town
 	RGB 14, 17, 31
 	RGB 07, 11, 15
 	RGB 09, 09, 17
 	RGB 05, 07, 13
-
+; traversal city
 	RGB 12, 19, 00
 	RGB 06, 10, 00
 	RGB 06, 09, 07

@@ -390,7 +390,7 @@ RayToRayLinkComms:
 	ld a, [wLinkMode]
 	cp LINK_COLOSSEUM
 	jr nz, .ready_to_trade
-	ld a, CAL
+	ld a, CHRIS
 	ld [wOtherTrainerClass], a
 	call ClearTilemap
 	call WaitBGMap

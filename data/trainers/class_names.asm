@@ -16,6 +16,7 @@ TrainerClassNames::
 	db "ELITE FOUR@"
 	db "ELITE FOUR@"
 	db "CHAMPION@"
+	; all under construction at this point
 	db "LEADER@"
 	db "LEADER@"
 	db "LEADER@"

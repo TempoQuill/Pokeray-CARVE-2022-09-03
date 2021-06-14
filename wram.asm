@@ -2131,8 +2131,9 @@ wCottageTownSceneID::                             db ; d6cb
 wPlayersHouse1FSceneID::                          db ; d6cc
 wLarchesHouseSceneID::                            db ; d6cd
 wRoute49HouseSceneID::                            db ; d6ce
+wTraversalCitySceneID::                           db ; d6cf
 
-	ds $120
+	ds $11f
 
 wEventFlags:: flag_array NUM_EVENTS ; d7ef
 

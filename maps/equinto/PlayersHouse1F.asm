@@ -78,7 +78,7 @@ MomScript:
 	end
 
 .JumpstdReceiveItem
-	jumpstd recieveitem
+	jumpstd ReceiveItemScript
 
 .Mom5:
 	jumptextfaceplayer WelcomeHomeText

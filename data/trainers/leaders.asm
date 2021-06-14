@@ -13,18 +13,19 @@ GymLeaders:
 	db JASMINE
 	db CHUCK
 	db CLAIR
-	db WILL
-	db BRUNO
-	db KAREN
-	db KOGA
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
 	db CHAMPION
 	db RED
-	db BROCK
-	db MISTY
-	db LT_SURGE
-	db ERIKA
-	db JANINE
-	db SABRINA
-	db BLAINE
-	db BLUE
+	; unused, no second region
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
 	db -1

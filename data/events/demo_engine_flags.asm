@@ -23,3 +23,4 @@ EngineFlags:
 	engine_flag wVisitedSpawns, SPAWN_HOME
 	engine_flag wVisitedSpawns, SPAWN_DEBUG
 	engine_flag wVisitedSpawns, SPAWN_COTTAGE
+	engine_flag wVisitedSpawns, SPAWN_TRAVERSAL

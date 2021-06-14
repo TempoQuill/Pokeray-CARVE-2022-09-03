@@ -6,6 +6,7 @@ PlayersHouse2F_MapScripts:
 
 .InitializeRoom
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
+	setevent EVENT_GRAMPS_MAP_CARD
 	endcallback
 
 2FPlayersHouseTownMapScript:

@@ -106,7 +106,6 @@ _ResetWRAM:
 	call CloseSRAM
 
 	call LoadOrRegenerateLuckyIDNumber
-	call InitializeMagikarpHouse
 
 	xor a
 	ld [wMonType], a
@@ -173,19 +172,6 @@ SetDefaultBoxNames:
 
 .Box:
 	db "BOX@"
-
-InitializeMagikarpHouse:
-	ld hl, wBestMagikarpLengthFeet
-	ld a, $3
-	ld [hli], a
-	ld a, $6
-	ld [hli], a
-	ld de, .Ralph
-	call CopyName2
-	ret
-
-.Ralph:
-	db "RALPH@"
 
 InitializeNPCNames:
 	ld hl, .Rival
@@ -546,7 +532,7 @@ OakSpeech:
 	xor a
 	ld [wCurPartySpecies], a
 	ld [wCurPartySpecies + 1], a
-	ld a, CAL
+	ld a, CHRIS
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
@@ -613,7 +599,7 @@ NamePlayer:
 	xor a
 	ld [wCurPartySpecies], a
 	ld [wCurPartySpecies + 1], a
-	ld a, CAL
+	ld a, CHRIS
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 

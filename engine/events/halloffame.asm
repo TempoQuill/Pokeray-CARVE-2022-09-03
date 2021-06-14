@@ -574,7 +574,7 @@ HOF_AnimatePlayerPic:
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, " "
 	call ByteFill
-	ld a, CAL
+	ld a, CHRIS
 	ld [wTrainerClass], a
 	ld de, vTiles2
 	farcall GetTrainerPic

@@ -25,11 +25,8 @@ PlayBattleMusic:
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp RED
 	jr z, .done
-	ld de, MUSIC_RIVAL_BATTLE
-	cp KOGA
-	jr z, .done
 
-	; IsGymLeader also counts CHAMPION, KOGA, and RED
+	; IsGymLeader also counts CHAMPION and RED
 	; but they have been taken care of before this
 	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
 	farcall IsGymLeader

@@ -1,25 +1,25 @@
 ; Places and People will not describe these trainers.
 
 PnP_HiddenPeople:
-	db WILL
-	db BRUNO
-	db KAREN
-	db KOGA
-	db CHAMPION
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
 	; fallthrough
 PnP_HiddenPeople_BeatE4:
-	db BROCK
-	db MISTY
-	db LT_SURGE
-	db ERIKA
-	db JANINE
-	db SABRINA
-	db BLAINE
-	db BLUE
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
+	db CHRIS
 	; fallthrough
 	db RIVAL1
 	db POKEMON_PROF
-	db CAL
-	db RIVAL2
-	db RED
+	db CHRIS
+	db CHRIS
+	db CHRIS
 	db -1

@@ -277,9 +277,6 @@ PlaceEnemysName::
 	ld a, [wTrainerClass]
 	cp RIVAL1
 	jr z, .rival
-	cp RIVAL2
-	jr z, .rival
-
 	ld de, wOTClassName
 	call PlaceString
 	ld h, b

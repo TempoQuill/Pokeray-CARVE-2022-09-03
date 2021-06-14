@@ -44,3 +44,8 @@ ENDM
 	map_const ROUTE_49_VACUUM_GATE  4,   4 ; 12
 	map_const ROUTE_49_51_GATE      4,   4 ; 13
 	map_const COTTAGE_ROUTE_55_GATE 4,   4 ; 14
+
+	newgroup                        ; 2
+	
+	map_const ROUTE_50              15,  9 ; 1
+	map_const TRAVERSAL_CITY        20, 18 ; 2

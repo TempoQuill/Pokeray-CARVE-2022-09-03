@@ -37,6 +37,7 @@
 	const EMAIL_BLACKBELT_KENJI
 	const EMAIL_HIKER_PARRY
 	const EMAIL_PICNICKER_ERIN
+TOTAL_CONTACTS EQU const_value
 
 ; SpecialPhoneCallList indexes (see data/phone/special_calls.asm)
 	const_def

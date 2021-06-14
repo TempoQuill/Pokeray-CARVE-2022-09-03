@@ -4,7 +4,8 @@
 
 OutdoorSprites:
 ; entries correspond to map groups
-	dw CottageGroupSprites
+	dw CottageGroupSprites ; GROUP_COTTAGE
+	dw CottageGroupSprites ; GROUP_TRAVERSAL
 
 CottageGroupSprites:
 	db SPRITE_SILVER
@@ -14,7 +15,7 @@ CottageGroupSprites:
 	db SPRITE_YOUNGSTER
 	db SPRITE_MONSTER
 	db SPRITE_GRAMPS
-	db SPRITE_BUG_CATCHER
-	db SPRITE_COOLTRAINER_F
+	db SPRITE_LASS
+	db SPRITE_GRANNY
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE

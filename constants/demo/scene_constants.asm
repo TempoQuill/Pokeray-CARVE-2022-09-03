@@ -30,3 +30,8 @@ SCENE_FINISHED EQU 1
 	const_def 1
 	const SCENE_ON_JOURNEY_HELP ; 1
 	const SCENE_CT_DONE         ; 2
+
+; wTraversalCitySceneID
+	const_def 1
+	const SCENE_ARRIVED                ; 1
+	const SCENE_MET_RIVAL_IN_TRAVERSAL ; 2

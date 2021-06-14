@@ -11,7 +11,8 @@ MapGroupRoofs:
 ; entries correspond to map groups
 ; values are indexes for Roofs (see below)
 	db -1             ;  0
-	db ROOF_NEW_BARK  ;  1
+	db ROOF_NEW_BARK  ;  1 (Cottage)
+	db ROOF_NEW_BARK  ;  2 (Traversal)
 Roofs:
 ; entries correspond to ROOF_* constants
 INCBIN "gfx/tilesets/roofs/new_bark.2bpp"
