@@ -3,7 +3,7 @@ Music_VSMenu1:
 	channel 1, Music_VSMenu_Ch1
 	channel 2, Music_VSMenu_Ch2
 
-Music_VSMenu1:
+Music_VSMenu2:
 	channel_count 2
 	channel 3, Music_VSMenu_Ch3
 	channel 4, Music_VSMenu_Ch4
