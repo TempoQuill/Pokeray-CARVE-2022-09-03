@@ -412,7 +412,7 @@ Music_Larch_Ch4:
 	drum_note 3, 4
 	drum_note 3, 2
 	drum_note 3, 2
-Music_Larch_Ch4_loop:
+.mainloop:
 	drum_note 3, 4
 	drum_note 3, 4
 	drum_note 3, 4
@@ -449,4 +449,4 @@ Music_Larch_Ch4_loop:
 	drum_note 3, 4
 	drum_note 3, 2
 	drum_note 3, 2
-	sound_jump Music_Larch_Ch4_loop
+	sound_jump .mainloop

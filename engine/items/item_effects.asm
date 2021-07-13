@@ -777,7 +777,7 @@ ToolBallMultiplier:
 	add b
 	ld b, a
 	sla b
-	push af
+	pop af
 	jr c, .max_2
 	ret
 

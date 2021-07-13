@@ -527,7 +527,7 @@ UpdateChannels:
 	; 0-f are technically valid
 	; f is filler made of 0's to avoid garbage
 	and WAVE_TABLE_MASK
-	; opt 4 - 7 (27)
+	; opt 5 - 7 (28)
 	swap a
 	ld l, a
 	ld h, 0
@@ -582,7 +582,7 @@ UpdateChannels:
 
 	bc_offset CHANNEL_NOTE_FLAGS
 
-	; opt 7 - 15 (19)
+	; opt 7 - 15 (20)
 	bit NOTE_NOISE_SAMPLING, [hl]
 	jr nz, .ch4_noise_sampling
 
@@ -858,10 +858,10 @@ LoadNote:
 	; wait for pitch slide to finish
 	bc_offset CHANNEL_FLAGS2
 	bit SOUND_PITCH_SLIDE, [hl]
-	; opt 0 - 1 (18)
+	; opt 0 - 1 (19)
 	; new_start
 	jp z, .relative_pitch
-	; new_end + 3 (21)
+	; new_end + 3 (22)
 
 	; get note duration
 	bc_offset CHANNEL_NOTE_DURATION
@@ -982,7 +982,7 @@ LoadNote:
 	bc_offset CHANNEL_PITCH_SLIDE_TEMPO
 	xor a
 	ld [hl], a
-	; opt 0 - 1 (20)
+	; opt 0 - 1 (21)
 	; new_start
 .relative_pitch
 
@@ -1095,7 +1095,7 @@ GeneralHandler:
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_FREQ_OVERRIDE, [hl]
 
-	; new_end 56 (128)
+	; new_end 56 (129)
 .pitch_offset
 
 	bc_offset CHANNEL_FLAGS2
@@ -1150,7 +1150,7 @@ GeneralHandler:
 	inc hl
 	ld [hl], d
 
-	; new_end 26 (154)
+	; new_end 26 (155)
 .vibrato
 
 	; is vibrato on?
@@ -1238,7 +1238,7 @@ GeneralHandler:
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_VIBRATO_OVERRIDE, [hl]
 
-	; opt 0 - 1 (153)
+	; opt 0 - 1 (154)
 	; new_start
 .env_ptrn
 
@@ -1314,7 +1314,7 @@ GeneralHandler:
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_REST, [hl]
 	ret
-	; new_end + 104 (257)
+	; new_end + 104 (258)
 
 ApplyPitchSlide:
 
@@ -1738,7 +1738,7 @@ GetByteInEnvelopeGroup:
 .quit
 	scf
 	ret
-	; new_end + 32 (289)
+	; new_end + 32 (290)
 
 GetNoiseSample:
 ; load ptr to sample header in wNoiseSampleAddress
@@ -1930,7 +1930,7 @@ Music_SetMusic:
 	bc_offset CHANNEL_FLAGS1
 	set SOUND_SFX, [hl]
 	ret
-	; new_end + 45 (334)
+	; new_end + 45 (335)
 
 Music_Ret:
 ; called when $ff is encountered w/(o) subroutine flag set
@@ -1956,7 +1956,7 @@ Music_Ret:
 	ld a, [hl]
 	and a
 	jr nz, .skip_flag
-	; new_end 8 (342)
+	; new_end 8 (343)
 
 	; reset subroutine flag
 	bc_offset CHANNEL_FLAGS1
@@ -1976,7 +1976,7 @@ Music_Ret:
 	ld [hl], e
 	inc hl
 	ld [hl], d
-	; new_end 13 (355)
+	; new_end 13 (356)
 
 .skip_deep_move
 
@@ -2007,15 +2007,15 @@ Music_Call:
 	ld [hl], d
 
 .next_stack
-	; new_end 15 (370)
+	; new_end 15 (371)
 	; copy MusicAddress to LastMusicAddress
 	bc_offset CHANNEL_MUSIC_ADDRESS
-	; opt 2 - 3 (369)
+	; opt 2 - 3 (370)
 	ld a, [hli]
 	ld d, [hl]
 
 	bc_offset CHANNEL_LAST_MUSIC_ADDRESS
-	; opt 2 - 3 (368)
+	; opt 2 - 3 (369)
 	ld [hli], a
 	ld [hl], d
 
@@ -2041,7 +2041,7 @@ Music_Jump:
 	call GetMusicByte
 	ld e, a
 	call GetMusicByte
-	; opt 6 - 8 (366)
+	; opt 6 - 8 (367)
 
 	bc_offset CHANNEL_MUSIC_ADDRESS + 1
 	ld [hld], a
@@ -2530,7 +2530,7 @@ Music_NoteType:
 	ld a, [wCurChannel]
 	maskbits NUM_MUSIC_CHANS
 	cp CHAN4
-	; opt 1 - 5 (362)
+	; opt 1 - 5 (363)
 	ret z
 
 
@@ -2590,7 +2590,7 @@ Music_StereoPanning:
 	bit STEREO, a
 	jr nz, .pan_channel
 
-	; opt 3 - 4 (361)
+	; opt 3 - 4 (362)
 	; skip param
 	jp GetMusicByte
 
@@ -2615,7 +2615,7 @@ Music_OldPanning:
 	call GetMusicByte
 	ld [wStereoPanningMask], a
 	ret
-	; new_end 6 (367)
+	; new_end 6 (368)
 
 Music_Volume:
 ; set volume
@@ -3040,7 +3040,7 @@ _PlayMusic::
 	ld [wMusicNoiseSampleSet], a
 	; new_start
 	ld [wFrameSwap], a
-	; new_end + 3 (370)
+	; new_end + 3 (371)
 	call MusicOn
 	ret
 
@@ -3057,7 +3057,7 @@ _PlayCry::
 	; new_start
 	xor a
 	ld [wPitchSweep], a
-	; new_end + 4 (374)
+	; new_end + 4 (375)
 
 ; Overload the music id with the cry id
 
@@ -3172,12 +3172,12 @@ _PlayCry::
 
 	; stop playing music
 	push af
-	; new_end 5 (379)
+	; new_end 5 (380)
 	ld a, 1 << SOUND_PRIORITY_F
 	ld [wSFXPriority], a
 	; new_start
 	pop af
-	; new_end 1 (380)
+	; new_end 1 (381)
 
 .end
 
@@ -3516,7 +3516,7 @@ LoadMusicByte::
 ; wav moved to after engine   - 160 (170)  256
 ; drums moved to after engine - 367 (-197) 519
 
-	; opt 4 - 23 (-216)
+	; opt 4 - 23 (-215)
 SpeakerTracks:
 ; bit corresponds to track #
 ; hi: left channel
@@ -3578,9 +3578,9 @@ ClearChannel:
 	ld a, $80
 	ld [hli], a ; rNR14, rNR24, rNR34, rNR44 ; restart sound (freq hi = 0)
 	ret
-	; opt 0 - 100  (-316)
-	; missing 1011 (695)
-	; nothing reduced to just one channel (-9) (686)
-	; music pointer opt (-78) (608)
-	; three extra cries (+9) (617)
-	; 41 extra SFX (+123) (740)
+	; opt 0 - 100  (-315)
+	; missing 1011 (696)
+	; nothing reduced to just one channel (-9) (687)
+	; music pointer opt (-78) (609)
+	; three extra cries (+9) (618)
+	; 41 extra SFX (+123) (741)

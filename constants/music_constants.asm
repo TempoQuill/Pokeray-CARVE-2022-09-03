@@ -42,20 +42,20 @@
 	const MUSIC_MAGNET_TRAIN                 ; 25 ; RG_OLD_HEAL ; NON_PC_HEAL
 ; added after demo build
 	const MUSIC_GAME_CORNER                  ; 26
-	const MUSIC_BICYCLE                      ; 27 ; c-type
+	const MUSIC_BICYCLE                      ; 27
 	const MUSIC_HALL_OF_FAME                 ; 28
 	const MUSIC_PALLET_TOWN                  ; 29 ; ODDISH_FARM
 	const MUSIC_EVOLUTION                    ; 2a
 	const MUSIC_CREDITS                      ; 2b
 	const MUSIC_DARK_CAVE                    ; 2c ; LANAWE_FOREST
-	const MUSIC_SS_AQUA                      ; 2d ; B_TYPE ; SS_VAPOR
+	const MUSIC_SS_AQUA                      ; 2d ; FIRE_FLOWER ; SS_VAPOR
 	const MUSIC_RUINS_OF_ALPH_INTERIOR       ; 2e ; RBY_POKEMON_CENTER ; DILAP_POKEMON_CENTER
-	const MUSIC_LIGHTHOUSE                   ; 2f
+	const MUSIC_LIGHTHOUSE                   ; 2f ; STARMAN ; LIGHTHOUSE
 	const MUSIC_ROUTE_2                      ; 30 ; EAST_COAST_STOP
 	const MUSIC_INDIGO_PLATEAU               ; 31 ; EQUINTO_LEAGUE
 	const MUSIC_NATIONAL_PARK                ; 32 ; GOLEM_PALACE
 	const MUSIC_CELADON_CITY                 ; 33 ; HYPERCOIN_CITY
-	const MUSIC_MT_MOON                      ; 34 ; MT_VACUUM
+	const MUSIC_MT_MOON                      ; 34 ; DIGLETT_CAVE ; MT_VACUUM
 	const MUSIC_AZALEA_TOWN                  ; 35 ; NORGEO_TOWN
 	const MUSIC_GOLDENROD_CITY               ; 36 ; PORTITE_CITY
 	const MUSIC_POST_CREDITS                 ; 37
@@ -68,9 +68,10 @@
 	const MUSIC_UNION_CAVE                   ; 3e ; SUNKERN_SWAMP
 	const MUSIC_SURF                         ; 3f
 	const MUSIC_ROCKET_HIDEOUT               ; 40 ; HAVOC_HIDEOUT
-	const MUSIC_POKE_FLUTE_CHANNEL           ; 41 ; RBY_BICYCLE ; TRADE_MENU_1
-	const MUSIC_POKEMON_LULLABY              ; 42 ; BUG_CATCHING_CONTEST_EXT ; TRADE_MENU_2
-NUM_MUSIC_IDS EQU const_value
+	const MUSIC_POKE_FLUTE_CHANNEL           ; 41 ; VS_MENU_1 ; TRADE_MENU_1
+FINAL_MUSIC_TRACK EQU const_value
+	const MUSIC_POKEMON_LULLABY              ; 42 ; VS_MENU_2 ; TRADE_MENU_2
+NUM_MUSIC_IDS EQU FINAL_MUSIC_TRACK
 
 ; speical track behavior regarding linked games
 ; doesn't affect map music behavior

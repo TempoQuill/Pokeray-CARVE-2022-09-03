@@ -50,23 +50,23 @@ Music:
 	dba Music_DarkCave            ; LanaweForest
 	dba Music_SSAqua              ; FireFlower ; SSVapor
 	dba Music_RuinsOfAlphInterior ; RBYPokemonCenter ; DilapPokeCenter
-	dba Music_Lighthouse          ; *
+	dba Music_Lighthouse          ; Starman ; Lighthouse
 	dba Music_Route2              ; EastCoastStop
 	dba Music_IndigoPlateau       ; PokemonLeague
 	dba Music_NationalPark        ; GolemPalace
 	dba Music_CeladonCity         ; HypercoinCity
-	dba Music_MtMoon              ; MtVacuum ; *
+	dba Music_MtMoon              ; MtVacuum
 	dba Music_AzaleaTown          ; NorgeoTown
 	dba Music_GoldenrodCity       ; PortiteCity
 	dba Music_PostCredits         ; TheEnd
 	dba Music_Printer
-	dba Music_Route26             ; Route61 ; *
+	dba Music_Route26             ; Route61
 	dba Music_LookRocket          ; LookHavoc
 	dba Music_RocketTheme         ; HavocTheme
 	dba Music_PokemonMarch        ; RBYSurf ; SSVaporDeparture
 	dba Music_VioletCity          ; StampTown
 	dba Music_UnionCave           ; SunkernSwamp ; *
 	dba Music_Surf
-	dba Music_RocketHideout       ; HavocHideout ; *
+	dba Music_RocketHideout       ; HavocHideout
 	dba Music_PokeFluteChannel    ; VSMatchPlayer1 ; TradeMenuPart1
 	dba Music_PokemonLullaby      ; VSMatchPlayer2 ; TradeMenuPart2

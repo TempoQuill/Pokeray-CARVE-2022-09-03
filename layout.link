@@ -170,7 +170,8 @@ ROMX $41
 	"Phone Scripts"
 ROMX $42
 	"Demo Map Scripts 1"
-;	43
+ROMX $43
+	"Demo Map Scripts 2"
 ;	44
 ;	45
 ;	46

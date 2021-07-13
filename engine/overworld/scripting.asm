@@ -486,7 +486,7 @@ Script_specialsound::
 	ld de, SFX_3RD_PLACE
 	jr z, .play
 	cp KEY_ITEM
-	ld de, SFX_GET_EGG
+	ld de, SFX_TRADE_COMPLETE
 	jr z, .play
 	ld de, SFX_ITEM
 .play

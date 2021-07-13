@@ -399,7 +399,7 @@ DayCareManOutside:
 	call DayCare_InitBreeding
 	ld hl, .ReceivedEggText
 	call PrintText
-	ld de, SFX_GET_EGG
+	ld de, SFX_TRADE_COMPLETE
 	call PlaySFX
 	ld c, 120
 	call DelayFrames
