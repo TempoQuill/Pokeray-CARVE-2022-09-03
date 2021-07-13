@@ -1,4 +1,6 @@
 Music_SunkernSwamp:
+; engine, wav
+; OCT 28, 2019
 	channel_count 4
 	channel 1, Music_SunkernSwamp_Ch1
 	channel 2, Music_SunkernSwamp_Ch2
