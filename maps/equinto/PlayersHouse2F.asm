@@ -25,7 +25,7 @@ PH2F_BedScript:
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	playmusic MUSIC_MAGNET_TRAIN
+	playmusic MUSIC_RG_OLD_HEAL
 	special HealParty
 	pause 60
 	special FadeInQuickly

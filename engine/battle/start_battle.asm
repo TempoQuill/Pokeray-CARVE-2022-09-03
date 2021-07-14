@@ -15,26 +15,29 @@ PlayBattleMusic:
 	and a
 	jr nz, .trainermusic
 
-	ld de, MUSIC_JOHTO_WILD_BATTLE
+	ld de, MUSIC_WILD_BATTLE
 	jr .done
 
 .trainermusic
-	ld de, MUSIC_ROCKET_BATTLE
+	ld de, MUSIC_PARTY_HOST_BATTLE
+	cp BROCK
+	jr z, .done
+	ld de, MUSIC_SHAGGY_BATTLE
 	cp CHAMPION
 	jr z, .done
-	ld de, MUSIC_CHAMPION_BATTLE
+	ld de, MUSIC_PARKER_BATTLE
 	cp RED
 	jr z, .done
 
 	; IsGymLeader also counts CHAMPION and RED
 	; but they have been taken care of before this
-	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
+	ld de, MUSIC_GYM_LEADER_BATTLE
 	farcall IsGymLeader
 	jr c, .done
 
 	ld a, [wLinkMode]
 	and a
-	ld de, MUSIC_JOHTO_TRAINER_BATTLE
+	ld de, MUSIC_TRAINER_BATTLE
 .done
 	call PlayMusic
 

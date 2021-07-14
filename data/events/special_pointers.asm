@@ -43,7 +43,6 @@ SpecialsPointers::
 	add_special DayCareLady
 	add_special DayCareManOutside
 	add_special MoveDeletion
-	add_special MagnetTrain
 	add_special NameRival
 	add_special SetDayOfWeek
 	add_special OverworldTownMap
@@ -98,7 +97,6 @@ SpecialsPointers::
 	add_special RandomPhoneMon
 	add_special LoadUsedSpritesGFX
 	add_special PlaySlowCry
-	add_special SnorlaxAwake
 	add_special OlderHaircutBrother
 	add_special YoungerHaircutBrother
 	add_special DaisysGrooming

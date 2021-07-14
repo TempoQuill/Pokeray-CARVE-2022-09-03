@@ -29,7 +29,7 @@ Route49House_MapScripts:
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	playmusic MUSIC_MAGNET_TRAIN
+	playmusic MUSIC_RG_OLD_HEAL
 	special HealParty
 	pause 60
 	special FadeInQuickly
