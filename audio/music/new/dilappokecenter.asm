@@ -1,4 +1,4 @@
-Music_DilapPokeCenter:
+Music_DilapPokeCenter: ; JUNICHI MASUDA
 ; OCT 19 2019
 	channel_count 3
 	channel 1, Music_DilapPokeCenter_Ch1

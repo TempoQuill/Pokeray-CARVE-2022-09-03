@@ -1,4 +1,4 @@
-Music_LookLunatic:
+Music_LookLunatic: ; JUNICHI MASUDA
 ; wav
 ; SEP 19 2019
 	channel_count 3

@@ -1,4 +1,4 @@
-Music_HouseEnroute:
+Music_HouseEnroute: ; JUNICHI MASUDA
 ; engine, wav
 ; JUL 27 2019
 	channel_count 3

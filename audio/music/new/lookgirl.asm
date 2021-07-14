@@ -1,4 +1,4 @@
-Music_LookGirl:
+Music_LookGirl: ; JUNICHI MASUDA
 ; AUG 24 2019
 	channel_count 4
 	channel 1, Music_LookGirl_Ch1

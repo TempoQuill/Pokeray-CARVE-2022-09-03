@@ -1,4 +1,4 @@
-Music_SSVapor:
+Music_SSVapor: ; JUNICHI MASUDA
 ; wav
 ; JUL 19 2019
 	channel_count 3

@@ -1,4 +1,4 @@
-Music_Mum:
+Music_Mum: ; JUNICHI MASUDA
 ; engine, wav
 ; AUG 6 2020
 	channel_count 3

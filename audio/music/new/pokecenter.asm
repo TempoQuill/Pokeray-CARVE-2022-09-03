@@ -1,4 +1,4 @@
-Music_PokemonCenter:
+Music_PokemonCenter: ; JUNICHI MASUDA
 ; wav, drum
 ; MAY 31 2020
 	channel_count 4

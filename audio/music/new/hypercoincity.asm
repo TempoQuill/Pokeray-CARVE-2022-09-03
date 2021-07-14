@@ -1,4 +1,4 @@
-Music_HypercoinCity:
+Music_HypercoinCity: ; MINAKO HAMANO
 ; wav
 ; AUG 15 2020
 	channel_count 3

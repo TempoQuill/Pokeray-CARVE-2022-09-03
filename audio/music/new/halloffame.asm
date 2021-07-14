@@ -1,4 +1,4 @@
-Music_HallOfFame:
+Music_HallOfFame: ; JUNICHI MASUDA
 ; drum
 ; AUG 14 2019
 	channel_count 4

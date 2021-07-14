@@ -1,4 +1,4 @@
-Music_StampTown:
+Music_StampTown: ; JUNICHI MASUDA
 ; wav
 ; APR 1 2021
 	channel_count 3

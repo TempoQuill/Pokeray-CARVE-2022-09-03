@@ -1,4 +1,4 @@
-Music_MainMenu:
+Music_MainMenu: ; JUNICHI MASUDA
 ; engine, wav
 ; AUG 18 2019
 	channel_count 4

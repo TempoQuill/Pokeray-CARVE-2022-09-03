@@ -1,4 +1,4 @@
-Music_TitleScreen:
+Music_TitleScreen: ; JUNICHI MASUDA
 ; wav
 ; JUL 15 2019
 	channel_count 4

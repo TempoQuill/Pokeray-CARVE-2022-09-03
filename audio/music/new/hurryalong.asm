@@ -1,4 +1,4 @@
-Music_HurryAlong:
+Music_HurryAlong: ; JUNICHI MASUDA, WILLIAM ANDERSON(INTRO)
 ; engine, wav, drum
 ; JUN 27 2020
 	channel_count 4

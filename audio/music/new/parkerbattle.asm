@@ -1,4 +1,4 @@
-Music_ParkerBattle:
+Music_ParkerBattle: ; JUNICHI MASUDA
 ; wav
 ; FEB 11 2020
 	channel_count 3

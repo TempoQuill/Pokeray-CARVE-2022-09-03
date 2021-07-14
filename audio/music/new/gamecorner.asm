@@ -1,4 +1,4 @@
-Music_GameCorner:
+Music_GameCorner: ; JACK GETSCHMAN
 ; engine
 ; APR 11 2020
 	channel_count 4

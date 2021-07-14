@@ -1,4 +1,4 @@
-Music_GymVictory:
+Music_GymVictory: ; JUNICHI MASUDA
 ; wav, drum
 ; JUL 23 2019
 	channel_count 4

@@ -1,4 +1,4 @@
-Music_PartyHostBattle:
+Music_PartyHostBattle: ; SCOTT CHENEY
 ; engine, wav
 ; SEP 16 2019
 	channel_count 3

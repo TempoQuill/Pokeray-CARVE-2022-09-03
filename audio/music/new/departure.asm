@@ -1,4 +1,4 @@
-Music_Departure:
+Music_Departure: ; JUNICHI MASUDA
 ; MAR 30 2020
 	channel_count 3
 	channel 1, Music_Departure_Ch1

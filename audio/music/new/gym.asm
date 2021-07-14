@@ -1,4 +1,4 @@
-Music_Gym:
+Music_Gym: ; JUNICHI MASUDA
 ; wav, drum
 ; JUN 18 2020
 	channel_count 4

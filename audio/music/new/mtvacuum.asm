@@ -1,4 +1,4 @@
-Music_MtVacuum:
+Music_MtVacuum: ; JUNICHI MASUDA
 ; engine, wav
 ; SEP 8 2019
 	channel_count 3

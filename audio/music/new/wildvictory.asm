@@ -1,4 +1,4 @@
-Music_WildVictory:
+Music_WildVictory: ; JUNICHI MASUDA
 ; wav
 ; JUN 18 2020
 	channel_count 3
@@ -6,7 +6,7 @@ Music_WildVictory:
 	channel 2, Music_WildVictory_Ch2
 	channel 3, Music_WildVictory_Ch3
 
-Music_CatchVictory:
+Music_CatchVictory: ; JUNICHI MASUDA
 ; wav
 ; JUN 18 2020
 	channel_count 3

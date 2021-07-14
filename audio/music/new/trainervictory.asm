@@ -1,4 +1,4 @@
-Music_TrainerVictory:
+Music_TrainerVictory: ; JUNICHI MASUDA
 ; engine
 ; JUL 23 2019
 	channel_count 3

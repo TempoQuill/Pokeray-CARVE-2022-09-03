@@ -1,4 +1,4 @@
-Music_Portite:
+Music_Portite: ; GO ICHINOSE, DANIEL INGRAM(INTRO), MINAKO HAMANO
 ; JUL 25 2019
 	channel_count 4
 	channel 1, Music_Portite_Ch1

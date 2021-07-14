@@ -1,4 +1,4 @@
-Music_EastCoastStop:
+Music_EastCoastStop: ; SOLO ACAPELLO
 ; engine
 ; APR 17 2021
 	channel_count 4

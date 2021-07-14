@@ -1,4 +1,4 @@
-Music_Event:
+Music_Event: ; JUNICHI MASUDA
 ; engine, wav, drum
 ; AUG 21 2019
 	channel_count 4

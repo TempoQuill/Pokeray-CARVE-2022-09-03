@@ -1,4 +1,4 @@
-Music_TradeMenuPart1:
+Music_TradeMenuPart1: ; JUNICHI MASUDA
 ; engine
 ; JUN 11 2020
 	channel_count 4
@@ -7,7 +7,7 @@ Music_TradeMenuPart1:
 	channel 3, Music_TradeMenu_Ch5
 	channel 4, Music_TradeMenu_Ch7
 
-Music_TradeMenuPart2:
+Music_TradeMenuPart2: ; JUNICHI MASUDA
 ; engine
 ; JUN 10 2020
 	channel_count 4

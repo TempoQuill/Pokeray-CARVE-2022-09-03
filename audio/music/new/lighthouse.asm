@@ -1,4 +1,4 @@
-Music_Lighthouse:
+Music_Lighthouse: ; JUNICHI MASUDA
 ; engine, wav
 ; SEP 13 2019
 	channel_count 3

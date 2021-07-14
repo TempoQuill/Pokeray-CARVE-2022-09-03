@@ -1,4 +1,4 @@
-Music_StaffRoll:
+Music_StaffRoll: ; JUNICHI MASUDA
 ; wav, drum
 ; SEP 5 2019
 	channel_count 4

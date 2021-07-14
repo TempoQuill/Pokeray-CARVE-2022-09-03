@@ -1,4 +1,4 @@
-Music_HavocHideout:
+Music_HavocHideout: ; WILLIAM ANDERSON
 ; FEB 14 2020
 	channel_count 4
 	channel 1, Music_HavocHideout_Ch1

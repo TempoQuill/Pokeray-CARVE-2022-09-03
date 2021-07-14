@@ -1,4 +1,4 @@
-Music_ShaggyBattle:
+Music_ShaggyBattle: ; JUNICHI MASUDA
 ; AUG 14 2019
 	channel_count 3
 	channel 1, Music_ShaggyBattle_Ch1

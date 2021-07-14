@@ -1,4 +1,4 @@
-Music_EquintoLeague:
+Music_EquintoLeague: ; JUNICHI MASUDA
 ; AUG 14 2019
 	channel_count 4
 	channel 1, Music_EquintoLeague_Ch1

@@ -1,4 +1,4 @@
-Music_TeamHavocTheme:
+Music_TeamHavocTheme: ; WILLIAM ANDERSON
 ; wav
 ; NOV 10 2019
 	channel_count 4

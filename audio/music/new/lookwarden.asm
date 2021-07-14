@@ -1,4 +1,4 @@
-Music_LookWarden:
+Music_LookWarden: ; JUNICHI MASUDA
 ; SEP 10 2019
 	channel_count 3
 	channel 1, Music_LookWarden_Ch1

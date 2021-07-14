@@ -1,4 +1,4 @@
-Music_Printer:
+Music_Printer: ; JUNICHI MASUDA
 ; AUG 15 2019
 	channel_count 1
 	channel 3, Music_Printer_Ch3

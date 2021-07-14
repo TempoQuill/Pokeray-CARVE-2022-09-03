@@ -1,4 +1,4 @@
-Music_HealAlternate:
+Music_HealAlternate: ; JUNICHI MASUDA
 ; wav
 ; MAY 17 2020
 	channel_count 3
