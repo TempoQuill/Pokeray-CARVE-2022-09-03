@@ -69,7 +69,7 @@ NUM_CHANNELS EQU const_value
 	const CHANNEL_PITCH_SLIDE_AMOUNT    ; 23
 	const CHANNEL_PITCH_SLIDE_FRACTION  ; 24
 	const CHANNEL_PITCH_SLIDE_TEMPO     ; 25
-	const CHANNEL_MUTE_ENABLE           ; 26
+	const CHANNEL_MUTE_COUNTER          ; 26
 	const CHANNEL_PITCH_OFFSET          ; 27
 	const_skip
 	const CHANNEL_RELATIVE_PITCH        ; 29
@@ -92,7 +92,7 @@ NOISE_CHAN_F EQU 2 ; bit set in CHAN5-CHAN7
 	const SOUND_LOOPING          ; 2
 	const SOUND_SFX              ; 3
 	const SOUND_NOISE            ; 4
-	const SOUND_REST             ; 5
+	const SOUND_CRY              ; 5
 	const SOUND_PITCH_INC_SWITCH ; 6
 
 ; Flags2

@@ -15,7 +15,7 @@ _InitSound::
 ; restart sound operation
 ; clear all relevant hardware registers & wram
 
-	push hl
+	push hl ; preserve all registers
 	push de
 	push bc
 	push af
@@ -44,7 +44,7 @@ _InitSound::
 	ld a, $80
 	ld [hli], a ; rNR14, rNR24, rNR34, rNR44 ; restart sound (freq hi = 0)
 	dec e
-	jr nz, .clearsound
+	jr nz, .clearsound ; if e /= $00, jump
 
 	ld hl, wChannels ; start of channel data
 	ld de, wChannelsEnd - wChannels ; length of area to clear (entire sound wram area)
@@ -60,7 +60,7 @@ _InitSound::
 	ld a, MAX_VOLUME
 	ld [wVolume], a
 	call MusicOn
-	pop af
+	pop af ; restore all registers
 	pop bc
 	pop de
 	pop hl
@@ -300,10 +300,10 @@ UpdateChannels:
 
 	bit NOTE_FREQ_OVERRIDE, [hl]
 	jr nz, .ch1_frequency_override
-	; new_start
+
 	bit NOTE_ENV_OVERRIDE, [hl]
 	jr nz, .ch1_env_override
-	; new_end + 4
+
 	bit NOTE_VIBRATO_OVERRIDE, [hl]
 	jr nz, .ch1_vibrato_override
 
@@ -329,13 +329,11 @@ UpdateChannels:
 	ldh [rNR11], a
 	ret
 
-	; new_start
 .ch1_env_override
 
 	ld a, [wCurTrackVolumeEnvelope]
 	ldh [rNR12], a
 	ret
-	; new_end + 6 (10)
 
 .ch1_vibrato_override
 
@@ -383,13 +381,13 @@ UpdateChannels:
 
 	bit NOTE_NOISE_SAMPLING, [hl]
 	jr nz, .ch2_noise_sampling
-	; new_start
+
 	bit NOTE_FREQ_OVERRIDE, [hl]
 	jr nz, .ch2_frequency_override
 
 	bit NOTE_ENV_OVERRIDE, [hl]
 	jr nz, .ch2_env_override
-	; new_end + 8 (18)
+
 	bit NOTE_VIBRATO_OVERRIDE, [hl]
 	jr nz, .ch2_vibrato_override
 
@@ -412,14 +410,12 @@ UpdateChannels:
 	ldh [rNR24], a
 	ret
 
-	; new_start
 .ch2_env_override
 
 	ld a, [wCurTrackVolumeEnvelope]
 	ldh [rNR22], a
 	ret
 
-	; new_end + 6 (24)
 .ch2_vibrato_override
 
 	ld a, [wCurTrackDuty]
@@ -466,17 +462,16 @@ UpdateChannels:
 
 	bit NOTE_NOISE_SAMPLING, [hl]
 	jr nz, .ch3_noise_sampling
-	; new_start
+
 	bit NOTE_ENV_OVERRIDE, [hl]
 	jr nz, .ch3_env_override
-	; new_end + 4 (28)
+
 	bit NOTE_VIBRATO_OVERRIDE, [hl]
 	jr nz, .ch3_vibrato_override
-	; opt 0 - 1 (27)
-	; new_start
+
 	bit NOTE_FREQ_OVERRIDE, [hl]
 	ret z
-	; new_end + 3 (30)
+
 	ld a, [wCurTrackFrequency]
 	ldh [rNR33], a
 	ld a, [wCurTrackFrequency + 1]
@@ -527,7 +522,6 @@ UpdateChannels:
 	; 0-f are technically valid
 	; f is filler made of 0's to avoid garbage
 	and WAVE_TABLE_MASK
-	; opt 5 - 7 (28)
 	swap a
 	ld l, a
 	ld h, 0
@@ -582,7 +576,6 @@ UpdateChannels:
 
 	bc_offset CHANNEL_NOTE_FLAGS
 
-	; opt 7 - 15 (20)
 	bit NOTE_NOISE_SAMPLING, [hl]
 	jr nz, .ch4_noise_sampling
 
@@ -773,6 +766,7 @@ FadeMusic:
 	cp PLAYER_BIKE
 	jr z, .bicycle
 
+	; don't overwrite channel pointer
 	push bc
 
 	; restart sound
@@ -858,10 +852,7 @@ LoadNote:
 	; wait for pitch slide to finish
 	bc_offset CHANNEL_FLAGS2
 	bit SOUND_PITCH_SLIDE, [hl]
-	; opt 0 - 1 (19)
-	; new_start
 	jp z, .relative_pitch
-	; new_end + 3 (22)
 
 	; get note duration
 	bc_offset CHANNEL_NOTE_DURATION
@@ -982,8 +973,7 @@ LoadNote:
 	bc_offset CHANNEL_PITCH_SLIDE_TEMPO
 	xor a
 	ld [hl], a
-	; opt 0 - 1 (21)
-	; new_start
+
 .relative_pitch
 
 	bc_offset CHANNEL_FLAGS2
@@ -1013,15 +1003,14 @@ LoadNote:
 	bit SOUND_MUTE, [hl]
 	ret z
 
-	; read mute state
-	bc_offset CHANNEL_MUTE_ENABLE
+	; read main byte
+	bc_offset CHANNEL_MUTE
 	ld a, [hl]
 
-	; copy to main byte
-	bc_offset CHANNEL_MUTE
+	; copy to counter
+	bc_offset CHANNEL_MUTE_COUNTER
 	ld [hl], a
 	ret
-	; new_start 52 (72)
 
 
 GeneralHandler:
@@ -1042,7 +1031,6 @@ GeneralHandler:
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_DUTY_OVERRIDE, [hl]
 
-	; new_start
 .relative_pitch
 
 	bc_offset CHANNEL_FLAGS2
@@ -1056,7 +1044,6 @@ GeneralHandler:
 
 	set SOUND_REL_PITCH_FLAG, [hl]
 	jr .skip_pitch
-	; 20
 
 .on
 
@@ -1083,7 +1070,6 @@ GeneralHandler:
 	ld [hl], e
 	inc hl
 	ld [hl], d
-	; 30 + 20
 
 ; interesting notes:
 ;	$d9 and $e7 can stack with each other
@@ -1095,7 +1081,6 @@ GeneralHandler:
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_FREQ_OVERRIDE, [hl]
 
-	; new_end 56 (129)
 .pitch_offset
 
 	bc_offset CHANNEL_FLAGS2
@@ -1119,13 +1104,18 @@ GeneralHandler:
 	inc hl
 	ld [hl], d
 
-	; new_start
 .pitch_inc
 
 	; is pitch inc on?
 	bc_offset CHANNEL_FLAGS1
 	bit SOUND_PITCH_INC_SWITCH, [hl]
 	jr z, .vibrato
+
+	; frenquency is now de
+	ld hl, wCurTrackFrequency
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
 
 	bc_offset CHANNEL_PITCH_INC_SWITCH
 
@@ -1150,7 +1140,6 @@ GeneralHandler:
 	inc hl
 	ld [hl], d
 
-	; new_end 26 (155)
 .vibrato
 
 	; is vibrato on?
@@ -1238,10 +1227,9 @@ GeneralHandler:
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_VIBRATO_OVERRIDE, [hl]
 
-	; opt 0 - 1 (154)
-	; new_start
 .env_ptrn
-
+	; NOTE: this function is unorthodox on Gameboy (Color) titles
+	; notes reset on envelope change
 	bc_offset CHANNEL_FLAGS2
 	bit SOUND_ENV_PTRN, [hl]
 	jr z, .mute
@@ -1299,8 +1287,8 @@ GeneralHandler:
 	bit SOUND_MUTE, [hl]
 	ret z
 
-	; check for active state
-	bc_offset CHANNEL_MUTE_ENABLE
+	; check for active counter
+	bc_offset CHANNEL_MUTE_COUNTER
 	ld a, [hl]
 	and a
 	jr z, .enable
@@ -1314,7 +1302,6 @@ GeneralHandler:
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_REST, [hl]
 	ret
-	; new_end + 104 (258)
 
 ApplyPitchSlide:
 
@@ -1494,7 +1481,7 @@ ReadNoiseSample:
 	jr z, .quit
 
 	and $f
-	inc a
+	inc a ; adds one frame to depicted duration
 	ld [wNoiseSampleDelay], a
 	ld a, [de]
 	inc de
@@ -1539,10 +1526,10 @@ ParseMusic:
 
 	bc_offset CHANNEL_FLAGS1
 	bit SOUND_SFX, [hl]
-	jp nz, ParseSFXOrRest
+	jp nz, ParseSFXOrCry
 
-	bit SOUND_REST, [hl] ; rest
-	jp nz, ParseSFXOrRest
+	bit SOUND_CRY, [hl] ; cry
+	jp nz, ParseSFXOrCry
 
 	bit SOUND_NOISE, [hl] ; noise sample
 	jp nz, GetNoiseSample
@@ -1579,7 +1566,7 @@ ParseMusic:
 	inc hl
 	ld [hl], d
 
-	; check if not or rest
+	; check if note or rest
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_NOISE_SAMPLING, [hl]
 	jp LoadNote
@@ -1610,7 +1597,7 @@ ParseMusic:
 .chan_5to8
 
 	bc_offset CHANNEL_FLAGS1
-	bit SOUND_REST, [hl]
+	bit SOUND_CRY, [hl]
 	call nz, RestoreVolume
 
 	; end music
@@ -1664,7 +1651,7 @@ RestoreVolume:
 	ld [wSFXPriority], a
 	ret
 
-ParseSFXOrRest:
+ParseSFXOrCry:
 
 	; turn noise sampling on
 	bc_offset CHANNEL_NOTE_FLAGS
@@ -1672,7 +1659,7 @@ ParseSFXOrRest:
 
 	; update note duration
 	ld a, [wCurMusicByte]
-	call SetNoteDuration ; top nybble doesnt matter?
+	call SetNoteDuration ; top nybble only applied to SFX / cries
 
 	; update volume envelope from next param
 	call GetMusicByte
@@ -1697,7 +1684,6 @@ ParseSFXOrRest:
 	ld [hl], a
 	ret
 
-	; new_start
 GetByteInEnvelopeGroup:
 
 	; get pointer
@@ -1738,7 +1724,6 @@ GetByteInEnvelopeGroup:
 .quit
 	scf
 	ret
-	; new_end + 32 (290)
 
 GetNoiseSample:
 ; load ptr to sample header in wNoiseSampleAddress
@@ -1853,7 +1838,7 @@ MusicCommands:
 	dw Music_ToggleMusic           ; music mode on/off
 	dw Music_PitchSlide            ; pitch slide
 	dw Music_Vibrato               ; vibrato
-	dw Music_SetMute               ; mute
+	dw Music_TimeMute              ; mute after a frames
 	dw Music_ToggleNoise           ; music noise sampling
 	dw Music_OldPanning            ; old panning
 	dw Music_Volume                ; volume
@@ -1887,17 +1872,14 @@ MusicCommands:
 MusicDummy:
 	ret
 
-	; new_start
 Music_FrameSwap:
 ; alternate between sprite $0-$3 and $4-$7, controlled by wFrameSwap
 ; only works on noise channels
 	ld a, [wCurChannel]
+	maskbits NUM_MUSIC_CHANS
 	cp CHAN4
-	jr z, .got_valid_channel
-	cp CHAN8
 	ret nz
 
-.got_valid_channel
 	ld hl, wFrameSwap
 	ld a, [hl]
 	and a
@@ -1930,7 +1912,6 @@ Music_SetMusic:
 	bc_offset CHANNEL_FLAGS1
 	set SOUND_SFX, [hl]
 	ret
-	; new_end + 45 (335)
 
 Music_Ret:
 ; called when $ff is encountered w/(o) subroutine flag set
@@ -1951,17 +1932,14 @@ Music_Ret:
 	inc hl
 	ld [hl], d
 
-	; new_start
 	bc_offset CHNANEL_DEEP_MUSIC_ADDRESS
 	ld a, [hl]
 	and a
 	jr nz, .skip_flag
-	; new_end 8 (343)
 
 	; reset subroutine flag
 	bc_offset CHANNEL_FLAGS1
 	res SOUND_SUBROUTINE, [hl]
-	; new_start
 	jr .skip_deep_move
 
 .skip_flag
@@ -1976,7 +1954,6 @@ Music_Ret:
 	ld [hl], e
 	inc hl
 	ld [hl], d
-	; new_end 13 (356)
 
 .skip_deep_move
 
@@ -1993,7 +1970,6 @@ Music_Call:
 	ld d, a
 	push de
 
-	; new_start
 	bc_offset CHANNEL_LAST_MUSIC_ADDRESS
 	ld a, [hli]
 	and a
@@ -2007,15 +1983,13 @@ Music_Call:
 	ld [hl], d
 
 .next_stack
-	; new_end 15 (371)
+
 	; copy MusicAddress to LastMusicAddress
 	bc_offset CHANNEL_MUSIC_ADDRESS
-	; opt 2 - 3 (370)
 	ld a, [hli]
 	ld d, [hl]
 
 	bc_offset CHANNEL_LAST_MUSIC_ADDRESS
-	; opt 2 - 3 (369)
 	ld [hli], a
 	ld [hl], d
 
@@ -2041,7 +2015,6 @@ Music_Jump:
 	call GetMusicByte
 	ld e, a
 	call GetMusicByte
-	; opt 6 - 8 (367)
 
 	bc_offset CHANNEL_MUSIC_ADDRESS + 1
 	ld [hld], a
@@ -2252,8 +2225,9 @@ Music_SetSoundEvent:
 	ld [wSoundEventFlag], a
 	ret
 
-Music_SetMute:
-; appears to be a variant of Gen 1's $ef command
+Music_TimeMute:
+; cuts a note off after a specified number of frames
+; useful for optimization
 ; params: 1
 
 	call GetMusicByte
@@ -2530,7 +2504,6 @@ Music_NoteType:
 	ld a, [wCurChannel]
 	maskbits NUM_MUSIC_CHANS
 	cp CHAN4
-	; opt 1 - 5 (363)
 	ret z
 
 
@@ -2556,7 +2529,7 @@ Music_Tempo:
 	ld d, a
 	call GetMusicByte
 	ld e, a
-	call SetGlobalTempo
+	call `
 	ret
 
 
@@ -2590,7 +2563,6 @@ Music_StereoPanning:
 	bit STEREO, a
 	jr nz, .pan_channel
 
-	; opt 3 - 4 (362)
 	; skip param
 	jp GetMusicByte
 
@@ -2611,11 +2583,9 @@ Music_OldPanning:
 ; only used in red
 ; params: 1
 
-	; new_start
 	call GetMusicByte
 	ld [wStereoPanningMask], a
 	ret
-	; new_end 6 (368)
 
 Music_Volume:
 ; set volume
@@ -3038,9 +3008,7 @@ _PlayMusic::
 	ld [wNoiseSampleAddress + 1], a
 	ld [wNoiseSampleDelay], a
 	ld [wMusicNoiseSampleSet], a
-	; new_start
 	ld [wFrameSwap], a
-	; new_end + 3 (371)
 	call MusicOn
 	ret
 
@@ -3054,10 +3022,8 @@ _PlayCry::
 
 ; reset sweep
 
-	; new_start
 	xor a
 	ld [wPitchSweep], a
-	; new_end + 4 (375)
 
 ; Overload the music id with the cry id
 
@@ -3099,7 +3065,7 @@ _PlayCry::
 	call LoadChannel
 
 	bc_offset CHANNEL_FLAGS1
-	set SOUND_REST, [hl]
+	set SOUND_CRY, [hl]
 
 	bc_offset CHANNEL_FLAGS2
 	set SOUND_PITCH_OFFSET, [hl]
@@ -3166,18 +3132,14 @@ _PlayCry::
 ; edit: cries will only mute music if not playing at MAX_VOLUME
 ; to achieve this, check for non-MAX_VOLUME before muting
 
-	; new_start
 	cp MAX_VOLUME
 	jr z, .end
 
 	; stop playing music
 	push af
-	; new_end 5 (380)
 	ld a, 1 << SOUND_PRIORITY_F
 	ld [wSFXPriority], a
-	; new_start
 	pop af
-	; new_end 1 (381)
 
 .end
 
@@ -3324,10 +3286,8 @@ PlayStereoSFX::
 ; else, let's go ahead with this
 ; reset sweep
 
-	; new_start
 	xor a
 	ld [wPitchSweep], a
-	; new end 4 (384)
 
 	ld hl, wMusicID
 	ld [hl], e
@@ -3451,7 +3411,6 @@ LoadChannel:
 ; set default tempo and note length in case nothing is loaded
 ; input:
 ;   bc = channel struct pointer
-	; from_sub 0 - 4 (380)
 	push de
 	xor a
 	; get channel struct location and length
@@ -3512,11 +3471,6 @@ LoadMusicByte::
 	ld a, [wCurMusicByte]
 	ret
 
-; notes moved to after engine - 50  (330)  56
-; wav moved to after engine   - 160 (170)  256
-; drums moved to after engine - 367 (-197) 519
-
-	; opt 4 - 23 (-215)
 SpeakerTracks:
 ; bit corresponds to track #
 ; hi: left channel
@@ -3578,9 +3532,4 @@ ClearChannel:
 	ld a, $80
 	ld [hli], a ; rNR14, rNR24, rNR34, rNR44 ; restart sound (freq hi = 0)
 	ret
-	; opt 0 - 100  (-315)
-	; missing 1011 (696)
-	; nothing reduced to just one channel (-9) (687)
-	; music pointer opt (-78) (609)
-	; three extra cries (+9) (618)
-	; 41 extra SFX (+123) (741)
+	; trainer music subroutine merged

@@ -166,9 +166,9 @@ ENDM
 channel_struct: MACRO
 \1MusicID::           dw
 \1MusicBank::         db
-\1Flags1::            db ; 0:on/off 1:subroutine 2:looping 3:sfx 4:noise 5:rest
-\1Flags2::            db ; 0:vibrato on/off 1:pitch slide 2:duty cycle pattern 4:pitch offset
-\1Flags3::            db ; 0:vibrato up/down 1:pitch slide direction
+\1Flags1::            db ; 0:pow 1:sub 2:loop 3:read 4:noise 5:cry 6:pitch inc
+\1Flags2::            db ; 0:vib pow 1:slide pow 2:cycle 4:pitch offs 5:env 6:rel pitch 7:bcd
+\1Flags3::            db ; 0:vib dir 1:slide dir 3:rel pitch flag
 \1MusicAddress::      dw
 \1LastMusicAddress::  dw ; 4-byte music stack
 \1DeepMusicAddress::  dw
@@ -195,9 +195,9 @@ channel_struct: MACRO
 \1PitchSlideAmount::  db
 \1PitchSlideFractal:: db
 \1PitchSlideTempo::   db
-\1MuteEnable::        db
+\1MuteCounter::       db
 \1PitchOffset::       dw
-\1CodeOffset::        db
+\1RelativePitch::     db
 \1EnvGroup::          db
 \1EnvGroupOffset::    db
 \1Mute::              db

@@ -84,13 +84,13 @@ SPECIAL_MAP_MUSIC EQU $fd
 RESTART_MAP_MUSIC EQU $fe
 ENTER_MAP_MUSIC   EQU $ff
 
-; gs leftovers (rs constants)    ; (gs constants in comment)
-MUSIC_GS_OPENING         EQU $01 ; $52
-MUSIC_GS_OPENING_2       EQU $02 ; $53
-MUSIC_ROUTE_30           EQU $07 ; $2b
+; G/S leftovers (rs constants)   ; (gs constants in comment)
 MUSIC_MAGNET_TRAIN       EQU $25 ; $05
+MUSIC_ROUTE_30           EQU $07 ; $2b
 MUSIC_ROCKET_ENCOUNTER   EQU $3a ; $39
-MUSIC_ROCKET_OVERTURE    EQU $3b ; $56
-MUSIC_POKEMON_MARCH      EQU $3c ; $51
 MUSIC_POKE_FLUTE_CHANNEL EQU $41 ; $40
 MUSIC_POKEMON_LULLABY    EQU $42 ; $50
+MUSIC_POKEMON_MARCH      EQU $3c ; $51
+MUSIC_GS_OPENING         EQU $01 ; $52
+MUSIC_GS_OPENING_2       EQU $02 ; $53
+MUSIC_ROCKET_OVERTURE    EQU $3b ; $56
