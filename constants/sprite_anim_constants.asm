@@ -68,6 +68,9 @@ NUM_SPRITE_ANIM_STRUCTS EQU 10 ; see wSpriteAnimationStructs
 	const SPRITE_ANIM_INDEX_GS_INTRO_HO_OH_LUGIA      ; 2c
 	const SPRITE_ANIM_INDEX_HEADBUTT                  ; 2d
 	const SPRITE_ANIM_INDEX_EGG_HATCH                 ; 2e
+	const SPRITE_ANIM_INDEX_RS_INTRO_EYE              ; 2f
+	const SPRITE_ANIM_INDEX_RS_INTRO_PAW              ; 30
+	const SPRITE_ANIM_INDEX_RS_INTRO_TAIL             ; 31
 
 ; DoAnimFrame.Jumptable indexes (see engine/gfx/sprite_anims.asm)
 	const_def
@@ -114,6 +117,8 @@ NUM_SPRITE_ANIM_STRUCTS EQU 10 ; see wSpriteAnimationStructs
 	const SPRITE_ANIM_SEQ_FLY_TO                      ; 28
 	const SPRITE_ANIM_SEQ_GS_INTRO_HO_OH_LUGIA        ; 29
 	const SPRITE_ANIM_SEQ_YOSHI_FRAME_SWAP            ; 2a
+	const SPRITE_ANIM_SEQ_RS_INTRO_HELICELIA          ; 2b
+	const SPRITE_ANIM_SEQ_RS_INTRO_SELENUMIA          ; 2c
 
 ; SpriteAnimFrameData indexes (see data/sprite_anims/framesets.asm)
 	const_def
@@ -175,6 +180,8 @@ NUM_SPRITE_ANIM_STRUCTS EQU 10 ; see wSpriteAnimationStructs
 	const SPRITE_ANIM_FRAMESET_HEADBUTT                  ; 37
 	const SPRITE_ANIM_FRAMESET_SWAP_1                    ; 38
 	const SPRITE_ANIM_FRAMESET_SWAP_2                    ; 39
+	const SPRITE_ANIM_FRAMESET_RS_INTRO_HELICELIA        ; 3a
+	const SPRITE_ANIM_FRAMESET_RS_INTRO_SELENUMIA        ; 3b
 
 ; SpriteAnimOAMData indexes (see data/sprite_anims/oam.asm)
 	const_def
@@ -272,3 +279,9 @@ NUM_SPRITE_ANIM_STRUCTS EQU 10 ; see wSpriteAnimationStructs
 	const SPRITE_ANIM_OAMSET_HEADBUTT_TREE_2             ; 5b
 	const SPRITE_ANIM_OAMSET_SWAPSPRITE_1                ; 5c
 	const SPRITE_ANIM_OAMSET_SWAPSPRITE_2                ; 5d
+	const SPRITE_ANIM_OAMSET_RS_INTRO_HELICELIA_1        ; 5e
+	const SPRITE_ANIM_OAMSET_RS_INTRO_HELICELIA_2        ; 5f
+	const SPRITE_ANIM_OAMSET_RS_INTRO_HELICELIA_3        ; 60
+	const SPRITE_ANIM_OAMSET_RS_INTRO_SELENUMIA_1        ; 61
+	const SPRITE_ANIM_OAMSET_RS_INTRO_SELENUMIA_2        ; 62
+	const SPRITE_ANIM_OAMSET_RS_INTRO_SELENUMIA_3        ; 63

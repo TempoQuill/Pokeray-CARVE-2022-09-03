@@ -1037,26 +1037,26 @@ Functione53eb:
 	ret
 
 Intro_LoadChikoritaPalette:
-	lb bc, HIGH(CHIKORITA), LOW(CHIKORITA)
+	ld bc, CHIKORITA
 	farcall Intro_LoadMonPalette
 	ret
 
 Intro_LoadCyndaquilPalette:
-	lb bc, HIGH(CYNDAQUIL), LOW(CYNDAQUIL)
+	ld bc, CYNDAQUIL
 	farcall Intro_LoadMonPalette
 	ret
 
 Intro_LoadTotodilePalette:
-	lb bc, HIGH(TOTODILE), LOW(TOTODILE)
+	ld bc, TOTODILE
 	farcall Intro_LoadMonPalette
 	ret
 
 Functione5412:
 	ldh a, [hCGB]
 	and a
-	ld c, CYNDAQUIL
+	ld bc, CYNDAQUIL
 	jr nz, .got_mon
-	ld c, CHARIZARD
+	ld bc, CHARIZARD
 .got_mon
 	farcall Intro_LoadMonPalette
 	ret
@@ -1227,6 +1227,7 @@ Intro_ResetLYOverrides:
 	ret
 
 Intro_WaterGFX1:
+Intro_MountainGFX1:
 INCBIN "gfx/intro/water1.2bpp.lz"
 
 Intro_WaterTilemap:

@@ -58,6 +58,22 @@ SpriteAnimFrameData:
 	dw .Frameset_HeadbuttTree
 	dw .Frameset_Swap_1
 	dw .Frameset_Swap_2
+	dw .Frameset_Helicelia
+	dw .Frameset_Selenumia
+
+.Frameset_Selenumia
+	frame SPRITE_ANIM_OAMSET_RS_INTRO_SELENUMIA_1, 5
+	frame SPRITE_ANIM_OAMSET_RS_INTRO_SELENUMIA_2, 5
+	frame SPRITE_ANIM_OAMSET_RS_INTRO_SELENUMIA_3, 5
+	frame SPRITE_ANIM_OAMSET_RS_INTRO_SELENUMIA_2, 5
+	dorestart
+
+.Frameset_Helicelia
+	frame SPRITE_ANIM_OAMSET_RS_INTRO_HELICELIA_1, 5
+	frame SPRITE_ANIM_OAMSET_RS_INTRO_HELICELIA_2, 5
+	frame SPRITE_ANIM_OAMSET_RS_INTRO_HELICELIA_3, 5
+	frame SPRITE_ANIM_OAMSET_RS_INTRO_HELICELIA_2, 5
+	dorestart
 
 .Frameset_Swap_1:
 	frame SPRITE_ANIM_OAMSET_SWAPSPRITE_1, 0

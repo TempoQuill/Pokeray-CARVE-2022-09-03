@@ -815,9 +815,6 @@ NUM_TITLESCREENOPTIONS EQU const_value
 
 IntroSequence:
 	callfar SplashScreen
-	jr c, StartTitleScreen
-	callfar GoldSilverIntro
-
 	; fallthrough
 
 StartTitleScreen:

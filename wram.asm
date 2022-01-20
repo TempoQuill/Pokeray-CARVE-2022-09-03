@@ -131,7 +131,15 @@ wPCItemsCursor::           db ; 16 10
 wPCItemsScrollPosition::   db ; 17 11
 wPrevDexEntry::            dw ; 18 12
 
-	ds 42 ; 20 14
+; each byte represents a segment of the sprite
+; ray = helicelia, shade = selenumia
+; byte 1 = eyes
+; byte 2 = paw
+; byte 3 = tail
+wTitleSpriteFrames::       ds 3 ; 20 14
+wCurrentAnimationZone::    db 1 ; 23 17
+
+	ds 38 ; 24 18
 
 
 SECTION "GBC Palettes", WRAM0
@@ -208,6 +216,11 @@ UNION ; c508
 wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
 	ds 24 ; filler for RAM
 
+NEXT ; c508
+; used for title screen buffer
+wScratch:: ds 504
+wScratchEnd
+
 NEXTU ; c508
 ; box save buffer
 ; SaveBoxAddress uses this buffer in three steps because it
@@ -240,16 +253,16 @@ wSpriteAnimDict:: ds 10 * 2
 wSpriteAnimationStructs:: ; 20 14
 ; field  0:   index
 ; fields 1-3: loaded from SpriteAnimSeqData
-wSpriteAnim10:: sprite_anim_struct wSpriteAnim1  ; 20  14
-wSpriteAnim1::  sprite_anim_struct wSpriteAnim2  ; 36  24
-wSpriteAnim2::  sprite_anim_struct wSpriteAnim3  ; 52  34
-wSpriteAnim3::  sprite_anim_struct wSpriteAnim4  ; 68  44
-wSpriteAnim4::  sprite_anim_struct wSpriteAnim5  ; 84  54
-wSpriteAnim5::  sprite_anim_struct wSpriteAnim6  ; 100 64
-wSpriteAnim6::  sprite_anim_struct wSpriteAnim7  ; 116 74
-wSpriteAnim7::  sprite_anim_struct wSpriteAnim8  ; 132 84
-wSpriteAnim8::  sprite_anim_struct wSpriteAnim9  ; 148 94
-wSpriteAnim9::  sprite_anim_struct wSpriteAnim10 ; 164 a4
+wSpriteAnim1::  sprite_anim_struct wSpriteAnim1  ; 20  14
+wSpriteAnim2::  sprite_anim_struct wSpriteAnim2  ; 36  24
+wSpriteAnim3::  sprite_anim_struct wSpriteAnim3  ; 52  34
+wSpriteAnim4::  sprite_anim_struct wSpriteAnim4  ; 68  44
+wSpriteAnim5::  sprite_anim_struct wSpriteAnim5  ; 84  54
+wSpriteAnim6::  sprite_anim_struct wSpriteAnim6  ; 100 64
+wSpriteAnim7::  sprite_anim_struct wSpriteAnim7  ; 116 74
+wSpriteAnim8::  sprite_anim_struct wSpriteAnim8  ; 132 84
+wSpriteAnim9::  sprite_anim_struct wSpriteAnim9  ; 148 94
+wSpriteAnim10::  sprite_anim_struct wSpriteAnim10 ; 164 a4
 wSpriteAnimationStructsEnd::
 
 wSpriteAnimCount::   db ; 180 b4
@@ -1117,7 +1130,10 @@ wMinutesSince:: db ; ce72
 wHoursSince:: db ; ce73
 wDaysSince:: db ; ce74
 
-	ds 12
+wRSTitleScreenOpticalTimer:: db ; ce75
+wRSTitleScreenPlegicTimer:: db ; ce76
+wRSTitleScreenRearTimer:: db ; ce77
+	ds 9
 
 wPlayerBGMapOffsetX:: db ; ce81 ; used in FollowNotExact; unit is pixels
 wPlayerBGMapOffsetY:: db ; ce82 ; used in FollowNotExact; unit is pixels
@@ -1565,10 +1581,10 @@ wSolvedUnownPuzzle::
 
 wVramState:: ; cfe9
 ; bit 0: overworld sprite updating on/off
+; bit 1-3: Intro anim segments
 ; bit 5: can animate object $0/$4 to music
 ; bit 6: something to do with text
 ; bit 7: on when surf initiates
-;        flickers when climbing waterfall
 	db
 
 wBattleResult:: ; cfea

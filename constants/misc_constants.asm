@@ -6,6 +6,9 @@ TRUE  EQU 1
 MALE   EQU 0
 FEMALE EQU 1
 
+; title
+NUM_TITLE_CHR_IDS EQU 48
+
 ; FlagAction arguments (see home/flag.asm)
 	const_def
 	const RESET_FLAG

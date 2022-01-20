@@ -95,6 +95,122 @@ SpriteAnimOAMData:
 	dbw $04, .OAMData_Tree                     ; SPRITE_ANIM_OAMSET_HEADBUTT_TREE_2
 	dbw $00, .OAMData_Swap_1                   ; SPRITE_ANIM_OAMSET_SWAPSPRITE_1
 	dbw $04, .OAMData_Swap_1                   ; SPRITE_ANIM_OAMSET_SWAPSPRITE_2
+	dbw $00, .OAMData_Helicelia_1              ; SPRITE_ANIM_OAMSET_HELICELIA_1
+	dbw $00, .OAMData_Helicelia_2              ; SPRITE_ANIM_OAMSET_HELICELIA_2
+	dbw $00, .OAMData_Helicelia_3              ; SPRITE_ANIM_OAMSET_HELICELIA_3
+	dbw $00, .OAMData_Helicelia_1              ; SPRITE_ANIM_OAMSET_SELENUMIA_1
+	dbw $00, .OAMData_Helicelia_2              ; SPRITE_ANIM_OAMSET_SELENUMIA_2
+	dbw $00, .OAMData_Helicelia_3              ; SPRITE_ANIM_OAMSET_SELENUMIA_3
+
+.OAMData_Helicelia_1:
+	db 36
+	dbsprite 0, 5, 0, 0, $02, 0
+	dbsprite 1, 5, 0, 0, $04, 0 ; eyes
+	dbsprite 2, 5, 0, 0, $0c, 0 ; eyes
+	dbsprite 1, 6, 0, 0, $05, 0 ; eyes
+	dbsprite 2, 6, 0, 0, $0d, 0 ; eyes
+	dbsprite 3, 5, 0, 0, $14, 0
+	dbsprite 4, 5, 0, 0, $1b, 0
+	dbsprite 5, 5, 0, 0, $22, 0 ; paw
+	dbsprite 0, 6, 0, 0, $03, 0
+	dbsprite 3, 6, 0, 0, $15, 0
+	dbsprite 4, 6, 0, 0, $1c, 0
+	dbsprite 5, 6, 0, 0, $23, 0
+	dbsprite 1, 7, 0, 0, $06, 0
+	dbsprite 2, 7, 0, 0, $0e, 0
+	dbsprite 4, 7, 0, 0, $1d, 0
+	dbsprite 5, 7, 0, 0, $24, 0
+	dbsprite 2, 0, 0, 0, $07, 0 ; tail
+	dbsprite 3, 0, 0, 0, $0f, 0 ; tail
+	dbsprite 4, 0, 0, 0, $16, 0 ; tail
+	dbsprite 2, 1, 0, 0, $08, 0 ; tail
+	dbsprite 3, 1, 0, 0, $10, 0 ; tail
+	dbsprite 4, 1, 0, 0, $17, 0 ; tail
+	dbsprite 5, 1, 0, 0, $1e, 0 ; tail
+	dbsprite 2, 2, 0, 0, $09, 0 ; tail
+	dbsprite 3, 2, 0, 0, $11, 0 ; tail
+	dbsprite 4, 2, 0, 0, $18, 0 ; tail
+	dbsprite 5, 2, 0, 0, $1f, 0 ; tail
+	dbsprite 2, 3, 0, 0, $0a, 0
+	dbsprite 3, 3, 0, 0, $12, 0 ; tail
+	dbsprite 4, 3, 0, 0, $19, 0 ; tail
+	dbsprite 5, 3, 0, 0, $20, 0 ; tail
+	dbsprite 0, 4, 0, 0, $01, 0
+	dbsprite 2, 4, 0, 0, $0b, 0
+	dbsprite 3, 4, 0, 0, $13, 0 ; tail
+	dbsprite 4, 4, 0, 0, $1a, 0 ; tail
+	dbsprite 5, 4, 0, 0, $21, 0 ; tail
+
+.OAMData_Helicelia_2:
+	db 30
+	dbsprite 0, 5, 0, 0, $02, 0
+	dbsprite 1, 5, 0, 0, $25, 0 ; eyes
+	dbsprite 2, 5, 0, 0, $0c, 0 ; eyes
+	dbsprite 1, 6, 0, 0, $26, 0 ; eyes
+	dbsprite 2, 6, 0, 0, $0d, 0 ; eyes
+	dbsprite 3, 5, 0, 0, $14, 0
+	dbsprite 4, 5, 0, 0, $1b, 0
+	dbsprite 5, 5, 0, 0, $32, 0 ; paw
+	dbsprite 0, 6, 0, 0, $03, 0
+	dbsprite 3, 6, 0, 0, $15, 0
+	dbsprite 4, 6, 0, 0, $1c, 0
+	dbsprite 5, 6, 0, 0, $23, 0
+	dbsprite 1, 7, 0, 0, $06, 0
+	dbsprite 2, 7, 0, 0, $0e, 0
+	dbsprite 4, 7, 0, 0, $1d, 0
+	dbsprite 5, 7, 0, 0, $24, 0
+	dbsprite 2, 0, 0, 0, $27, 0 ; tail
+	dbsprite 3, 0, 0, 0, $2a, 0 ; tail
+	dbsprite 2, 1, 0, 0, $28, 0 ; tail
+	dbsprite 3, 1, 0, 0, $2b, 0 ; tail
+	dbsprite 2, 2, 0, 0, $29, 0 ; tail
+	dbsprite 3, 2, 0, 0, $2c, 0 ; tail
+	dbsprite 4, 2, 0, 0, $2f, 0 ; tail
+	dbsprite 2, 3, 0, 0, $0a, 0
+	dbsprite 3, 3, 0, 0, $2d, 0 ; tail
+	dbsprite 4, 3, 0, 0, $30, 0 ; tail
+	dbsprite 0, 4, 0, 0, $01, 0
+	dbsprite 2, 4, 0, 0, $0b, 0
+	dbsprite 3, 4, 0, 0, $2e, 0 ; tail
+	dbsprite 4, 4, 0, 0, $31, 0 ; tail
+
+.OAMData_Helicelia_3:
+	db 35
+	dbsprite 0, 5, 0, 0, $02, 0
+	dbsprite 1, 5, 0, 0, $38, 0 ; eyes
+	dbsprite 2, 5, 0, 0, $3d, 0 ; eyes
+	dbsprite 1, 6, 0, 0, $39, 0 ; eyes
+	dbsprite 2, 6, 0, 0, $3e, 0 ; eyes
+	dbsprite 3, 5, 0, 0, $14, 0
+	dbsprite 4, 5, 0, 0, $1b, 0
+	dbsprite 5, 5, 0, 0, $42, 0 ; paw
+	dbsprite 0, 6, 0, 0, $03, 0
+	dbsprite 3, 6, 0, 0, $15, 0
+	dbsprite 4, 6, 0, 0, $1c, 0
+	dbsprite 5, 6, 0, 0, $23, 0
+	dbsprite 1, 7, 0, 0, $06, 0
+	dbsprite 2, 7, 0, 0, $0e, 0
+	dbsprite 4, 7, 0, 0, $1d, 0
+	dbsprite 5, 7, 0, 0, $24, 0
+	dbsprite 1, 0, 0, 0, $33, 0 ; tail
+	dbsprite 2, 0, 0, 0, $3a, 0 ; tail
+	dbsprite 3, 0, 0, 0, $3f, 0 ; tail
+	dbsprite 1, 1, 0, 0, $34, 0 ; tail
+	dbsprite 2, 1, 0, 0, $3b, 0 ; tail
+	dbsprite 3, 1, 0, 0, $40, 0 ; tail
+	dbsprite 1, 2, 0, 0, $35, 0 ; tail
+	dbsprite 2, 2, 0, 0, $3c, 0 ; tail
+	dbsprite 3, 2, 0, 0, $41, 0 ; tail
+	dbsprite 4, 2, 0, 0, $2f, 0 ; tail
+	dbsprite 1, 3, 0, 0, $36, 0 ; tail
+	dbsprite 2, 3, 0, 0, $0a, 0
+	dbsprite 3, 3, 0, 0, $2d, 0 ; tail
+	dbsprite 4, 3, 0, 0, $30, 0 ; tail
+	dbsprite 0, 4, 0, 0, $01, 0
+	dbsprite 1, 4, 0, 0, $37, 0 ; tail
+	dbsprite 2, 4, 0, 0, $0b, 0
+	dbsprite 3, 4, 0, 0, $2e, 0 ; tail
+	dbsprite 4, 4, 0, 0, $31, 0 ; tail
 
 .OAMData_Swap_1:
 	db 4

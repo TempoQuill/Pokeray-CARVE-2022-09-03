@@ -8,6 +8,11 @@
 	const SPRITEDATA_PALETTE ; 5
 NUM_SPRITEDATA_FIELDS EQU const_value
 
+; intro
+OPTICAL_ANIM_DELAY EQU 20
+PEDAL_ANIM_DELAY   EQU 36
+REAR_ANIM_DELAY    EQU 29
+
 ; sprite types
 	const_def 1
 	const WALKING_SPRITE  ; 1

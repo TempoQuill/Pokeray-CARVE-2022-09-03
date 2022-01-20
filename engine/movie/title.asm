@@ -1,8 +1,92 @@
+MapOutTitleSprite:
+	ld bc, 144
+	ld de, wScratch
+	ld hl, Title_ObjectMap
+.loop1
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .loop1
+	ld bc, 1072
+	ld de, vTiles0
+	ld hl, Title_CHRData
+.loop2
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .loop2
+	ld a, b
+	and a
+	ret z
+	dec b
+	jr .loop2
+
+FindTitleSpriteFrames:
+	ld a, [wCurrentAnimationZone]
+	ld de, Title_AnimationZones
+	rla
+	ld c, a
+	ld b, 0
+	ld hl, .jumptable
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+
+.jumptable
+	dw .eye
+	dw .paw
+	dw .tail
+
+.eye
+	ld bc, Title_Paw - Title_Eyes
+	ld a, [de]
+	ld e, a
+	ld d, 0
+	ld hl, wScratch
+	add hl, de
+	ret
+
+.paw
+	ld hl, Title_Paw - Title_Eyes
+	add hl, de
+	ld bc, Title_Tail - Title_Paw
+	ld a, [hl]
+	ld e, a
+	ld d, 0
+	ld hl, wScratch
+	add hl, de
+	ret
+
+.tail
+	ld hl, Title_Tail - Title_Eyes
+	add hl, de
+	ld bc, Title_AnimationZonesEnd - Title_Tail
+	ld a, [hl]
+	ld e, a
+	ld d, 0
+	ld hl, wScratch
+	add hl, de
+	ret
+
+INCLUDE "data/sprite_anims/intro_anim_zones.asm"
+
+Title_ObjectMap:
+INCBIN "gfx/title/map_helicelia.bin"
+
+Title_CHRData:
+INCBIN "gfx/title/helicelia_ray.bmp"
+
 TitleScreen:
 	call ClearBGPalettes
 	xor a
 	ld [wTimeOfDayPal], a
-	ld de, MUSIC_NONE
+	; MUSIC_NONE: faster/smaller than 11 00 00
+	ld d, a
+	ld e, a
 	call PlayMusic
 	call ClearTilemap
 	call DisableLCD
@@ -15,6 +99,12 @@ TitleScreen:
 	ldh [hMapAnims], a
 	ldh [hSCY], a
 	ldh [hSCX], a
+
+	; new code
+	ld hl, wScratch
+	ld bc, wScratchEnd - wScratch
+	xor a
+	call ByteFill
 
 	ld hl, vTiles0
 	ld bc, $200 tiles
@@ -34,6 +124,12 @@ TitleScreen:
 	ld a, BANK(TitleScreenGFX2)
 	call FarDecompress
 
+	; map out helicelia / selenumia
+	call MapOutTitleSprite
+
+	jr .got_tile_data
+	; dummy out G/S code
+
 ; Decompress Ho-Oh/Lugia sprite
 	ld hl, TitleScreenGFX4
 	ld de, vTiles0
@@ -50,6 +146,7 @@ TitleScreen:
 	ld a, BANK(TitleScreenGFX3)
 	call FarCopyBytes
 
+.got_tile_data
 	call FillTitleScreenPals
 	call LoadTitleScreenTilemap
 	ld hl, wSpriteAnimDict
@@ -67,10 +164,30 @@ TitleScreen:
 	ld [hli], a ; wTitleScreenSelectedOption
 	ld [hli], a ; wTitleScreenTimer
 	ld [hl], a  ; wTitleScreenTimer + 1
+	; new segment
+	ld hl, wRSTitleScreenOpticalTimer
+	ld [hli], a ; wRSTitleScreenOpticalTimer
+	ld [hli], a ; wRSTitleScreenPlegicTimer
+	ld [hl], a ; wRSTitleScreenRearTimer
+	ld hl, wVramState
+	ld a, [hl]
+	and $f1 ; reset timer flags
+	ld [hl], a
 
+	depixel 15, 11
+	ld a, SPRITE_ANIM_INDEX_RS_INTRO_EYE
+	call InitSpriteAnimStruct
+	ld a, SPRITE_ANIM_INDEX_RS_INTRO_PAW
+	call InitSpriteAnimStruct
+	ld a, SPRITE_ANIM_INDEX_RS_INTRO_TAIL
+	call InitSpriteAnimStruct
+	jr .init_anim
+
+	; more G/S leftovers
 	depixel 12, 11
 	ld a, SPRITE_ANIM_INDEX_GS_INTRO_HO_OH_LUGIA
 	call InitSpriteAnimStruct
+.init_anim
 	ld hl, wSpriteAnim1
 	ld de, wSpriteAnim10
 	ld bc, NUM_SPRITE_ANIM_STRUCTS

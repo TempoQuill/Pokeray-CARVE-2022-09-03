@@ -17,23 +17,23 @@ DoAnimFrame:
 	dw .PartyMon
 	dw .PartyMonSwitch
 	dw .PartyMonSelected
-	dw .GSIntroBubble
-	dw .GSIntroShellder
-	dw .GSIntroMagikarp
-	dw .UnusedLapras
-	dw .GSIntroLapras
-	dw .GSIntroNote
-	dw .GSIntroJigglypuff
-	dw .GSIntroPikachu
-	dw .GSIntroPikachuTail
-	dw .GSIntroFireball
-	dw .GSIntroChikoritaTotodile
-	dw .GSIntroCyndaquil
-	dw .GSTitleTrail
-	dw .UnusedPikachu
-	dw .UnusedPikachuTail
-	dw .UnusedNote
-	dw .UnusedJigglypuff
+	dw .GSIntroBubble ; leftover
+	dw .GSIntroShellder ; leftover
+	dw .GSIntroMagikarp ; leftover
+	dw .UnusedLapras ; gs 97
+	dw .GSIntroLapras ; leftover
+	dw .GSIntroNote ; leftover
+	dw .GSIntroJigglypuff ; leftover
+	dw .GSIntroPikachu ; leftover
+	dw .GSIntroPikachuTail ; leftover
+	dw .GSIntroFireball ; leftover
+	dw .GSIntroChikoritaTotodile ; leftover
+	dw .GSIntroCyndaquil ; leftover
+	dw .GSTitleTrail ; leftover
+	dw .UnusedPikachu ; gs 97
+	dw .UnusedPikachuTail ; gs 97
+	dw .UnusedNote ; gs 97
+	dw .UnusedJigglypuff ; gs 97
 	dw .NamingScreenCursor
 	dw .GameFreakLogo
 	dw .GSGameFreakLogoStar
@@ -54,8 +54,10 @@ DoAnimFrame:
 	dw .FlyFrom
 	dw .FlyLeaf
 	dw .FlyTo
-	dw .GSIntroHoOhLugia
+	dw .GSIntroHoOhLugia ; leftover
 	dw .YoshiFrameSwap
+	dw .RSIntroHelicelia
+	dw .RSIntroHelicelia
 
 .Null:
 	ret
@@ -1463,3 +1465,61 @@ DoAnimFrame:
 	inc [hl]
 	ret
 
+.RSIntroHelicelia:
+	ld hl, wVramState
+	ld a, [hl]
+	or $0e ; timer flags
+	ld [hl], a
+
+	; eyes
+	ld a, [wRSTitleScreenOpticalTimer]
+	and a
+	call nz, .OpticalTimer
+	jr nz, .paw
+	ld [wCurrentAnimationZone], a
+	ld a, OPTICAL_ANIM_DELAY
+	ld [wRSTitleScreenOpticalTimer], a
+	farcall FindTitleSpriteFrames
+
+.paw
+	ld a, [wRSTitleScreenPlegicTimer]
+	and a
+	call nz, .PlegicTimer
+	jr nz, .tail
+	ld a, 1
+	ld [wCurrentAnimationZone], a
+	ld a, PEDAL_ANIM_DELAY
+	ld [wRSTitleScreenPlegicTimer], a
+	farcall FindTitleSpriteFrames
+
+.tail
+	ld a, [wRSTitleScreenRearTimer]
+	and a
+	jr nz, .RearTimer
+	ld a, 2
+	ld [wCurrentAnimationZone], a
+	ld a, REAR_ANIM_DELAY
+	ld [wRSTitleScreenPlegicTimer], a
+	farcall FindTitleSpriteFrames
+	ret
+
+.OpticalTimer ; eyes
+	dec a
+	ret nz
+	ld hl, wVramState
+	res 1, [hl]
+	ret
+
+.PlegicTimer: ; paw
+	dec a
+	ret nz
+	ld hl, wVramState
+	res 2, [hl]
+	ret
+
+.RearTimer: ; tail
+	dec a
+	ret nz
+	ld hl, wVramState
+	res 3, [hl]
+	ret
