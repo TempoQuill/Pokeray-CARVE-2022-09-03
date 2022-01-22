@@ -775,12 +775,14 @@ FadeMusic:
 	; get new song id
 	ld a, [wMusicFadeID]
 	and a
-	jr z, .quit ; this assumes there are fewer than 256 songs!
-
 	ld e, a
 	ld a, [wMusicFadeID + 1]
 	ld d, a
+	jr nz, .play ; just in case we have more than 256 songs
+	and a
+	jr z, .quit ; quit if $0000
 
+.play
 	; load new song
 	call _PlayMusic
 

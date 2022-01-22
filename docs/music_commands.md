@@ -188,12 +188,12 @@ USAGE:
 	vibrato 20, 2, 3
 ```
 
-## `E2` **Mute**
+## `E2` **Mute Timer**
 
 IMPORTANT NOTE: This only works in Ray.  This is because it was stubbed in the retail release of Gold.
 
 VARS:
-- Byte 2 = Boolean Mute flag (On/off)
+- Byte 2 = Mute Delay
 
 USAGE:
 ```
@@ -284,7 +284,7 @@ IMPORTANT NOTE: This only works in Ray.  This is because it was stubbed in the r
 VARS:
 - Byte 2 = Sequence ID.
 
-NOTE: Channel 1/2/5/6 (`env_note` x, y) and Channel 3/7 (`wav_note` wavetable constant) are handled differently and, as such, possess their own groups of volume envelopes.  Each sequence either ends with `FE` (`env_loop`), which resets the offset counter (which limits the sequence to 256 bytes), or `FF` (`env_ret`), which ends the sequence entirely.
+NOTE: Channel 1/2/5/6 (`env_note` x, y) and Channel 3/7 (`wav_note` wavetable constant) are handled differently and, as such, possess their own groups of volume envelopes.  Each sequence either ends with `FE` (`env_loop`), which resets the offset counter (which limits the sequence to 256 bytes), or `FF` (`env_ret`), which ends the sequence entirely, thus ending the note.
 
 USAGE:
 ```
