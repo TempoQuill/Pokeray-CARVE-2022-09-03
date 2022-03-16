@@ -571,7 +571,7 @@ Music_StampTown_Ch3:
 	rest 3
 	volume_envelope 1, 5
 	octave 3
-	note D_, 3
+	note D#, 3
 	rest 1
 	volume_envelope 1, 6
 	octave 4

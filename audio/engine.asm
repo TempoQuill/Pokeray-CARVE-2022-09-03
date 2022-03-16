@@ -247,8 +247,6 @@ UpdateChannels:
 	jr nz, .ch1_noise_sampling
 	bit NOTE_FREQ_OVERRIDE, [hl]
 	jr nz, .ch1_frequency_override
-	bit NOTE_ENV_OVERRIDE, [hl]
-	jr nz, .ch1_env_override
 	bit NOTE_VIBRATO_OVERRIDE, [hl]
 	jr nz, .ch1_vibrato_override
 	jr .ch1_check_duty_override
@@ -260,16 +258,17 @@ UpdateChannels:
 	ldh [rNR14], a
 .ch1_check_duty_override
 	bit NOTE_DUTY_OVERRIDE, [hl]
-	ret z
+	jr z, .ch1_check_env_override
 	ld a, [wCurTrackDuty]
 	ld d, a
 	ldh a, [rNR11]
 	and $3f ; sound length
 	or d
 	ldh [rNR11], a
-	ret
 
-.ch1_env_override
+.ch1_check_env_override
+	bit NOTE_ENV_OVERRIDE, [hl]
+	ret z
 	ld a, [wCurTrackVolumeEnvelope]
 	ldh [rNR12], a
 	ret
@@ -315,18 +314,24 @@ UpdateChannels:
 	jr nz, .ch2_noise_sampling
 	bit NOTE_FREQ_OVERRIDE, [hl]
 	jr nz, .ch2_frequency_override
-	bit NOTE_ENV_OVERRIDE, [hl]
-	jr nz, .ch2_env_override
 	bit NOTE_VIBRATO_OVERRIDE, [hl]
 	jr nz, .ch2_vibrato_override
+
+.ch2_check_duty_override
 	bit NOTE_DUTY_OVERRIDE, [hl]
-	ret z
+	jr z, .ch2_check_env_override
 	ld a, [wCurTrackDuty]
 	ld d, a
 	ldh a, [rNR21]
 	and $3f ; sound length
 	or d
 	ldh [rNR21], a
+
+.ch2_check_env_override
+	bit NOTE_ENV_OVERRIDE, [hl]
+	ret z
+	ld a, [wCurTrackVolumeEnvelope]
+	ldh [rNR22], a
 	ret
 
 .ch2_frequency_override
@@ -334,12 +339,7 @@ UpdateChannels:
 	ldh [rNR23], a
 	ld a, [wCurTrackFrequency + 1]
 	ldh [rNR24], a
-	ret
-
-.ch2_env_override
-	ld a, [wCurTrackVolumeEnvelope]
-	ldh [rNR22], a
-	ret
+	jr .ch2_check_duty_override
 
 .ch2_vibrato_override
 	ld a, [wCurTrackDuty]
@@ -380,16 +380,21 @@ UpdateChannels:
 	jr nz, .ch3_rest
 	bit NOTE_NOISE_SAMPLING, [hl]
 	jr nz, .ch3_noise_sampling
-	bit NOTE_ENV_OVERRIDE, [hl]
-	jr nz, .ch3_env_override
+	bit NOTE_FREQ_OVERRIDE, [hl]
+	jr nz, .ch3_frequency_override
 	bit NOTE_VIBRATO_OVERRIDE, [hl]
 	jr nz, .ch3_vibrato_override
-	bit NOTE_FREQ_OVERRIDE, [hl]
-	ret z
+	jr .ch3_check_env_override
+
+.ch3_frequency_override
 	ld a, [wCurTrackFrequency]
 	ldh [rNR33], a
 	ld a, [wCurTrackFrequency + 1]
 	ldh [rNR34], a
+
+.ch3_check_env_override
+	bit NOTE_ENV_OVERRIDE, [hl]
+	jr nz, .ch3_env_override
 	ret
 
 .ch3_vibrato_override
@@ -2388,7 +2393,6 @@ Tempo:
 	bc_offset CHANNEL_NOTE_FLOW
 	ld [hl], a
 	ret
-
 
 StartChannel:
 	call SetLRTracks
