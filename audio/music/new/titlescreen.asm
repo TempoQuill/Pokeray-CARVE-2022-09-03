@@ -192,7 +192,7 @@ Music_TitleScreen_Ch1:
 	note B_, 2
 	note A_, 1
 	note B_, 1
-	octave 5
+	octave 4
 	note C#, 4
 	sound_ret
 
@@ -226,7 +226,7 @@ Music_TitleScreen_Ch1:
 	volume_envelope 11, 7
 	note G#, 1
 	rest 1
-	sound_loop 2, .sub2loop2
+	sound_loop 2, .sub2loop3
 	volume_envelope 7, 7
 	note G#, 1
 	rest 1
@@ -236,6 +236,8 @@ Music_TitleScreen_Ch2:
 	duty_cycle 2
 	vibrato 11, 6, 2
 	transpose 1, 7
+	note_type 6, 0, 0
+	rest 3
 .loop1:
 	sound_call .sub1
 	sound_loop 3, .loop1

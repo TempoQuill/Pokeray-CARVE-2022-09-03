@@ -154,56 +154,55 @@ Music_LanaweForest_Ch4:
 	toggle_noise 5
 .mainloop:
 	sound_call .sub1
-	drum_note 1, 1
+	drum_note 1, 2
 	sound_call .sub1
-	drum_speed 6
 	drum_note 1, 1
 	drum_note 1, 1
 	sound_loop 4, .mainloop
 .loop1:
 	rest 16
-	sound_loop 16, .loop1
+	sound_loop 32, .loop1
 .loop2:
 	sound_call .sub1
-	drum_note 1, 1
+	drum_note 1, 2
 	sound_call .sub1
-	drum_speed 6
 	drum_note 1, 1
 	drum_note 1, 1
 	sound_loop 2, .loop2
 	sound_jump .mainloop
 
 .sub1:
-	drum_speed 12
-	drum_note 12, 1
+	drum_speed 6
+	drum_note 12, 2
+	drum_note 5, 2
+	drum_note 5, 2
+	drum_note 12, 2
+	drum_note 1, 2
+	drum_note 5, 2
+	drum_note 12, 2
+	drum_note 5, 2
+	drum_note 5, 2
 	drum_note 5, 1
 	drum_note 5, 1
-	drum_note 12, 1
-	drum_note 1, 1
-	drum_note 5, 1
-	drum_note 12, 1
-	drum_note 5, 1
-	drum_note 5, 1
-	drum_note 5, 1
-	drum_note 12, 1
-	drum_note 5, 1
-	drum_note 1, 1
-	drum_note 12, 1
-	drum_note 5, 1
-	drum_note 1, 1
-	drum_note 12, 1
-	drum_note 5, 1
-	drum_note 5, 1
-	drum_note 12, 1
-	drum_note 1, 1
-	drum_note 5, 1
-	drum_note 12, 1
-	drum_note 1, 1
-	drum_note 5, 1
-	drum_note 1, 1
-	drum_note 12, 1
-	drum_note 5, 1
-	drum_note 1, 1
-	drum_note 12, 1
-	drum_note 5, 1
+	drum_note 12, 2
+	drum_note 5, 2
+	drum_note 1, 2
+	drum_note 12, 2
+	drum_note 5, 2
+	drum_note 1, 2
+	drum_note 12, 2
+	drum_note 5, 2
+	drum_note 5, 2
+	drum_note 12, 2
+	drum_note 1, 2
+	drum_note 5, 2
+	drum_note 12, 2
+	drum_note 1, 2
+	drum_note 5, 2
+	drum_note 1, 2
+	drum_note 12, 2
+	drum_note 5, 2
+	drum_note 1, 2
+	drum_note 12, 2
+	drum_note 5, 2
 	sound_ret

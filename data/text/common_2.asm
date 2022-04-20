@@ -293,7 +293,7 @@ _ThrewAwayText::
 	prompt
 
 _OakThisIsntTheTimeText::
-	text "OAK: <PLAYER>!"
+	text "LARCH: <PLAYER>!"
 	line "This isn't the"
 	cont "time to use that!"
 	prompt
@@ -423,7 +423,7 @@ _BreedEggHatchText::
 	text_ram wStringBuffer1
 	text " came"
 	line "out of its EGG!@"
-	sound_caught_mon
+	sound_egg
 	text_promptbutton
 	text_end
 
@@ -588,9 +588,9 @@ _CaughtAskNicknameText::
 	done
 
 _PokecenterPCCantUseText::
-	text "Bzzzzt! You must"
-	line "have a #MON to"
-	cont "use this!"
+	text "You must have a"
+	line "#MON to use"
+	cont "this!"
 	prompt
 
 _PlayersPCTurnOnText::
@@ -884,7 +884,7 @@ _ItemsTooImportantText::
 	prompt
 
 _ItemsOakWarningText::
-	text "OAK: <PLAYER>!"
+	text "LARCH: <PLAYER>!"
 	line "This isn't the"
 	cont "time to use that!"
 	done
@@ -1346,7 +1346,8 @@ _PharmacyFinalPriceText::
 	done
 
 _PharmacyThanksText::
-	text "Thanks much!"
+	text "Thanks a bunch!"
+;	text "Thanks much!"
 	done
 
 _PharmacyPackFullText::

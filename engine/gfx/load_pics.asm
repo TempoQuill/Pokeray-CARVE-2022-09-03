@@ -74,6 +74,7 @@ GetFrontpic:
 	jr c, .is_a_pokemon
 	ret
 .could_be_egg
+	ld a, [wCurPartySpecies]
 	cp LOW(EGG)
 	ret nc
 

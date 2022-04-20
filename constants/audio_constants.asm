@@ -78,8 +78,8 @@ NUM_CHANNELS EQU const_value
 	const CHANNEL_MUTE                  ; 2c
 	const CHANNEL_NOTE_LENGTH           ; 2d
 	const CHANNEL_TEMPO_OFFSET          ; 2e
-	const CHANNEL_BCD_DELAY             ; 2f
-	const CHANNEL_BCD_DELAY_COUNTER     ; 30
+	const CHANNEL_STEREO_DELAY          ; 2f
+	const CHANNEL_STEREO_DELAY_COUNTER  ; 30
 	const_skip
 CHANNEL_STRUCT_LENGTH EQU const_value
 
@@ -104,7 +104,7 @@ NOISE_CHAN_F EQU 2 ; bit set in CHAN5-CHAN7
 	const SOUND_PITCH_OFFSET   ; 4
 	const SOUND_ENV_PTRN       ; 5
 	const SOUND_RELATIVE_PITCH ; 6
-	const SOUND_BCD            ; 7
+	const SOUND_STEREO         ; 7
 
 ; Flags3
 	const_def

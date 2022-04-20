@@ -211,6 +211,7 @@ SFX:
 ; imported
 	dba Sfx_ShootingStar
 	dba Sfx_RBYSing
+	dba Sfx_EscapeRopeNoSweepFix
 ; placeholders
 	dba Sfx_ShootingStar
 	dba Sfx_ShootingStar

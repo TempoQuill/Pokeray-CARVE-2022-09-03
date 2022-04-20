@@ -61,7 +61,6 @@ _PhoneWrongNumberText::
 	done
 
 _PhoneClickText::
-	text "Click!"
 	done
 
 _PhoneEllipseText::
@@ -377,7 +376,7 @@ _ItemCantUseOnEggText::
 	prompt
 
 _ItemOakWarningText::
-	text "OAK: <PLAYER>!"
+	text "LARCH: <PLAYER>!"
 	line "This isn't the"
 	cont "time to use that!"
 	prompt

@@ -345,3 +345,17 @@ Sfx_RBYSing_Ch6:
 	octave 5
 	note G#, 8
 	sound_ret
+
+Sfx_EscapeRopeNoSweepFix:
+	channel_count
+	channel 5, Sfx_EscapeRopeNoSweepFix_Ch5
+
+Sfx_EscapeRopeNoSweepFix_Ch5:
+	duty_cycle 1
+	pitch_sweep 1, 7
+	square_note 15, 13, 7, 1536
+	square_note 15, 11, 7, 1408
+	square_note 15, 8, 7, 1280
+	square_note 15, 4, 7, 1152
+	square_note 15, 1, 7, 1024
+	sound_ret

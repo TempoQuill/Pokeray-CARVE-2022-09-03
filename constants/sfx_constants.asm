@@ -211,24 +211,25 @@
 ; imported
 	const SFX_SHOOTING_STAR               ; cf
 	const SFX_RBY_SING                    ; d0
+	const SFX_ESCAPE_ROPE_NO_SWEEP_FIX    ; d1
 ; placeholder
-	const SFX_LOCK_ON                     ; d1
-	const SFX_FLAIL                       ; d2
-	const SFX_BALL_CLOSE                  ; d3
-	const SFX_IN_LOVE                     ; d4
-	const SFX_AMNESIA                     ; d5
-	const SFX_EXP_BAR_FULL                ; d6
-	const SFX_MIMIC_D7                    ; d7
+	const SFX_LOCK_ON                     ; d2
+	const SFX_FLAIL                       ; d3
+	const SFX_BALL_CLOSE                  ; d4
+	const SFX_IN_LOVE                     ; d5
+	const SFX_AMNESIA                     ; d6
+	const SFX_EXP_BAR_FULL                ; d7
 	const SFX_MIMIC_D8                    ; d8
 	const SFX_MIMIC_D9                    ; d9
 	const SFX_MIMIC_DA                    ; da
 	const SFX_MIMIC_DB                    ; db
 	const SFX_MIMIC_DC                    ; dc
 	const SFX_MIMIC_DD                    ; dd
-	const SFX_BALL_SHAKE                  ; de
-	const SFX_EGG_ROLL                    ; df
-	const SFX_SMOKESCREEN                 ; e0
-	const SFX_SPIKES_E1                   ; e1
-	const SFX_SPIKES_E2                   ; e2
-	const SFX_RECOVER                     ; e3
-	const SFX_PAY_DAY                     ; e4
+	const SFX_MIMIC_DE                    ; de
+	const SFX_BALL_SHAKE                  ; df
+	const SFX_EGG_ROLL                    ; e0
+	const SFX_SMOKESCREEN                 ; e1
+	const SFX_SPIKES_E1                   ; e2
+	const SFX_SPIKES_E2                   ; e3
+	const SFX_RECOVER                     ; e4
+	const SFX_PAY_DAY                     ; e5

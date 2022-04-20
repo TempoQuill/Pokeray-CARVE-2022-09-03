@@ -16,7 +16,10 @@ Bankswitch::
 	ret
 
 SECTION "rst18", ROM0[$0018]
-	rst Lockup
+BankJump:
+	rst Bankswitch
+	rst JumpTable
+	ret
 
 SECTION "rst20", ROM0[$0020]
 	rst Lockup

@@ -560,13 +560,14 @@ TextCommands::
 	dw TextCommand_WAIT_BUTTON   ; TX_WAIT_BUTTON
 	dw TextCommand_SOUND         ; TX_SOUND_DEX_FANFARE_20_49
 	dw TextCommand_SOUND         ; TX_SOUND_ITEM
-	dw TextCommand_SOUND         ; TX_SOUND_CAUGHT_MON
+	dw TextCommand_SOUND         ; TX_SOUND_EGG
 	dw TextCommand_SOUND         ; TX_SOUND_DEX_FANFARE_80_109
 	dw TextCommand_SOUND         ; TX_SOUND_FANFARE
 	dw TextCommand_SOUND         ; TX_SOUND_SLOT_MACHINE_START
 	dw TextCommand_STRINGBUFFER  ; TX_STRINGBUFFER
 	dw TextCommand_DAY           ; TX_DAY
 	dw TextCommand_FAR           ; TX_FAR
+	dw TextCommand_SOUND         ; TX_SOUND_CAUGHT_MON
 
 TextCommand_START::
 ; write text until "@"
@@ -785,9 +786,10 @@ TextSFX::
 	dbw TX_SOUND_FANFARE,            SFX_PL_LONG
 	dbw TX_SOUND_DEX_FANFARE_20_49,  SFX_GEN_1_DEX_REWARD
 	dbw TX_SOUND_ITEM,               SFX_ITEM
-	dbw TX_SOUND_CAUGHT_MON,         SFX_EVO_DITTY
+	dbw TX_SOUND_EGG,                SFX_EVO_DITTY
 	dbw TX_SOUND_DEX_FANFARE_80_109, SFX_TRADE_COMPLETE
 	dbw TX_SOUND_SLOT_MACHINE_START, SFX_DEX_UPDATE
+	dbw TX_SOUND_CAUGHT_MON,         SFX_CAUGHT_MON
 	db -1
 
 TextCommand_DOTS::

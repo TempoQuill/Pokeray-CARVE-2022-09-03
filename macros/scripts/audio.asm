@@ -182,6 +182,7 @@ ENDM
 
 ; from Gold, restored
 ; appears to be an equivalent to RBY's $ef
+; used in VulpReich, but not Ray
 set_mute: MACRO
 	db set_mute_cmd
 	db \1 ; mute flag
@@ -227,7 +228,7 @@ relative_pitch: MACRO
 	db \1 ; pitch
 ENDM
 
-; from Gold/Silver, restored
+; from Gold/Silver, restored but unused
 volume_envelope_group: MACRO
 	db volume_envelope_group_cmd
 	db \1 ; group
@@ -265,6 +266,7 @@ ENDM
 
 ; from Gold, unused
 ; uses exclusive RAM, not set by any scripts
+; used in VulpReich, but not Ray
 sound_jump_ram: MACRO
 	db sound_jump_ram_cmd
 	dw \1 ; address

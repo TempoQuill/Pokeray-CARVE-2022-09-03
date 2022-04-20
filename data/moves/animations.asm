@@ -2420,8 +2420,6 @@ BattleAnim_Mimic:
 	anim_obj ANIM_OBJ_MIMIC, 132, 44, $28
 	anim_obj ANIM_OBJ_MIMIC, 132, 44, $30
 	anim_obj ANIM_OBJ_MIMIC, 132, 44, $38
-	anim_sound 0, 0, SFX_MIMIC_D7
-	anim_wait 8
 	anim_sound 0, 0, SFX_MIMIC_D8
 	anim_wait 8
 	anim_sound 0, 0, SFX_MIMIC_D9
@@ -2433,6 +2431,8 @@ BattleAnim_Mimic:
 	anim_sound 0, 0, SFX_MIMIC_DC
 	anim_wait 8
 	anim_sound 0, 0, SFX_MIMIC_DD
+	anim_wait 8
+	anim_sound 0, 0, SFX_MIMIC_DE
 	anim_wait 128
 	anim_ret
 

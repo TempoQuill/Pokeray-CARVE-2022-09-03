@@ -23,8 +23,8 @@ NurseAskHealText:
 	line "#MON to perfect"
 	cont "health."
 
-	para "Shall we heal your"
-	line "#MON?"
+	para "Should we heal"
+	line "your #MON?"
 	done
 
 NurseTakePokemonText:

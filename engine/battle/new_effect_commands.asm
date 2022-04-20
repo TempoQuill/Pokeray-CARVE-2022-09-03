@@ -165,6 +165,8 @@ BattleCommand_Freeze:
 	ret
 
 BattleCommand_FunnyStuff:
+; Funny Stuff is a custom move with a wide range of effects
+; base power varies wildly, and can inflict a variety of statuses
 
 	push bc
 	push de
@@ -204,12 +206,11 @@ BattleCommand_FunnyStuff:
 
 .fail_1
 	ld hl, FunnySfuffIneffectiveText
-	jr .fail_common
+	jp StdBattleTextbox
+
 .fail_2
 	ld hl, FunnyStuffMissText
-.fail_common
-	call StdBattleTextbox
-	ret
+	jp StdBattleTextbox
 
 ; chance, power
 power: MACRO
@@ -276,13 +277,31 @@ BattleCommand_MultiStatusChance:
 	; 1/8 chance of each status
 	call BattleRandom
 	swap a
-	and %11
+	and %111
 	jr z, .loop
 	dec a
-	ld a, BANK(MultiStatusPointer)
+	ld e, a
+	add e
+	add e
+	ld d, e
+	ld e, a
+	ld a, d
+	ld d, 0
 	ld hl, MultiStatusPointer
-	rst JumpTable
+	add hl, de
+	ld a, [hl]
+	ld hl, MultiStatusPointer
+	rst BankJump
 	ret
+
+MultiStatusPointer:
+	dba BattleCommand_ParalyzeTarget ; paralyze
+	dba BattleCommand_FreezeTarget ; freeze
+	dba BattleCommand_BurnTarget ; burn
+	dba BattleCommand_PoisonTarget ; poison
+	dba BattleCommand_SleepTarget ; sleep
+	dba BattleCommand_ConfuseTarget ; confusion
+	dba BattleCommand_FlinchTarget ; flinch
 
 AlreadyBurnedText:
 	text "<TARGET>'s"

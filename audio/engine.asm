@@ -289,8 +289,7 @@ UpdateChannels:
 	and %10001110 ; ch1 off
 	ldh [rNR52], a
 	ld hl, rNR10
-	call ClearChannel
-	ret
+	jp ClearChannel
 
 .ch1_noise_sampling
 	ld hl, wCurTrackDuty
@@ -357,8 +356,7 @@ UpdateChannels:
 	and %10001101 ; ch2 off
 	ldh [rNR52], a
 	ld hl, rNR20
-	call ClearChannel
-	ret
+	jp ClearChannel
 
 .ch2_noise_sampling
 	ld hl, wCurTrackDuty
@@ -407,8 +405,7 @@ UpdateChannels:
 	and %10001011 ; ch3 off
 	ldh [rNR52], a
 	ld hl, rNR30
-	call ClearChannel
-	ret
+	jp ClearChannel
 
 .ch3_noise_sampling
 	ld a, $3f ; sound length
@@ -481,18 +478,10 @@ UpdateChannels:
 
 .Channel48:
 	bc_offset CHANNEL_NOTE_FLAGS
-	bit NOTE_NOISE_SAMPLING, [hl]
-	jr nz, .ch4_noise_sampling
 	bit NOTE_REST, [hl]
+	jr nz, .rest
+	bit NOTE_NOISE_SAMPLING, [hl]
 	ret z
-	ldh a, [rNR52]
-	and %10000111 ; ch4 off
-	ldh [rNR52], a
-	ld hl, rNR40
-	call ClearChannel
-	ret
-
-.ch4_noise_sampling
 	ld a, $3f ; sound length
 	ldh [rNR41], a
 	ld a, [wCurTrackVolumeEnvelope]
@@ -502,6 +491,13 @@ UpdateChannels:
 	ld a, $80
 	ldh [rNR44], a
 	ret
+
+.ch4_rest
+	ldh a, [rNR52]
+	and %10000111 ; ch4 off
+	ldh [rNR52], a
+	ld hl, rNR40
+	jp ClearChannel
 
 _CheckSFX:
 ; return carry if any sfx channels are active
@@ -2459,8 +2455,7 @@ _PlayMusic::
 	ld [wNoiseSampleDelay], a
 	ld [wMusicNoiseSampleSet], a
 	ld [wFrameSwap], a
-	call MusicOn
-	ret
+	jp MusicOn
 
 _PlayCry::
 ; Play cry de using parameters:
@@ -2575,8 +2570,7 @@ _PlayCry::
 	ld [wLastVolume], a
 	ld a, MAX_VOLUME
 	ld [wVolume], a
-	call MusicOn
-	ret
+	jp MusicOn
 
 _PlaySFX::
 ; clear channels if they aren't already
@@ -2739,7 +2733,7 @@ PlayStereoSFX::
 	bc_offset CHANNEL_TRACKS
 	ld [hl], a
 
-	bc_offset CHANNEL_BCD_DELAY_COUNTER
+	bc_offset CHANNEL_STEREO_DELAY_COUNTER
 	ld [hl], a
 
 	ld a, [wCryTracks]
@@ -2752,11 +2746,11 @@ PlayStereoSFX::
 	bc_offset CHANNEL_TEMPO_OFFSET
 	ld [hl], a
 
-	bc_offset CHANNEL_BCD_DELAY
+	bc_offset CHANNEL_STEREO_DELAY
 	ld [hl], a
 
 	bc_offset CHANNEL_FLAGS2
-	set SOUND_BCD, [hl]
+	set SOUND_STEREO, [hl]
 
 .skip
 	pop de
@@ -2771,8 +2765,7 @@ PlayStereoSFX::
 	jr nz, .loop
 
 ; we're done
-	call MusicOn
-	ret
+	jp MusicOn
 
 LoadChannel:
 ; prep channel for use

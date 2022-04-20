@@ -99,9 +99,9 @@ sound_item: MACRO
 	db TX_SOUND_ITEM
 ENDM
 
-	const TX_SOUND_CAUGHT_MON ; $10
-sound_caught_mon: MACRO
-	db TX_SOUND_CAUGHT_MON
+	const TX_SOUND_EGG ; $10
+sound_egg: MACRO
+	db TX_SOUND_EGG
 ENDM
 
 	const TX_SOUND_DEX_FANFARE_80_109 ; $11
@@ -118,7 +118,6 @@ ENDM
 sound_slot_machine_start: MACRO
 	db TX_SOUND_SLOT_MACHINE_START
 ENDM
-
 	const TX_STRINGBUFFER ; $14
 text_buffer: MACRO
 	db TX_STRINGBUFFER
@@ -135,6 +134,11 @@ text_far: MACRO
 	db TX_FAR
 	dw \1
 	db BANK(\1)
+ENDM
+
+	const TX_SOUND_CAUGHT_MON ; $17
+sound_caught_mon: MACRO
+	db TX_SOUND_CAUGHT_MON
 ENDM
 
 	const_next $50

@@ -5,7 +5,7 @@ BattleText_PlayerPickedUpPayDayMoney:
 	line "¥@"
 	text_decimal wPayDayMoney, 3, 6
 	text " from PAY"
-	line "DAY!"
+	cont "DAY!"
 	prompt
 
 BattleText_PlayerPickedUpPowerBallMoney:
@@ -95,7 +95,7 @@ PerishCountText:
 BattleText_TargetRecoveredWithItem:
 	text "<TARGET>"
 	line "recovered with"
-	cont "@"
+	cont "a(n) @"
 	text_ram wStringBuffer1
 	text "."
 	prompt
@@ -103,7 +103,7 @@ BattleText_TargetRecoveredWithItem:
 BattleText_UserRecoveredPPUsing:
 	text "<USER>"
 	line "recovered PP using"
-	cont "@"
+	cont "a(n) @"
 	text_ram wStringBuffer1
 	text "."
 	prompt
@@ -256,7 +256,7 @@ BattleText_AnEGGCantBattle:
 	prompt
 
 BattleText_CantEscape2:
-	text "Can't escape!"
+	text "You can't escape!"
 	prompt
 
 BattleText_TheresNoEscapeFromTrainerBattle:
@@ -271,7 +271,7 @@ BattleText_GotAwaySafely:
 
 BattleText_UserFledUsingAStringBuffer1:
 	text "<USER>"
-	line "fled using a"
+	line "fled using a(n)"
 	cont "@"
 	text_ram wStringBuffer1
 	text "!"
@@ -288,8 +288,8 @@ BattleText_UserHurtBySpikes:
 
 RecoveredUsingText:
 	text "<TARGET>"
-	line "recovered using a"
-	cont "@"
+	line "recovered using"
+	cont "a(n) @"
 	text_ram wStringBuffer1
 	text "!"
 	prompt
@@ -389,8 +389,8 @@ MustRechargeText:
 	prompt
 
 DisabledNoMoreText:
-	text "<USER>'s"
-	line "disabled no more!"
+	text "<USER>"
+	line "can use all moves!"
 	prompt
 
 IsConfusedText:
@@ -423,13 +423,13 @@ BattleText_ItemHealedConfusion:
 	prompt
 
 AlreadyConfusedText:
-	text "<TARGET>'s"
-	line "already confused!"
+	text "<TARGET> is"
+	line "still confused!"
 	prompt
 
 BattleText_UsersHurtByStringBuffer1:
-	text "<USER>'s"
-	line "hurt by"
+	text "<USER>"
+	line "is hurt by"
 	cont "@"
 	text_ram wStringBuffer1
 	text "!"
@@ -549,10 +549,11 @@ IsNotListeningText:
 	text_ram wBattleMonNick
 	text " won't"
 	line "listen!"
+	prumpt
 
 RowdySelfHarmText:
-	text "It became reck-"
-	line "less and crashed!"
+	text "It became reckless"
+	line "and crashed!"
 	prumpt
 
 NoPPLeftText:
@@ -615,7 +616,7 @@ CriticalHitText:
 	prompt
 
 OneHitKOText:
-	text "It's a one-hit
+	text "It's a one-hit"
 	line "knock out!"
 	prompt
 

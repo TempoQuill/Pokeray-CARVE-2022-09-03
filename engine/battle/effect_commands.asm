@@ -689,32 +689,39 @@ BattleCommand_CheckObedience:
 	; The maximum obedience level is constrained by owned badges:
 	ld hl, wEquintoBadges
 
-	; scenery badge
+	; check for the hardest badge to get
+	; having it, traded pokemon obey unconditionally
+	; scenery badge - belle
 	bit SCENERYBADGE, [hl]
 	ld a, -1
 	jr nz, .getlevel
 
-	; rodeo badge
+	; check if we unlocked the last of the main campaign
+	; unlocking the full main game, traded pokemon obey up to level 70
+	; rodeo badge - woody
 	bit RODEOBADGE, [hl]
 	ld a, 70
 	jr z, .keep_checking
 
-	; bon badge
+	; bon badge - gordon
 	bit BONBADGE, [hl]
 	jr nz, .getlevel
 
 .keep_checking
-	; venom badge
+	; check if we fought Portite Gym
+	; venom badge - zach
 	bit VENOMBADGE, [hl]
 	ld a, 50
 	jr nz, .getlevel
 
-	; ivy badge
+	; check first two badges
+	; having both, traded pokemon obey up to Level 30.
+	; ivy badge - cindy
 	bit IVYBADGE, [hl]
 	ld a, 30
 	jr z, .default
 
-	; gadget badge
+	; gadget badge - james
 	bit GADGETBADGE, [hl]
 	jr nz, .getlevel
 
@@ -4867,15 +4874,6 @@ LowerStat:
 	ld a, 2
 	ld [wFailedMessage], a
 	ret
-
-MultiStatusPointer:
-	dw BattleCommand_ParalyzeTarget ; paralyze
-	dw BattleCommand_FreezeTarget ; freeze
-	dw BattleCommand_BurnTarget ; burn
-	dw BattleCommand_PoisonTarget ; poison
-	dw BattleCommand_SleepTarget ; sleep
-	dw BattleCommand_ConfuseTarget ; confusion
-	dw BattleCommand_FlinchTarget ; flinch
 
 BattleCommand_TriStatusChance:
 ; tristatuschance

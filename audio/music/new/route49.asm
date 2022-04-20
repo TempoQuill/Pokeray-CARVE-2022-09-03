@@ -44,7 +44,7 @@ Music_Route49_Ch1:
 	octave 3
 	note G_, 2
 	note B_, 2
-	note D_, 2
+	note G_, 2
 	note E_, 2
 	note C_, 2
 	note C_, 2

@@ -330,7 +330,7 @@ Music_WildBattle_Ch2:
 	octave 2
 	note G#, 1
 	octave 3
-	note G#, 1
+	note D#, 1
 	sound_loop 8, .loop1
 	sound_call .sub2
 .loop2:

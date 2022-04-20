@@ -197,7 +197,7 @@ VARS:
 
 USAGE:
 ```
-	set_mute TRUE
+	set_mute 3
 ```
 
 ## `E3` **Drum Mode Switch (Channel 4)**

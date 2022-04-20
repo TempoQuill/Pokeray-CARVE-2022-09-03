@@ -307,7 +307,7 @@ EQUINTO_MONS EQU 1
 	const SMUJJ      ; 11f ; nob
 	const TIRUFF     ; 120
 	const BELMITT    ; 121 ; TSK
-	const BOMIMIA    ; 122
+	const BOMOCA     ; 122
 	const KOTORA     ; 123 ; TSK
 	const RAITORA    ; 124 ; TSK
 	const MADAME     ; 125 ; TSK
