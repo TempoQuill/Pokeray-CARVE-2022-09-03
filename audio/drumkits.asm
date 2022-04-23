@@ -47,12 +47,12 @@ Snare1_8:
 	sound_ret
 
 CymbalRev:
-	noise_note 6, 8, 4, 55
-	noise_note 5, 8, 4, 54
-	noise_note 4, 8, 3, 53
-	noise_note 3, 8, 3, 52
-	noise_note 2, 8, 2, 51
-	noise_note 1, 8, 1, 50
+	noise_note 7, 8, 4, 55
+	noise_note 6, 8, 4, 54
+	noise_note 5, 8, 3, 53
+	noise_note 4, 8, 3, 52
+	noise_note 3, 8, 2, 51
+	noise_note 2, 8, 1, 50
 	sound_ret
 
 Triangle1:
@@ -60,7 +60,7 @@ Triangle1:
 	sound_ret
 
 Triangle2:
-	noise_note 0, 4, 1, 43
+	noise_note 1, 4, 1, 43
 	noise_note 0, 6, 1, 42
 	sound_ret
 
@@ -113,7 +113,7 @@ Triangle3:
 	sound_ret
 
 Triangle4:
-	noise_note 1, 9, 1, 40
+	noise_note 2, 9, 1, 40
 	noise_note 0, 7, 1, 24
 	sound_ret
 

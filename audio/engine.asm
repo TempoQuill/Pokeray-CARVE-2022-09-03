@@ -2115,7 +2115,47 @@ Music_OldPanning:
 ; only used in red
 ; params: 1
 	call GetMusicByte
-	ld [wStereoPanningMask], a
+	push bc
+	ld c, a
+	ld hl, SpeakerTracks
+	ld a, [wCurChannel]
+	and NUM_MUSIC_CHANS
+	ld a, [hli]
+	jr nz, .sfx
+	and c
+	ld de, wChannel1Tracks
+	ld [de], a
+	ld a, [hli]
+	and c
+	ld de, wChannel2Tracks
+	ld [de], a
+	ld a, [hli]
+	and c
+	ld de, wChannel3Tracks
+	ld [de], a
+	ld a, [hl]
+	and c
+	ld de, wChannel4Tracks
+	ld [de], a
+	pop bc
+	ret
+.sfx
+	and c
+	ld de, wChannel5Tracks
+	ld [de], a
+	ld a, [hli]
+	and c
+	ld de, wChannel6Tracks
+	ld [de], a
+	ld a, [hli]
+	and c
+	ld de, wChannel7Tracks
+	ld [de], a
+	ld a, [hl]
+	and c
+	ld de, wChannel8Tracks
+	ld [de], a
+	pop bc
 	ret
 
 Music_Volume:

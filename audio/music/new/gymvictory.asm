@@ -310,6 +310,7 @@ Music_GymVictory_Ch3:
 	sound_call .sub1
 	rest 5
 	volume_envelope 1, 2
+	octave 5
 	note D_, 1
 	note E_, 1
 	sound_call .sub1
@@ -325,14 +326,14 @@ Music_GymVictory_Ch3:
 	sound_call .sub3
 	sound_call .sub2
 	octave 3
-	ntoe C_, 8
+	note C_, 8
 	octave 4
 	note E_, 1
 	note G_, 1
 	rest 2
 	octave 3
 	note G_, 4
-	ntoe C_, 4
+	note C_, 4
 	octave 4
 	note E_, 1
 	note G_, 1
@@ -449,14 +450,14 @@ Music_GymVictory_Ch3:
 
 .sub3:
 	octave 3
-	ntoe C_, 8
+	note C_, 8
 	octave 4
 	note E_, 1
 	note G_, 1
 	rest 2
 	octave 3
 	note G_, 4
-	ntoe C_, 4
+	note C_, 4
 	octave 4
 	note E_, 1
 	note G_, 1

@@ -143,7 +143,7 @@ Music_PokemonCenter_Ch1:
 	note C_, 1
 	volume_envelope 10, 3
 	note C#, 8
-	octave 3 
+	octave 3
 	note B_, 4
 	note A_, 4
 	note G_, 4
@@ -208,7 +208,7 @@ Music_PokemonCenter_Ch2:
 	note F#, 4
 	note G_, 15
 	sound_call .sub2
-	sound_loop .mainloop
+	sound_jump .mainloop
 	
 .sub1:
 	duty_cycle 1
@@ -304,7 +304,7 @@ Music_PokemonCenter_Ch3:
 	note G_, 2
 	note A_, 2
 	sound_loop 2, .mainloop
-.loop1:    
+.loop1:
 	note D_, 2
 	note A_, 2
 	octave 2

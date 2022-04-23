@@ -585,7 +585,7 @@ Music_Surf_Ch3:
 	octave 5
 	note B_, 16
 	note G_, 4
-	ntoe F_, 4
+	note F_, 4
 	note G_, 4
 	note D#, 2
 	rest 6

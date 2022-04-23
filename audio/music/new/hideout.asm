@@ -294,7 +294,7 @@ Music_HavocHideout_Ch2:
 	note B_, 2
 	note B_, 2
 	note B_, 1
-	ntoe F#, 2
+	note F#, 2
 	ntoe F#, 7
 	sound_jump .mainloop
 

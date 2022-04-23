@@ -120,10 +120,11 @@ Music_TitleScreen_Ch1:
 	transpose 0, 0
 	sound_call .sub2
 	note_type 12, 11, 7
+	octave 4
 	note F#, 2
 	note D_, 1
 	note F#, 3
-	ntoe G_, 2
+	note G_, 2
 	sound_call .sub2
 	note_type 6, 11, 7
 	octave 3

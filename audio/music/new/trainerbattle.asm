@@ -26,8 +26,6 @@ Music_TrainerBattle_Ch1:
 	note D#, 1
 	note D_, 1
 	note C#, 1
-	note D_, 1
-	note C#, 1
 	note C_, 1
 	note C#, 1
 	note C_, 1
@@ -124,7 +122,7 @@ Music_TrainerBattle_Ch1:
 	octave 4
 	note C#, 2
 	octave 3
-	note G#, 4
+	note G#, 6
 	note F_, 4
 	vibrato 5, 4, 2
 	volume_envelope 10, 7
@@ -167,32 +165,32 @@ Music_TrainerBattle_Ch1:
 	vibrato 0, 0, 0
 	volume_envelope 10, 3
 	note B_, 2
-	ntoe A_, 2
-	ntoe G_, 2
-	ntoe F_, 2
+	note A_, 2
+	note G_, 2
+	note F_, 2
 	note E_, 4
-	ntoe F_, 2
-	ntoe G_, 4
-	ntoe F_, 2
-	ntoe G_, 2
-	ntoe F_, 2
-	ntoe G_, 6
+	note F_, 2
+	note G_, 4
+	note F_, 2
+	note G_, 2
+	note F_, 2
+	note G_, 6
 	octave 4
 	note C_, 6
 	octave 3
-	ntoe G_, 2
+	note G_, 2
 	note C_, 2
 	note D_, 4
 	note E_, 2
-	ntoe F_, 4
+	note F_, 4
 	note D_, 2
-	ntoe F_, 2
-	ntoe G_, 2
-	ntoe A_, 6
-	ntoe G_, 6
+	note F_, 2
+	note G_, 2
+	note A_, 6
+	note G_, 6
 	note D_, 2
-	ntoe F_, 2
-	ntoe G_, 2
+	note F_, 2
+	note G_, 2
 	sound_jump .mainloop
 
 Music_TrainerBattle_Ch2:
@@ -229,27 +227,27 @@ Music_TrainerBattle_Ch2:
 	octave 2
 	note G_, 1
 	note B_, 1
-	soudn_call .sub1
-	soudn_call .sub1
-	soudn_call .sub1
-	soudn_call .sub1
+	sound_call .sub1
+	sound_call .sub1
+	sound_call .sub1
+	sound_call .sub1
 .mainloop:
 	transpose 0, 0
-	soudn_call .sub2
+	sound_call .sub2
 	transpose 0, 1
-	soudn_call .sub2
+	sound_call .sub2
 	transpose 0, 0
-	soudn_call .sub2
+	sound_call .sub2
 	transpose 1, 10
-	soudn_call .sub2
+	sound_call .sub2
 	transpose 0, 0
-	soudn_call .sub3
+	sound_call .sub3
 	transpose 0, 1
-	soudn_call .sub3
+	sound_call .sub3
 	transpose 0, 0
-	soudn_call .sub2
+	sound_call .sub2
 	transpose 1, 10
-	soudn_call .sub2
+	sound_call .sub2
 	transpose 0, 0
 .loop1:
 	note C_, 2
@@ -287,9 +285,9 @@ Music_TrainerBattle_Ch2:
 	note F_, 1
 	note E_, 1
 	note D_, 1
-	soudn_call .sub2
+	sound_call .sub2
 	transpose 1, 10
-	soudn_call .sub2
+	sound_call .sub2
 	sound_jump .mainloop
 
 .sub1:
@@ -376,13 +374,13 @@ Music_TrainerBattle_Ch3:
 	octave 5
 	note C_, 2
 	note C#, 2
-	soudn_call .sub1
+	sound_call .sub1
 	transpose 0, 12
 	volume_envelope 1, 7
-	soudn_call .sub1
+	sound_call .sub1
 	transpose 0, 0
 .mainloop:
-	soudn_call .sub2
+	sound_call .sub2
 	note F_, 8
 	note E_, 8
 	note D_, 8
@@ -395,7 +393,7 @@ Music_TrainerBattle_Ch3:
 	note G#, 8
 	volume_envelope 3, 4
 	note G#, 8
-	soudn_call .sub2
+	sound_call .sub2
 	note G_, 12
 	note F_, 6
 	rest 2
@@ -409,7 +407,7 @@ Music_TrainerBattle_Ch3:
 	note F_, 4
 	volume_envelope 3, 4
 	note F_, 4
-	soudn_call .sub3
+	sound_call .sub3
 	volume_envelope 1, 4
 	octave 5
 	note E_, 4
@@ -421,7 +419,8 @@ Music_TrainerBattle_Ch3:
 	octave 5
 	note E_, 8
 	transpose 0, 1
-	soudn_call .sub3
+	sound_call .sub3
+	volume_envelope 1, 4
 	octave 4
 	note G_, 4
 	octave 5
@@ -441,8 +440,9 @@ Music_TrainerBattle_Ch3:
 	volume_envelope 3, 4
 	note G_, 8
 	transpose 1, 10
-	soudn_call .sub3
+	sound_call .sub3
 	transpose 0, 0
+	volume_envelope 1, 4
 	note A#, 10
 	rest 2
 	note A_, 4
@@ -450,22 +450,23 @@ Music_TrainerBattle_Ch3:
 	note F_, 4
 	note E_, 4
 	note F_, 4
-	soudn_call .sub3
+	sound_call .sub3
 	transpose 0, 3
-	soudn_call .sub3
+	sound_call .sub3
 	transpose 0, 6
-	soudn_call .sub3
+	sound_call .sub3
 	transpose 0, 5
-	soudn_call .sub3
+	sound_call .sub3
 	transpose 0, 3
-	soudn_call .sub3
+	sound_call .sub3
 	transpose 0, 8
-	soudn_call .sub3
+	sound_call .sub3
 	transpose 0, 12
-	soudn_call .sub3
+	sound_call .sub3
 	transpose 0, 10
-	soudn_call .sub3
+	sound_call .sub3
 	transpose 0, 0
+	volume_envelope 1, 4
 	octave 5
 	note C_, 10
 	rest 2
@@ -482,7 +483,8 @@ Music_TrainerBattle_Ch3:
 	volume_envelope 3, 4
 	note E_, 4
 	rest 4
-	rest 10
+	rest 16
+	volume_envelope 1, 4
 	octave 5
 	note D_, 10
 	rest 2

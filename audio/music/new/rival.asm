@@ -16,7 +16,7 @@ Music_AfterTheRivalFight:
 	channel 3, Music_AfterTheRivalFight_Ch3
 	channel 4, Music_AfterTheRivalFight_Ch4
 
-Music_AfterTheRivalFight:
+Music_AfterTheRivalFight_Ch1:
 	tempo 203
 	volume 7
 	sound_jump Music_LookRival_Ch1.body
@@ -325,9 +325,9 @@ Music_LookRival_Ch3:
 Music_AfterTheRivalFight_Ch3:
 	note_type 6, 1, 4
 	octave 2
-	note F_, 1
+	note E_, 1
 	volume_envelope 2, 4
-	note F_, 1
+	note E_, 1
 	sound_call .sub1
 .mainloop:
 	transpose 1, 7
@@ -347,21 +347,21 @@ Music_AfterTheRivalFight_Ch3:
 	transpose 0, 0
 	sound_call .sub1
 	sound_loop 3, .mainloop
-	transpose 1, 5
-	sound_call .sub2
-	sound_call .sub2
 	transpose 1, 7
 	sound_call .sub2
+	sound_call .sub2
 	transpose 1, 5
+	sound_call .sub2
+	transpose 1, 7
 	sound_call .sub2
 	transpose 0, 0
 	sound_call .sub2
 	sound_call .sub2
-	transpose 0, 4
+	transpose 0, 3
 	sound_call .sub1
-	transpose 0, 6
+	transpose 0, 5
 	sound_call .sub1
-	transpose 0, 8
+	transpose 0, 7
 	sound_call .sub1
 	transpose 0, 2
 .loop1:
@@ -380,7 +380,7 @@ Music_AfterTheRivalFight_Ch3:
 	volume_envelope 2, 4
 	note D_, 1
 	sound_loop 2, .loop2
-	transpose 0, 8
+	transpose 0, 7
 	sound_call .sub1
 	transpose 0, 2
 .loop3:

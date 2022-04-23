@@ -304,7 +304,7 @@ Music_HouseEnroute_Ch2:
 	octave 3
 	note F#, 1
 	rest 1
-	octave 1
+	octave 2
 	note C#, 2
 	rest 2
 	octave 3
@@ -537,7 +537,7 @@ Music_HouseEnroute_Ch3:
 	note B_, 2
 	octave 5
 	note E_, 2
-	volume_envelope 1, -3
+	volume_envelope 1, -4
 	note D_, 1
 	note D#, 1
 	rest 2
@@ -556,7 +556,7 @@ Music_HouseEnroute_Ch3:
 	note B_, 2
 	octave 5
 	note D#, 2
-	volume_envelope 1, -3
+	volume_envelope 1, -4
 .sub1loop1:
 	note C#, 2
 	rest 2

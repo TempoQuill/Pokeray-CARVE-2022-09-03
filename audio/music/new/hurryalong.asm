@@ -45,7 +45,7 @@ Music_HurryAlong_Ch1:
 	note A#, 4
 	note A_, 4
 	note A_, 4
-	sound_loop 2 .loop1
+	sound_loop 2, .loop1
 	note F_, 2
 	note F_, 6
 	sound_jump .mainloop
@@ -308,6 +308,6 @@ Music_HurryAlong_Ch4:
 	drum_note 2, 2
 	drum_note 2, 2
 	drum_note 2, 2
-	sound_loop 2 .loop1
+	sound_loop 2, .loop1
 	drum_note 7, 4
 	sound_jump .mainloop

@@ -228,7 +228,7 @@ Music_CottageTown_Ch2:
 	rest 3
 	note C_, 1
 	rest 3
-	endchannel
+	sound_ret
 
 .sub2:
 	octave 3
@@ -238,7 +238,7 @@ Music_CottageTown_Ch2:
 	rest 3
 	note C#, 1
 	rest 3
-	endchannel
+	sound_ret
 
 Music_CottageTown_Ch3:
 	vibrato 13, 1, 3

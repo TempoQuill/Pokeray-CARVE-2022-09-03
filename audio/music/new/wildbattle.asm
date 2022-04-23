@@ -410,11 +410,11 @@ Music_WildBattle_Ch2:
 	octave 2
 	note G#, 1
 	octave 3
-	note G#, 1
+	note D#, 1
 	octave 2
 	note G#, 1
 	octave 3
-	note G#, 1
+	note D#, 1
 	sound_ret
 
 .sub2:
@@ -562,6 +562,7 @@ Music_WildBattle_Ch3:
 	sound_ret
 
 .sub2:
+	volume_envelope 1, -6
 	note G_, 3
 	rest 9
 	note D_, 3

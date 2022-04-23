@@ -12,7 +12,7 @@ Music_Route52_Ch1:
 	volume 7
 	pitch_offset -1
 	duty_cycle 2
-	note_type 12, 10, 2
+	note_type 12, 10, 3
 	rest 16
 	rest 2
 	sound_call .sub1
@@ -58,11 +58,11 @@ Music_Route52_Ch1:
 	sound_call .sub2
 	transpose 0, 5
 	sound_call .sub3
-	note_type 6, 10, 2
+	note_type 6, 10, 3
 	octave 2
 	note F_, 1
 	note A#, 1
-	note_type 12, 10, 2
+	note_type 12, 10, 3
 	octave 3
 	note D_, 15
 	sound_call .sub3
@@ -290,7 +290,7 @@ Music_Route52_Ch1:
 
 Music_Route52_Ch2:
 	duty_cycle 3
-	note_type 12, 13, 1
+	note_type 12, 13, 2
 	sound_call .sub1
 	note F_, 2
 	note F_, 2

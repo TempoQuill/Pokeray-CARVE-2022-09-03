@@ -22,10 +22,10 @@ Music_Mum_Ch2:
 	note C_, 12
 	volume_envelope 10, 1
 .mainloop:
-	note A#, 4
+	note A#, 8
 	sound_loop 6, .mainloop
-	note A_, 4
-	note A_, 4
+	note A_, 8
+	note A_, 8
 	sound_jump .mainloop
 
 Music_Mum_Ch3:

@@ -25,7 +25,7 @@ Music_Gym_Ch1:
 	rest 3
 	octave 4
 	note E_, 2
-	note G#, 4
+	note G#, 2
 	transpose 1, 10
 	sound_loop 2, .mainloop
 	transpose 0, 0
@@ -94,7 +94,7 @@ Music_Gym_Ch1:
 	note B_, 4
 	octave 4
 	note D_, 4
-	note E_, 4
+	note E_, 6
 	octave 3
 	note B_, 6
 	note B_, 4
@@ -118,7 +118,6 @@ Music_Gym_Ch1:
 	octave 3
 	note B_, 6
 	note G#, 6
-	note G#, 4
 	note G#, 2
 	note B_, 2
 	octave 4
@@ -200,7 +199,7 @@ Music_Gym_Ch1:
 	note G#, 12
 	octave 3
 	note B_, 2
-	rest 4
+	rest 6
 	note B_, 2
 	rest 2
 	note B_, 2
@@ -266,7 +265,7 @@ Music_Gym_Ch2:
 	note G#, 2
 	note A_, 3
 	note F#, 1
-	note F#, 2
+	note F#, 4
 	octave 5
 	note D_, 3
 	octave 4
@@ -285,35 +284,36 @@ Music_Gym_Ch2:
 	octave 2
 	note D_, 4
 	note D#, 4
+	transpose 0, 4
 	sound_call .sub2
 	sound_call .sub3
-	transpose 1, 10
+	transpose 0, 2
 	sound_call .sub2
 	sound_call .sub3
-	transpose 1, 9
+	transpose 0, 1
 	sound_call .sub2
 	sound_call .sub3
-	transpose 1, 8
-	note E_, 4
-	sound_call .sub4
-	transpose 1, 10
-	note E_, 4
-	sound_call .sub4
 	transpose 0, 0
+	note C_, 4
+	sound_call .sub4
+	transpose 0, 2
+	note C_, 4
+	sound_call .sub4
+	transpose 0, 4
 	sound_call .sub2
 	sound_call .sub3
-	transpose 1, 10
+	transpose 0, 2
 	sound_call .sub2
 	sound_call .sub3
-	transpose 1, 9
+	transpose 0, 1
 	sound_call .sub2
 	octave 2
-	note E_, 4
-	transpose 1, 10
+	note C_, 4
+	transpose 0, 2
 	sound_call .sub2
 	octave 2
-	note E_, 4
-	transpose 0, 0
+	note C_, 4
+	transpose 0, 4
 	sound_call .sub2
 	sound_call .sub3
 	sound_jump Music_Gym_Ch2
@@ -335,25 +335,25 @@ Music_Gym_Ch2:
 	sound_ret
 
 .sub2:
-	note E_, 2
+	note C_, 2
 	rest 2
-	note E_, 2
-	note B_, 2
+	note C_, 2
+	note G_, 2
 	octave 3
-	note E_, 2
+	note C_, 2
 	rest 2
 	sound_ret
 
 .sub3:
 	octave 2
-	note E_, 8
+	note C_, 8
 .sub4:
 	octave 1
-	note B_, 2
+	note G_, 2
 	octave 2
-	note E_, 2
-	note B_, 4
-	note E_, 4
+	note C_, 2
+	note G_, 4
+	note C_, 4
 	sound_ret
 
 Music_Gym_Ch3:

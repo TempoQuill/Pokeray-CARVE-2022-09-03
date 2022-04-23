@@ -393,12 +393,12 @@ Music_NorgeoTown_Ch3:
 	sound_call .sub2
 	note D#, 1
 	note F_, 7
-	ntoe F#, 2
+	note F#, 2
 	rest 2
 	volume_envelope 1, 0
 	octave 4
 	note C#, 4
-	ntoe F#, 4
+	note F#, 4
 	volume_envelope 1, -6
 	octave 3
 	note C_, 2
@@ -415,7 +415,7 @@ Music_NorgeoTown_Ch3:
 	volume_envelope 1, 0
 	octave 4
 	note F_, 2
-	ntoe F#, 2
+	note F#, 2
 	note G#, 2
 	rest 2
 	volume_envelope 1, -6
@@ -436,10 +436,10 @@ Music_NorgeoTown_Ch3:
 	octave 3
 	note D#, 1
 	note F_, 7
-	ntoe F#, 2
+	note F#, 2
 	rest 2
 	volume_envelope 1, 0
-	ntoe F#, 2
+	note F#, 2
 	octave 4
 	note C#, 2
 	note A#, 2
@@ -571,12 +571,12 @@ Music_NorgeoTown_Ch3:
 	rest 2
 	note D#, 1
 	note F_, 7
-	ntoe F#, 2
+	note F#, 2
 	rest 10
-	ntoe F#, 2
+	note F#, 2
 	rest 2
 	octave 2
-	ntoe F#, 2
+	note F#, 2
 	rest 2
 	octave 3
 	note A#, 4

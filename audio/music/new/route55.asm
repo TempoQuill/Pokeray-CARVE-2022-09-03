@@ -513,7 +513,7 @@ Music_Route55_Ch2:
 
 Music_Route55_Ch3:
 	vibrato 0, 1, 3
-.mainloop
+.mainloop:
 	sound_call .sub1
 	volume_envelope 1, 4
 	octave 4
@@ -582,7 +582,7 @@ Music_Route55_Ch3:
 	note D_, 4
 	octave 4
 	note A_, 4
-	octave 3
+	octave 5
 	note C_, 4
 	note D_, 12
 	note E_, 2
@@ -591,7 +591,7 @@ Music_Route55_Ch3:
 	note_type 6, 1, 5
 	octave 4
 	note A_, 2
-	rest 6
+	rest 4
 	note A_, 2
 	sound_call .sub3
 	note A_, 1
