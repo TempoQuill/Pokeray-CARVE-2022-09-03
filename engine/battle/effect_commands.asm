@@ -1676,16 +1676,18 @@ BattleCommand_CheckHit:
 	ld b, 0
 
 .skip_brightpowder
-	ld a, b
-	cp -1
-	jr z, .Hit
 
+	; in Red, there was an accuracy bug for moves that use this chedk
+	;	every move had a least 1 parameter that can result in a miss
+	; in Gold, perfect vanilla accuracy moves skip this check
+	; in Ray, this check will loop as long as the parameter is $ff
+	;	this essentially evens out accuracy estimates
 	call BattleRandom
+	ld c, a
+	inc c
+	jr z, .skip_brightpowder
 	cp b
-	jr nc, .Miss
-
-.Hit:
-	ret
+	ret c
 
 .Miss:
 ; Keep the damage value intact if we're using (Hi) Jump Kick.
