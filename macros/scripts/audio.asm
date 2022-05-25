@@ -65,7 +65,7 @@ FIRST_MUSIC_CMD EQU const_value
 	const toggle_music_cmd            ; $df
 	const pitch_slide_cmd             ; $e0
 	const vibrato_cmd                 ; $e1
-	const set_mute_cmd                ; $e2
+	const time_mute_cmd                ; $e2
 	const toggle_noise_cmd            ; $e3
 	const old_panning_cmd             ; $e4
 	const volume_cmd                  ; $e5
@@ -181,11 +181,11 @@ vibrato: MACRO
 ENDM
 
 ; from Gold, restored
-; appears to be an equivalent to RBY's $ef
+; similar to (NES)Yoshi's $ef
 ; used in VulpReich, but not Ray
-set_mute: MACRO
-	db set_mute_cmd
-	db \1 ; mute flag
+time_mute: MACRO
+	db time_mute_cmd
+	db \1 ; mute delay
 ENDM
 
 toggle_noise: MACRO

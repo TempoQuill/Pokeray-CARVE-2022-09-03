@@ -252,3 +252,6 @@ EvosAttacksPointers::
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
+	dw OrkidEvosAttacks
+	dw SyntiqueEvosAttacks
+	dw PhotordenEvosAttacks

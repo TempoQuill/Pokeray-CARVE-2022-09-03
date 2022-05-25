@@ -16,7 +16,7 @@ Music_VSMenu_Ch1:
 	rest 1
 	toggle_perfect_pitch
 	note_type 8, 11, 1
-.mainloop
+.mainloop:
 	octave 4
 	note C_, 3
 	note C_, 1

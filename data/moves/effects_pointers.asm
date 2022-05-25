@@ -160,3 +160,4 @@ MoveEffectsPointers:
 	dw DoBurn
 	dw DoFreeze
 	dw FunnyStuff
+	dw Smokescreen

@@ -42,7 +42,7 @@ Music_LookSibs_Ch1:
 	volume_envelope 10, 6
 	octave 3
 	note E_, 1
-	note F_, 1
+	note G_, 1
 	note F#, 6
 	note F#, 1
 	note G_, 1

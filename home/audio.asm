@@ -255,7 +255,7 @@ LowVolume::
 	ret
 
 MinVolume::
-	xor a
+	xor a ; 12.5%
 	ld [wVolume], a
 	ret
 
@@ -398,6 +398,8 @@ SpecialMapMusic::
 	ld a, [wMapMusic]
 	cp SPECIAL_MAP_MUSIC
 	jr z, .get_map
+	cp NUM_MUSIC_IDS
+	jr nc, .randomize
 	ld a, [wPlayerState]
 	cp PLAYER_BIKE
 	jr z, .bike
@@ -420,6 +422,14 @@ SpecialMapMusic::
 
 .get_map
 	scf
+	ret
+
+.randomize
+	call Random
+	cp NUM_MUSIC_IDS
+	jr nc, .randomize
+	ld e, a
+	ld d, 0
 	ret
 
 GetMapMusic_MaybeSpecial::

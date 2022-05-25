@@ -242,8 +242,8 @@ Music_LookWoman_Ch3:
 	note E_, 4
 	note F#, 4
 	note E_, 4
-	note F#, 4
-	note E_, 4
+	note D_, 4
+	note C#, 4
 	note D_, 4
 	note C#, 12
 	note D_, 4

@@ -157,6 +157,7 @@ Music_Surf_Ch1:
 	note G#, 1
 	note G_, 8
 	duty_cycle 3
+	vibrato 0, 0, 0
 	note_type 3, 12, 4
 	octave 2
 	note A#, 1
@@ -180,7 +181,7 @@ Music_Surf_Ch1:
 	note A#, 1
 	octave 3
 	note G_, 1
-	rest 2
+	rest 6
 	sound_jump .mainloop
 
 .sub1:
@@ -203,7 +204,6 @@ Music_Surf_Ch2:
 	octave 1
 	note A#, 1
 .mainloop:
-	duty_cycle 2
 	vibrato 6, 6, 4
 	sound_call .sub1
 	sound_call .sub3
@@ -251,6 +251,7 @@ Music_Surf_Ch2:
 	octave 3
 	note D#, 1
 	note G_, 1
+	rest 2
 	duty_cycle 2
 	octave 1
 	note A#, 4
@@ -258,6 +259,7 @@ Music_Surf_Ch2:
 	octave 3
 	note D_, 1
 	note F#, 1
+	rest 2
 	duty_cycle 2
 	octave 1
 	note A_, 4
@@ -265,6 +267,7 @@ Music_Surf_Ch2:
 	octave 3
 	note C#, 1
 	note F_, 1
+	rest 2
 	sound_call .sub2
 	sound_call .sub7
 	sound_call .sub6
@@ -299,6 +302,7 @@ Music_Surf_Ch2:
 	sound_jump .mainloop
 
 .sub1:
+	duty_cycle 2
 	note_type 3, 12, 3
 	octave 2
 	note D#, 8
@@ -403,7 +407,8 @@ Music_Surf_Ch2:
 	octave 2
 	note D_, 4
 .sub4:
-	note C_, 4
+	octave 2
+	note C_, 8
 .sub4_f7:
 	duty_cycle 3
 	note G_, 1
@@ -434,7 +439,7 @@ Music_Surf_Ch2:
 	duty_cycle 2
 	volume_envelope 12, 3
 	octave 2
-	note C_, 4
+	note C_, 8
 	duty_cycle 3
 	note A_, 1
 	octave 3
@@ -493,13 +498,13 @@ Music_Surf_Ch2:
 	octave 2
 	note F_, 1
 	octave 3
-	note D#, 1
+	note D_, 1
 	rest 2
 	volume_envelope 6, 3
 	octave 2
 	note F_, 1
 	octave 3
-	note D#, 1
+	note D_, 1
 	rest 2
 	volume_envelope 12, 3
 	octave 2
@@ -643,7 +648,7 @@ Music_Surf_Ch3:
 	note C#, 1
 	note D_, 8
 	rest 4
-	vibrato 0, 1, 4
+	vibrato 3, 1, 3
 	volume_envelope 1, -2
 	note G_, 4
 	note G#, 4

@@ -134,7 +134,6 @@ Music_LookYouth_Ch2:
 	octave 2
 	note C#, 2
 	note B_, 2
-	octave 2
 	note D_, 2
 	octave 3
 	note D_, 2

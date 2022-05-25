@@ -251,3 +251,14 @@ PokedexDataPointerTable:
 	dba LugiaPokedexEntry
 	dba HoOhPokedexEntry
 	dba CelebiPokedexEntry
+	dba DummyDexEntry
+	dba DummyDexEntry
+	dba DummyDexEntry
+	dba DummyDexEntry
+	dba DummyDexEntry
+	dba OrkidPokedexEntry
+	dba SyntiquePokedexEntry
+	dba PhotordenPokedexEntry
+
+DummyDexEntry:
+	db "@"

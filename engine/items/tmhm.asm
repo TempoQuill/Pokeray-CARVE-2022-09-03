@@ -96,9 +96,9 @@ ChooseMonToLearnTMHM_NoRefresh:
 	ld a, [wCurPartySpecies]
 	cp LOW(EGG)
 .high_byte_failed
-	pop bc ; now contains the former contents of af
+	pop af ; now contains the former contents of af
 	jr z, .egg
-	push bc
+	push af
 	ld hl, wTMHMMoveNameBackup
 	ld de, wStringBuffer2
 	ld bc, 12
@@ -553,4 +553,17 @@ CountTMsHMs:
 	jr nz, .loop
 	ld a, b
 	ld [wTempTMHM], a
+	ret
+
+SetUniversityTMFlag:
+	ld a, MON_BUILD
+	call GetPartyParamLocation
+	ld a, [wNamedObjectIndexBuffer]
+	cp DRAGON_RAGE
+	jr z, .set_dragon_rage
+	set UNIVERSITY_TM_F, [hl]
+	ret
+
+.set_dragon_rage
+	set UNIVERSITY_DRAGON_RAGE_F, [hl]
 	ret

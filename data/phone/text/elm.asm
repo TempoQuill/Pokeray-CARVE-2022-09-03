@@ -1,3 +1,4 @@
+; these are all unused, leftover from GS
 ElmPhoneHealYourMonText:
 	text ", <PLAYER>?"
 

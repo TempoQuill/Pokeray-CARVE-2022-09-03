@@ -44,6 +44,8 @@ NUM_SPRITE_OAM_STRUCTS EQU 40 ; see wVirtualOAM
 SPRITE_GFX_LIST_CAPACITY EQU 12 ; see wUsedSprites
 
 ; PokeAnims indexes (see engine/gfx/pic_animation.asm)
+; wait these are from Crystal, what were these doing in the Gold disassembly?
+; oh well, guess these'll be used for Chaos
 	const_def
 	const ANIM_MON_SLOW
 	const ANIM_MON_NORMAL

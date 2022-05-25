@@ -479,20 +479,37 @@ Script_pocketisfull:
 Script_specialsound::
 	farcall CheckItemPocket
 	ld a, [wItemAttributeParamBuffer]
-	cp TM_HM
-	ld de, SFX_GET_TM
-	jr z, .play
-	cp BALL
-	ld de, SFX_3RD_PLACE
-	jr z, .play
-	cp KEY_ITEM
-	ld de, SFX_TRADE_COMPLETE
-	jr z, .play
-	ld de, SFX_ITEM
-.play
+;	cp TM_HM
+;	ld de, SFX_GET_TM
+;	jr z, .play
+;	cp BALL
+;	ld de, SFX_3RD_PLACE
+;	jr z, .play
+;	cp KEY_ITEM
+;	ld de, SFX_TRADE_COMPLETE
+;	jr z, .play
+;	ld de, SFX_ITEM
+;.play
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, .sfx
+	add hl, de
+	ld e, [hl]
 	call PlaySFX
 	call WaitSFX
 	ret
+
+.sfx:
+	db SFX_ITEM             ; ITEM
+	db SFX_TRADE_COMPLETE   ; KEY_ITEM
+	; placeholder for POKE BALL fanfare
+	db SFX_CHOOSE_A_CARD    ; BALL
+	db SFX_GET_TM           ; TM_HM
+	db SFX_GEN_1_DEX_REWARD ; MEDICINE
+	db SFX_ITEM             ; FRUIT
+	db SFX_KEY_ITEM         ; ASM_ITEMS
+	db SFX_KEY_ITEM         ; EVO_ITEMS
 
 GetPocketName:
 	farcall CheckItemPocket

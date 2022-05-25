@@ -6,37 +6,31 @@
 ; some of these entries are unused because pokemon can't hold key items
 
 TimeCapsule_CatchRateItems:
-	db ITEM_2D,      BITTER_BERRY ; BUDDING_SEED
 	db ITEM_32,      FILLINGBERRY ; NAPKIN
 	db POKE_FLUTE,   FILLINGBERRY ; POKE_FLUTE
-	db RED_SCALE,    FILLINGBERRY
-	db MYSTERY_EGG,  FILLINGBERRY
+	db RED_SCALE,    FILLINGBERRY ; SPHERE_STONE
+	db MYSTERY_EGG,  FILLINGBERRY ; DUCKY_AMULET
 	db ITEM_46,      BERRY        ; CORNERTICKET
-	db SILVER_WING,  BERRY
-	db ITEM_5A,      BERRY        ; LUGNUT
+	db SILVER_WING,  BERRY        ; NIGHT_ARMOR
 	db ITEM_64,      BERRY        ; FLASH_STONE
 	db PINK_BOW,     BERRY        ; TRUSTY_STONE
-	db ITEM_73,      BERRY        ; SPHERE_STONE
-	db ITEM_74,      BERRY        ; DUCKY_AMULET
+	db ITEM_73,      BERRY
+	db ITEM_74,      BERRY
 	db ITEM_78,      BERRY        ; PUMP_BOTTLE
-	db MACHINE_PART, BERRY        ; NIGHT_ARMOR
-	db ITEM_81,      BERRY        ; PIPE_FEATHER
-	db LOST_ITEM,    BERRY        ; LARGE_PIN
+	db MACHINE_PART, BERRY
+	db ITEM_81,      BERRY
+	db LOST_ITEM,    BERRY
 	db PASS,         BERRY        ; FOSSIL_ROCK
 	db ITEM_87,      BERRY        ; STADIUM_BAND
 	db ITEM_88,      BERRY        ; BLUE_LEAF
 	db ITEM_89,      BERRY        ; WHITE_LEAF
 	db ITEM_8D,      BERRY        ; WHOPPER
-	db ITEM_8E,      BERRY        ; SOFT_PILLOW
-	db ITEM_91,      BERRY        ; SLVRAPRICORN
-	db ITEM_93,      BERRY        ; AQUAAPRICORN
-	db ITEM_94,      BERRY        ; GOLDAPRICORN
 	db ITEM_95,      BERRY        ; HEAVY_GENE
 	db ITEM_99,      BERRY        ; SLEAK_GENE
 	db ITEM_AB,      BERRY        ; VINE_MAIL
 	db ITEM_B0,      BERRY        ; CHORD_MAIL
-	db PARK_BALL,    BERRY
-	db RAINBOW_WING, BERRY
+	db PARK_BALL,    BERRY        ; SOFT_PILLOW
+	db RAINBOW_WING, BERRY        ; LARGE_PIN
 	db ITEM_BE,      BERRY        ; HELIX_FOSSIL
 	db ITEM_C3,      BERRY        ; OUTLET
 	db -1,           BERRY

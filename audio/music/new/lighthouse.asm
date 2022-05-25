@@ -279,6 +279,7 @@ Music_Lighthouse_Ch2:
 	note A_, 2
 	note B_, 2
 .mainloop:
+	volume_envelope 6, 3
 	sound_call .sub1
 	octave 1
 	note G_, 2

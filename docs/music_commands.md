@@ -32,7 +32,7 @@ USAGE:
 	...
 	square_note 20, 8, 4, 1920
 	...
-	drum_note 4, 10, 1, 44
+	noise_note 4, 10, 1, 44
 ```
 
 ## `D0-D7` **Octave**
@@ -178,6 +178,8 @@ USAGE:
 
 ## `E1` **Vibrato**
 
+NOTE: Like all 8-bit Game Freak sound engines, vibrato style is in a pulse wave.
+
 VARS:
 - Byte 2 = Preamble length
 - Nybble 5 = Key pitch distance
@@ -192,12 +194,14 @@ USAGE:
 
 IMPORTANT NOTE: This only works in Ray.  This is because it was stubbed in the retail release of Gold.
 
+NOTE: Muting was only ever officially implemented in the NES version of Yoshi as `EF`, where it was never used.
+
 VARS:
-- Byte 2 = Mute Delay
+- Byte 2 = Mute Delay (in frames)
 
 USAGE:
 ```
-	set_mute 3
+	time_mute 3
 ```
 
 ## `E3` **Drum Mode Switch (Channel 4)**
@@ -314,6 +318,8 @@ USAGE:
 ```
 
 ## `EB` **Present A New ID**
+
+NOTE: This command additionally appeared Yoshi and Pokemon Red, `EE` for NES, `EF` for GB
 
 VARS:
 - Byte 2-3 = Song/Sound Effect ID to play

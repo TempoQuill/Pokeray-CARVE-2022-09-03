@@ -14,7 +14,8 @@ Music_TeamHavocTheme_Ch1:
 	sound_call .sub1
 	sound_call .sub2
 	sound_call .sub3
-	rest 4
+	note G#, 2
+	note A_, 2
 	sound_call .sub2
 	note G_, 16
 	note G#, 16
@@ -475,7 +476,7 @@ Music_TeamHavocTheme_Ch3:
 	note A_, 4
 	note A#, 4
 	octave 6
-	note D_, 4
+	note D_, 2
 	sound_jump Music_TeamHavocTheme_Ch3
 
 .sub1:

@@ -35,8 +35,7 @@ AI_SwitchOrTryItem:
 	; fallthrough
 
 DontSwitch:
-	call AI_TryItem
-	ret
+	jp AI_TryItem
 
 SwitchOften:
 	callfar CheckAbleToSwitch

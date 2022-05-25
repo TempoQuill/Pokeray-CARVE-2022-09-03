@@ -3,6 +3,7 @@
 ; Control characters (see home/text.asm)
 
 	charmap "<NULL>",    $00
+	charmap "<PLAY_G>",  $14 ; simplified port from Crystal
 	charmap "<CR>",      $16
 	charmap "¯",         $1f ; soft linebreak
 	charmap "<LF>",      $22

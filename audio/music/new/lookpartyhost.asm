@@ -15,7 +15,7 @@ Music_LookPartyHost_Ch1:
 	note_type 12, 10, 1
 	rest 5
 .mainloop:
-	octave 4
+	octave 3
 	note F_, 2
 	sound_loop 10, .mainloop
 	note E_, 2

@@ -360,3 +360,30 @@ HappinessText1:
 	para "If you aren't"
 	line "nice, it'll pout."
 	done
+
+ToolBoxText1:
+	text "A toolbox! You can"
+	line "make your very own"
+	cont "#MON!"
+
+	para "Want to assemble a"
+	cont "#MON?"
+	done
+
+ToolBoxText2:
+	text "You don't have any"
+	line "items to use!"
+	done
+
+ToolBoxText3:
+	text "Your items cannot"
+	line "combine!"
+	done
+
+ToolBoxText4:
+	text "Maybe next time."
+	done
+
+ToolBoxText5:
+	text "Assembling…"
+	done

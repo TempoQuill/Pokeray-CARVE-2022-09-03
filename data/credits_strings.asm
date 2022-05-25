@@ -63,9 +63,15 @@ Credits_DanielIngram::        db "   DANIEL INGRAM@"
 Credits_LaurenFaust::         db "    LAUREN FAUST@"
 Credits_MinakoHamano::        db "   MINAKO HAMANO@"
 Credits_JoshuaCrapo::         db "    JOSHUA CRAPO@"
+Credits_BonnieZacherle::      db "  BONNIE ZACHERLE@"
 Credits_End::                 db "END@"
 Credits_Staff::               db "      #MON"
-                            next "     RAY VERSION"
+IF DEF(_RAY)
+                            next "    RAY VERSION"
+ENDIF
+IF DEF(_SHADE)
+                            next "   SHADE VERSION"
+ENDIF
                             next "       STAFF@"
 Credits_Director::            db "      DIRECTOR@"
 Credits_SubDirector::         db "    SUB DIRECTOR@"

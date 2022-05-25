@@ -50,7 +50,7 @@
 	const SUPER_REPEL  ; 2a
 	const MAX_REPEL    ; 2b
 	const DIRE_HIT     ; 2c
-	const ITEM_2D      ; 2d
+	const BUDDING_SEED ; 2d
 	const FRESH_WATER  ; 2e
 	const SODA_POP     ; 2f
 	const LEMONADE     ; 30
@@ -95,7 +95,7 @@
 	const BIG_MUSHROOM ; 57
 	const SILVERPOWDER ; 58
 	const BLUEAPRICORN ; 59
-	const ITEM_5A      ; 5a
+	const LUGNUT       ; 5a
 	const AMULET_COIN  ; 5b
 	const YLW_APRICORN ; 5c
 	const GR_APRICORN  ; 5d
@@ -147,13 +147,13 @@
 	const BERRY_JUICE  ; 8b
 	const SCOPE_LENS   ; 8c
 	const ITEM_8D      ; 8d
-	const ITEM_8E      ; 8e
+	const PIPE_FEATHER ; 8e
 	const METAL_COAT   ; 8f
 	const DRAGON_FANG  ; 90
-	const ITEM_91      ; 91
+	const SLVRAPRICORN ; 91
 	const LEFTOVERS    ; 92
-	const ITEM_93      ; 93
-	const ITEM_94      ; 94
+	const AQUAAPRICORN ; 93
+	const GOLDAPRICORN ; 94
 	const ITEM_95      ; 95
 	const MYSTERYBERRY ; 96
 	const DRAGON_SCALE ; 97

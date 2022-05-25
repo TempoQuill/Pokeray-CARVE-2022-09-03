@@ -1,4 +1,5 @@
 Music_GolemPalace:
+; engine
 ; FEB 13 2020
 	channel_count 3
 	channel 1, Music_GolemPalace_Ch1
@@ -9,6 +10,7 @@ Music_GolemPalace:
 Music_GolemPalace_Ch1:
 	tempo 176
 	volume 7
+	pitch_inc_switch
 	duty_cycle 3
 	note_type 12, 7, 7
 	rest 2

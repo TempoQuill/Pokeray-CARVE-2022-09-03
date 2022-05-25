@@ -37,7 +37,7 @@ Music_Route52_Ch1:
 	octave 4
 	note C#, 2
 	octave 3
-	note F#, 2
+	note A#, 2
 	octave 4
 	note F_, 2
 	note C#, 2
@@ -68,11 +68,14 @@ Music_Route52_Ch1:
 	sound_call .sub3
 	transpose 0, 2
 	sound_call .sub4
+	octave 3
 	note D#, 15
 	transpose 0, 0
 	sound_call .sub4
+	octave 3
 	note D_, 15
 	sound_call .sub4
+	octave 3
 	note D#, 15
 	transpose 0, 1
 	sound_call .sub3
@@ -161,7 +164,14 @@ Music_Route52_Ch1:
 	note A#, 2
 	octave 4
 	note C_, 4
-	sound_call .sub7
+	note D_, 2
+	octave 3
+	note A#, 2
+	octave 4
+	note F_, 4
+	octave 3
+	note A#, 4
+	octave 4
 	note C_, 2
 	octave 3
 	note F_, 2
@@ -194,11 +204,9 @@ Music_Route52_Ch1:
 	octave 4
 	note D_, 2
 	note C_, 2
-	octave 3
-	note A_, 2
-	octave 4
-	note F_, 2
-	note C_, 4
+	note D_, 2
+	note D#, 2
+	note D_, 4
 	note F_, 4
 	note A_, 4
 	note G_, 2
@@ -258,7 +266,6 @@ Music_Route52_Ch1:
 	note G_, 1
 	note A#, 1
 	note_type 12, 10, 3
-	octave 3
 	sound_ret
 
 .sub5:
@@ -275,17 +282,6 @@ Music_Route52_Ch1:
 	note F_, 4
 	note D_, 4
 	note D_, 4
-	sound_ret
-
-.sub7:
-	note D_, 2
-	octave 3
-	note A#, 2
-	octave 4
-	note F_, 4
-	octave 3
-	note A#, 4
-	octave 4
 	sound_ret
 
 Music_Route52_Ch2:
@@ -342,7 +338,7 @@ Music_Route52_Ch2:
 	note C_, 2
 	note D#, 2
 	sound_call .sub2
-.mainloop
+.mainloop:
 	sound_call .sub2
 	duty_cycle 2
 	note_type 6, 9, 7
@@ -404,7 +400,14 @@ Music_Route52_Ch2:
 	note D_, 2
 	note F_, 2
 	note D#, 2
-	sound_call Music_Route52_Ch1.sub7
+	note D_, 2
+	octave 3
+	note A#, 2
+	octave 4
+	note F_, 4
+	octave 3
+	note A#, 4
+	octave 4
 	note C_, 4
 	octave 3
 	note A#, 2
@@ -422,12 +425,25 @@ Music_Route52_Ch2:
 	note A#, 2
 	note F_, 2
 	note A#, 2
-	sound_call .sub4
+	note A_, 2
+	note F_, 2
+	octave 4
+	note C_, 2
+	octave 3
+	note A_, 2
+	octave 4
 	note F_, 2
 	note C_, 2
 	note F_, 2
 	note C_, 2
-	sound_call .sub4
+	octave 3
+	note A_, 2
+	note F_, 2
+	octave 4
+	note C_, 2
+	octave 3
+	note A_, 2
+	octave 4
 	note D#, 2
 	note C_, 2
 	note D_, 2
@@ -485,17 +501,6 @@ Music_Route52_Ch2:
 	rest 1
 	note C_, 1
 	rest 1
-	sound_ret
-
-.sub4:
-	octave 3
-	note A_, 2
-	note F_, 2
-	octave 4
-	note C_, 2
-	octave 3
-	note A_, 2
-	octave 4
 	sound_ret
 
 Music_Route52_Ch3:

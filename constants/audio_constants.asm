@@ -60,10 +60,10 @@ NUM_CHANNELS EQU const_value
 	const_skip
 	const CHANNEL_TRACKS                ; 1b
 	const CHANNEL_DUTY_CYCLE_PATTERN    ; 1c
-	const CHANNEL_VIBRATO_DELAY_COUNT   ; 1d
-	const CHANNEL_VIBRATO_DELAY         ; 1e
-	const CHANNEL_VIBRATO_EXTENT        ; 1f
-	const CHANNEL_VIBRATO_RATE          ; 20
+	const CHANNEL_VIBRATO_COUNTER       ; 1d
+	const CHANNEL_VIBRATO_PREAMBLE      ; 1e
+	const CHANNEL_VIBRATO_DEPTH         ; 1f
+	const CHANNEL_VIBRATO_TIMER         ; 20
 	const CHANNEL_PITCH_SLIDE_TARGET    ; 21
 	const_skip
 	const CHANNEL_PITCH_SLIDE_AMOUNT    ; 23
@@ -90,7 +90,7 @@ NOISE_CHAN_F EQU 2 ; bit set in CHAN5-CHAN7
 	const SOUND_CHANNEL_ON       ; 0
 	const SOUND_SUBROUTINE       ; 1
 	const SOUND_LOOPING          ; 2
-	const SOUND_SFX              ; 3
+	const SOUND_READING_MODE     ; 3
 	const SOUND_NOISE            ; 4
 	const SOUND_CRY              ; 5
 	const SOUND_PITCH_INC_SWITCH ; 6

@@ -25,6 +25,7 @@ Music_HavocHideout_Ch1:
 	duty_cycle 1
 	volume_envelope 7, 2
 	sound_call .sub1
+	rest 2
 	duty_cycle 2
 	volume_envelope 10, 1
 	sound_call .sub2
@@ -70,6 +71,7 @@ Music_HavocHideout_Ch1:
 	vibrato 0, 2, 2
 	volume_envelope 8, 8
 	note D_, 12
+	rest 4
 	vibrato 14, 2, 2
 	volume_envelope 7, 2
 	octave 4
@@ -104,8 +106,8 @@ Music_HavocHideout_Ch1:
 
 Music_HavocHideout_Ch2:
 	duty_cycle 3
-	vibrato 7, 3, 3
 .mainloop:
+	vibrato 7, 3, 3
 	note_type 12, 10, 1
 	rest 4
 	octave 3
@@ -129,8 +131,8 @@ Music_HavocHideout_Ch2:
 	vibrato 0, 3, 3
 	volume_envelope 10, 8
 	note D_, 12
-	vibrato 7, 3, 3
 	sound_loop 2, .mainloop
+	rest 2
 	note_type 6, 13, 0
 	octave 2
 	note A#, 1
@@ -205,6 +207,7 @@ Music_HavocHideout_Ch2:
 	note B_, 4
 	note A_, 4
 	note F#, 4
+	note F_, 4
 	note E_, 4
 	note D_, 4
 	octave 2
@@ -295,7 +298,7 @@ Music_HavocHideout_Ch2:
 	note B_, 2
 	note B_, 1
 	note F#, 2
-	ntoe F#, 7
+	note F#, 7
 	sound_jump .mainloop
 
 Music_HavocHideout_Ch3:
@@ -485,12 +488,12 @@ Music_HavocHideout_Ch4:
 	drum_note 8, 2
 	drum_note 9, 2
 	drum_note 8, 2
-	drum_note 8, 2
 	drum_note 3, 2
 	sound_call .sub1
 	drum_note 8, 2
 	drum_note 9, 1
 	drum_note 8, 1
+	drum_note 8, 2
 	drum_note 8, 2
 	drum_note 8, 2
 	drum_note 9, 2

@@ -65,3 +65,16 @@ PhoneRoute45Text:
 
 PhoneRoute46Text:
 	db "ROUTE 46@"
+
+; new landmarks
+PhoneCottageTownText:
+	db "COTTAGE TOWN@"
+
+PhoneRoute49Text:
+	db "ROUTE 49@"
+
+PhoneRoute50Text:
+	db "ROUTE 50@"
+
+PhoneTraversalCityText:
+	db "TRAVERSAL CITY@"

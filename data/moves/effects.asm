@@ -1032,6 +1032,21 @@ FunnyStuff:
 	multistatuschance ; tristatuschance
 	endmove
 
+Smokescreen:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	accuracydown
+	lowersub
+	statdownanim
+	raisesub
+	statdownmessage
+	statdownfailtext
+	checksafeguard
+	poison
+	endmove
+
 TriAttack:
 	checkobedience
 	usedmovetext

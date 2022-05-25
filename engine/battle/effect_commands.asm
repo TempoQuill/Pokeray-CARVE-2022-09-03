@@ -1104,8 +1104,7 @@ BattleCommand_DoTurn:
 
 .mimic
 	ld hl, wWildMonPP
-	call .consume_pp
-	ret
+	jp .consume_pp
 
 .out_of_pp
 	call BattleCommand_MoveDelay
@@ -3746,8 +3745,7 @@ BattleCommand_SleepTarget:
 	farcall UseHeldStatusHealingItem
 	ret nz
 
-	call OpponentCantMove
-	ret
+	jp OpponentCantMove
 
 .fail
 	call AnimateFailedMove
@@ -4890,8 +4888,7 @@ BattleCommand_TriStatusChance:
 	jr z, .loop
 	dec a
 	ld hl, .ptrs
-	rst JumpTable
-	ret
+	jp JumpTable
 
 .ptrs
 	dw BattleCommand_ParalyzeTarget ; paralyze
@@ -6881,8 +6878,7 @@ PlayOpponentBattleAnim:
 
 CallBattleCore:
 	ld a, BANK("Battle Core")
-	rst FarCall
-	ret
+	jp FarCall
 
 AnimateFailedMove:
 	call BattleCommand_LowerSub

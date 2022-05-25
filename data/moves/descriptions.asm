@@ -271,8 +271,8 @@ CrabhammerDescription:
 SlashDescription:
 AeroblastDescription:
 CrossChopDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
+	db   "User may land more"
+	next "critical hits.@"
 
 DoubleslapDescription:
 	db   "A round-trip that"
@@ -478,9 +478,12 @@ DisableDescription:
 	next "most recent move.@"
 
 AcidDescription:
-RockSmashDescription:
 	db   "An attack that may"
 	next "lower DEFENSE.@"
+
+RockSmashDescription:
+	db   "A move that always"
+	next "drops DEFENSE.@"
 
 EmberDescription:
 FlamethrowerDescription:
@@ -523,8 +526,8 @@ AuroraBeamDescription:
 	next "lower ATTACK.@"
 
 HyperBeamDescription:
-	db   "1st turn: Attack"
-	next "2nd turn: Rest@"
+	db   "Mighty, but leaves"
+	next "the user winded.@"
 
 PeckDescription:
 	db   "Jabs the foe with"
@@ -576,8 +579,8 @@ StunSporeDescription:
 	next "paralyze the foe.@"
 
 StringShotDescription:
-	db   "A move that lowers"
-	next "the foe's SPEED.@"
+	db   "A move that slows"
+	next "the foe down.@"
 
 DragonRageDescription:
 	db   "Always inflicts"
@@ -605,8 +608,8 @@ FissureDescription:
 	next "one-hit KO attack.@"
 
 DigDescription:
-	db   "1st turn: Burrow"
-	next "2nd turn: Attack@"
+	db   "Helps the trainer"
+	next "regroup outside.@"
 
 ToxicDescription:
 	db   "A poison move with"
@@ -619,9 +622,12 @@ DizzyPunchDescription:
 
 PsychicMDescription:
 CrunchDescription:
-ShadowBallDescription:
 	db   "An attack that may"
 	next "lower SPCL.DEF.@"
+
+ShadowBallDescription:
+	db   "Orb that may cost"
+	next "the foe's defenses.@"
 
 MeditateDescription:
 	db   "Raises the user's"
@@ -651,10 +657,13 @@ ScreechDescription:
 	db   "Makes the foe's"
 	next "DEFENSE tumble.@"
 
-DoubleTeamDescription:
 MinimizeDescription:
-	db   "Heightens evasive-"
-	next "ness.@"
+	db   "Makes a #MON"
+	next "harder to hit.@"
+
+DoubleTeamDescription:
+	db   "Heightens the"
+	next "user's stamina.@"
 
 RecoverDescription:
 MilkDrinkDescription:
@@ -666,8 +675,8 @@ HardenDescription:
 	next "DEFENSE.@"
 
 SmokescreenDescription:
-	db   "Lowers the foe's"
-	next "accuracy.@"
+	db   "Lowers accuracy,"
+	next "may cause poison.@"
 
 ConfuseRayDescription:
 SweetKissDescription:
@@ -788,8 +797,8 @@ SporeDescription:
 	next "induces sleep.@"
 
 FlashDescription:
-	db   "Blinds the foe to"
-	next "reduce accuracy.@"
+	db   "Shines light to"
+	next "see in dark areas.@"
 
 PsywaveDescription:
 	db   "An attack with"
@@ -803,7 +812,7 @@ AcidArmorDescription:
 	next "user's DEFENSE.@"
 
 ExplosionDescription:
-	db   "Very powerful but"
+	db   "High-cue attack,"
 	next "makes user faint.@"
 
 FurySwipesDescription:
@@ -1048,7 +1057,7 @@ RapidSpinDescription:
 
 SweetScentDescription:
 	db   "Reduces the foe's"
-	next "evasiveness.@"
+	next "stamina.@"
 
 IronTailDescription:
 	db   "An attack that may"

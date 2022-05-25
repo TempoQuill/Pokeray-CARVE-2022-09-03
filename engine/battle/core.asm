@@ -1579,7 +1579,7 @@ HandleScreens:
 	bit SCREENS_LIGHT_SCREEN, [hl]
 	call nz, .LightScreenTick
 	bit SCREENS_REFLECT, [hl]
-	call nz, .ReflectTick
+	jp nz, .ReflectTick
 	ret
 
 .Copy:
@@ -2838,8 +2838,7 @@ ForceEnemySwitch:
 	call ResetEnemyStatLevels
 	call Function_SetEnemyMonAndSendOutAnimation
 	call BreakAttraction
-	call ResetBattleParticipants
-	ret
+	jp ResetBattleParticipants
 
 EnemySwitch:
 	call CheckWhetherToAskSwitch
@@ -3017,7 +3016,6 @@ LookUpTheEffectivenessOfEveryMove:
 	jr c, .loop
 	ld hl, wBuffer1
 	set 0, [hl]
-	ret
 .done
 	ret
 
@@ -3598,8 +3596,7 @@ InitBattleMon:
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
 	call CopyBytes
 	call ApplyStatusEffectOnPlayerStats
-	call BadgeStatBoosts
-	ret
+	jp BadgeStatBoosts
 
 BattleCheckPlayerShininess:
 	call GetPartyMonDVs
@@ -4567,13 +4564,11 @@ DrawEnemyHUD:
 	ld [wWhichHPBar], a
 	hlcoord 2, 2
 	ld b, 0
-	call DrawBattleHPBar
-	ret
+	jp DrawBattleHPBar
 
 UpdateEnemyHPPal:
 	ld hl, wEnemyHPPal
-	call UpdateHPPal
-	ret
+	jp UpdateHPPal
 
 UpdateHPPal:
 	ld b, [hl]
@@ -4792,8 +4787,7 @@ Battle_StatsScreen:
 	ld bc, $31 tiles
 	call CopyBytes
 
-	call EnableLCD
-	ret
+	jp EnableLCD
 
 TryPlayerSwitch:
 	ld a, [wCurBattleMon]
@@ -4865,8 +4859,7 @@ PlayerSwitch:
 	jp c, .switch
 	cp BATTLEACTION_FORFEIT
 	jr nz, .dont_run
-	call WildFled_EnemyFled_LinkBattleCanceled
-	ret
+	jp WildFled_EnemyFled_LinkBattleCanceled
 
 .dont_run
 	ldh a, [hSerialConnectionStatus]
@@ -6122,9 +6115,7 @@ LoadEnemyMon:
 	ld hl, wEnemyMonStats
 	ld de, wEnemyStats
 	ld bc, NUM_EV_STATS * 2
-	call CopyBytes
-
-	ret
+	jp CopyBytes
 
 CheckUnownLetter:
 ; Return carry if the Unown letter hasn't been unlocked yet
@@ -6435,7 +6426,7 @@ BadgeStatBoosts:
 ; depending on which badges have been obtained.
 
 ; Every other badge boosts a stat, starting from the first.
-; GlacierBadge also boosts Special Defense
+; DashBadge also boosts Special Defense
 
 ; 	GadgetBadge:  Attack
 ; 	VenomBadge:   Speed
@@ -6447,8 +6438,6 @@ BadgeStatBoosts:
 	ld a, [wLinkMode]
 	and a
 	ret nz
-
-	ld a, [wEquintoBadges]
 
 .CheckBadge:
 	ld a, b
@@ -6670,8 +6659,8 @@ GiveExperiencePoints:
 	call .add_evs_rus ; spd
 ; special is split into atk and def
 ; in .prepare_special_ev, b = atk, a = def
-; if comparison is zero or positive, leave [hl] as is
-; if negative, decrement back to atk
+; if comparison is zero or positive, leave hl as is
+; if negative, decrement hl back to atk
 	call .prepare_special_ev
 	ld a, [hl]
 ; this part of the routine turns the highest two bits into evs
@@ -6789,6 +6778,15 @@ GiveExperiencePoints:
 	ld a, [hl]
 	cp LUCKY_EGG
 	call z, BoostExp
+; Boost experience for University TM
+	ld a, MON_BUILD
+	call GetPartyParamLocation
+	bit UNIVERSITY_TM_F, [hl]
+	call nz, BoostExp
+	jr nz, .skip_other_utm
+	bit UNIVERSITY_DRAGON_RAGE_F, [hl]
+	call nz, BoostExp2
+.skip_other_utm
 	ldh a, [hQuotient + 3]
 	ld [wStringBuffer2 + 1], a
 	ldh a, [hQuotient + 2]
@@ -7888,8 +7886,7 @@ ExitBattle:
 	ld [hli], a
 	dec b
 	jr nz, .loop
-	call WaitSFX
-	ret
+	jp WaitSFX
 
 CheckPowerBall:
 	ld hl, wPowerBallMoney
@@ -7920,8 +7917,7 @@ CheckPowerBall:
 	ld de, wMoney + 2
 	call AddBattleMoneyToAccount
 	ld hl, BattleText_PlayerPickedUpPowerBallMoney
-	call StdBattleTextbox
-	ret
+	jp StdBattleTextbox
 
 CheckPayDay:
 	ld hl, wPayDayMoney
@@ -7950,8 +7946,11 @@ CheckPayDay:
 	ld de, wMoney + 2
 	call AddBattleMoneyToAccount
 	ld hl, BattleText_PlayerPickedUpPayDayMoney
-	call StdBattleTextbox
-	ret
+	jp StdBattleTextbox
+
+PlayerPickedUpPowerBallMoney:
+	text_far _PlayerPickedUpPowerBallMoney
+	text_end
 
 PlayerPickedUpPayDayMoney:
 	text_far _PlayerPickedUpPayDayMoney
@@ -7990,8 +7989,7 @@ ShowLinkBattleParticipantsAfterEnd:
 	call CloseSRAM
 
 	call WaitPressAorB_BlinkCursor
-	call ClearTilemap
-	ret
+	jp ClearTilemap
 
 .YouWin:
 	db "YOU WIN@"
@@ -8020,8 +8018,7 @@ _DisplayLinkRecord:
 	call SetPalettes
 	ld c, 8
 	call DelayFrames
-	call WaitPressAorB_BlinkCursor
-	ret
+	jp WaitPressAorB_BlinkCursor
 
 ReadAndPrintLinkBattleRecord:
 	call ClearTilemap
@@ -8387,8 +8384,7 @@ AddLastLinkBattleToLinkRecord:
 
 .done
 	call .StoreResult
-	call .FindOpponentAndAppendRecord
-	ret
+	jp .FindOpponentAndAppendRecord
 
 .StoreResult:
 	ld a, [wBattleResult]
@@ -8510,8 +8506,7 @@ AddLastLinkBattleToLinkRecord:
 	ld hl, wceed
 	ld bc, LINK_BATTLE_RECORD_LENGTH
 	pop de
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 .LoadPointer:
 	ld e, $0
@@ -8595,15 +8590,13 @@ InitBattleDisplay:
 	hlbgcoord 0, 0
 	lb bc, BANK(.BlankBGMap), $40
 	call Request2bpp
-	call CloseSRAM
-	ret
+	jp CloseSRAM
 
 INCLUDE "engine/battle/sliding_intro.asm"
 
 InitBackPic:
 	call GetTrainerBackpic
-	call CopyBackpic
-	ret
+	jp CopyBackpic
 
 GetTrainerBackpic:
 ; Load the player character's backpic (6x6) into VRAM starting from vTiles2 tile $31.
@@ -8736,8 +8729,7 @@ BattleStartMessage:
 	push hl
 	farcall BattleStart_TrainerHuds
 	pop hl
-	call StdBattleTextbox
-	ret
+	jp StdBattleTextbox
 
 ShowLinkBattleParticipants:
 	call IsLinkBattle

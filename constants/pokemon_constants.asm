@@ -267,10 +267,11 @@ JOHTO_POKEMON EQU const_value
 	const CELEBI     ; fb
 NEW_MONS EQU const_value
 
-NUM_POKEMON  EQU $fb
-EGG          EQU $fffd ; -3
-PAST_MONS    EQU 0
-EQUINTO_MONS EQU 1
+NUM_POKEMON     EQU $fb + $85
+NUM_DEF_POKEMON EQU $185
+EGG             EQU $fffd ; -3
+PAST_MONS       EQU 0
+EQUINTO_MONS    EQU 1
 
 ; new mons
 	const_next $101
@@ -331,7 +332,7 @@ EQUINTO_MONS EQU 1
 	const TENTACRIME ; 137
 	const LIODEW     ; 138
 	const FOSSLIX    ; 139
-	const SOMNIUX    ; 13a
+	const ALREM      ; 13a
 	const PINCHLER   ; 13b
 	const POUCHENT   ; 13c
 	const MIGHTALEX  ; 13d

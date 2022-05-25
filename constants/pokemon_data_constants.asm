@@ -46,7 +46,22 @@ BASE_DATA_SIZE EQU const_value
 	const_def
 	const NAT_OR_ASM_F
 	const POWER_BALL_F
+	const UNIVERSITY_TM_F
+	const UNIVERSITY_DRAGON_RAGE_F
 NUM_BUILD_FLAGS EQU const_value
+
+ASM_PARAMETER_LENGTH EQU 10
+
+	const def
+	const COMBO_MAGNEMITE ; 0
+	const COMBO_STARYU    ; 1
+	const COMBO_PARAS     ; 2
+;	const COMBO_METABEAK  ; 3
+;	const COMBO_FOSSLIX   ; 4
+;	const COMBO_PARABUD   ; 5
+;	const COMBO_KURSTRAW  ; 6
+;	const COMBO_PANGSHI   ; 7
+NUM_ITEM_POKECOMBOS EQU const_value
 
 ; gender ratio constants
 GENDER_F0      EQU   0 percent

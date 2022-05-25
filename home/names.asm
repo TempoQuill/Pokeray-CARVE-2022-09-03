@@ -123,9 +123,11 @@ GetPokemonName::
 
 
 ; Each name is ten characters
+	call .check_egg
 	ld a, [wNamedObjectIndexBuffer]
 	dec a
 	ld hl, PokemonNames
+.get_name
 	push hl
 	ld hl, MON_SPECIES
 	add hl, bc
@@ -151,6 +153,20 @@ ENDR
 	pop af
 	rst Bankswitch
 	ret
+
+.check_egg:
+	ld a, [wNamedObjectIndexBuffer + 1]
+	cp HIGH(EGG)
+	ret nz
+	ld a, [wNamedObjectIndexBuffer]
+	cp LOW(EGG)
+	ret nz
+	pop hl
+	ld hl, EggName
+	jr .get_name
+
+EggName:
+	db "EGG@@@@@@@"
 
 GetItemName::
 ; Get item name for wNamedObjectIndexBuffer.

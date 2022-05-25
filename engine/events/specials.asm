@@ -88,7 +88,8 @@ NameRival:
 .default
 IF DEF(_RAY)
 	db "SHAGGY@"
-ELIF DEF(_SHADE)
+ENDC
+IF DEF(_SHADE)
 	db "SONNY@"
 ENDC
 

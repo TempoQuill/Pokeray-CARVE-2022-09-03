@@ -121,7 +121,8 @@ Moves:
 	move HARDEN,       EFFECT_DEFENSE_UP,          0, NORMAL,       100, 30,   0
 	move MINIMIZE,     EFFECT_EVASION_UP,          0, NORMAL,       100, 20,   0
 ; changed to Fire Type
-	move SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, FIRE,         100, 20,   0 ;
+; added chance of poisoning the enemy
+	move SMOKESCREEN,  EFFECT_SMOKESCREEN,         0, FIRE,         100, 20,  25 ;
 	move CONFUSE_RAY,  EFFECT_CONFUSE,             0, GHOST,        100, 10,   0
 	move WITHDRAW,     EFFECT_DEFENSE_UP,          0, WATER,        100, 40,   0
 	move DEFENSE_CURL, EFFECT_DEFENSE_CURL,        0, NORMAL,       100, 40,   0

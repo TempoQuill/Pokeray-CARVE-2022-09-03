@@ -309,7 +309,7 @@ Music_Bicycle_Ch3:
 	octave 5
 	note C_, 2
 	note F_, 8
-	rest 2
+	rest 4
 	volume_envelope 1, 6
 	octave 4
 	note F_, 2

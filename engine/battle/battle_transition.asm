@@ -49,8 +49,7 @@ DoBattleTransition:
 
 	pop af
 	ldh [hVBlank], a
-	call DelayFrame
-	ret
+	jp DelayFrame
 
 .InitGFX:
 	farcall ReanchorBGMap_NoOAMUpdate
@@ -69,8 +68,7 @@ DoBattleTransition:
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a
-	call WipeLYOverrides
-	ret
+	jp WipeLYOverrides
 
 ConvertTrainerBattlePokeballTilesTo2bpp:
 	ld hl, wDecompressScratch
@@ -93,8 +91,7 @@ ConvertTrainerBattlePokeballTilesTo2bpp:
 	ld hl, vTiles3 tile BATTLETRANSITION_SQUARE
 	ld b, BANK(TrainerBattlePokeballTiles)
 	ld c, 2
-	call Request2bpp
-	ret
+	jp Request2bpp
 
 TrainerBattlePokeballTiles:
 INCBIN "gfx/overworld/trainer_battle_pokeball_tiles.2bpp"
@@ -215,8 +212,7 @@ StartTrainerBattle_SetUpBGMap:
 StartTrainerBattle_Flash:
 	call .DoFlashAnimation
 	ret nc
-	call StartTrainerBattle_NextScene
-	ret
+	jp StartTrainerBattle_NextScene
 
 .DoFlashAnimation:
 	ld a, [wTimeOfDayPalset]
@@ -279,8 +275,7 @@ StartTrainerBattle_SineWave:
 	ld a, [wce64]
 	cp $60
 	jr nc, .end
-	call .DoSineWave
-	ret
+	jp .DoSineWave
 
 .end
 	ld a, BATTLETRANSITION_FINISH
@@ -606,8 +601,7 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	call CGBOnly_CopyTilemapAtOnce
 
 .nextscene
-	call StartTrainerBattle_NextScene
-	ret
+	jp StartTrainerBattle_NextScene
 
 .PokeBallTransition:
 	; 16x16 overlay of a Poke Ball

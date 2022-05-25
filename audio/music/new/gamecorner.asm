@@ -39,6 +39,7 @@ Music_GameCorner_Ch1:
 	sound_call .sub3
 	sound_call .sub2
 	sound_loop 6, .loop3
+	duty_cycle 0
 	sound_jump .mainloop
 
 .sub1:
@@ -105,7 +106,7 @@ Music_GameCorner_Ch2:
 	note B_, 2
 	note G#, 1
 	octave 4
-	note C#, 2
+	note C#, 3
 	note D_, 3
 	octave 3
 	note B_, 1
@@ -126,7 +127,7 @@ Music_GameCorner_Ch2:
 	note F#, 2
 	note G#, 4
 	note G#, 4
-	sound_loop 6, .loop2
+	sound_loop 12, .loop2
 	sound_jump .mainloop
 
 Music_GameCorner_Ch3:
@@ -238,9 +239,8 @@ Music_GameCorner_Ch4:
 
 .sub1:
 	rest 16
-	rest 16
-	rest 16
-	rest 12
+	sound_loop 7, .sub1
+	rest 8
 	drum_note 3, 2
 	drum_note 2, 2
 	drum_note 10, 2

@@ -14,8 +14,7 @@ Function24e78:
 	call _2DMenu
 	ld a, [wMenuCursorBuffer]
 	ld [wBattleMenuCursorBuffer], a
-	call ExitMenu
-	ret
+	jp ExitMenu
 
 BattleMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -59,8 +58,7 @@ Function24edc:
 	hlcoord 17, 13
 	ld de, wSafariBallsRemaining
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
-	call PrintNum
-	ret
+	jp PrintNum
 
 MenuHeader_0x24ee9:
 	db MENU_BACKUP_TILES ; flags

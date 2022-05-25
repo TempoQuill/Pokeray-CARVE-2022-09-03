@@ -250,7 +250,7 @@ _CardFlip:
 	ldh [hVBlankCounter], a
 	call CardFlip_UpdateCursorOAM
 	call WaitSFX
-	ld de, SFX_CHOOSE_A_CARD
+	ld de, SFX_FULL_HEAL
 	call PlaySFX
 	call WaitSFX
 	ld a, [wCardFlipNumCardsPlayed]

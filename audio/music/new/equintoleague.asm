@@ -49,6 +49,7 @@ Music_EquintoLeague_Ch1:
 	octave 3
 	note E_, 2
 	sound_loop 3, .loop3
+	sound_call .sub2
 	volume_envelope 10, 3
 	octave 3
 	note C_, 2
@@ -150,6 +151,7 @@ Music_EquintoLeague_Ch2:
 	sound_loop 2, .loop5
 	sound_call .sub2
 	sound_call .sub1
+	sound_call .sub2
 	sound_jump .mainloop
 
 .sub1:
@@ -165,6 +167,8 @@ Music_EquintoLeague_Ch2:
 	note D_, 4
 	octave 2
 	note D_, 4
+	sound_ret
+
 .sub2:
 	volume_envelope 12, 1
 	note E_, 1
@@ -278,6 +282,7 @@ Music_EquintoLeague_Ch3:
 	rest 10
 	sound_loop 3, .sub1
 .sub2:
+	octave 4
 	note E_, 2
 	rest 2
 	note E_, 2

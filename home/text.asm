@@ -164,8 +164,6 @@ PlaceNextChar::
 	pop hl
 	ret
 
-	pop de ; unused
-
 NextChar::
 	inc de
 	jp PlaceNextChar
@@ -220,7 +218,9 @@ ENDM
 	dict "<DEXEND>",  PlaceDexEnd
 	dict "<TARGET>",  PlaceMoveTargetsName
 	dict "<USER>",    PlaceMoveUsersName
-	jp PlaceEnemysName
+	dict "<ENEMY>",   PlaceEnemysName
+	dict "<PLAY_G>",  PrintPlayerName
+	jp NextChar
 
 print_name: MACRO
 	push de

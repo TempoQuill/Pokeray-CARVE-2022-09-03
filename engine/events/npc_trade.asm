@@ -402,26 +402,31 @@ TradeTexts:
 	dw NPCTradeIntroText2
 	dw NPCTradeIntroText3
 	dw NPCTradeIntroText4
+	dw NPCTradeIntroText5
 ; TRADE_DIALOG_CANCEL
 	dw NPCTradeCancelText1
 	dw NPCTradeCancelText2
 	dw NPCTradeCancelText3
 	dw NPCTradeCancelText4
+	dw NPCTradeCancelText5
 ; TRADE_DIALOG_WRONG
 	dw NPCTradeWrongText1
 	dw NPCTradeWrongText2
 	dw NPCTradeWrongText3
 	dw NPCTradeWrongText4
+	dw NPCTradeWrongText5
 ; TRADE_DIALOG_COMPLETE
 	dw NPCTradeCompleteText1
 	dw NPCTradeCompleteText2
 	dw NPCTradeCompleteText3
 	dw NPCTradeCompleteText4
+	dw NPCTradeCompleteText5
 ; TRADE_DIALOG_AFTER
 	dw NPCTradeAfterText1
 	dw NPCTradeAfterText2
 	dw NPCTradeAfterText3
 	dw NPCTradeAfterText4
+	dw NPCTradeAfterText5
 
 NPCTradeCableText:
 	text_far _NPCTradeCableText
@@ -537,8 +542,8 @@ NPCTradeCompleteText4:
 	text "Thanks for the"
 	line "@"
 	text_ram wMonOrItemNameBuffer
-	text ", my"
-	cont "friend. Enjoy your"
+	text ", champ."
+	cont "Enjoy your new"
 	cont "@"
 	text_ram wStringBuffer2
 	text "."
@@ -553,4 +558,59 @@ NPCTradeAfterText4:
 	text_ram wMonOrItemNameBuffer
 	text " is"
 	cont "doing great!"
+	text_end
+
+NPCTradeIntroText5:
+	text "Hello there! I'm"
+	line "conducting new"
+	cont "research. Would"
+
+	para "you mind trading"
+	line "subjects? My"
+
+	para "@"
+	text_ram wStringBuffer2
+	text " for a"
+	line "@"
+	text_ram wMonOrItemNameBuffer
+	text "?"
+	text_end
+
+NPCTradeCancelText5:
+	text "But what else will"
+	line "I present at the"
+	cont "conference?!?"
+
+	text "I'll be a laughing"
+	line "stock out there!"
+	text_end
+
+NPCTradeWrongText5:
+	text "…but, that's the"
+	line "wrong #MON!"
+
+	para "I'm not ready for"
+	line "that one yet!"
+	text_end
+
+NPCTradeCompleteText5:
+	text "Splendid! This is"
+	line "exactly the #-"
+	cont "MON I needed!"
+	text_end
+
+NPCTradeAfterText5:
+	text "Hello there! How's"
+	line "ol' @"
+	text_ram wStringBuffer2
+	text "?"
+
+	para "@"
+	text_ram wMonOrItemNameBuffer
+	text "'s taken"
+	line "VERY well to my"
+	cont "colleagues!"
+
+	para "We may be keeping"
+	line "it around here!"
 	text_end

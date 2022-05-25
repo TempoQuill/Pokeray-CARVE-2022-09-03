@@ -71,6 +71,9 @@ MomDeterminedText:
 	line "be OK, right?"
 	done
 
+; leftover GSC exclusive feature where you hold money with Mom
+; while it had benefits, Mom did spend a lot of money (¥45,190 to be exact)
+; Ray bucks this feature simply by refusing to access it
 MomCheckBalanceText:
 	text "By the way, you've"
 	line "saved up ¥@"

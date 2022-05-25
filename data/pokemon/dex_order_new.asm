@@ -1,15 +1,9 @@
 ; Every Pokémon sorted in New Pokédex Order.
 
 NewPokedexOrder:
-	dw CHIKORITA
-	dw BAYLEEF
-	dw MEGANIUM
-	dw CYNDAQUIL
-	dw QUILAVA
-	dw TYPHLOSION
-	dw TOTODILE
-	dw CROCONAW
-	dw FERALIGATR
+	dw ORKID
+	dw SYNTIQUE
+	dw PHOTORDEN
 	dw PIDGEY
 	dw PIDGEOTTO
 	dw PIDGEOT
@@ -235,6 +229,15 @@ NewPokedexOrder:
 	dw SQUIRTLE
 	dw WARTORTLE
 	dw BLASTOISE
+	dw CHIKORITA
+	dw BAYLEEF
+	dw MEGANIUM
+	dw CYNDAQUIL
+	dw QUILAVA
+	dw TYPHLOSION
+	dw TOTODILE
+	dw CROCONAW
+	dw FERALIGATR
 	dw ARTICUNO
 	dw ZAPDOS
 	dw MOLTRES

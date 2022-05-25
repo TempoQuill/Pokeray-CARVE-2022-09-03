@@ -104,7 +104,7 @@ Music_LookArtist_Ch3:
 	note B_, 4
 	note A_, 4
 	note G_, 16
-	note F_, 16
+	note F_, 12
 	note E_, 4
 	note D_, 4
 	rest 12

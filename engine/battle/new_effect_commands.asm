@@ -291,8 +291,7 @@ BattleCommand_MultiStatusChance:
 	add hl, de
 	ld a, [hl]
 	ld hl, MultiStatusPointer
-	rst BankJump
-	ret
+	jp BankJump
 
 MultiStatusPointer:
 	dba BattleCommand_ParalyzeTarget ; paralyze

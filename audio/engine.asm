@@ -111,9 +111,9 @@ _UpdateSound::
 
 .noteover
 	; reset vibrato delay
-	bc_offset CHANNEL_VIBRATO_DELAY
+	bc_offset CHANNEL_VIBRATO_PREAMBLE
 	ld a, [hl]
-	bc_offset CHANNEL_VIBRATO_DELAY_COUNT
+	bc_offset CHANNEL_VIBRATO_COUNTER
 	ld [hl], a
 	; turn vibrato off for now
 	bc_offset CHANNEL_FLAGS2
@@ -428,7 +428,7 @@ UpdateChannels:
 	ld a, [wCurTrackVolumeEnvelope]
 	; 0-f are technically valid
 	; f is filler made of 0's to avoid garbage
-	and WAVE_TABLE_MASK
+	maskbits NUM_WAVS
 	swap a
 	ld l, a
 	ld h, 0
@@ -813,6 +813,14 @@ LoadNote:
 	bc_offset CHANNEL_FLAGS2
 	bit SOUND_RELATIVE_PITCH, [hl]
 	jr z, .env_ptrn
+	bc_offset CHANNEL_RELATIVE_PITCH
+	ld a, [hl]
+	and a
+	jr z, .rp_off
+	bc_offset CHANNEL_FLAGS3
+	set SOUND_REL_PITCH_FLAG, [hl]
+	jr .env_ptrn
+.rp_off
 	bc_offset CHANNEL_FLAGS3
 	res SOUND_REL_PITCH_FLAG, [hl]
 
@@ -860,16 +868,12 @@ GeneralHandler:
 	; is relative pitch on?
 	bc_offset CHANNEL_FLAGS3
 	bit SOUND_REL_PITCH_FLAG, [hl]
-	jr nz, .on
-	set SOUND_REL_PITCH_FLAG, [hl]
-	jr .skip_pitch
-.on
-	res SOUND_REL_PITCH_FLAG, [hl]
+	jr z, .pitch_offset
 	; get pitch
 	bc_offset CHANNEL_PITCH
 	ld a, [hl]
 	and a
-	jr z, .skip_pitch
+	jr z, .pitch_offset
 	; add to pitch value
 	bc_offset CHANNEL_RELATIVE_PITCH
 	add [hl]
@@ -878,7 +882,7 @@ GeneralHandler:
 	bc_offset CHANNEL_OCTAVE
 	ld d, [hl]
 	; get final tone
-	call GetFrequency
+	call GetPitch
 	ld hl, wCurTrackFrequency
 	ld [hl], e
 	inc hl
@@ -887,9 +891,6 @@ GeneralHandler:
 ;	$d9 and $e7 can stack with each other
 ;		$d9 $01 and $e7 $01 together would be the same as $d9/e7 $02
 ;	$e7 $f4-ff can trigger the rest pitch due to a lack of carry
-.skip_pitch
-	bc_offset CHANNEL_NOTE_FLAGS
-	set NOTE_FREQ_OVERRIDE, [hl]
 .pitch_offset
 	bc_offset CHANNEL_FLAGS2
 	bit SOUND_PITCH_OFFSET, [hl]
@@ -944,19 +945,19 @@ GeneralHandler:
 	jr z, .env_ptrn
 	; is vibrato active for this note yet?
 	; is the delay over?
-	bc_offset CHANNEL_VIBRATO_DELAY_COUNT
+	bc_offset CHANNEL_VIBRATO_COUNTER
 	ld a, [hl]
 	and a
 	jr nz, .subexit
 	; is the extent nonzero?
-	bc_offset CHANNEL_VIBRATO_EXTENT
+	bc_offset CHANNEL_VIBRATO_DEPTH
 	ld a, [hl]
 	and a
 	jr z, .env_ptrn
 	; save it for later
 	ld d, a
 	; is it time to toggle vibrato up/down?
-	bc_offset CHANNEL_VIBRATO_RATE
+	bc_offset CHANNEL_VIBRATO_TIMER
 	ld a, [hl]
 	and $f ; count
 	jr z, .toggle
@@ -1214,7 +1215,6 @@ ReadNoiseSample:
 	jr z, .quit
 
 	and $f
-	inc a ; adds one frame to depicted duration
 	ld [wNoiseSampleDelay], a
 	ld a, [de]
 	inc de
@@ -1251,7 +1251,7 @@ ParseMusic:
 ; wCurMusicByte contains current note
 ; special notes
 	bc_offset CHANNEL_FLAGS1
-	bit SOUND_SFX, [hl]
+	bit SOUND_READING_MODE, [hl]
 	jp nz, ParseSFXOrCry
 	bit SOUND_CRY, [hl] ; cry
 	jp nz, ParseSFXOrCry
@@ -1276,7 +1276,7 @@ ParseMusic:
 	bc_offset CHANNEL_OCTAVE
 	ld d, [hl]
 	; update frequency
-	call GetFrequency
+	call GetPitch
 	bc_offset CHANNEL_FREQUENCY
 	ld [hl], e
 	inc hl
@@ -1503,7 +1503,7 @@ MusicCommands:
 	dw Music_ToggleMusic           ; music mode on/off
 	dw Music_PitchSlide            ; pitch slide
 	dw Music_Vibrato               ; vibrato
-	dw Music_TimeMute              ; mute after a frames
+	dw Music_TimeMute              ; mute after A frames
 	dw Music_ToggleNoise           ; music noise sampling
 	dw Music_OldPanning            ; old panning
 	dw Music_Volume                ; volume
@@ -1569,7 +1569,7 @@ Music_PitchIncSwitch:
 Music_SetMusic:
 ; basically execute_music
 	bc_offset CHANNEL_FLAGS1
-	res SOUND_SFX, [hl]
+	res SOUND_READING_MODE, [hl]
 	ret
 
 Music_Ret:
@@ -1659,7 +1659,7 @@ Music_Jump:
 
 Music_Loop:
 ; loops xx - 1 times
-; 	00: infinite
+; 	00: infinite (please stop using this, just use the jump)
 ; params: 3
 ;	xx ll hh
 ;		xx : loop count
@@ -1772,7 +1772,7 @@ Music_JumpIf:
 Music_JumpRAM:
 ; conditional jump
 ; checks for active condition in exclusive RAM
-; RAM may've been used to play dynamic music based on in-game events
+; use for the sink sound effect in VulpReich
 ; params: 2
 ; ll hh ; pointer
 
@@ -1855,17 +1855,17 @@ Music_Vibrato:
 	res SOUND_VIBRATO_DIR, [hl]
 	; get delay
 	call GetMusicByte
-; update delay
-	bc_offset CHANNEL_VIBRATO_DELAY
+; update preamble
+	bc_offset CHANNEL_VIBRATO_PREAMBLE
 	ld [hl], a
-; update delay count
-	bc_offset CHANNEL_VIBRATO_DELAY_COUNT
+; update counter
+	bc_offset CHANNEL_VIBRATO_COUNTER
 	ld [hl], a
-; update extent
+; update depth
 ; this is split into halves only to get added back together at the last second
-	; get extent/rate
+	; get depth/timer
 	call GetMusicByte
-	bc_offset CHANNEL_VIBRATO_EXTENT
+	bc_offset CHANNEL_VIBRATO_DEPTH
 	ld d, a
 	; get top nybble
 	and $f0
@@ -1876,8 +1876,8 @@ Music_Vibrato:
 	swap a
 	or e
 	ld [hl], a
-; update rate
-	bc_offset CHANNEL_VIBRATO_RATE
+; update timer
+	bc_offset CHANNEL_VIBRATO_TIMER
 	; get bottom nybble
 	ld a, d
 	and $f
@@ -1904,7 +1904,7 @@ Music_PitchSlide:
 	swap a
 	and $f
 	ld d, a
-	call GetFrequency
+	call GetPitch
 	bc_offset CHANNEL_PITCH_SLIDE_TARGET
 	ld [hl], e
 	bc_offset CHANNEL_PITCH_SLIDE_TARGET + 1
@@ -1914,9 +1914,8 @@ Music_PitchSlide:
 	ret
 
 Music_PitchOffset:
-; tone
+; add hhll to current pitch
 ; params: 1 (bigdw)
-; offset to add to each note frequency
 	bc_offset CHANNEL_FLAGS2
 	set SOUND_PITCH_OFFSET, [hl]
 	bc_offset CHANNEL_PITCH_OFFSET + 1
@@ -1927,7 +1926,7 @@ Music_PitchOffset:
 	ret
 
 Music_RelativePitch:
-; set a note medium
+; add A to final note id
 ; operates squarely on FrequencyTable
 ; params: 1
 	bc_offset CHANNEL_FLAGS2
@@ -1939,6 +1938,7 @@ Music_RelativePitch:
 
 Music_DutyCyclePattern:
 ; sequence of 4 duty cycles to be looped
+; NOTE: sequence plays in ascending bit order
 ; params: 1 (4 2-bit duty cycle arguments)
 	bc_offset CHANNEL_FLAGS2
 	set SOUND_DUTY_LOOP, [hl] ; duty cycle looping
@@ -1965,16 +1965,16 @@ Music_VolumeEnvelopePattern:
 	ret
 
 Music_ToggleMusic:
-; switch to music mode
+; switch between audio data reading modes
 ; params: none
 	bc_offset CHANNEL_FLAGS1
-	bit SOUND_SFX, [hl]
+	bit SOUND_READING_MODE, [hl]
 	jr nz, .clear
-	set SOUND_SFX, [hl]
+	set SOUND_READING_MODE, [hl]
 	ret
 
 .clear
-	res SOUND_SFX, [hl]
+	res SOUND_READING_MODE, [hl]
 	ret
 
 Music_ToggleNoise:
@@ -2056,8 +2056,8 @@ Music_NoteType:
 Music_VolumeEnvelope:
 ; volume envelope
 ; params: 1
-;	hi: volume
-;	lo: fade/wavetable id
+;	ch1-2: volume, fade direction, speed
+;	ch3: volume, wavetable ID
 	call GetMusicByte
 	bc_offset CHANNEL_VOLUME_ENVELOPE
 	ld [hl], a
@@ -2083,8 +2083,7 @@ Music_Octave:
 	ret
 
 Music_Transpose:
-; set starting octave
-; this forces all notes up by the starting octave
+; pitch / octave offset
 ; params: 1
 	call GetMusicByte
 	bc_offset CHANNEL_TRANSPOSITION
@@ -2099,7 +2098,12 @@ Music_StereoPanning:
 	bit STEREO, a
 	jr nz, .pan_channel
 	; skip param
-	jp GetMusicByte
+	bc_offset CHANNEL_MUSIC_ADDRESS
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	inc hl
+	ret
 
 .pan_channel
 	call SetLRTracks
@@ -2115,47 +2119,36 @@ Music_OldPanning:
 ; only used in red
 ; params: 1
 	call GetMusicByte
-	push bc
-	ld c, a
+	ld e, a
 	ld hl, SpeakerTracks
 	ld a, [wCurChannel]
 	and NUM_MUSIC_CHANS
 	ld a, [hli]
 	jr nz, .sfx
-	and c
-	ld de, wChannel1Tracks
-	ld [de], a
+	and e
+	ld [wChannel1Tracks], a
 	ld a, [hli]
-	and c
-	ld de, wChannel2Tracks
-	ld [de], a
+	and e
+	ld [wChannel2Tracks], a
 	ld a, [hli]
-	and c
-	ld de, wChannel3Tracks
-	ld [de], a
+	and e
+	ld [wChannel3Tracks], a
 	ld a, [hl]
-	and c
-	ld de, wChannel4Tracks
-	ld [de], a
-	pop bc
+	and e
+	ld [wChannel4Tracks], a
 	ret
 .sfx
-	and c
-	ld de, wChannel5Tracks
-	ld [de], a
+	and e
+	ld [wChannel5Tracks], a
 	ld a, [hli]
-	and c
-	ld de, wChannel6Tracks
-	ld [de], a
+	and e
+	ld [wChannel6Tracks], a
 	ld a, [hli]
-	and c
-	ld de, wChannel7Tracks
-	ld [de], a
+	and e
+	ld [wChannel7Tracks], a
 	ld a, [hl]
-	and c
-	ld de, wChannel8Tracks
-	ld [de], a
-	pop bc
+	and e
+	ld [wChannel8Tracks], a
 	ret
 
 Music_Volume:
@@ -2248,6 +2241,7 @@ Music_RestartChannel:
 
 Music_NewSong:
 ; new song
+; seems to be a variant of $ef from Gen 1 ($ee on NES)
 ; params: 2
 ;	de: song id
 	call GetMusicByte
@@ -2282,39 +2276,32 @@ GetMusicByte:
 	ld a, [wCurMusicByte]
 	ret
 
-GetFrequency:
-; generate frequency
-; input:
-; 	d: octave
-;	e: pitch
-; output:
-; 	de: frequency
-
-; get octave
-	; get starting octave
+GetPitch:
+; generate pitch
+;    in     out
+; d = Octave hi
+; e = Pitch  lo
+	; get octave
 	bc_offset CHANNEL_TRANSPOSITION
 	ld a, [hl]
 	swap a ; hi nybble
 	and $f
-	; add current octave
 	add d
-	push af ; we'll use this later
-	; get starting octave
+	push af ; save octave
+	; add pitch
 	bc_offset CHANNEL_TRANSPOSITION
 	ld a, [hl]
 	and $f ; lo nybble
-	ld l, a ; ok
-	ld d, 0
-	ld h, d
-	add hl, de ; add current pitch
-	add hl, hl ; skip 2 bytes for each
+	add e
+	rla
+	ld l, a
+	ld h, 0
 	ld de, FrequencyTable
 	add hl, de
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	; get our octave
-	pop af
+	pop af ; retrieve octave
 	; shift right by [7 - octave] bits
 .loop
 	; [7 - octave] loops
@@ -2484,7 +2471,6 @@ _PlayMusic::
 	pop af
 	dec a
 	jr nz, .loop
-	xor a
 	ld [wSoundEventFlag], a
 	ld [wChannel1JumpCondition], a
 	ld [wChannel2JumpCondition], a
@@ -2700,7 +2686,7 @@ _PlaySFX::
 	push af
 	call LoadChannel ; bc = current channel
 	bc_offset CHANNEL_FLAGS1
-	set SOUND_SFX, [hl]
+	set SOUND_READING_MODE, [hl]
 	call StartChannel
 	pop af
 	dec a
@@ -2756,7 +2742,7 @@ PlayStereoSFX::
 	call LoadChannel
 
 	bc_offset CHANNEL_FLAGS1
-	set SOUND_SFX, [hl]
+	set SOUND_READING_MODE, [hl]
 
 	push de
 	; get tracks for this channel

@@ -255,7 +255,7 @@ Traversal_MapCardText:
 	
 	para "house just"
 	line "anywhere. Just in"
-	
+
 	para "case, here's a"
 	line "little something"
 	cont "for you."

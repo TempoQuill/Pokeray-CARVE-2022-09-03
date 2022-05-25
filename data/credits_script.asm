@@ -88,6 +88,26 @@ CreditsScript:
 	db         CREDIT_MUSIC, 0
 	db       JUNICHI_MASUDA, 1
 	db          GO_ICHINOSE, 2
+	db     WILLIAM_ANDERSON, 3
+
+	db CREDITS_WAIT, 12
+
+	db         CREDIT_MUSIC, 0
+	db         JOSHUA_CRAPO, 1
+	db         ANDREW_STEIN, 2
+	db        DANIEL_INGRAM, 3
+
+	db CREDITS_WAIT, 12
+
+	db         CREDIT_MUSIC, 0
+	db         SCOTT_CHENEY, 1
+	db        MINAKO_HAMANO, 2
+	db       JACK_GETSCHMAN, 3
+
+	db CREDITS_WAIT, 12
+
+	db         CREDIT_MUSIC, 0
+	db        SOLO_ACAPELLO, 1
 
 	db CREDITS_WAIT, 12
 
@@ -235,6 +255,12 @@ CreditsScript:
 	db      HIROYUKI_ZINNAI, 1
 	db      KUNIMI_KAWAMURA, 2
 	db     KIMIKO_NAKAMICHI, 3
+
+	db CREDITS_WAIT, 12
+
+	db       SPECIAL_THANKS, 0
+	db         LAUREN_FAUST, 1
+	db      BONNIE_ZACHERLE, 2
 
 	db CREDITS_WAIT, 12
 

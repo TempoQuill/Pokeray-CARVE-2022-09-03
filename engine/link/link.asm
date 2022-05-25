@@ -604,11 +604,13 @@ Link_PrepPartyData_Gold:
 	ld hl, wPartyMon1Species
 	ld c, PARTY_LENGTH
 .mon_loop
+	push de
 	push bc
 	call .ConvertPartyStructRayToGold
 	ld bc, PARTYMON_STRUCT_LENGTH
 	add hl, bc
 	pop bc
+	pop de
 	dec c
 	jr nz, .mon_loop
 	ld hl, wPartyMonOT
@@ -619,18 +621,19 @@ Link_PrepPartyData_Gold:
 	jp CopyBytes
 
 .ConvertPartyStructRayToGold:
-	ld hl, MON_ITEM
+	ld d, h
+	ld e, l
+	de_offset MON_ITEM
 	ld a, [hl]
 	ld b, a
-	ld de, GOLDMON_ITEM
-	ld a, [de]
+	de_offset GOLDMON_ITEM
+	ld a, [hl]
 ; is it a TM or HM?
 	cp ITEM_BF
 ; if so, call to update the constant
 	call nc, TimeCapsule_UpdateConstants
-	ld bc, RayToGoldConverter
-	ld hl, wTimeCapsulePlayerData
-	ld de, wTempMon
+	ld de, wTimeCapsulePlayerData
+	ld hl, 0
 	ld b, GOLDMON_SPECIES
 	ld c, MON_SPECIES
 	ld a, c
@@ -645,10 +648,10 @@ Link_PrepPartyData_Gold:
 	inc b
 	ld c, a
 	ld a, b
-	cp PARTYMON_STRUCT_LENGTH
+	cp GOLDMON_STRUCT_LENGTH
 	ret nc
 	ld a, c
-	cp GOLDMON_STRUCT_LENGTH
+	cp PARTYMON_STRUCT_LENGTH
 	jr nc, .offset
 
 .next_byte
@@ -668,15 +671,13 @@ Link_PrepPartyData_Gold:
 	jr .convert_mon_loop
 
 .erase
-	ld a, [de]
 	xor a
 	ld [de], a
 	jr .next_byte
 
 .offset
 	push de
-	ld de, GOLDMON_STRUCT_LENGTH
-	add hl, de
+	de_offset GOLDMON_STRUCT_LENGTH
 	pop de
 	jr .next_byte
 
@@ -803,9 +804,11 @@ Function285db:
 	ld hl, wOTPartyMon1Species
 	ld c, PARTY_LENGTH
 .loop
+	push de
 	push bc
 	call .ConvertToRay
 	pop bc
+	pop de
 	dec c
 	jr nz, .loop
 	pop hl
@@ -819,11 +822,13 @@ Function285db:
 	jp CopyBytes
 
 .ConvertToRay:
-	ld hl, GOLDMON_ITEM
+	ld d, h
+	ld e, l
+	de_offset GOLDMON_ITEM
 	ld a, [hl]
 	ld b, a
-	ld de, MON_ITEM
-	ld a, [de]
+	de_offset MON_ITEM
+	ld a, [hl]
 ; is it a TM or HM from gold?
 	cp ITEM_BF
 ; if so, jump to update the constant, then come back to continue

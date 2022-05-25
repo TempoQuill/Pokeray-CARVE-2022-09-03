@@ -387,9 +387,10 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
-	dbw EFFECT_BURN              AI_Smart_Burn
-	dbw EFFECT_FREEZE            AI_Smart_Freeze
-	dbw EFFECT_FUNNY_STUFF       AI_Smart_FunnyStuff
+	dbw EFFECT_BURN,             AI_Smart_Burn
+	dbw EFFECT_FREEZE,           AI_Smart_Freeze
+	dbw EFFECT_FUNNY_STUFF,      AI_Smart_FunnyStuff
+	dbw EFFECT_SMOKESCREEN,      AI_Smart_AccuracyDown
 	db -1 ; end
 
 AI_Smart_FunnyStuff:

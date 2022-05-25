@@ -153,10 +153,12 @@ AlphabeticalPokedexOrder:
 	dw OMANYTE
 	dw OMASTAR
 	dw ONIX
+	dw ORKID
 	dw PARAS
 	dw PARASECT
 	dw PERSIAN
 	dw PHANPY
+	dw PHOTORDEN
 	dw PICHU
 	dw PIDGEOT
 	dw PIDGEOTTO
@@ -219,6 +221,7 @@ AlphabeticalPokedexOrder:
 	dw SUNFLORA
 	dw SUNKERN
 	dw SWINUB
+	dw SYNTIQUE
 	dw TANGELA
 	dw TAUROS
 	dw TEDDIURSA

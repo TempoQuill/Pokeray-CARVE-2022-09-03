@@ -689,8 +689,28 @@ PrintPartyMenuText:
 	ld [wOptions], a
 	hlcoord 1, 16 ; Coord
 	call PlaceString
+	call .AmendMoveName
 	pop af
 	ld [wOptions], a
+	ret
+
+.AmendMoveName:
+; we check for PARTYMENUACTION_TEACH_MOVE (unused in Ray)
+; if nz, we amend wTMHMMoveNameBackup to our string
+	push hl
+	push bc
+	push de
+	push af
+	ld a, [wPartyMenuActionText]
+	cp PARTYMENUACTION_TEACH_MOVE
+	jr z, .quit
+	ld de, wStringBuffer2
+	call PlaceString
+.quit
+	push af
+	push de
+	push bc
+	push hl
 	ret
 
 PartyMenuStrings:
@@ -703,6 +723,7 @@ PartyMenuStrings:
 	dw ChooseAMonString ; Probably used to be ChooseAFemalePKMNString
 	dw ChooseAMonString ; Probably used to be ChooseAMalePKMNString
 	dw ToWhichPKMNString
+	dw TeachMoveString
 
 ChooseAMonString:
 	db "Choose a #MON.@"
@@ -732,6 +753,9 @@ ToWhichPKMNString:
 
 YouHaveNoPKMNString:
 	db "You have no <PK><MN>!@"
+
+TeachMoveString:
+	db "Move: @"
 
 PrintPartyMenuActionText:
 	ld a, [wCurPartyMon]

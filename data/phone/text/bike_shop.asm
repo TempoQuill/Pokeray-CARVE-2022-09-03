@@ -1,4 +1,4 @@
-BikeShopPhoneCallerText:
+BikeShopPhoneCallerText: ; GS leftovers
 	text "Hi, <PLAYER>!"
 	line "Our BICYCLE sales"
 

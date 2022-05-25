@@ -196,6 +196,7 @@ Music_StampTown_Ch1:
 	sound_ret
 
 .sub2:
+	octave 3
 	note G#, 2
 	note G#, 1
 	note A#, 1
@@ -335,6 +336,7 @@ Music_StampTown_Ch2:
 	note C#, 2
 	note C_, 2
 	rest 2
+	octave 5
 	note F_, 1
 	note G_, 1
 	note G#, 2
@@ -348,7 +350,7 @@ Music_StampTown_Ch2:
 	octave 1
 	note G#, 8
 	duty_cycle 1
-	volume_envelope 9, 1
+	volume_envelope 9, 2
 	octave 4
 	note C_, 2
 	note C_, 1
@@ -476,6 +478,7 @@ Music_StampTown_Ch2:
 
 .sub2:
 	note_type 6, 12, 4
+	octave 4
 	note C_, 4
 	note C_, 2
 	note C#, 2
@@ -528,6 +531,7 @@ Music_StampTown_Ch3:
 	note G#, 2
 	note A#, 2
 	note_type 6, 1, 4
+	octave 6
 	note C_, 8
 	note D_, 8
 	note D#, 1
@@ -564,14 +568,6 @@ Music_StampTown_Ch3:
 	rest 3
 	volume_envelope 1, 5
 	note D_, 3
-	rest 1
-	volume_envelope 1, 6
-	octave 4
-	note C_, 1
-	rest 3
-	volume_envelope 1, 5
-	octave 3
-	note D#, 3
 	rest 1
 	volume_envelope 1, 6
 	octave 4

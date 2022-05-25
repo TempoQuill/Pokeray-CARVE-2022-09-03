@@ -1,7 +1,7 @@
 	db "LIGHT@" ; species name
 	dw 407, 1360 ; height, weight
 
-	db   "Its retna provides"
+	db   "Its retina provides"
 	next "a heat loop for"
 	next "easy vision. This"
 

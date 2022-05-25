@@ -45,6 +45,7 @@ StdScripts::
 	add_stdscript GameCornerCoinVendorScript
 	add_stdscript HappinessCheckScript
 	add_stdscript ReceiveMultipleItemsScript
+	add_stdscript AssemblePokemonScript
 
 PokecenterNurseScript:
 	opentext
@@ -455,4 +456,10 @@ HappinessCheckScript:
 	writetext HappinessText1
 	waitbutton
 	closetext
+	end
+
+AssemblePokemonScript:
+	opentext
+	writetext ToolBoxText1
+	callasm SearchForItemPokeCombo
 	end

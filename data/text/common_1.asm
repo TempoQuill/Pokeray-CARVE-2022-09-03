@@ -855,34 +855,35 @@ _NPCTradeFanfareText::
 	text_end
 
 _NPCTradeIntroText1::
-	text "I collect #MON."
-	line "Do you have"
-	cont "@"
+	text "I strive to obtain"
+	line "rare #MON. D'ya"
+	cont "have a @"
 	text_ram wStringBuffer1
 	text "?"
 
 	para "Want to trade it"
-	line "for my @"
+	line "for my highly rare"
+	cont "@"
 	text_ram wStringBuffer2
 	text "?"
 	done
 
 _NPCTradeCancelText1::
 	text "You don't want to"
-	line "trade? Aww…"
+	line "trade? Rats…"
 	done
 
 _NPCTradeWrongText1::
 	text "Huh? That's not"
 	line "@"
 	text_ram wStringBuffer1
-	text ". "
-	cont "What a letdown…"
+	text ". What"
+	cont "a letdown…"
 	done
 
 _NPCTradeCompleteText1::
-	text "Yay! I got myself"
-	line "@"
+	text "Yes! I got myself"
+	line "a @"
 	text_ram wStringBuffer1
 	text "!"
 	cont "Thanks!"
@@ -1502,6 +1503,13 @@ _ComeBackText::
 	text " come"
 	line "back!"
 	done
+
+PlayerPickedUpPowerBallMoney:
+	text "<PLAYER> was given"
+	line "¥@"
+	text_decimal wPayDayMoney, 3, 6
+	text "!"
+	prompt
 
 _PlayerPickedUpPayDayMoney::
 	text "<PLAYER> picked up"

@@ -101,7 +101,7 @@ Music_MtVacuum_Ch1:
 .sub1:
 	volume_envelope 3, 3
 	octave 3
-	note D#, 2
+	note E_, 2
 	octave 4
 	note C_, 2
 	octave 3
@@ -136,7 +136,7 @@ Music_MtVacuum_Ch2:
 .mainloop:
 	sound_call .sub1
 	transpose 0, 0
-	sound_loop 8, .mainloop
+	sound_loop 12, .mainloop
 	transpose 1, 11
 	sound_call .sub1
 	sound_call .sub1
@@ -188,6 +188,7 @@ Music_MtVacuum_Ch2:
 	sound_ret
 
 .sub2:
+	volume_envelope 10, 1
 	octave 3
 	note E_, 2
 	octave 4
@@ -274,6 +275,7 @@ Music_MtVacuum_Ch3:
 .sub2:
 	rest 16
 	volume_envelope 1, -4
+	octave 3
 	note D#, 1
 	volume_envelope 2, -4
 	note D#, 1

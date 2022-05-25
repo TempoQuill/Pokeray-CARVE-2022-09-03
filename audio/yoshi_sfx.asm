@@ -50,7 +50,7 @@ Sfx_Mimic6:
 
 Sfx_Mimic7:
 	channel_count 1
-	channel 5, Sfx_Mimic1_Ch5
+	channel 5, Sfx_Mimic7_Ch5
 
 Sfx_ExpBarFilled:
 	channel_count 2
@@ -63,7 +63,7 @@ Sfx_EggRoll:
 
 Sfx_Smokescreen:
 	channel_count 1
-	channel 5, Sfx_Smokescreen
+	channel 5, Sfx_Smokescreen_CH5
 
 Sfx_BallClose:
 	channel_count 1

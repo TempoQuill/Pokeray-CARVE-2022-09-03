@@ -13,6 +13,10 @@ ENDC
 	next "necessary for this"
 	next "game to function.@"
 
+IF DEF (_RAY)
+	db 0
+ENDC
+
 UnusedMetadataCorruptionText2:
 IF DEF (_RAY)
 	db   "   #MON RAY"
@@ -26,6 +30,10 @@ ENDC
 	next "  please support"
 	next "Game Freak before"
 	next "    doing so.@"
+
+IF DEF (_RAY)
+	db 0
+ENDC
 
 UnusedDisclaimerText:
 	db   "      WARNING:"

@@ -187,17 +187,14 @@ EvolveAfterBattle_MasterLoop:
 	push hl
 	farcall GetGender
 	pop hl
-	jp c, .dont_evolve_1
+	ld b, a
 	ld a, [hli]
-	jr z, .gender_female
-	cp MON_MALE
-	jr .gender_check
-
-.gender_female
-	cp MON_FEMALE
-.gender_check
+	cp -1
+	jr z, .trade_any_gender
+	cp b
 	jp nz, .dont_evolve_2
 
+.trade_any_gender
 	ld a, [hli]
 	ld b, a
 	inc a

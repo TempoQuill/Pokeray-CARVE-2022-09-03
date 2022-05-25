@@ -44,7 +44,7 @@ ItemDescriptions:
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
-	dw TeruSama3Desc
+	dw BuddingSeedDesc
 	dw FreshWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
@@ -89,7 +89,7 @@ ItemDescriptions:
 	dw BigMushroomDesc
 	dw SilverPowderDesc
 	dw BluApricornDesc
-	dw TeruSama7Desc
+	dw LugnutDesc
 	dw AmuletCoinDesc
 	dw YlwApricornDesc
 	dw GrnApricornDesc
@@ -141,13 +141,13 @@ ItemDescriptions:
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
 	dw TeruSama16Desc
-	dw TeruSama17Desc
+	dw PipeFeatherDesc
 	dw MetalCoatDesc
 	dw DragonFangDesc
-	dw TeruSama18Desc
+	dw SlvrApricornDesc
 	dw LeftoversDesc
-	dw TeruSama19Desc
-	dw TeruSama20Desc
+	dw AquaApricornDesc
+	dw GoldApricornDesc
 	dw TeruSama21Desc
 	dw MysteryBerryDesc
 	dw DragonScaleDesc
@@ -425,11 +425,9 @@ DireHitDesc:
 	db   "Raises critical"
 	next "hit ratio.@"
 
-TeruSama3Desc:
 TeruSama4Desc:
 TeruSama5Desc:
 TeruSama6Desc:
-TeruSama7Desc:
 TeruSama8Desc:
 TeruSama9Desc:
 TeruSama10Desc:
@@ -439,10 +437,6 @@ TeruSama13Desc:
 TeruSama14Desc:
 TeruSama15Desc:
 TeruSama16Desc:
-TeruSama17Desc:
-TeruSama18Desc:
-TeruSama19Desc:
-TeruSama20Desc:
 TeruSama21Desc:
 TeruSama22Desc:
 TeruSama26Desc:
@@ -890,3 +884,29 @@ MirageMailDesc:
 OldAmberDesc:
 	db   "An old fossil from"
 	next "the KANTO region.@"
+
+GoldApricornDesc:
+	db   "A gold APRICORN.@"
+
+SlvrApricornDesc:
+	db   "A silver APRICORN.@"
+
+AquaApricornDesc:
+	db   "A sky-blue APRI-"
+	next "CORN@"
+
+LugnutDesc:
+	db   "Some machine part."
+	next "Sell very low.@"
+
+BuddingSeedDesc:
+	db   "An infertile seed."
+	next "Sell very high.@"
+
+PipeFeatherDesc:
+	db   "A special trading"
+	next "evolution item.@"
+
+; unused
+	db   "A TM that teaches"
+	next "any move desired.@"

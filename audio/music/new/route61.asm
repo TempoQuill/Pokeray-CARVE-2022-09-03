@@ -35,7 +35,7 @@ Music_Route61_Ch1:
 	note C_, 2
 	octave 3
 	note G#, 2
-	sound_loop 2, .loop1
+	sound_loop 2, .loop2
 	note C#, 2
 	note F#, 2
 	note A#, 2
@@ -204,7 +204,7 @@ Music_Route61_Ch2:
 	note A#, 2
 	octave 2
 	note C_, 2
-.loop5
+.loop5:
 	sound_call .sub1
 	octave 2
 	note C#, 4
@@ -255,6 +255,7 @@ Music_Route61_Ch2:
 	rest 2
 	note D#, 1
 	note G#, 1
+	rest 2
 	volume_envelope 13, 2
 	octave 2
 	note G#, 8
@@ -289,7 +290,7 @@ Music_Route61_Ch2:
 	rest 2
 	sound_jump .mainloop
 
-.sub1
+.sub1:
 	octave 2
 	note C#, 4
 	note C#, 4
@@ -361,7 +362,7 @@ Music_Route61_Ch3:
 	octave 5
 	note C_, 2
 	note C#, 8
-	volume_envelope 1, 5
+	volume_envelope 2, 5
 	octave 4
 	note C#, 1
 	note D#, 1

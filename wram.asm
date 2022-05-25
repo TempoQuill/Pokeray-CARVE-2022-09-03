@@ -684,10 +684,15 @@ wSurfWaveBGEffect:: ds $40
 wSurfWaveBGEffectEnd:: ; 64 40
 ENDU ; ca62
 
+wAssemblyProject:: db
+wAssemblyProjectParams:: ds ASM_PARAMETER_LENGTH
+wAssemblyProjectEnd::
+wAssemblySearchResult:: flag_array NUM_ITEM_POKECOMBOS
+
 wBattleMon:: battle_struct wBattleMon
 wBattleMonBuild:: flag_array NUM_BUILD_FLAGS
 
-	ds 99 ; 35  23
+	ds 87 ; 47  2f
 
 wBattle::
 wEnemyMoveStruct:: move_struct wEnemyMoveStruct   ; 134 86

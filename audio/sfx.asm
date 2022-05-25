@@ -1017,7 +1017,86 @@ SFX_PLLong:
 	channel 7, SFX_PLLong_Ch7
 
 Sfx_RegisterPhoneNumber:
-INCLUDE "audio/music/yoshi/roundclear.asm"
+	channel_count 4
+	channel 5, Sfx_RegisterPhoneNumber_Ch5
+	channel 6, Sfx_RegisterPhoneNumber_Ch6
+	channel 7, Sfx_RegisterPhoneNumber_Ch7
+	channel 8, Sfx_RegisterPhoneNumber_Ch8
+
+Sfx_RegisterPhoneNumber_Ch5:
+	toggle_sfx
+	tempo 124
+	volume 7, 7
+	duty_cycle 3
+	note_type 12, 10, 2
+	rest 2
+	octave 3
+	note C_, 4
+	note G#, 4
+	octave 4
+	note C_, 2
+	octave 3
+	note F_, 1
+	note G#, 2
+	note C_, 1
+	note F_, 2
+	note A#, 3
+	octave 4
+	note C#, 3
+	note C_, 2
+	rest 8
+	sound_ret
+
+Sfx_RegisterPhoneNumber_Ch6:
+	toggle_sfx
+	duty_cycle 3
+	note_type 12, 12, 2
+	rest 2
+	octave 4
+	note D#, 2
+	note C#, 2
+	note C_, 2
+	note D#, 2
+	note F_, 2
+	rest 1
+	note G#, 3
+	octave 5
+	note C_, 2
+	note D#, 3
+	octave 4
+	note G_, 3
+	note G#, 2
+	rest 8
+	sound_ret
+
+Sfx_RegisterPhoneNumber_Ch7:
+	toggle_sfx
+	note_type 12, 2, 5
+	rest 2
+	octave 3
+	note D#, 7
+	rest 1
+	note G#, 2
+	rest 1
+	note C_, 2
+	rest 1
+	note G#, 2
+	note G_, 2
+	rest 1
+	note A#, 3
+	note G#, 2
+	rest 8
+	sound_ret
+
+Sfx_RegisterPhoneNumber_Ch8:
+	toggle_sfx
+	sfx_toggle_noise 4
+	drum_speed 12
+	note C_, 2
+	rest 16
+	rest 16
+	sound_ret
+
 
 Sfx_3rdPlace:
 	channel_count 3
@@ -1380,7 +1459,113 @@ Sfx_2ndPlace_Ch8:
 	sound_ret
 
 Sfx_1stPlace:
-INCLUDE "audio/music/yoshi/matchover.asm"
+	channel_count 4
+	channel 5, Sfx_1stPlace_Ch5
+	channel 6, Sfx_1stPlace_Ch6
+	channel 7, Sfx_1stPlace_Ch7
+	channel 8, Sfx_1stPlace_Ch8
+
+Sfx_1stPlace_Ch5:
+	toggle_sfx
+	tempo 124
+	volume 7, 7
+	duty_cycle 3
+	vibrato 12, 3, 4
+	note_type 12, 10, 1
+	octave 5
+	note D_, 2
+	octave 4
+	note B_, 2
+	octave 5
+	note D_, 2
+	note A#, 1
+	note F_, 1
+	note D_, 1
+	note F_, 1
+	volume_envelope 9, 1
+	note D_, 1
+	octave 4
+	note A#, 1
+	note F_, 1
+	note A#, 1
+	volume_envelope 8, 1
+	octave 5
+	note D_, 1
+	octave 4
+	note A#, 1
+	note F_, 1
+	note D_, 1
+	volume_envelope 10, 1
+	note C_, 2
+	note E_, 2
+	note G_, 2
+	volume_envelope 10, 7
+	note A_, 10
+	rest 6
+	sound_ret
+
+Sfx_1stPlace_Ch6:
+	toggle_sfx
+	duty_cycle 3
+	vibrato 12, 3, 4
+	note_type 12, 12, 1
+	octave 3
+	note B_, 2
+	note G_, 2
+	note B_, 2
+	volume_envelope 11, 6
+	octave 4
+	note D_, 12
+	volume_envelope 12, 1
+	note E_, 2
+	note G_, 2
+	octave 5
+	note C_, 2
+	volume_envelope 11, 7
+	note D_, 10
+	rest 6
+	sound_ret
+
+Sfx_1stPlace_Ch7:
+	toggle_sfx
+	note_type 12, 2, 5
+	octave 2
+	note G_, 1
+	rest 1
+	note G_, 1
+	rest 1
+	note G_, 1
+	rest 1
+	note A#, 6
+	note F_, 6
+	note E_, 1
+	rest 1
+	note E_, 1
+	rest 1
+	note E_, 1
+	rest 1
+	note D_, 10
+	rest 6
+	sound_ret
+
+Sfx_1stPlace_Ch8:
+	toggle_sfx
+	sfx_toggle_noise 4
+	drum_speed 6
+	note D_, 4
+	note D_, 4
+	note D_, 4
+	note B_, 12
+	note B_, 10
+	note C#, 1
+	note C#, 1
+	note D_, 4
+	note D_, 4
+	note D_, 4
+	drum_speed 12
+	note B_, 10
+	rest 6
+	sound_ret
 
 Sfx_ChooseACard:
 	channel_count 4
@@ -2734,7 +2919,82 @@ Sfx_GameFreakLogoGs_Ch5:
 	sound_ret
 
 Sfx_Fail:
-INCLUDE "audio/music/yoshi/gameover.asm"
+	channel_count 4
+	channel 5, Sfx_Fail_Ch5
+	channel 6, Sfx_Fail_Ch6
+	channel 7, Sfx_Fail_Ch7
+	channel 8, Sfx_Fail_Ch8
+
+Sfx_Fail_Ch5:
+	toggle_sfx
+	tempo 124
+	volume 7, 7
+	note_type 8, 11, 1
+	octave 3
+	note A_, 4
+	note F#, 2
+	note A_, 4
+	note F#, 2
+	note C#, 6
+	note G_, 6
+	note F#, 6
+	note E_, 2
+	note E_, 2
+	note E_, 2
+	note D_, 6
+	sound_ret
+
+Sfx_Fail_Ch6:
+	toggle_sfx
+	note_type 8, 12, 1
+	octave 3
+	note B_, 4
+	note A_, 2
+	note B_, 4
+	note A_, 2
+	note D#, 6
+	note A#, 6
+	note A_, 6
+	note A_, 2
+	note A_, 2
+	note G_, 2
+	note F#, 6
+	sound_ret
+
+Sfx_Fail_Ch7:
+	toggle_sfx
+	note_type 8, 2, 5
+	octave 4
+	note D_, 6
+	octave 3
+	note A_, 2
+	rest 2
+	note A_, 2
+	note A#, 4
+	note G_, 2
+	octave 4
+	note D#, 6
+	note D_, 2
+	rest 4
+	octave 3
+	note E_, 1
+	rest 1
+	note F#, 1
+	rest 1
+	note G_, 1
+	rest 1
+	note A_, 2
+	rest 6
+	sound_ret
+
+Sfx_Fail_Ch8:
+	toggle_sfx
+	sfx_toggle_noise 4
+	drum_speed 12
+	note C#, 6
+	rest 16
+	rest 12
+	sound_ret
 
 Sfx_KeepAtIt:
 	channel_count 4
@@ -3247,10 +3507,10 @@ Sfx_NotVeryEffective_Ch8:
 	sound_ret
 
 ; unreferenced
-	noise_note 2, 7, 1, 92
-	noise_note 2, 9, 1, 90
-	noise_note 2, 7, 1, 92
-	noise_note 2, 5, 1, 91
+	noise_note 2, 12, 1, 92
+	noise_note 2, 15, 1, 90
+	noise_note 2, 12, 1, 92
+	noise_note 2, 8, 1, 91
 	sound_ret
 
 Sfx_Damage:

@@ -110,8 +110,10 @@ Music_LookWarden_Ch3:
 	note B_, 2
 	volume_envelope 2, 7
 	note B_, 1
-	volume_envelope 1, 7
+	volume_envelope 3, 7
 	note B_, 1
+	volume_envelope 1, 7
+	note B_, 2
 .loop1:
 	volume_envelope 1, 7
 	octave 2
@@ -127,9 +129,9 @@ Music_LookWarden_Ch3:
 .mainloop:
 	sound_call .sub1
 	sound_call .sub1
-	transpose 1, 8
+	transpose 1, 6
 	sound_call .sub1
-	transpose 1, 7
+	transpose 1, 5
 	sound_call .sub1
 	transpose 0, 0
 	sound_jump .mainloop

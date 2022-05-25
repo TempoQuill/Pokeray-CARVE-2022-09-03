@@ -284,13 +284,19 @@ GetBaseData::
 
 .end
 ; Replace Pokedex # with species
+	ld e, NEW_MONS
+	ld a, [wBaseDexNo + 1]
+	and a
+	jr nz, .update
 	ld a, [wBaseDexNo]
-	cp NUM_POKEMON + 1
+	cp e
 	jr c, .skip
+.update
 	push hl
 	ld hl, wBaseDexNo
 	add 5
 	ld [hli], a
+	jr nc, .done
 	inc [hl]
 	pop hl
 	jr .done

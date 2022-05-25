@@ -29,6 +29,21 @@ ctbv: MACRO
 	jr z, \4
 ENDM
 
+offset_de: MACRO
+	ld de, \1
+	add hl, de
+ENDM
+
+offset_bc: MACRO
+	ld bc, \1
+	add hl, bc
+ENDM
+
+de_offset: MACRO
+	ld hl, \1
+	add hl, de
+ENDM
+
 bc_offset: MACRO
 	ld hl, \1
 	add hl, bc

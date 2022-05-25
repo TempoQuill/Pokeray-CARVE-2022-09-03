@@ -57,7 +57,7 @@ ItemEffects:
 	dw SuperRepelEffect    ; SUPER_REPEL
 	dw MaxRepelEffect      ; MAX_REPEL
 	dw DireHitEffect       ; DIRE_HIT
-	dw NoEffect            ; ITEM_2D
+	dw NoEffect            ; BUDDING_SEED
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
@@ -102,7 +102,7 @@ ItemEffects:
 	dw NoEffect            ; BIG_MUSHROOM
 	dw NoEffect            ; SILVERPOWDER
 	dw NoEffect            ; BLUEAPRICORN
-	dw NoEffect            ; ITEM_5A
+	dw NoEffect            ; LUGNUT
 	dw NoEffect            ; AMULET_COIN
 	dw NoEffect            ; YLW_APRICORN
 	dw NoEffect            ; GR_APRICORN
@@ -154,13 +154,13 @@ ItemEffects:
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
 	dw NoEffect            ; ITEM_8D
-	dw NoEffect            ; ITEM_8E
+	dw NoEffect            ; PIPE_FEATHER
 	dw NoEffect            ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
-	dw NoEffect            ; ITEM_91
+	dw NoEffect            ; SLVRAPRICORN
 	dw NoEffect            ; LEFTOVERS
-	dw NoEffect            ; ITEM_93
-	dw NoEffect            ; ITEM_94
+	dw NoEffect            ; AQUAAPRICORN
+	dw NoEffect            ; GOLDAPRICORN
 	dw NoEffect            ; ITEM_95
 	dw RestorePPEffect     ; MYSTERYBERRY
 	dw NoEffect            ; DRAGON_SCALE
@@ -762,14 +762,14 @@ BallMultiplierFunctionTable:
 	dbw MOON_BALL,   MoonBallMultiplier
 	dbw LOVE_BALL,   LoveBallMultiplier
 	dbw TOOL_BALL,   ToolBallMultiplier
-	dbw PARK_BALL,   ParkBallMultiplier
+	dbw PARK_BALL,   ParkBallMultiplier ; GS leftover
 	db -1 ; end
 
 ToolBallMultiplier:
-; multiply catch rate by 6 for mon with active build stat
+; multiply catch rate by 6 for assembled mon
 	ld a, [wEnemyMonBuild]
 	bit NAT_OR_ASM_F, a
-	ret z
+	ret z ; return if natural
 	push af
 	ld a, b
 	sla b

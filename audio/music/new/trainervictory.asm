@@ -21,6 +21,7 @@ Music_TrainerVictory_Ch1:
 	rest 1
 	note A_, 1
 	rest 1
+	volume_envelope 10, 7
 	note A_, 2
 	note G_, 2
 	note E_, 2

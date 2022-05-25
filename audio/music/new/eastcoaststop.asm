@@ -15,7 +15,6 @@ Music_EastCoastStop_Ch1:
 	vibrato 5, 6, 3
 	note_type 12, 7, 4
 .mainloop:
-	transpose 0, 0
 	octave 1
 	note A_, 2
 	octave 2
@@ -29,11 +28,29 @@ Music_EastCoastStop_Ch1:
 	sound_loop 12, .mainloop
 .loop1:
 	sound_call .sub1
-	sound_call .sub2
+	octave 1
+	note A_, 2
+	octave 2
+	note E_, 3
+	note E_, 1
+	octave 1
+	note A_, 2
+	octave 2
+	note E_, 1
+	octave 1
+	note A_, 2
+	octave 2
+	note E_, 1
 	sound_loop 3, .loop1
 	sound_call .sub1
-	transpose 1, 7
-	sound_call .sub2
+	octave 1
+	note E_, 2
+	note B_, 3
+	note B_, 1
+	note E_, 2
+	note B_, 1
+	note E_, 2
+	note B_, 1
 	sound_jump .mainloop
 
 .sub1:
@@ -50,22 +67,6 @@ Music_EastCoastStop_Ch1:
 	note F#, 2
 	octave 2
 	note D#, 1
-	sound_ret
-
-.sub2:
-	octave 1
-	note A_, 2
-	octave 2
-	note E_, 3
-	note E_, 1
-	octave 1
-	note A_, 2
-	octave 2
-	note E_, 1
-	octave 1
-	note A_, 2
-	octave 2
-	note E_, 1
 	sound_ret
 
 Music_EastCoastStop_Ch2:
@@ -119,7 +120,6 @@ Music_EastCoastStop_Ch2:
 	rest 12
 	note A_, 2
 	note B_, 4
-	note A_, 2
 	sound_call .sub2
 	sound_call .sub3
 	sound_call .sub2
@@ -165,7 +165,7 @@ Music_EastCoastStop_Ch2:
 	note A_, 2
 	volume_envelope 10, 2
 	octave 4
-	note C_, 1
+	note C_, 2
 	octave 3
 	note B_, 2
 	volume_envelope 11, 1

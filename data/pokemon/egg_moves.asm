@@ -801,5 +801,11 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+OrkidEggMoves:
+	db SYNTHESIS
+	db SWEET_SCENT
+	db GROWTH
+	db -1 ; end
+
 NoEggMoves:
 	db -1 ; end
