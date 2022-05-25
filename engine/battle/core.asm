@@ -4359,7 +4359,6 @@ CheckDanger:
 PrintPlayerHUD:
 	ld de, wBattleMonNick
 	hlcoord 10, 7
-	call ret_3df99
 	call PlaceString
 
 	push bc
@@ -4451,7 +4450,6 @@ DrawEnemyHUD:
 	call GetBaseData
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
-	call ret_3df99
 	call PlaceString
 	ld h, b
 	ld l, c
@@ -4577,9 +4575,6 @@ UpdateHPPal:
 	cp b
 	ret z
 	jp FinishBattleAnim
-
-ret_3df99:
-	ret
 
 BattleMenu:
 	xor a
