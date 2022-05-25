@@ -1,9 +1,11 @@
 ; Every Pokémon sorted in New Pokédex Order.
 
 NewPokedexOrder:
+	; starters
 	dw ORKID
 	dw SYNTIQUE
 	dw PHOTORDEN
+	; early-birds
 	dw PIDGEY
 	dw PIDGEOTTO
 	dw PIDGEOT
@@ -11,6 +13,7 @@ NewPokedexOrder:
 	dw FEAROW
 	dw HOOTHOOT
 	dw NOCTOWL
+	; early-rodents
 	dw RATTATA
 	dw RATICATE
 	dw SENTRET
@@ -18,6 +21,7 @@ NewPokedexOrder:
 	dw PICHU
 	dw PIKACHU
 	dw RAICHU
+	; early-bugs
 	dw CATERPIE
 	dw METAPOD
 	dw BUTTERFREE
@@ -28,12 +32,14 @@ NewPokedexOrder:
 	dw LEDIAN
 	dw SPINARAK
 	dw ARIADOS
+	; cave-types
 	dw GEODUDE
 	dw GRAVELER
 	dw GOLEM
 	dw ZUBAT
 	dw GOLBAT
 	dw CROBAT
+	; cute-types
 	dw CLEFFA
 	dw CLEFAIRY
 	dw CLEFABLE
@@ -42,11 +48,13 @@ NewPokedexOrder:
 	dw WIGGLYTUFF
 	dw TOGEPI
 	dw TOGETIC
+	; warmth-reliant
 	dw SANDSHREW
 	dw SANDSLASH
 	dw EKANS
 	dw ARBOK
 	dw DUNSPARCE
+	; light-aided
 	dw MAREEP
 	dw FLAAFFY
 	dw AMPHAROS
@@ -58,6 +66,7 @@ NewPokedexOrder:
 	dw UNOWN
 	dw ONIX
 	dw STEELIX
+	; grass-dwelling
 	dw BELLSPROUT
 	dw WEEPINBELL
 	dw VICTREEBEL
@@ -66,6 +75,7 @@ NewPokedexOrder:
 	dw JUMPLUFF
 	dw PARAS
 	dw PARASECT
+	; sea-dwelling
 	dw POLIWAG
 	dw POLIWHIRL
 	dw POLIWRATH
@@ -77,6 +87,7 @@ NewPokedexOrder:
 	dw SLOWPOKE
 	dw SLOWBRO
 	dw SLOWKING
+	; mid-game
 	dw ODDISH
 	dw GLOOM
 	dw VILEPLUME
@@ -87,6 +98,7 @@ NewPokedexOrder:
 	dw KADABRA
 	dw ALAKAZAM
 	dw DITTO
+	; suburban
 	dw PINECO
 	dw FORRETRESS
 	dw NIDORAN_F
@@ -95,6 +107,7 @@ NewPokedexOrder:
 	dw NIDORAN_M
 	dw NIDORINO
 	dw NIDOKING
+	; landscape
 	dw YANMA
 	dw SUNKERN
 	dw SUNFLORA
@@ -102,12 +115,14 @@ NewPokedexOrder:
 	dw EXEGGUTOR
 	dw SUDOWOODO
 	dw WOBBUFFET
+	; middle bugs
 	dw VENONAT
 	dw VENOMOTH
 	dw SCYTHER
 	dw SCIZOR
 	dw PINSIR
 	dw HERACROSS
+	; industrious
 	dw KOFFING
 	dw WEEZING
 	dw GRIMER
@@ -116,6 +131,7 @@ NewPokedexOrder:
 	dw MAGNETON
 	dw VOLTORB
 	dw ELECTRODE
+	; wildlife
 	dw AIPOM
 	dw SNUBBULL
 	dw GRANBULL
@@ -134,6 +150,7 @@ NewPokedexOrder:
 	dw PERSIAN
 	dw PSYDUCK
 	dw GOLDUCK
+	; fighters
 	dw MACHOP
 	dw MACHOKE
 	dw MACHAMP
@@ -141,6 +158,7 @@ NewPokedexOrder:
 	dw HITMONLEE
 	dw HITMONCHAN
 	dw HITMONTOP
+	; user-fit
 	dw GIRAFARIG
 	dw TAUROS
 	dw MILTANK
@@ -155,6 +173,7 @@ NewPokedexOrder:
 	dw FARFETCH_D
 	dw NATU
 	dw XATU
+	; sea-dominant
 	dw QWILFISH
 	dw TENTACOOL
 	dw TENTACRUEL
@@ -172,6 +191,7 @@ NewPokedexOrder:
 	dw LANTURN
 	dw SEEL
 	dw DEWGONG
+	; domestic
 	dw LICKITUNG
 	dw TANGELA
 	dw EEVEE
@@ -183,6 +203,7 @@ NewPokedexOrder:
 	dw HORSEA
 	dw SEADRA
 	dw KINGDRA
+	; cool-aclimates
 	dw GLIGAR
 	dw DELIBIRD
 	dw SWINUB
@@ -191,10 +212,12 @@ NewPokedexOrder:
 	dw URSARING
 	dw PHANPY
 	dw DONPHAN
+	; unusual-flyers
 	dw MANTINE
 	dw SKARMORY
 	dw DODUO
 	dw DODRIO
+	; rare
 	dw PONYTA
 	dw RAPIDASH
 	dw CUBONE
@@ -202,6 +225,7 @@ NewPokedexOrder:
 	dw KANGASKHAN
 	dw RHYHORN
 	dw RHYDON
+	; dark
 	dw MURKROW
 	dw HOUNDOUR
 	dw HOUNDOOM
@@ -209,16 +233,19 @@ NewPokedexOrder:
 	dw MAGCARGO
 	dw SNEASEL
 	dw MISDREAVUS
+	; man-dwelling
 	dw PORYGON
 	dw PORYGON2
 	dw CHANSEY
 	dw BLISSEY
+	; fossils
 	dw LAPRAS
 	dw OMANYTE
 	dw OMASTAR
 	dw KABUTO
 	dw KABUTOPS
 	dw AERODACTYL
+	; imports
 	dw SNORLAX
 	dw BULBASAUR
 	dw IVYSAUR
@@ -238,6 +265,7 @@ NewPokedexOrder:
 	dw TOTODILE
 	dw CROCONAW
 	dw FERALIGATR
+	; legends
 	dw ARTICUNO
 	dw ZAPDOS
 	dw MOLTRES
