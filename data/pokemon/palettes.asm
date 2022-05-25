@@ -526,8 +526,14 @@ INCLUDE "gfx/pokemon/celebi/shiny.pal"
 	RGB 23, 16, 00
 	RGB 00, 00, 00
 
-INCBIN "gfx/pokemon/egg/front.gbcpal", top_colors
-INCLUDE "gfx/pokemon/egg/shiny.pal"
+; 253
+	RGB 30, 26, 11
+	RGB 23, 16, 00
+	RGB 00, 00, 00
+; 253 shiny
+	RGB 30, 26, 11
+	RGB 23, 16, 00
+	RGB 00, 00, 00
 
 ; 254
 	RGB 30, 26, 11
@@ -546,3 +552,9 @@ INCLUDE "gfx/pokemon/egg/shiny.pal"
 	RGB 23, 23, 23
 	RGB 17, 17, 17
 	RGB 00, 00, 00
+
+INCBIN "gfx/pokemon/orkid/front.gbcpal", top_colors
+INCLUDE "gfx/pokemon/orkid/shiny.pal"
+
+INCBIN "gfx/pokemon/egg/front.gbcpal", top_colors
+INCLUDE "gfx/pokemon/egg/shiny.pal"

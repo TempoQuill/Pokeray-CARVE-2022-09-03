@@ -692,3 +692,8 @@ UnownPBackpic:       INCBIN "gfx/pokemon/unown_p/back.2bpp.lz"
 UnownIFrontpic:      INCBIN "gfx/pokemon/unown_i/front.2bpp.lz"
 UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 UnownRFrontpic:      INCBIN "gfx/pokemon/unown_r/front.2bpp.lz"
+
+SECTION "Pics 15", ROMX
+
+OrkidFrontPic:       INCBIN "gfx/pokemon/orkid/front.2bpp.lz"
+OrkidBackPic:        INCBIN "gfx/pokemon/orkid/back.2bpp.lz"

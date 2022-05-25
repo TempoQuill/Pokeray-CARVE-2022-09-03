@@ -507,3 +507,21 @@ PokemonPicPointers::
 	dba HoOhBackpic
 	dba CelebiFrontpic
 	dba CelebiBackpic
+
+	dbw -1, -1
+	dbw -1, -1
+
+	dbw -1, -1
+	dbw -1, -1
+
+	dbw -1, -1
+	dbw -1, -1
+
+	dbw -1, -1
+	dbw -1, -1
+
+	dbw -1, -1
+	dbw -1, -1
+
+	dba OrkidFrontPic
+	dba OrkidBackPic
