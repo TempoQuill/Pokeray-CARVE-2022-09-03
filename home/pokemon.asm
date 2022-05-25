@@ -293,7 +293,8 @@ GetBaseData::
 	jr c, .skip
 .update
 	; a bit of a design flaw
-	; slots $fc-$100 are empty due to 
+	; slots $fc-$100 are empty due to 2 slots not nearly being enough room
+	; for a brand new pokedex
 	push hl
 	ld hl, wBaseDexNo
 	sub 5 ; empty slots from $fc-$100
