@@ -37,3 +37,9 @@ UniversityTMDragonRageText:
 	line "did before!"
 	sound_item
 	done
+
+UniversityTMAlreadyUsedText:
+	text "This #MON has"
+	line "already learned a"
+	cont "move this way!"
+	done
