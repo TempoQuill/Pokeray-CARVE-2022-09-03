@@ -371,6 +371,7 @@ LoadYellowPage:
 	push hl
 	ld hl, .BuildStatTable
 	ld a, [wTempMonBuild]
+	and 1 << NAT_OR_ASM_F
 	rla
 	ld e, a
 	ld d, 0
