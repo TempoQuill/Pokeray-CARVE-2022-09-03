@@ -4,7 +4,7 @@ StartedUniversityTMText:
 	text "<PLAYER> started up"
 	line "the UNIVERSITY TM!"
 
-	para "teach a move to a"
+	para "Teach a move to a"
 	line "#MON?"
 	done
 
@@ -12,10 +12,10 @@ UniversityTMMoveUsedText:
 	text "<PLAYER> taught"
 	line "@"
 	text_ram wStringBuffer2
-	text "using"
+	text " using"
 	cont "the UNIVERSITY TM!"
 
-	text "This #MON will"
+	para "This #MON will"
 	line "now get time and a"
 
 	para "half the EXP. it"
@@ -27,10 +27,10 @@ UniversityTMDragonRageText:
 	text "<PLAYER> taught"
 	line "@"
 	text_ram wStringBuffer2
-	text "with"
+	text " with"
 	cont "the UNIVERSITY TM!"
 
-	text "This #MON will"
+	para "This #MON will"
 	line "now recieve double"
 
 	para "the EXPERIENCE it"
