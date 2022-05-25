@@ -1,4 +1,4 @@
-	db SYNTIQUE
+	dw SYNTIQUE
 
 	db 112,  42, 224,  77, 108,  12
 	;   hp  atk  def  spd  sat  sdf

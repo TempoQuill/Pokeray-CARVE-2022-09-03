@@ -1,4 +1,4 @@
-	db ORKID
+	dw ORKID
 
 	db 102,  39, 203,  70,  98,  11
 	;   hp  atk  def  spd  sat  sdf

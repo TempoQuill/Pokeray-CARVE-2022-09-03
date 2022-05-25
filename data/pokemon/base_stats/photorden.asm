@@ -1,4 +1,4 @@
-	db PHOTORDEN
+	dw PHOTORDEN
 
 	db 124,  47, 246,  85, 119,  13
 	;   hp  atk  def  spd  sat  sdf
