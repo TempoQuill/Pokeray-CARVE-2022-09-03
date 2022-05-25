@@ -292,12 +292,15 @@ GetBaseData::
 	cp e
 	jr c, .skip
 .update
+	; a bit of a design flaw
+	; slots $fc-$100 are empty due to 
 	push hl
 	ld hl, wBaseDexNo
-	add 5
+	sub 5 ; empty slots from $fc-$100
 	ld [hli], a
-	jr nc, .done
-	inc [hl]
+	jr nc, .no_dec
+	dec [hl]
+.no_dec
 	pop hl
 	jr .done
 
