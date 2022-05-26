@@ -8,6 +8,7 @@ Music_RayShadeOpening2: ; JUNICHI MASUDA, WILLIAM ANDERSON(INTRO)
 
 Music_RayShadeOpening2_Ch1:
 	tempo 240
+	volume 7
 	pitch_offset -1
 	note_type 12, 12, 1
 	rest 16
