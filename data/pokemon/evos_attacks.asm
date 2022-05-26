@@ -261,6 +261,7 @@ RattataEvosAttacks:
 	db 0 ; no more level-up moves
 
 RaticateEvosAttacks:
+;	evolve QUALITY_OF_LIFE, RAVERMIN
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, TAIL_WHIP
@@ -284,6 +285,7 @@ SpearowEvosAttacks:
 	db 0 ; no more level-up moves
 
 FearowEvosAttacks:
+;	evolve QUALITY_OF_LIFE, TEAROW
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, GROWL
@@ -309,6 +311,7 @@ EkansEvosAttacks:
 	db 0 ; no more level-up moves
 
 ArbokEvosAttacks:
+;	evolve QUALITY_OF_LIFE, NOHTYP
 	db 0 ; no more evolutions
 	db 1, WRAP
 	db 1, LEER
@@ -358,6 +361,7 @@ SandshrewEvosAttacks:
 	db 0 ; no more level-up moves
 
 SandslashEvosAttacks:
+;	evolve QUALITY_OF_LIFE, SANDSCOUR
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, DEFENSE_CURL
@@ -603,6 +607,7 @@ VenonatEvosAttacks:
 	db 0 ; no more level-up moves
 
 VenomothEvosAttacks:
+;	evolve HELD, NIGHT_ARMOR, VENOKNIGHT
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, DISABLE
@@ -628,6 +633,7 @@ DiglettEvosAttacks:
 	db 0 ; no more level-up moves
 
 DugtrioEvosAttacks:
+;	evolve QUALITY_OF_LIFE, DUGQUINTET
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
@@ -676,6 +682,7 @@ PsyduckEvosAttacks:
 	db 0 ; no more level-up moves
 
 GolduckEvosAttacks:
+;	evolve TRADE, -1, DUCKY_AMULET, EMPEDUCK
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, TAIL_WHIP
@@ -702,6 +709,7 @@ MankeyEvosAttacks:
 	db 0 ; no more level-up moves
 
 PrimeapeEvosAttacks:
+;	evolve TRADE, -1, PUMP_BOTTLE, ALPHAPE
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
@@ -866,6 +874,7 @@ BellsproutEvosAttacks:
 
 WeepinbellEvosAttacks:
 	evolve ITEM, LEAF_STONE, VICTREEBEL
+;	evolve ITEM, FLASH_STONE, BELMITT
 	db 0 ; no more evolutions
 	db 1, VINE_WHIP
 	db 1, GROWTH
@@ -900,6 +909,7 @@ TentacoolEvosAttacks:
 	db 0 ; no more level-up moves
 
 TentacruelEvosAttacks:
+;	evolve ITEM, TRUSTY_STONE, TENTACRIME
 	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 1, SUPERSONIC
@@ -1027,6 +1037,7 @@ MagnetonEvosAttacks:
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
+;	evolve ITEM, TRUSTY_STONE, MADAME
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 7, SAND_ATTACK
@@ -1075,6 +1086,7 @@ SeelEvosAttacks:
 	db 0 ; no more level-up moves
 
 DewgongEvosAttacks:
+;	evolve ITEM, FLASH_STONE, LIODEW
 	db 0 ; no more evolutions
 	db 1, HEADBUTT
 	db 1, GROWL
@@ -1110,6 +1122,7 @@ MukEvosAttacks:
 
 ShellderEvosAttacks:
 	evolve ITEM, WATER_STONE, CLOYSTER
+;	evolve ITEM, SPHERE_STONE, TURBANN
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, WITHDRAW
@@ -1194,6 +1207,7 @@ DrowzeeEvosAttacks:
 	db 0 ; no more level-up moves
 
 HypnoEvosAttacks:
+;	evolve ITEM, TRUSTY_STONE, ALREM
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, HYPNOSIS
@@ -1220,6 +1234,7 @@ KrabbyEvosAttacks:
 	db 0 ; no more level-up moves
 
 KinglerEvosAttacks:
+;	evolve HELD, NIGHT_ARMOR, PINCHLER
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 1, LEER
@@ -1294,6 +1309,7 @@ CuboneEvosAttacks:
 	db 0 ; no more level-up moves
 
 MarowakEvosAttacks:
+;	evolve QUALITY_OF_LIFE, POUCHENT
 	db 0 ; no more evolutions
 	db 1, GROWL
 	db 1, TAIL_WHIP
@@ -1362,6 +1378,7 @@ KoffingEvosAttacks:
 	db 0 ; no more level-up moves
 
 WeezingEvosAttacks:
+;	evolve HELD, NIGHT_ARMOR, CHOAKING
 	db 0 ; no more evolutions
 	db 1, POISON_GAS
 	db 1, TACKLE
@@ -1539,6 +1556,7 @@ ScytherEvosAttacks:
 	db 0 ; no more level-up moves
 
 JynxEvosAttacks:
+;	evolve ITEM, TRUSTY_STONE, MURPHELT
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, LICK
@@ -1702,6 +1720,7 @@ FlareonEvosAttacks:
 
 PorygonEvosAttacks:
 	evolve TRADE, -1, UP_GRADE, PORYGON2
+;	evolve ITEM, SPHERE_STONE, PORYSPHIA
 	db 0 ; no more evolutions
 	db 1, CONVERSION2
 	db 1, TACKLE
@@ -1729,6 +1748,7 @@ OmanyteEvosAttacks:
 	db 0 ; no more level-up moves
 
 OmastarEvosAttacks:
+;	evolve ITEM, FLASH_STONE, OMANOVA
 	db 0 ; no more evolutions
 	db 1, CONSTRICT
 	db 1, WITHDRAW
@@ -1753,6 +1773,7 @@ KabutoEvosAttacks:
 	db 0 ; no more level-up moves
 
 KabutopsEvosAttacks:
+;	evolve TRADE, -1, PUMP_BOTTLE, KABOULDER
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, HARDEN
@@ -1775,6 +1796,7 @@ AerodactylEvosAttacks:
 	db 0 ; no more level-up moves
 
 SnorlaxEvosAttacks:
+;	evolve QUALITY_OF_LIFE, RECLINAX
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 8, AMNESIA
@@ -1842,6 +1864,7 @@ DratiniEvosAttacks:
 
 DragonairEvosAttacks:
 	evolve LEVEL, 55, DRAGONITE
+;	evolve ITEM, FLASH_STONE, DRAGONISCE
 	db 0 ; no more evolutions
 	db 1, WRAP
 	db 1, LEER
@@ -2019,6 +2042,7 @@ SentretEvosAttacks:
 	db 0 ; no more level-up moves
 
 FurretEvosAttacks:
+;	evolve QUALITY_OF_LIFE, COATRET
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, DEFENSE_CURL
@@ -2044,6 +2068,7 @@ HoothootEvosAttacks:
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:
+;	evolve HELD, NIGHT_ARMOR, NOCTGLIDE
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
@@ -2071,6 +2096,7 @@ LedybaEvosAttacks:
 	db 0 ; no more level-up moves
 
 LedianEvosAttacks:
+;	evolve QUALITY_OF_LIFE, LEDIURY
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SUPERSONIC
@@ -2097,6 +2123,7 @@ SpinarakEvosAttacks:
 	db 0 ; no more level-up moves
 
 AriadosEvosAttacks:
+;	evolve HELD, NIGHT_ARMOR, TIERACNID
 	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 1, STRING_SHOT
@@ -2377,6 +2404,7 @@ SunkernEvosAttacks:
 	db 0 ; no more level-up moves
 
 SunfloraEvosAttacks:
+;	evolve TRADE, -1, PIPE_FEATHER, SUNTHESIA
 	db 0 ; no more evolutions
 	db 1, ABSORB
 	db 1, POUND
@@ -2415,6 +2443,7 @@ WooperEvosAttacks:
 	db 0 ; no more level-up moves
 
 QuagsireEvosAttacks:
+;	evolve ITEM, TRUSTY_STONE, QUAGAMI
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 1, TAIL_WHIP
@@ -2598,6 +2627,7 @@ GranbullEvosAttacks:
 	db 0 ; no more level-up moves
 
 QwilfishEvosAttacks:
+;	evolve ITEM, FLASH_STONE, NUMPUFF
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, POISON_STING
@@ -2624,6 +2654,7 @@ ScizorEvosAttacks:
 	db 0 ; no more level-up moves
 
 ShuckleEvosAttacks:
+;	evolve HELD, NIGHT_ARMOR, SHUVEL
 	db 0 ; no more evolutions
 	db 1, CONSTRICT
 	db 1, WITHDRAW
@@ -2806,6 +2837,7 @@ HoundourEvosAttacks:
 	db 0 ; no more level-up moves
 
 HoundoomEvosAttacks:
+;	evolve HELD, NIGHT_ARMOR, HOUNDREAD
 	db 0 ; no more evolutions
 	db 1, LEER
 	db 1, EMBER
