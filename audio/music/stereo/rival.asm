@@ -19,11 +19,13 @@ Music_AfterTheRivalFight:
 Music_AfterTheRivalFight_Ch1:
 	tempo 203
 	volume 7
+	stereo_panning TRUE, TRUE
 	sound_jump Music_LookRival_Ch1.body
 
 Music_LookRival_Ch1:
 	tempo 203
 	volume 7
+	stereo_panning TRUE, TRUE
 	note_type 6, 8, 7
 	octave 4
 	note C_, 1
@@ -68,6 +70,7 @@ Music_LookRival_Ch1:
 	note D_, 2
 	note F_, 2
 	note E_, 2
+	stereo_panning TRUE, FALSE
 	duty_cycle 2
 	octave 5
 	note D_, 1
@@ -88,6 +91,7 @@ Music_LookRival_Ch1:
 	note C#, 1
 	rest 1
 	note D_, 6
+	stereo_panning TRUE, TRUE
 	duty_cycle 0
 	octave 3
 	note D_, 4
@@ -105,6 +109,7 @@ Music_LookRival_Ch1:
 	note A_, 2
 	note G_, 4
 	note D_, 2
+	stereo_panning TRUE, FALSE
 	duty_cycle 2
 	octave 4
 	note F_, 1
@@ -169,6 +174,7 @@ Music_LookRival_Ch1:
 	note E_, 2
 	note D_, 2
 	note C_, 2
+	stereo_panning TRUE, TRUE
 	duty_cycle 0
 	note F#, 12
 	sound_jump .mainloop
@@ -180,6 +186,7 @@ Music_AfterTheRivalFight_Ch2:
 	sound_jump Music_LookRival_Ch2.mainloop
 
 Music_LookRival_Ch2:
+	stereo_panning TRUE, FALSE
 	duty_cycle 3
 	vibrato 19, 4, 4
 	note_type 6, 12, 4
@@ -198,6 +205,7 @@ Music_LookRival_Ch2:
 	note B_, 12
 	vibrato 0, 0, 0
 .mainloop:
+	stereo_panning TRUE, TRUE
 	volume_envelope 10, 4
 	octave 3
 	note G_, 6
@@ -217,6 +225,7 @@ Music_LookRival_Ch2:
 	note D_, 6
 	note C_, 2
 	note D_, 8
+	stereo_panning FALSE, TRUE
 	duty_cycle 2
 	volume_envelope 12, 1
 	octave 5
@@ -238,6 +247,7 @@ Music_LookRival_Ch2:
 	note F#, 1
 	rest 1
 	note G_, 4
+	stereo_panning TRUE, TRUE
 	duty_cycle 3
 	volume_envelope 12, 4
 	note F_, 2
@@ -259,6 +269,7 @@ Music_LookRival_Ch2:
 	note C_, 2
 	octave 3
 	note B_, 4
+	stereo_panning FALSE, TRUE
 	duty_cycle 2
 	volume_envelope 12, 1
 	octave 4
@@ -309,12 +320,14 @@ Music_LookRival_Ch2:
 	note G_, 4
 	note A_, 2
 	note G_, 12
+	stereo_panning TRUE, TRUE
 	duty_cycle 3
 	octave 4
 	note C_, 12
 	sound_jump .mainloop
 
 Music_LookRival_Ch3:
+	stereo_panning FALSE, TRUE
 	note_type 6, 3, 7
 	octave 3
 	note G_, 1
@@ -323,6 +336,7 @@ Music_LookRival_Ch3:
 	octave 4
 	note C_, 9
 Music_AfterTheRivalFight_Ch3:
+	stereo_panning TRUE, TRUE
 	note_type 6, 1, 4
 	octave 2
 	note E_, 1
@@ -435,11 +449,13 @@ Music_AfterTheRivalFight_Ch3:
 
 Music_AfterTheRivalFight_Ch4:
 	toggle_noise 6
+	stereo_panning TRUE, TRUE
 	drum_speed 12
 	sound_jump Music_LookRival_Ch4.body
 
 Music_LookRival_Ch4:
 	toggle_noise 6
+	stereo_panning TRUE, TRUE
 	drum_speed 12
 	rest 10
 .body:
@@ -455,6 +471,7 @@ Music_LookRival_Ch4:
 	sound_jump .mainloop
 
 .sub1:
+	stereo_panning TRUE, TRUE
 	drum_note 10, 3
 	drum_note 10, 3
 	drum_note 10, 3
@@ -462,14 +479,18 @@ Music_LookRival_Ch4:
 	drum_note 10, 3
 	drum_note 10, 3
 	drum_note 10, 1
+	stereo_panning FALSE, TRUE
 	drum_note 3, 1
 	drum_note 4, 1
+	stereo_panning TRUE, TRUE
 	drum_note 10, 1
+	stereo_panning TRUE, FALSE
 	drum_note 5, 1
 	drum_note 6, 1
 	sound_ret
 
 .sub2:
+	stereo_panning TRUE, TRUE
 	drum_note 10, 3
 	drum_note 10, 3
 	drum_note 10, 3
@@ -477,9 +498,12 @@ Music_LookRival_Ch4:
 	drum_note 7, 3
 	drum_note 10, 3
 	drum_note 10, 1
+	stereo_panning FALSE, TRUE
 	drum_note 3, 1
 	drum_note 4, 1
+	stereo_panning TRUE, TRUE
 	drum_note 10, 1
+	stereo_panning TRUE, FALSE
 	drum_note 5, 1
 	drum_note 6, 1
 	sound_ret

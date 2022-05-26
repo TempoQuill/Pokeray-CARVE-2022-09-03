@@ -10,6 +10,7 @@ Music_HallOfFame: ; JUNICHI MASUDA
 Music_HallOfFame_Ch1:
 	tempo 226
 	volume 7
+	stereo_panning TRUE, TRUE
 	duty_cycle 3
 	vibrato 6, 2, 2
 	note_type 6, 10, 7
@@ -33,6 +34,7 @@ Music_HallOfFame_Ch1:
 	sound_jump .mainloop
 
 Music_HallOfFame_Ch2:
+	stereo_panning TRUE, TRUE
 	duty_cycle 3
 	vibrato 14, 8, 4
 	note_type 12, 12, 2
@@ -78,6 +80,7 @@ Music_HallOfFame_Ch2:
 Music_HallOfFame_Ch3:
 	vibrato 8, 1, 3
 .mainloop:
+	stereo_panning TRUE, TRUE
 	note_type 3, 1, 4
 	transpose 0, 2
 	sound_call .sub1
@@ -95,10 +98,13 @@ Music_HallOfFame_Ch3:
 	note C_, 4
 	note F_, 4
 	note G_, 7
+	stereo_panning FALSE, TRUE
 	volume_envelope 2, 4
 	note G_, 7
+	stereo_panning TRUE, FALSE
 	volume_envelope 3, 4
 	note G_, 6
+	stereo_panning TRUE, TRUE
 	sound_ret
 
 .sub2:
@@ -107,17 +113,22 @@ Music_HallOfFame_Ch3:
 	note C_, 4
 	note F_, 4
 	note A#, 7
+	stereo_panning FALSE, TRUE
 	volume_envelope 2, 4
 	note A#, 1
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 4
 	note A_, 7
+	stereo_panning FALSE, TRUE
 	volume_envelope 2, 4
 	note A_, 1
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 4
 	sound_ret
 
 Music_HallOfFame_Ch4:
 	toggle_noise 7
+	stereo_panning TRUE, TRUE
 	drum_speed 6
 .mainloop:
 	rest 16

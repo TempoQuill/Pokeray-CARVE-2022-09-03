@@ -10,6 +10,7 @@ Music_Route55: ; WILLIAM ANDERSON
 Music_Route55_Ch1:
 	tempo 158
 	volume 7
+	stereo_panning FALSE, TRUE
 	duty_cycle 2
 	vibrato 0, 1, 4
 	note_type 6, 10, 1
@@ -227,6 +228,7 @@ Music_Route55_Ch1:
 Music_Route55_Ch2:
 	note_type 6, 13, 1
 .mainloop:
+	stereo_panning TRUE, TRUE
 	sound_call .sub1
 	note D_, 4
 	note D_, 8
@@ -245,12 +247,14 @@ Music_Route55_Ch2:
 	note D#, 1
 	note E_, 7
 	sound_call .sub2
+	stereo_panning TRUE, FALSE
 	octave 2
 	note D_, 2
 	note A_, 2
 	octave 3
 	note F#, 2
 	note G_, 2
+	stereo_panning TRUE, TRUE
 	volume_envelope 13, 1
 	octave 2
 	note A_, 4
@@ -265,6 +269,7 @@ Music_Route55_Ch2:
 	sound_call .sub2
 	note A#, 8
 	note B_, 8
+	stereo_panning TRUE, FALSE
 	octave 2
 	note F#, 2
 	octave 3
@@ -272,8 +277,10 @@ Music_Route55_Ch2:
 	note A_, 2
 	octave 4
 	note D_, 2
+	stereo_panning TRUE, TRUE
 	octave 1
 	note A_, 8
+	stereo_panning TRUE, FALSE
 	octave 2
 	note F#, 2
 	octave 3
@@ -281,13 +288,16 @@ Music_Route55_Ch2:
 	note A_, 2
 	octave 4
 	note D_, 2
+	stereo_panning TRUE, TRUE
 	octave 1
 	note G_, 4
+	stereo_panning TRUE, FALSE
 	octave 3
 	note A#, 1
 	note B_, 3
 	note A_, 4
 	note G_, 4
+	stereo_panning TRUE, TRUE
 	octave 1
 	note F#, 8
 	note G_, 8
@@ -336,6 +346,7 @@ Music_Route55_Ch2:
 	note E_, 7
 	sound_call .sub4
 	note F_, 4
+	stereo_panning TRUE, FALSE
 	octave 3
 	note B_, 1
 	octave 4
@@ -343,6 +354,7 @@ Music_Route55_Ch2:
 	octave 3
 	note A#, 4
 	note G_, 4
+	stereo_panning TRUE, TRUE
 	sound_call .sub4
 	note F_, 2
 	rest 2
@@ -359,11 +371,13 @@ Music_Route55_Ch2:
 	rest 1
 	note A#, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	octave 2
 	note A#, 4
 	octave 3
 	note C_, 4
 	note D_, 4
+	stereo_panning TRUE, TRUE
 	octave 2
 	note C_, 8
 	rest 4
@@ -377,9 +391,11 @@ Music_Route55_Ch2:
 	note A#, 2
 	rest 2
 	note A_, 4
+	stereo_panning TRUE, FALSE
 	octave 2
 	note A_, 2
 	note G_, 2
+	stereo_panning TRUE, TRUE
 .loop2:
 	sound_call .sub3
 	rest 2
@@ -388,18 +404,22 @@ Music_Route55_Ch2:
 	sound_loop 2, .loop2
 	octave 2
 	note D_, 8
+	stereo_panning TRUE, FALSE
 	octave 1
 	note A_, 2
 	octave 2
 	note D_, 2
 	note A_, 2
 	note D_, 2
+	stereo_panning TRUE, TRUE
 	note E_, 8
+	stereo_panning TRUE, FALSE
 	note C_, 2
 	note E_, 2
 	note G_, 2
 	octave 3
 	note C_, 2
+	stereo_panning TRUE, TRUE
 	sound_call .sub4
 	note F_, 2
 	rest 2
@@ -468,14 +488,17 @@ Music_Route55_Ch2:
 .sub2:
 	octave 1
 	note F#, 8
+	stereo_panning TRUE, FALSE
 	octave 2
 	note D_, 2
 	note A_, 2
 	octave 3
 	note D_, 2
 	note A_, 2
+	stereo_panning TRUE, TRUE
 	octave 1
 	note G_, 8
+	stereo_panning TRUE, FALSE
 	octave 2
 	note D_, 2
 	note B_, 2
@@ -483,6 +506,7 @@ Music_Route55_Ch2:
 	note G_, 2
 	octave 4
 	note D_, 2
+	stereo_panning TRUE, TRUE
 	octave 1
 	note A_, 8
 	sound_ret
@@ -512,9 +536,11 @@ Music_Route55_Ch2:
 	sound_ret
 
 Music_Route55_Ch3:
+	stereo_panning TRUE, FALSE
 	vibrato 0, 1, 3
 .mainloop:
 	sound_call .sub1
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 4
 	octave 4
 	note D_, 4
@@ -526,12 +552,14 @@ Music_Route55_Ch3:
 	note A_, 4
 	note_type 12, 1, 4
 	note F#, 12
+	stereo_panning TRUE, FALSE
 	volume_envelope 2, 1
 	rest 2
 	octave 3
 	note A_, 1
 	rest 1
 	sound_call .sub1
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 4
 	octave 4
 	note F#, 4
@@ -539,6 +567,7 @@ Music_Route55_Ch3:
 	sound_call .sub2
 	note_type 12, 1, 4
 	note E_, 12
+	stereo_panning TRUE, FALSE
 	note_type 6, 1, 6
 	rest 4
 	octave 5
@@ -567,6 +596,7 @@ Music_Route55_Ch3:
 	octave 3
 	note A_, 1
 	rest 3
+	stereo_panning TRUE, TRUE
 	note_type 6, 1, 3
 	sound_call .sub3
 	note_type 12, 1, 3
@@ -588,6 +618,7 @@ Music_Route55_Ch3:
 	note E_, 2
 	note F_, 2
 	note E_, 12
+	stereo_panning TRUE, FALSE
 	note_type 6, 1, 5
 	octave 4
 	note A_, 2
@@ -663,6 +694,7 @@ Music_Route55_Ch3:
 
 Music_Route55_Ch4:
 	toggle_noise 6
+	stereo_panning TRUE, TRUE
 	drum_speed 6
 .mainloop:
 	sound_call .sub2

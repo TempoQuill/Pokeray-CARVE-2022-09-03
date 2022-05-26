@@ -9,6 +9,7 @@ Music_GolemPalace:
 Music_GolemPalace_Ch1:
 	tempo 176
 	volume 7
+	old_panning %1110, %1101
 	pitch_inc_switch
 	duty_cycle 3
 	note_type 12, 7, 7

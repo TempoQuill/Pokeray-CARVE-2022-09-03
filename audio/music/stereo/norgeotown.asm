@@ -10,6 +10,7 @@ Music_NorgeoTown:
 Music_NorgeoTown_Ch1:
 	tempo 165
 	volume 7
+	stereo_panning FALSE, TRUE
 	pitch_inc_switch
 	duty_cycle 2
 	note_type 12, 10, 1
@@ -197,6 +198,7 @@ Music_NorgeoTown_Ch1:
 
 Music_NorgeoTown_Ch2:
 	duty_cycle 2
+	stereo_panning TRUE, FALSE
 	note_type 12, 13, 1
 	rest 2
 	sound_call .sub1
@@ -234,6 +236,7 @@ Music_NorgeoTown_Ch2:
 	sound_call .sub2
 	note G#, 2
 	duty_cycle 3
+	stereo_panning TRUE, TRUE
 	volume_envelope 13, 4
 	octave 4
 	note C#, 2
@@ -251,6 +254,7 @@ Music_NorgeoTown_Ch2:
 	note G#, 4
 	note D#, 2
 	note F_, 4
+	stereo_panning TRUE, FALSE
 	duty_cycle 2
 .loop2:
 	volume_envelope 10, 1
@@ -260,6 +264,7 @@ Music_NorgeoTown_Ch2:
 	volume_envelope 13, 1
 	note F_, 2
 	sound_loop 2, .loop2
+	stereo_panning TRUE, TRUE
 	duty_cycle 3
 	volume_envelope 13, 4
 	octave 5
@@ -281,6 +286,7 @@ Music_NorgeoTown_Ch2:
 	note C_, 4
 	note C_, 2
 	note C#, 8
+	stereo_panning TRUE, FALSE
 	duty_cycle 2
 	volume_envelope 13, 1
 	octave 3
@@ -377,6 +383,7 @@ Music_NorgeoTown_Ch2:
 	sound_ret
 
 Music_NorgeoTown_Ch3:
+	stereo_panning TRUE, TRUE
 	note_type 6, 1, -6
 	octave 2
 	note G#, 2
@@ -395,10 +402,12 @@ Music_NorgeoTown_Ch3:
 	note F_, 7
 	note F#, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 0
 	octave 4
 	note C#, 4
 	note F#, 4
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note C_, 2
@@ -412,43 +421,52 @@ Music_NorgeoTown_Ch3:
 	note G#, 4
 	note C#, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 0
 	octave 4
 	note F_, 2
 	note F#, 2
 	note G#, 2
 	rest 2
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note C#, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 0
 	octave 5
 	note C#, 2
 	rest 2
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note C#, 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 0
 	octave 4
 	note G#, 2
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note D#, 1
 	note F_, 7
 	note F#, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 0
 	note F#, 2
 	octave 4
 	note C#, 2
 	note A#, 2
 	rest 2
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note F#, 4
 	note G_, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 0
 	octave 4
 	note D#, 2
@@ -456,23 +474,28 @@ Music_NorgeoTown_Ch3:
 	note B_, 1
 	octave 5
 	note C_, 3
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note G_, 4
 	note G#, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 0
 	octave 4
 	note F_, 2
 	note G#, 2
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note F_, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 0
 	octave 5
 	note E_, 1
 	note F_, 3
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note A#, 2
@@ -487,14 +510,17 @@ Music_NorgeoTown_Ch3:
 	note F_, 2
 	note D#, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 0
 	octave 4
 	note A#, 4
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note D#, 2
 	rest 2
 	note G#, 4
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 0
 	octave 5
 	note C_, 4
@@ -507,19 +533,23 @@ Music_NorgeoTown_Ch3:
 	octave 5
 	note C_, 2
 	note D#, 2
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note C#, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 0
 	octave 5
 	note C#, 4
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note C_, 2
 	rest 2
 	octave 2
 	note A#, 4
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 0
 	octave 4
 	note F_, 4
@@ -532,6 +562,7 @@ Music_NorgeoTown_Ch3:
 	octave 5
 	note C#, 2
 	note F_, 2
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 2
 	note F#, 2
@@ -608,40 +639,48 @@ Music_NorgeoTown_Ch3:
 	note F_, 2
 	note F#, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 2, -6
 	octave 4
 	note C#, 1
 	rest 3
 	note C#, 1
 	rest 3
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note F#, 4
 	note G_, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 2, -6
 	octave 4
 	note D#, 1
 	rest 3
 	note D#, 1
 	rest 3
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note G_, 4
 	note G#, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 2, -6
 	octave 4
 	note F_, 1
 	rest 3
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note F_, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 2, -6
 	octave 4
 	note D#, 1
 	rest 3
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -6
 	octave 3
 	note A#, 2
@@ -679,6 +718,7 @@ Music_NorgeoTown_Ch4:
 	rest 2
 .mainloop:
 	sound_call .sub1
+	stereo_panning FALSE, TRUE
 	drum_note 5, 1
 	drum_note 5, 1
 	sound_loop 3, .mainloop
@@ -687,19 +727,25 @@ Music_NorgeoTown_Ch4:
 	drum_note 1, 1
 .loop1:
 	sound_call .sub1
+	stereo_panning FALSE, TRUE
 	drum_note 5, 1
 	drum_note 5, 1
 	sound_loop 4, .loop1
 	sound_jump .mainloop
 
 .sub1:
+	stereo_panning TRUE, TRUE
 	drum_note 12, 2
+	stereo_panning FALSE, TRUE
 	drum_note 5, 2
+	stereo_panning TRUE, TRUE
 	drum_note 1, 2
 	drum_note 12, 1
+	stereo_panning FALSE, TRUE
 	drum_note 5, 1
 	drum_note 5, 1
 	drum_note 5, 1
+	stereo_panning TRUE, TRUE
 	drum_note 12, 2
 	drum_note 1, 2
 	sound_ret

@@ -9,6 +9,7 @@ Music_Mum: ; JUNICHI MASUDA
 Music_Mum_Ch2:
 	tempo 146
 	volume 7
+	stereo_panning TRUE, FALSE
 	pitch_inc_switch
 	duty_cycle 2
 	note_type 6, 10, 1
@@ -30,6 +31,7 @@ Music_Mum_Ch2:
 	sound_jump .mainloop
 
 Music_Mum_Ch3:
+	stereo_panning FALSE, TRUE
 	note_type 6, 1, 4
 	octave 3
 	note F_, 1
@@ -40,51 +42,67 @@ Music_Mum_Ch3:
 	note F_, 8
 	volume_envelope 1, 3
 .mainloop:
+	stereo_panning TRUE, TRUE
 	octave 2
 	note A#, 1
 	rest 1
+	stereo_panning FALSE, TRUE
 	octave 4
 	note F_, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	octave 3
 	note F_, 1
 	rest 1
+	stereo_panning FALSE, TRUE
 	octave 4
 	note F_, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	octave 3
 	note D#, 1
 	rest 1
+	stereo_panning FALSE, TRUE
 	octave 4
 	note G_, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	octave 3
 	note C_, 1
 	rest 1
+	stereo_panning FALSE, TRUE
 	octave 4
 	note G_, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	octave 2
 	note A#, 1
 	rest 1
+	stereo_panning FALSE, TRUE
 	octave 4
 	note F_, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	octave 3
 	note D_, 1
 	rest 1
+	stereo_panning FALSE, TRUE
 	octave 4
 	note F_, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	octave 3
 	note F_, 1
 	rest 1
+	stereo_panning FALSE, TRUE
 	octave 4
 	note D#, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	octave 3
 	note C_, 1
 	rest 1
+	stereo_panning FALSE, TRUE
 	octave 4
 	note D#, 1
 	rest 1
@@ -92,6 +110,7 @@ Music_Mum_Ch3:
 
 Music_Mum_Ch4:
 	toggle_noise 6
+	stereo_panning TRUE, TRUE
 	drum_speed 12
 	rest 6
 .mainloop:

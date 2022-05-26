@@ -8,6 +8,8 @@ Music_RayShadeOpening2: ; JUNICHI MASUDA, WILLIAM ANDERSON(INTRO)
 
 Music_RayShadeOpening2_Ch1:
 	tempo 240
+	volume 7
+	stereo_panning FALSE, TRUE
 	pitch_offset -1
 	note_type 12, 12, 1
 	rest 16
@@ -64,6 +66,7 @@ Music_RayShadeOpening2_Ch1:
 	sound_ret
 
 Music_RayShadeOpening2_Ch2:
+	stereo_panning FALSE, TRUE
 	duty_cycle 3
 	note_type 12, 5, 0
 	octave 3
@@ -79,6 +82,7 @@ Music_RayShadeOpening2_Ch2:
 	note A_, 1
 	note A#, 7
 	rest 4
+	stereo_panning TRUE, TRUE
 .loop1:
 	sound_call .sub1
 	sound_loop 3, .loop1
@@ -148,6 +152,7 @@ Music_RayShadeOpening2_Ch2:
 	sound_ret
 
 Music_RayShadeOpening2_Ch3:
+	stereo_panning TRUE, FALSE
 	vibrato 15, 2, 4
 	note_type 12, 2, 7
 	octave 4
@@ -217,6 +222,7 @@ Music_RayShadeOpening2_Ch3:
 
 Music_RayShadeOpening2_Ch4:
 	toggle_noise 1
+	stereo_panning TRUE, TRUE
 	drum_speed 12
 	rest 16
 	rest 16

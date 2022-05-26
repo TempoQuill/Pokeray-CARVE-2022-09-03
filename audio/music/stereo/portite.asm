@@ -13,29 +13,36 @@ Music_Portite_Ch1:
 	vibrato 8, 2, 2
 	note_type 6, 10, 3
 .loop1:
+	stereo_panning FALSE, TRUE
 	octave 2
 	note A_, 4
 	note A#, 4
 	octave 3
 	note F_, 4
+	stereo_panning TRUE, FALSE
 	octave 2
 	note A#, 4
 	octave 3
 	note C_, 4
 	note F_, 4
+	stereo_panning FALSE, TRUE
 	octave 2
 	note A#, 8
+	stereo_panning TRUE, FALSE
 	note F_, 4
 	note A#, 4
+	stereo_panning FALSE, TRUE
 	octave 3
 	note D_, 2
 	note F_, 2
+	stereo_panning TRUE, FALSE
 	octave 2
 	note A#, 1
 	octave 3
 	note D_, 1
 	note F_, 2
 	rest 4
+	stereo_panning FALSE, TRUE
 	octave 2
 	note A#, 1
 	octave 3
@@ -43,6 +50,7 @@ Music_Portite_Ch1:
 	rest 4
 	sound_loop 2, .loop1
 .mainloop:
+	stereo_panning TRUE, FALSE
 	volume_envelope 10, 4
 .loop2:
 	octave 4
@@ -104,6 +112,7 @@ Music_Portite_Ch1:
 	sound_call .sub2
 	sound_call .sub3
 	sound_call .sub2
+	stereo_panning FALSE, TRUE
 	volume_envelope 10, 1
 	note C_, 2
 	volume_envelope 7, 1
@@ -192,6 +201,7 @@ Music_Portite_Ch1:
 	sound_ret
 
 .sub2:
+	stereo_panning TRUE, FALSE
 	duty_cycle 3
 	volume_envelope 10, 4
 .sub2loop:
@@ -211,6 +221,7 @@ Music_Portite_Ch1:
 	sound_ret
 
 .sub3:
+	stereo_panning FALSE, TRUE
 	duty_cycle 2
 	volume_envelope 6, 4
 	octave 4
@@ -223,6 +234,7 @@ Music_Portite_Ch1:
 	sound_ret
 
 .sub4:
+	stereo_panning TRUE, FALSE
 	duty_cycle 3
 	volume_envelope 10, 4
 	octave 3
@@ -243,6 +255,7 @@ Music_Portite_Ch1:
 	sound_ret
 
 Music_Portite_Ch2:
+	stereo_panning TRUE, TRUE
 	duty_cycle 3
 	vibrato 18, 4, 4
 	note_type 6, 12, 3
@@ -396,6 +409,7 @@ Music_Portite_Ch2:
 	sound_ret
 
 Music_Portite_Ch3:
+	stereo_panning TRUE, FALSE
 	vibrato 11, 2, 3
 	note_type 12, 2, 3
 	octave 4
@@ -408,13 +422,16 @@ Music_Portite_Ch3:
 	note F_, 6
 	note G_, 10
 	note F_, 8
+	stereo_panning FALSE, TRUE
 	volume_envelope 1, 6
 	octave 3
 	note F_, 2
 	rest 2
+	stereo_panning TRUE, FALSE
 	note A#, 2
 	rest 2
 .mainloop:
+	stereo_panning FALSE, TRUE
 	vibrato 11, 1, 3
 	note_type 6, 1, 4
 	sound_call .sub1
@@ -435,6 +452,7 @@ Music_Portite_Ch3:
 	note F_, 4
 	note G_, 10
 	rest 6
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 2
 	sound_call .sub2
 	note C_, 4
@@ -454,17 +472,21 @@ Music_Portite_Ch3:
 	rest 3
 	sound_call .sub6
 	sound_call .sub3
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 5
 	note A_, 1
 	note A#, 3
+	stereo_panning FALSE, TRUE
 	volume_envelope 1, 1
 	note D_, 1
 	rest 1
 	note D_, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 5
 	note A#, 4
 	sound_call .sub6
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 6
 	octave 4
 	note C_, 1
@@ -510,6 +532,7 @@ Music_Portite_Ch3:
 	volume_envelope 3, 6
 	note A_, 1
 	sound_call .sub5
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 5
 	octave 5
 	note C_, 1
@@ -519,21 +542,25 @@ Music_Portite_Ch3:
 	transpose 0, 3
 	sound_call .sub3
 	transpose 0, 0
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 5
 	octave 5
 	note C_, 1
 	note C#, 3
+	stereo_panning FALSE, TRUE
 	volume_envelope 1, 1
 	octave 4
 	note C#, 1
 	rest 1
 	note C#, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 5
 	octave 5
 	note C#, 4
 	sound_call .sub7
 	rest 4
+	stereo_panning FALSE, TRUE
 	volume_envelope 1, 1
 	octave 4
 	note C_, 1
@@ -542,11 +569,13 @@ Music_Portite_Ch3:
 	rest 1
 	note C_, 1
 	rest 5
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 5
 	octave 5
 	note D#, 1
 	note E_, 5
 	rest 2
+	stereo_panning FALSE, TRUE
 	volume_envelope 1, 1
 	note C_, 1
 	rest 1
@@ -603,6 +632,7 @@ Music_Portite_Ch3:
 	sound_ret
 
 .sub3:
+	stereo_panning TRUE, FALSE
 	volume_envelope 2, 7
 	octave 4
 	note G#, 1
@@ -637,39 +667,48 @@ Music_Portite_Ch3:
 	sound_ret
 
 .sub6:
+	stereo_panning FALSE, TRUE
 	volume_envelope 1, 1
 	note D_, 1
 	rest 3
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 5
 	note A#, 2
 	rest 2
+	stereo_panning FALSE, TRUE
 	volume_envelope 1, 1
 	note D_, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 5
 	octave 5
 	note C_, 2
 	sound_ret
 
 .sub7:
+	stereo_panning FALSE, TRUE
 	volume_envelope 1, 1
 	octave 4
 	note C#, 1
 	rest 3
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 5
 	octave 5
 	note C#, 2
 	rest 2
+	stereo_panning FALSE, TRUE
 	volume_envelope 1, 1
 	octave 4
 	note C#, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, 5
 	octave 5
 	note D#, 2
 	sound_ret
 
 Music_Portite_Ch4:
+	stereo_panning TRUE, TRUE
 	toggle_noise 5
 	drum_speed 12
 	rest 16
@@ -685,27 +724,35 @@ Music_Portite_Ch4:
 .mainloop:
 	sound_call .sub1
 	sound_call .sub1
+	stereo_panning FALSE, TRUE
 .loop1:
 	drum_note 6, 1
 	drum_note 5, 1
 	drum_note 5, 1
 	drum_note 5, 1
+	stereo_panning TRUE, TRUE
 	drum_note 1, 1
+	stereo_panning FALSE, TRUE
 	drum_note 5, 1
 	drum_note 5, 1
 	drum_note 5, 1
 	sound_loop 15, .loop1
 	drum_note 6, 1
 	drum_note 5, 1
+	stereo_panning TRUE, FALSE
 	drum_note 9, 4
+	stereo_panning TRUE, TRUE
 	drum_note 1, 1
 	drum_note 1, 1
 	sound_jump .mainloop
 
 .sub1:
+	stereo_panning TRUE, FALSE
 	drum_note 9, 4
 .sub1loop1:
+	stereo_panning TRUE, TRUE
 	drum_note 1, 1
+	stereo_panning FALSE, TRUE
 	drum_note 5, 1
 	drum_note 5, 1
 	drum_note 5, 1
@@ -714,26 +761,35 @@ Music_Portite_Ch4:
 	drum_note 5, 1
 	drum_note 5, 1
 	sound_loop 7, .sub1loop1
+	stereo_panning TRUE, TRUE
 	drum_note 1, 1
 	drum_note 1, 1
 	drum_note 1, 1
 	drum_note 1, 1
+	stereo_panning FALSE, TRUE
 .sub1loop2:
 	drum_note 6, 1
 	drum_note 5, 1
 	drum_note 5, 1
 	drum_note 5, 1
+	stereo_panning TRUE, TRUE
 	drum_note 1, 1
+	stereo_panning FALSE, TRUE
 	drum_note 5, 1
 	drum_note 5, 1
 	drum_note 5, 1
 	sound_loop 7, .sub1loop2
 	drum_note 6, 1
+	stereo_panning TRUE, TRUE
 	drum_note 1, 1
+	stereo_panning FALSE, TRUE
 	drum_note 5, 1
 	drum_note 5, 1
+	stereo_panning TRUE, TRUE
 	drum_note 1, 1
+	stereo_panning FALSE, TRUE
 	drum_note 5, 1
+	stereo_panning TRUE, TRUE
 	drum_note 1, 1
 	drum_note 1, 1
 	sound_ret

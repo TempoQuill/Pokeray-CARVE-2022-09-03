@@ -25,6 +25,7 @@ Music_LanaweForest_Ch1:
 	sound_jump .mainloop
 
 .sub1:
+	stereo_panning TRUE, FALSE
 	octave 2
 	note D_, 1
 	octave 3
@@ -96,6 +97,7 @@ Music_LanaweForest_Ch2:
 	sound_call .sub1
 	sound_loop 7, .loop1
 	sound_call Music_LanaweForest_Ch1.sub1
+	stereo_panning TRUE, TRUE
 	vibrato 8, 7, 4
 .loop2:
 	volume_envelope 0, -7
@@ -113,6 +115,7 @@ Music_LanaweForest_Ch2:
 	sound_jump .mainloop
 
 .sub1:
+	stereo_panning TRUE, TRUE
 	octave 4
 	note C_, 2
 	note D_, 2
@@ -125,6 +128,7 @@ Music_LanaweForest_Ch2:
 	sound_ret
 
 Music_LanaweForest_Ch3:
+	stereo_panning FALSE, TRUE
 	vibrato 12, 9, 3
 	note_type 12, 1, 4
 .mainloop:
@@ -172,38 +176,61 @@ Music_LanaweForest_Ch4:
 	sound_jump .mainloop
 
 .sub1:
+	stereo_panning TRUE, TRUE
 	drum_speed 6
 	drum_note 12, 2
+	stereo_panning TRUE, FALSE
 	drum_note 5, 2
 	drum_note 5, 2
+	stereo_panning TRUE, TRUE
 	drum_note 12, 2
 	drum_note 1, 2
+	stereo_panning TRUE, FALSE
 	drum_note 5, 2
+	stereo_panning TRUE, TRUE
 	drum_note 12, 2
+	stereo_panning TRUE, FALSE
 	drum_note 5, 2
 	drum_note 5, 2
 	drum_note 5, 1
 	drum_note 5, 1
+	stereo_panning TRUE, TRUE
 	drum_note 12, 2
+	stereo_panning TRUE, FALSE
 	drum_note 5, 2
+	stereo_panning TRUE, TRUE
 	drum_note 1, 2
 	drum_note 12, 2
+	stereo_panning TRUE, FALSE
 	drum_note 5, 2
+	stereo_panning TRUE, TRUE
 	drum_note 1, 2
 	drum_note 12, 2
+	stereo_panning TRUE, FALSE
 	drum_note 5, 2
 	drum_note 5, 2
+	stereo_panning TRUE, TRUE
 	drum_note 12, 2
 	drum_note 1, 2
+	stereo_panning TRUE, FALSE
 	drum_note 5, 2
+	stereo_panning TRUE, TRUE
 	drum_note 12, 2
 	drum_note 1, 2
+	stereo_panning TRUE, FALSE
 	drum_note 5, 2
+	stereo_panning TRUE, TRUE
 	drum_note 1, 1
+	stereo_panning TRUE, FALSE
 	drum_note 5, 1
+	stereo_panning TRUE, TRUE
 	drum_note 12, 2
+	stereo_panning TRUE, FALSE
 	drum_note 5, 2
+	stereo_panning TRUE, TRUE
 	drum_note 1, 2
 	drum_note 12, 2
+	stereo_panning TRUE, FALSE
 	drum_note 5, 2
+	stereo_panning TRUE, TRUE
 	sound_ret

@@ -13,9 +13,11 @@ Music_Gym_Ch1:
 	duty_cycle 2
 	vibrato 8, 2, 4
 .mainloop:
+	stereo_panning TRUE, TRUE
 	note_type 6, 10, 2
 	octave 4
 	note G#, 4
+	stereo_panning FALSE, TRUE
 	octave 3
 	note B_, 1
 	rest 1
@@ -23,6 +25,7 @@ Music_Gym_Ch1:
 	rest 1
 	note B_, 1
 	rest 3
+	stereo_panning TRUE, TRUE
 	octave 4
 	note E_, 2
 	note G#, 2
@@ -30,6 +33,7 @@ Music_Gym_Ch1:
 	sound_loop 2, .mainloop
 	transpose 0, 0
 	note E_, 4
+	stereo_panning FALSE, TRUE
 	octave 3
 	note E_, 1
 	rest 1
@@ -37,6 +41,7 @@ Music_Gym_Ch1:
 	rest 1
 	note E_, 1
 	rest 3
+	stereo_panning TRUE, TRUE
 	note E_, 2
 	note E_, 2
 	octave 4
@@ -52,6 +57,7 @@ Music_Gym_Ch1:
 	note F#, 2
 	octave 4
 	note D#, 2
+	stereo_panning FALSE, TRUE
 	volume_envelope 10, 3
 	octave 3
 	note B_, 6
@@ -213,6 +219,7 @@ Music_Gym_Ch1:
 	sound_ret
 
 Music_Gym_Ch2:
+	stereo_panning TRUE, TRUE
 	transpose 0, 7
 	duty_cycle 3
 	vibrato 8, 6, 2
@@ -357,46 +364,54 @@ Music_Gym_Ch2:
 	sound_ret
 
 Music_Gym_Ch3:
+	stereo_panning TRUE, TRUE
 	vibrato 11, 1, 3
 	note_type 12, 1, -2
 	octave 6
 	note E_, 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, -4
 	octave 4
 	note E_, 1
 	note E_, 1
 	note E_, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -2
 	octave 5
 	note B_, 1
 	octave 6
 	note E_, 1
 	note D_, 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, -4
 	octave 4
 	note D_, 1
 	note D_, 1
 	note D_, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -2
 	octave 5
 	note B_, 1
 	octave 6
 	note D_, 1
 	note C#, 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, -4
 	octave 3
 	note A_, 1
 	note A_, 1
 	note A_, 1
 	rest 1
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -2
 	octave 6
 	note C#, 1
 	note C#, 1
 	note C#, 4
 	note D#, 4
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 6
 .loop1:
 	octave 4
@@ -471,6 +486,7 @@ Music_Gym_Ch3:
 
 Music_Gym_Ch4:
 	toggle_noise 6
+	stereo_panning TRUE, TRUE
 	drum_speed 12
 .mainloop:
 	drum_note 3, 1

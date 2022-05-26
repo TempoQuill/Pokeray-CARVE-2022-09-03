@@ -10,6 +10,7 @@ Music_MainMenu: ; JUNICHI MASUDA
 Music_MainMenu_Ch1:
 	tempo 160
 	volume 7
+	old_panning %1101, %1110
 	pitch_inc_switch
 	duty_cycle 3
 	vibrato 8, 3, 2

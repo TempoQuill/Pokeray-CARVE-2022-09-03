@@ -10,6 +10,7 @@ Music_GymVictory: ; JUNICHI MASUDA
 Music_GymVictory_Ch1:
 	tempo 235
 	volume 7
+	stereo_panning TRUE, FALSE
 	pitch_offset -1
 	duty_cycle 3
 	note_type 3, 10, 5
@@ -41,6 +42,7 @@ Music_GymVictory_Ch1:
 	octave 3
 	note A#, 4
 	note A_, 16
+	stereo_panning TRUE, FALSE
 	octave 4
 	note A_, 4
 	note G_, 4
@@ -69,6 +71,7 @@ Music_GymVictory_Ch1:
 	note G_, 4
 	note F_, 4
 	note A_, 16
+	stereo_panning TRUE, TRUE
 	sound_call .sub2
 	note A_, 4
 	note E_, 4
@@ -86,6 +89,7 @@ Music_GymVictory_Ch1:
 	note A_, 8
 	note G_, 8
 	note C_, 8
+	stereo_panning TRUE, FALSE
 	note D_, 2
 	note E_, 2
 	note F_, 2
@@ -93,22 +97,29 @@ Music_GymVictory_Ch1:
 	sound_jump .mainloop
 
 .sub1:
+	stereo_panning TRUE, TRUE
 	octave 3
 	note A_, 4
+	stereo_panning TRUE, FALSE
 	note A_, 2
 	note A#, 2
 	octave 4
 	note C_, 8
+	stereo_panning TRUE, TRUE
 	octave 3
 	note G_, 4
+	stereo_panning TRUE, FALSE
 	note G_, 2
 	note A_, 2
 	note A#, 8
+	stereo_panning TRUE, TRUE
 	note F_, 4
+	stereo_panning TRUE, FALSE
 	note A#, 2
 	octave 4
 	note C_, 2
 	note D_, 4
+	stereo_panning TRUE, TRUE
 	sound_ret
 
 .sub2:
@@ -159,6 +170,7 @@ Music_GymVictory_Ch1:
 	sound_ret
 
 Music_GymVictory_Ch2:
+	stereo_panning FALSE, TRUE
 	duty_cycle 2
 	note_type 3, 13, 5
 	octave 4
@@ -174,6 +186,7 @@ Music_GymVictory_Ch2:
 	note G_, 1
 	octave 5
 	note C_, 7
+	stereo_panning TRUE, TRUE
 	note_type 6, 10, 2
 	octave 2
 	note D_, 2
@@ -195,6 +208,7 @@ Music_GymVictory_Ch2:
 	octave 1
 	note F_, 7
 	sound_loop 2, .mainloop
+	stereo_panning FALSE, TRUE
 	sound_call .sub2
 	octave 3
 	note E_, 1
@@ -230,6 +244,7 @@ Music_GymVictory_Ch2:
 	note F_, 14
 	note G_, 2
 	note F_, 8
+	stereo_panning TRUE, TRUE
 	duty_cycle 2
 	vibrato 0, 0, 0
 	volume_envelope 10, 2
@@ -240,26 +255,33 @@ Music_GymVictory_Ch2:
 	sound_jump .mainloop
 
 .sub1:
+	stereo_panning TRUE, TRUE
 	octave 2
 	note F_, 2
+	stereo_panning FALSE, TRUE
 	octave 3
 	note F_, 1
 	note G_, 1
 	note A_, 2
+	stereo_panning TRUE, TRUE
 	octave 2
 	note C_, 2
 	note E_, 2
+	stereo_panning FALSE, TRUE
 	octave 3
 	note E_, 1
 	note F_, 1
 	note G_, 2
+	stereo_panning TRUE, TRUE
 	octave 2
 	note C_, 2
 	note D_, 2
+	stereo_panning FALSE, TRUE
 	octave 3
 	note D_, 1
 	note E_, 1
 	note F_, 2
+	stereo_panning TRUE, TRUE
 	octave 1
 	note A#, 2
 	sound_ret
@@ -291,6 +313,7 @@ Music_GymVictory_Ch2:
 	sound_ret
 
 Music_GymVictory_Ch3:
+	stereo_panning TRUE, TRUE
 	note_type 6, 1, 5
 	octave 3
 	note F_, 8
@@ -299,6 +322,7 @@ Music_GymVictory_Ch3:
 	note F_, 8
 	octave 3
 	note C_, 4
+	stereo_panning FALSE, TRUE
 	octave 4
 	note C_, 1
 	note E_, 1
@@ -307,6 +331,7 @@ Music_GymVictory_Ch3:
 	note C_, 1
 	volume_envelope 1, -3
 .mainloop:
+	stereo_panning TRUE, TRUE
 	sound_call .sub1
 	rest 5
 	volume_envelope 1, 2
@@ -325,21 +350,27 @@ Music_GymVictory_Ch3:
 	sound_call .sub3
 	sound_call .sub3
 	sound_call .sub2
+	stereo_panning TRUE, TRUE
 	octave 3
 	note C_, 8
+	stereo_panning FALSE, TRUE
 	octave 4
 	note E_, 1
 	note G_, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	octave 3
 	note G_, 4
 	note C_, 4
+	stereo_panning FALSE, TRUE
 	octave 4
 	note E_, 1
 	note G_, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	octave 3
 	note E_, 4
+	stereo_panning FALSE, TRUE
 	octave 4
 	note E_, 1
 	note A#, 1
@@ -355,13 +386,16 @@ Music_GymVictory_Ch3:
 	sound_call .sub2
 	octave 3
 	note F_, 4
+	stereo_panning FALSE, TRUE
 	octave 4
 	note F_, 1
+	stereo_panning TRUE, TRUE
 	octave 5
 	note C_, 1
 	rest 2
 	octave 3
 	note C_, 4
+	stereo_panning FALSE, TRUE
 	octave 4
 	note E_, 1
 	note A#, 1
@@ -369,6 +403,7 @@ Music_GymVictory_Ch3:
 	note F_, 1
 	note A_, 1
 	rest 6
+	stereo_panning TRUE, FALSE
 	note_type 6, 1, -3
 	note A#, 1
 	octave 5
@@ -428,49 +463,62 @@ Music_GymVictory_Ch3:
 .sub2:
 	octave 3
 	note F_, 8
+	stereo_panning FALSE, TRUE
 	octave 4
 	note F_, 1
 	note A_, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	octave 3
 	note C_, 4
 	note F_, 4
+	stereo_panning FALSE, TRUE
 	octave 4
 	note F_, 1
 	note A_, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	octave 3
 	note C_, 4
+	stereo_panning FALSE, TRUE
 	octave 4
 	note F_, 1
 	octave 5
 	note C_, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	sound_ret
 
 .sub3:
 	octave 3
 	note C_, 8
+	stereo_panning FALSE, TRUE
 	octave 4
 	note E_, 1
 	note G_, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	octave 3
 	note G_, 4
 	note C_, 4
+	stereo_panning FALSE, TRUE
 	octave 4
 	note E_, 1
 	note G_, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	octave 3
 	note G_, 4
+	stereo_panning FALSE, TRUE
 	octave 4
 	note E_, 1
 	note A#, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	sound_ret
 
 Music_GymVictory_Ch4:
+	stereo_panning TRUE, TRUE
 	toggle_noise 6
 	drum_speed 6
 	drum_note 7, 16
@@ -546,10 +594,13 @@ Music_GymVictory_Ch4:
 	drum_note 1, 4
 	drum_note 2, 4
 	drum_note 2, 4
+	stereo_panning TRUE, FALSE
 	drum_note 3, 2
 	drum_note 4, 2
+	stereo_panning FALSE, TRUE
 	drum_note 5, 2
 	drum_note 6, 2
+	stereo_panning TRUE, TRUE
 	drum_note 1, 8
 	sound_loop 2, .sub2loop1
 	drum_note 2, 4

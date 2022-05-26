@@ -17,6 +17,7 @@ Music_CatchVictory: ; JUNICHI MASUDA
 Music_WildVictory_Ch1:
 	tempo 251
 	volume 7
+	stereo_panning TRUE, TRUE
 	duty_cycle 3
 	note_type 6, 10, 1
 	octave 4
@@ -38,6 +39,7 @@ Music_WildVictory_Ch1:
 Music_CatchVictory_Ch1:
 	tempo 251
 	volume 7
+	stereo_panning TRUE, FALSE
 .mainloop:
 	sound_call .sub2
 	sound_call .sub1
@@ -88,6 +90,7 @@ Music_CatchVictory_Ch1:
 	sound_ret
 
 Music_WildVictory_Ch2:
+	stereo_panning TRUE, FALSE
 	duty_cycle 2
 	vibrato 15, 3, 4
 	note_type 6, 10, 1
@@ -99,6 +102,7 @@ Music_WildVictory_Ch2:
 	volume_envelope 12, 6
 	note B_, 12
 Music_CatchVictory_Ch2:
+	stereo_panning TRUE, TRUE
 	sound_call .sub2
 	sound_call .sub1
 	sound_call .sub3
@@ -161,6 +165,7 @@ Music_CatchVictory_Ch2:
 	sound_ret
 
 Music_WildVictory_Ch3:
+	stereo_panning FALSE, TRUE
 	vibrato 9, 1, 3
 	note_type 6, 1, 6
 	octave 4
@@ -174,6 +179,7 @@ Music_WildVictory_Ch3:
 	volume_envelope 3, 6
 	note E_, 4
 Music_CatchVictory_Ch3:
+	stereo_panning FALSE, TRUE
 	sound_call .sub2
 	sound_call .sub1
 	transpose 0, 1

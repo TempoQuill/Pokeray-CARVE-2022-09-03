@@ -10,6 +10,7 @@ Music_Larch:
 Music_Larch_Ch1:
 	tempo 145
 	volume 7
+	stereo_panning TRUE, FALSE
 	duty_cycle 2
 	note_type 12, 8, 2
 	rest 8
@@ -112,6 +113,7 @@ Music_Larch_Ch1:
 	sound_ret
 
 Music_Larch_Ch2:
+	stereo_panning TRUE, TRUE
 	duty_cycle 3
 	note_type 12, 13, 2
 	octave 4
@@ -128,6 +130,7 @@ Music_Larch_Ch2:
 	note B_, 2
 	octave 4
 	note C_, 6
+	stereo_panning FALSE, TRUE
 	volume_envelope 13, 1
 	octave 3
 	note E_, 4
@@ -135,6 +138,7 @@ Music_Larch_Ch2:
 	note E_, 4
 	note E_, 4
 	note E_, 4
+	stereo_panning TRUE, TRUE
 	volume_envelope 12, 3
 	octave 4
 	note A_, 4
@@ -236,6 +240,7 @@ Music_Larch_Ch2:
 	sound_jump .mainloop
 
 Music_Larch_Ch3:
+	stereo_panning TRUE, TRUE
 	note_type 12, 1, -6
 	rest 8
 	octave 3
@@ -398,6 +403,7 @@ Music_Larch_Ch3:
 
 Music_Larch_Ch4:
 	toggle_noise 3
+	stereo_panning FALSE, TRUE
 	drum_speed 12
 	rest 4
 	drum_note 3, 2

@@ -9,6 +9,7 @@ Music_OddishFarm:
 Music_OddishFarm_Ch1:
 	tempo 181
 	volume 7
+	stereo_panning TRUE, FALSE
 	note_type 6, 10, 5
 	rest 4
 	duty_cycle 1
@@ -109,13 +110,16 @@ Music_OddishFarm_Ch2:
 	duty_cycle 2
 	vibrato 22, 2, 4
 .mainloop:
+	stereo_panning TRUE, TRUE
 	octave 2
 	note F_, 4
 	sound_call .sub1
 	rest 3
 	sound_loop 2, .mainloop
+	stereo_panning TRUE, TRUE
 	octave 2
 	note F_, 4
+	stereo_panning FALSE, TRUE
 	note A#, 1
 	rest 3
 	octave 3
@@ -125,29 +129,37 @@ Music_OddishFarm_Ch2:
 	octave 2
 	note A#, 1
 	rest 3
+	stereo_panning TRUE, TRUE
 	note F_, 4
+	stereo_panning FALSE, TRUE
 	octave 3
 	note C_, 1
 	note A_, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	octave 2
 	note E_, 4
+	stereo_panning FALSE, TRUE
 	octave 3
 	note C_, 1
 	note A_, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	octave 2
 	note D_, 4
 	sound_call .sub1
 	rest 3
+	stereo_panning TRUE, TRUE
 	octave 1
 	note A#, 4
 .loop1:
 	sound_call .sub1
 	rest 3
+	stereo_panning TRUE, TRUE
 	octave 2
 	note C_, 4
 	sound_loop 2, .loop1
+	stereo_panning FALSE, TRUE
 	octave 3
 	note C_, 1
 	rest 3
@@ -156,23 +168,29 @@ Music_OddishFarm_Ch2:
 	rest 2
 	note C_, 1
 	rest 3
+	stereo_panning TRUE, TRUE
 	octave 2
 	note F_, 4
 	sound_call .sub1
 	rest 3
+	stereo_panning TRUE, TRUE
 	octave 1
 	note A_, 4
 	sound_call .sub1
 	rest 3
 	sound_call .sub2
+	stereo_panning TRUE, TRUE
 	octave 2
 	note C_, 4
+	stereo_panning FALSE, TRUE
 	octave 3
 	note C_, 1
 	note A_, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	octave 1
 	note B_, 4
+	stereo_panning FALSE, TRUE
 	octave 3
 	note C_, 1
 	note A_, 1
@@ -180,6 +198,7 @@ Music_OddishFarm_Ch2:
 	sound_call .sub2
 	transpose 0, 2
 	sound_call .sub2
+	stereo_panning TRUE, TRUE
 	transpose 0, 0
 	octave 2
 	note F_, 4
@@ -248,6 +267,7 @@ Music_OddishFarm_Ch2:
 	sound_jump .mainloop
 
 .sub1:
+	stereo_panning FALSE, TRUE
 	octave 3
 	note C_, 1
 	rest 3
@@ -258,8 +278,10 @@ Music_OddishFarm_Ch2:
 	sound_ret
 
 .sub2:
+	stereo_panning TRUE, TRUE
 	octave 1
 	note A#, 4
+	stereo_panning FALSE, TRUE
 	octave 3
 	note D_, 1
 	rest 3
@@ -271,6 +293,7 @@ Music_OddishFarm_Ch2:
 	sound_ret
 
 Music_OddishFarm_Ch3:
+	stereo_panning TRUE, TRUE
 	vibrato 13, 1, 3
 	note_type 6, 1, 0
 	octave 5

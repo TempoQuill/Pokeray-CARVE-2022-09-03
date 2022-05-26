@@ -13,6 +13,7 @@ Music_HypercoinCity_Ch1:
 	note_type 6, 0, 0
 	rest 12
 .mainloop:
+	stereo_panning TRUE, FALSE
 	sound_call .sub1
 	octave 3
 	note G#, 4
@@ -61,6 +62,7 @@ Music_HypercoinCity_Ch1:
 	note G_, 4
 	note D#, 8
 	note C_, 4
+	stereo_panning TRUE, TRUE
 	note B_, 2
 	octave 4
 	note C#, 2
@@ -113,12 +115,14 @@ Music_HypercoinCity_Ch1:
 
 Music_HypercoinCity_Ch2:
 	duty_cycle 2
+	stereo_panning TRUE, TRUE
 	note_type 6, 13, 1
 	octave 1
 	note D#, 4
 	note F#, 4
 	note G_, 4
 .mainloop:
+	stereo_panning FALSE, TRUE
 	sound_call .sub1
 	note D_, 4
 .loop1:
@@ -281,6 +285,7 @@ Music_HypercoinCity_Ch2:
 
 Music_HypercoinCity_Ch3:
 	vibrato 26, 2, 4
+	stereo_panning TRUE, TRUE
 	note_type 6, 0, 0
 	rest 12
 .mainloop:
@@ -333,6 +338,7 @@ Music_HypercoinCity_Ch3:
 	note A#, 2
 	rest 2
 	note G#, 12
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 5
 	octave 3
 	note C#, 2

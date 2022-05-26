@@ -9,6 +9,7 @@ Music_RayShadeOpening1:
 Music_RayShadeOpening1_Ch1:
 	tempo 160
 	volume 7
+	stereo_panning TRUE, FALSE
 	pitch_inc_switch
 	duty_cycle 3
 	note_type 12, 8, 7
@@ -59,6 +60,7 @@ Music_RayShadeOpening1_Ch1:
 Music_RayShadeOpening1_Ch2:
 	duty_cycle 3
 .loop1:
+	stereo_panning TRUE, TRUE
 	note_type 6, 10, 6
 	octave 2
 	note F_, 4
@@ -66,9 +68,11 @@ Music_RayShadeOpening1_Ch2:
 	note C_, 4
 	note F_, 4
 	note G_, 4
+	stereo_panning FALSE, TRUE
 	volume_envelope 10, 7
 	octave 4
 	note C_, 16
+	stereo_panning TRUE, TRUE
 	volume_envelope 10, 6
 	octave 2
 	note E_, 4
@@ -76,9 +80,11 @@ Music_RayShadeOpening1_Ch2:
 	note C_, 4
 	note E_, 4
 	note G_, 4
+	stereo_panning FALSE, TRUE
 	volume_envelope 10, 7
 	octave 4
 	note C_, 16
+	stereo_panning TRUE, TRUE
 	volume_envelope 10, 6
 	octave 2
 	note D_, 4
@@ -86,6 +92,7 @@ Music_RayShadeOpening1_Ch2:
 	octave 3
 	note D_, 4
 	note F_, 4
+	stereo_panning FALSE, TRUE
 	volume_envelope 10, 7
 	octave 4
 	note D_, 16
@@ -100,6 +107,7 @@ Music_RayShadeOpening1_Ch2:
 	octave 4
 	note C_, 16
 	sound_loop 2, .loop1
+	stereo_panning TRUE, TRUE
 	volume_envelope 10, 6
 	octave 1
 	note A#, 4
@@ -108,6 +116,7 @@ Music_RayShadeOpening1_Ch2:
 	note A#, 4
 	octave 3
 	note C_, 4
+	stereo_panning FALSE, TRUE
 	note D_, 8
 	note F_, 8
 	octave 2
@@ -144,6 +153,7 @@ Music_RayShadeOpening1_Ch2:
 	octave 3
 	note C_, 4
 	note E_, 4
+	stereo_panning TRUE, TRUE
 	octave 1
 	note A_, 4
 	octave 2
@@ -159,12 +169,14 @@ Music_RayShadeOpening1_Ch2:
 	note F_, 4
 	note A#, 3
 	note C_, 1
+	stereo_panning FALSE, TRUE
 	note_type 12, 13, 7
 	octave 2
 	note C_, 11
 	sound_ret
 
 Music_RayShadeOpening1_Ch3:
+	stereo_panning TRUE, TRUE
 	note_type 12, 1, 4
 	rest 16
 	rest 16
