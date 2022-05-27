@@ -554,7 +554,7 @@ OakText1:
 OakText2:
 	text_far _OakText2
 	text_asm
-	lb bc, HIGH(MARILL), LOW(MARILL)
+	ld bc, MARILL
 	call PlayMonCry
 	call WaitSFX
 	ld hl, OakText3
