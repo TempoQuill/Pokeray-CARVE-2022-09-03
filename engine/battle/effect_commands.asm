@@ -1676,7 +1676,7 @@ BattleCommand_CheckHit:
 
 .skip_brightpowder
 
-	; in Red, there was an accuracy bug for moves that use this chedk
+	; in Red, there was an accuracy bug for moves that use this check
 	;	every move had a least 1 parameter that can result in a miss
 	; in Gold, perfect vanilla accuracy moves skip this check
 	; in Ray, this check will loop as long as the parameter is $ff
@@ -1943,11 +1943,11 @@ BattleCommand_EffectChance:
 	ld hl, wEnemyMoveStruct + MOVE_CHANCE
 .got_move_chance
 
-	ld a, [hl]
-	sub 100 percent
-	; If chance was 100%, RNG won't be called (carry not set)
-	; Thus chance will be subtracted from 0, guaranteeing a carry
-	call c, BattleRandom
+	; if RNG deploys $ff, roll again
+	call BattleRandom
+	ld c, a
+	inc c
+	jr z, .got_move_chance
 	cp [hl]
 	pop hl
 	ret c
@@ -4797,7 +4797,7 @@ BattleCommand_AllStatsUp:
 ; Special Defense
 	call ResetMiss
 	call BattleCommand_SpecialDefenseUp
-	jp   BattleCommand_StatUpMessage
+	jp BattleCommand_StatUpMessage
 
 ResetMiss:
 	xor a
