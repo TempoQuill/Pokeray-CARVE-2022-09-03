@@ -1,40 +1,36 @@
 ; base data struct members (see data/pokemon/base_stats/*.asm)
 	const_def
-	const BASE_DEX_NO
+	const BASE_DEX_NO      ; 0
 	const_skip
-BASE_STATS EQU const_value ; 2
+BASE_STATS EQU const_value
 ; these will also be used for EV's
 ; the two highest bits represent the corresponding EV's
 ; some pokemon won't give any EV's (caterpie, weedle)
-	const BASE_HP
-	const BASE_ATK
-	const BASE_DEF
-	const BASE_SPD
-	const BASE_SAT
-	const BASE_SDF
+	const BASE_HP          ; 3
+	const BASE_ATK         ; 4
+	const BASE_DEF         ; 5
+	const BASE_SPD         ; 6
+	const BASE_SAT         ; 7
+	const BASE_SDF         ; 8
 BASE_TYPES EQU const_value
-	const BASE_TYPE_1
-	const BASE_TYPE_2
-	const BASE_CATCH_RATE
-; (BASE_EXP * level / 7)
-; * trainer (1.5 or 0)
-; * trade (1.5 or 0)
-; * lucky egg (1.5 or 0)
-; * University TM (2, 1.5 or 0)
-; = exp gain
-	const BASE_EXP
+	const BASE_TYPE_1      ; 9
+	const BASE_TYPE_2      ; a
+	const BASE_CATCH_RATE  ; b
+; (BASE_EXP * level / 7) * trainer (1.5 or 0) * trade (1.5 or 0)
+; * lucky egg (1.5 or 0) * University TM (2, 1.5 or 0) = exp gain
+	const BASE_EXP         ; c
 BASE_ITEMS EQU const_value
-	const BASE_ITEM_1
-	const BASE_ITEM_2
-	const BASE_GENDER
-	const BASE_EGG_STEPS
-	const BASE_PIC_SIZE
-	const BASE_GROWTH_RATE
-	const BASE_EGG_GROUPS
-	const BASE_TMHM
+	const BASE_ITEM_1      ; d
+	const BASE_ITEM_2      ; e
+	const BASE_GENDER      ; f
+	const BASE_EGG_STEPS   ; 10
+	const BASE_PIC_SIZE    ; 11
+	const BASE_GROWTH_RATE ; 12
+	const BASE_EGG_GROUPS  ; 13
+	const BASE_TMHM        ; 14
 ; BASE_TMHM is 7 bytes long with 55 entries total (7 * 8 = 56)
 	const_skip 6
-BASE_DATA_SIZE EQU const_value
+BASE_DATA_SIZE EQU const_value ; 1b
 
 ; build flags
 	const_def
