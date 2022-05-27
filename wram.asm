@@ -1834,16 +1834,13 @@ wBaseItems::
 wBaseItem1:: db ; d12f
 wBaseItem2:: db ; d130
 wBaseGender:: db ; d131
-wBaseUnknown1:: db ; d132
 wBaseEggSteps:: db ; d133
-wBaseUnknown2:: db ; d134
 wBasePicSize:: db ; d135
-wBaseUnusedFrontpic:: dw ; d136
-wBaseUnusedBackpic:: dw ; d138
-wBaseGrowthRate:: db ; d13a
-wBaseEggGroups:: db ; d13b
-wBaseTMHM:: flag_array NUM_TM_HM ; d13c
-wCurBaseDataEnd::
+wBaseGrowthRate:: db ; d136
+wBaseEggGroups:: db ; d137
+wBaseTMHM:: flag_array NUM_TM_HM ; d138
+wCurBaseDataEnd:: ; d13f
+	ds 4
 
 wCurDamage:: dw ; d143
 

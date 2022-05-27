@@ -227,14 +227,6 @@ Print8BitNumLeftAlign::
 	ld b, PRINTNUM_LEFTALIGN | 1
 	jp PrintNum
 
-GetNthMove:: ; unreferenced
-	ld hl, wListMoves_MoveIndicesBuffer
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	ret
-
 GetBaseData::
 	push bc
 	push de
@@ -270,42 +262,7 @@ GetBaseData::
 	ld hl, wBasePicSize
 	ld [hl], b
 
-; Beta front and back sprites
-; (see pokegold-spaceworld's data/pokemon/base_stats/*)
-	ld hl, wBaseUnusedFrontpic
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	inc hl
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	jr .end ; useless
-
 .end
-; Replace Pokedex # with species
-	ld e, NEW_MONS
-	ld a, [wBaseDexNo + 1]
-	and a
-	jr nz, .update
-	ld a, [wBaseDexNo]
-	cp e
-	jr c, .skip
-.update
-	; a bit of a design flaw
-	; slots $fc-$100 are empty due to 2 slots not nearly being enough room
-	; for a brand new pokedex
-	push hl
-	ld hl, wBaseDexNo
-	sub 5 ; empty slots from $fc-$100
-	ld [hli], a
-	jr nc, .no_dec
-	dec [hl]
-.no_dec
-	pop hl
-	jr .done
-
-.skip
 	ld a, [wCurSpecies]
 	ld [wBaseDexNo], a
 	ld a, [wCurSpecies + 1]

@@ -104,6 +104,9 @@ GeneratePartyMonStats:
 	ld a, [wBaseDexNo]
 	ld [de], a
 	inc de
+	ld a, [wBaseDexNo + 1]
+	ld [de], a
+	inc de
 
 	; Copy the item if it's a wild mon
 	ld a, [wBattleMode]

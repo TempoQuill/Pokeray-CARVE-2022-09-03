@@ -8,15 +8,12 @@
 	db 196 ; base exp
 	db NO_ITEM, METAL_COAT ; items
 	db GENDER_F50 ; gender ratio
-	db 100 ; unknown 1
 	db 25 ; step cycles to hatch
-	db 5 ; unknown 2
 IF DEF(_RAY)
 	INCBIN "gfx/pokemon/steelix/front_gold.dimensions"
 ELIF DEF(_SHADE)
 	INCBIN "gfx/pokemon/steelix/front_silver.dimensions"
 ENDC
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_MINERAL, EGG_MINERAL ; egg groups
 

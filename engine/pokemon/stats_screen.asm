@@ -328,6 +328,8 @@ StatsScreen_InitUpperHalf:
 	ld [hli], a
 	ld a, [wBaseDexNo]
 	ld [wNamedObjectIndexBuffer], a
+	ld a, [wBaseDexNo + 1]
+	ld [wNamedObjectIndexBuffer + 1], a
 	call GetPokemonName
 	call PlaceString
 	call StatsScreen_PlaceHorizontalDivider

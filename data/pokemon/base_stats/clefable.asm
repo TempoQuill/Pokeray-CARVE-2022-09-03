@@ -8,15 +8,12 @@
 	db 129 ; base exp
 	db MYSTERYBERRY, MOON_STONE ; items
 	db GENDER_F75 ; gender ratio
-	db 100 ; unknown 1
 	db 10 ; step cycles to hatch
-	db 5 ; unknown 2
 IF DEF(_RAY)
 	INCBIN "gfx/pokemon/clefable/front_gold.dimensions"
 ELIF DEF(_SHADE)
 	INCBIN "gfx/pokemon/clefable/front_silver.dimensions"
 ENDC
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_FAST ; growth rate
 	dn EGG_FAIRY, EGG_FAIRY ; egg groups
 

@@ -27,14 +27,8 @@ BASE_ITEMS EQU const_value
 	const BASE_ITEM_1
 	const BASE_ITEM_2
 	const BASE_GENDER
-	const BASE_UNKNOWN_1
 	const BASE_EGG_STEPS
-	const BASE_UNKNOWN_2
 	const BASE_PIC_SIZE
-	const BASE_FRONTPIC
-	const_skip
-	const BASE_BACKPIC
-	const_skip
 	const BASE_GROWTH_RATE
 	const BASE_EGG_GROUPS
 	const BASE_TMHM
