@@ -95,6 +95,8 @@ AI_Setup:
 	cp EFFECT_EVASION_UP + 1
 	jr c, .statup
 
+	; note: assembler modifiers make this instruction identical to the one above
+	; good job, Game Freak.
 ;	cp EFFECT_ATTACK_DOWN - 1
 	jr z, .checkmove
 	cp EFFECT_EVASION_DOWN + 1
@@ -105,6 +107,8 @@ AI_Setup:
 	cp EFFECT_EVASION_UP_2 + 1
 	jr c, .statup
 
+	; note: assembler modifiers make this instruction identical to the one above
+	; good job, Game Freak.
 ;	cp EFFECT_ATTACK_DOWN_2 - 1
 	jr z, .checkmove
 	cp EFFECT_EVASION_DOWN_2 + 1
@@ -394,11 +398,6 @@ AI_Smart_EffectHandlers:
 	db -1 ; end
 
 AI_Smart_FunnyStuff:
-; Greatly encourage Funny Stuff if the player's at higher than 50% HP
-
-	call AICheckPlayerHalfHP
-	jr z, .highlyencourage
-
 ; Greatly discourage Funny Stuff for Rock/Steel-types
 
 	ld a, [wTypeMatchup]
@@ -410,20 +409,34 @@ AI_Smart_FunnyStuff:
 ; Greatly discourage if the player is frozen
 
 	ld a, [wBattleMonStatus]
+	and a ; move on to HP if no status
+	jr z, .next
+	ld c, a
 	and SLP
-	jr z, .discourage
+	jr nz, .discourage
+	ld a, c
 	and 1 << BRN
-	jr z, .sigdiscourage
+	jr nz, .sigdiscourage
+	ld a, c
 	and 1 << PSN
-	jr z, .sigdiscourage
+	jr nz, .sigdiscourage
+	ld a, c
 	and 1 << FRZ
-	jr z, .highlydiscourage
+	jr nz, .highlydiscourage
+	ld a, c
 	and 1 << PAR
-	jr z, .discourage
+	jr nz, .discourage
 ; dismiss if the player is badly poisoned
 	ld a, [wPlayerSubStatus5]
 	cp SUBSTATUS_TOXIC
 	jp c, AIDiscourageMove
+
+.next
+; Greatly encourage Funny Stuff if the player's at higher than 50% HP
+
+	call AICheckPlayerHalfHP
+	jr c, .highlyencourage
+
 ; do nothing otherwise
 	ret
 
@@ -446,27 +459,25 @@ AI_Smart_Freeze:
 ; Significantly encourage burn/freeze inducing moves if the player's at higher than 50%
 
 	call AICheckPlayerHalfHP
-	jr z, .encourage
+	jr c, .encourage
 
 ; dismiss if the player is already statused
 
 	ld a, [wBattleMonStatus]
 	and a
-	jp c, AIDiscourageMove
+	jp nz, AIDiscourageMove
 
-; 50% chance to greatly discourage burn/freeze inducing moves otherwise.
+; 50% chance to discourage burn/freeze inducing moves otherwise.
 
 	call AI_50_50
 	ret c
-	jr .discourage
+;discourage
+	inc [hl]
+	ret
 
 .encourage
 	dec [hl]
 	dec [hl]
-	ret
-
-.discourage
-	inc [hl]
 	ret
 
 AI_Smart_Sleep:
