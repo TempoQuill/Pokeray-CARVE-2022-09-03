@@ -94,13 +94,14 @@ NOISE_CHAN_F EQU 2 ; bit set in CHAN5-CHAN7
 	const SOUND_NOISE            ; 4
 	const SOUND_CRY              ; 5
 	const SOUND_PITCH_INC_SWITCH ; 6
+;	const SOUND_DPCM ; NES ONLY
 
 ; Flags2
 	const_def
 	const SOUND_VIBRATO        ; 0
 	const SOUND_PITCH_SLIDE    ; 1
 	const SOUND_DUTY_LOOP      ; 2
-	const SOUND_MUTE           ; 3
+	const SOUND_TIME_MUTE      ; 3
 	const SOUND_PITCH_OFFSET   ; 4
 	const SOUND_ENV_PTRN       ; 5
 	const SOUND_RELATIVE_PITCH ; 6
@@ -121,6 +122,7 @@ NOISE_CHAN_F EQU 2 ; bit set in CHAN5-CHAN7
 	const NOTE_NOISE_SAMPLING   ; 4
 	const NOTE_REST             ; 5
 	const NOTE_VIBRATO_OVERRIDE ; 6
+;	const NOTE_DELTA_SAMPLING ; NES ONLY
 
 ; wVolume
 VOLUME_SO1_F     EQU 3

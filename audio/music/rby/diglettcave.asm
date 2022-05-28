@@ -254,8 +254,8 @@ Music_DiglettCave_Ch2:
 	rest 16
 	rest 16
 	rest 4
-	octave 4
 	note_type 12, 12, 2
+	octave 4
 	note B_, 2
 	note B_, 2
 	note B_, 2

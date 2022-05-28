@@ -1026,7 +1026,7 @@ Sfx_RegisterPhoneNumber:
 Sfx_RegisterPhoneNumber_Ch5:
 	toggle_sfx
 	tempo 124
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	note_type 12, 10, 2
 	rest 2
@@ -1468,7 +1468,7 @@ Sfx_1stPlace:
 Sfx_1stPlace_Ch5:
 	toggle_sfx
 	tempo 124
-	volume 7, 7
+	volume 7
 	duty_cycle 3
 	vibrato 12, 3, 4
 	note_type 12, 10, 1
@@ -2928,7 +2928,7 @@ Sfx_Fail:
 Sfx_Fail_Ch5:
 	toggle_sfx
 	tempo 124
-	volume 7, 7
+	volume 7
 	note_type 8, 11, 1
 	octave 3
 	note A_, 4

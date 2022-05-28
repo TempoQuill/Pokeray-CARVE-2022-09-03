@@ -827,7 +827,7 @@ LoadNote:
 .env_ptrn
 	bc_offset CHANNEL_FLAGS2
 	bit SOUND_ENV_PTRN, [hl]
-	jr z, .mute
+	jr z, .time_mute
 	bc_offset CHANNEL_NOTE_FLAGS
 	res NOTE_ENV_OVERRIDE, [hl]
 	; reset offset
@@ -835,9 +835,9 @@ LoadNote:
 	xor a
 	ld [hl], a
 
-.mute
+.time_mute
 	bc_offset CHANNEL_FLAGS2
-	bit SOUND_MUTE, [hl]
+	bit SOUND_TIME_MUTE, [hl]
 	ret z
 	; read main byte
 	bc_offset CHANNEL_MUTE
@@ -862,6 +862,10 @@ GeneralHandler:
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_DUTY_OVERRIDE, [hl]
 .relative_pitch
+; interesting notes:
+;	$d9 and $e7 can stack with each other
+;		$d9 $01 and $e7 $01 together would be the same as $d9/e7 $02
+;	$e7 $f4-ff can trigger the rest pitch due to a lack of carry
 	bc_offset CHANNEL_FLAGS2
 	bit SOUND_RELATIVE_PITCH, [hl]
 	jr z, .pitch_offset
@@ -887,11 +891,9 @@ GeneralHandler:
 	ld [hl], e
 	inc hl
 	ld [hl], d
-; interesting notes:
-;	$d9 and $e7 can stack with each other
-;		$d9 $01 and $e7 $01 together would be the same as $d9/e7 $02
-;	$e7 $f4-ff can trigger the rest pitch due to a lack of carry
 .pitch_offset
+; note: turns out when cries use this command, it fixes the current channel's
+; pitch to the sum in-base, pretty interesting
 	bc_offset CHANNEL_FLAGS2
 	bit SOUND_PITCH_OFFSET, [hl]
 	jr z, .pitch_inc
@@ -912,6 +914,8 @@ GeneralHandler:
 	inc hl
 	ld [hl], d
 .pitch_inc
+; incidentally, pitch_inc_switch can stack with pitch_offset
+; for example, $f1 followed by $e6 $0001 would essentially mean $e6 $0002
 	; is pitch inc on?
 	bc_offset CHANNEL_FLAGS1
 	bit SOUND_PITCH_INC_SWITCH, [hl]
@@ -931,8 +935,6 @@ GeneralHandler:
 	jr nc, .skip
 	; inc d if e rolls over
 	inc d
-; incidentally, pitch_inc_switch can stack with pitch_offset
-; for example, $f1 followed by $e6 $0001 would essentially mean $e6 $0002
 .skip
 	ld hl, wCurTrackFrequency
 	ld [hl], e
@@ -1009,7 +1011,7 @@ GeneralHandler:
 	; notes reset on envelope change
 	bc_offset CHANNEL_FLAGS2
 	bit SOUND_ENV_PTRN, [hl]
-	jr z, .mute
+	jr z, .time_mute
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_ENV_OVERRIDE, [hl]
 	; store group in de
@@ -1031,7 +1033,7 @@ GeneralHandler:
 	or d
 	ld [wCurTrackVolumeEnvelope], a
 	call UpdateChannels.load_wave_pattern
-	jr .mute
+	jr .time_mute
 
 .not_ch3
 	; envelope group
@@ -1042,25 +1044,24 @@ GeneralHandler:
 	; pause during rest
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_REST, [hl]
-	jr .mute
+	jr .time_mute
 .set
 	; store envelope during note
 	ld [wCurTrackVolumeEnvelope], a
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_NOISE_SAMPLING, [hl]
-.mute
+.time_mute
 	bc_offset CHANNEL_FLAGS2
-	bit SOUND_MUTE, [hl]
+	bit SOUND_TIME_MUTE, [hl]
 	ret z
-	; check for active counter
+	; check if the counter is zero
 	bc_offset CHANNEL_MUTE_COUNTER
 	ld a, [hl]
 	and a
-	jr z, .enable
-	; disable
+	jr z, .zero
 	dec [hl]
 	ret
-.enable
+.zero
 	bc_offset CHANNEL_NOTE_FLAGS
 	set NOTE_REST, [hl]
 	ret
@@ -1835,7 +1836,7 @@ Music_TimeMute:
 	bc_offset CHANNEL_MUTE
 	ld [hl], a
 	bc_offset CHANNEL_FLAGS2
-	set SOUND_MUTE, [hl]
+	set SOUND_TIME_MUTE, [hl]
 	ret
 
 Music_Vibrato:
