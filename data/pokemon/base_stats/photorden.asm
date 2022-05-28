@@ -1,4 +1,4 @@
-	dw PHOTORDEN
+	dw PHOTORDEN ; 259
 
 	db 124,  47, 246,  85, 119,  13
 	;   hp  atk  def  spd  sat  sdf
@@ -13,4 +13,6 @@ INCBIN "gfx/pokemon/photorden/front.dimensions"
 	db GROWTH_FAST ; growth rate
 	dn EGG_MONSTER, EGG_PLANT ; egg groups
 
+	; tm/hm learnset
 	tmhm CUT, FLASH
+	; end

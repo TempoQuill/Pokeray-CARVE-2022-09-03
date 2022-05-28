@@ -1,4 +1,4 @@
-	dw ORKID
+	dw ORKID ; 257
 
 	db 102,  39, 203,  70,  98,  11
 	;   hp  atk  def  spd  sat  sdf
@@ -13,4 +13,6 @@ INCBIN "gfx/pokemon/orkid/front.dimensions"
 	db GROWTH_FAST ; growth rate
 	dn EGG_MONSTER, EGG_PLANT ; egg groups
 
+	; tm/hm learnset
 	tmhm CUT, FLASH
+	; end

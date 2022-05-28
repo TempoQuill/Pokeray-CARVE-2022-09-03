@@ -1,4 +1,4 @@
-	dw SYNTIQUE
+	dw SYNTIQUE ; 258
 
 	db 112,  42, 224,  77, 108,  12
 	;   hp  atk  def  spd  sat  sdf
@@ -13,4 +13,6 @@ INCBIN "gfx/pokemon/syntique/front.dimensions"
 	db GROWTH_FAST ; growth rate
 	dn EGG_MONSTER, EGG_PLANT ; egg groups
 
+	; tm/hm learnset
 	tmhm CUT, FLASH
+	; end
