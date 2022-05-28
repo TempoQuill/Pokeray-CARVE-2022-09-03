@@ -2126,11 +2126,7 @@ Script_refreshscreen:
 	ret
 
 Script_writeunusedbytebuffer:
-	call GetScriptByte
-	ld [wUnusedScriptByteBuffer], a
 	ret
-
-	db closetext_command ; unused
 
 Script_closetext:
 	ldh a, [hOAMUpdate]

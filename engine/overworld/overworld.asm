@@ -118,9 +118,6 @@ AddOutdoorSprites:
 	pop bc
 	dec c
 	jr nz, .loop
-
-	ld a, [wUnusedD05A]
-	ld c, a
 	ret
 
 AddSpriteGFX:

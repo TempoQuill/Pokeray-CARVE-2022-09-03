@@ -57,11 +57,6 @@ GetName::
 	call CopyBytes
 
 .done
-	ld a, e
-	ld [wUnusedCFFE], a
-	ld a, d
-	ld [wUnusedCFFE + 1], a
-
 	pop de
 	pop bc
 	pop hl

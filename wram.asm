@@ -29,7 +29,9 @@ wChannel8:: channel_struct wChannel8 ; 351 15f
 wCurTrackDuty::           db ; 401 191
 wCurTrackVolumeEnvelope:: db ; 402 192
 wCurTrackFrequency::      dw ; 403 193
-wUnusedBCDNumber::        db ; 405 195 ; BCD value, dummied out
+
+	ds 1
+
 wCurNoteDuration::        db ; 406 196 ; used in Music_PitchSlide and LoadNote
 wCurMusicByte::           db ; 407 197
 wCurChannel::             db ; 408 198
@@ -122,7 +124,7 @@ wAutoInputLength::         db ; 7  7
 wDebugFlags::              db ; 8  8
 wGameLogicPaused::         db ; 9  9
 wSpriteUpdatesEnabled::    db ; 10 a
-wUnusedScriptByteBuffer::  db ; 11 b
+	ds 1
 wMapTimeOfDay::            db ; 12 c
 wPrinterConnectionOpen::   db ; 13 d
 wPrinterOpcode::           db ; 14 e
@@ -301,10 +303,6 @@ NEXTU ; c508
 ; link engine data
 wLink_c508:: ds 10
 wc512::      ds 10 ; 10 a
-
-NEXTU ; c508
-; unused (engine/menus/debug.asm)
-wc508:: ds 13
 ENDU ; c5d0
 
 ; This union spans 304 bytes. (c5d0 - c700)
@@ -489,12 +487,6 @@ NEXTU ; c700
 ; raw link data
 wLinkData:: ds $514
 wLinkDataEnd:: ; 1300 514
-
-NEXTU ; c700
-; unused (engine/gfx/sprite_anims.asm)
-	ds 4
-wc704:: ds 19 ; 4  4
-wc717:: ds 1  ; 23 17
 
 NEXTU ; c700
 ; link data members
@@ -860,9 +852,7 @@ wPlayerTurnsTaken:: db ; cbbb
 
 wPlayerSubstituteHP:: db ; cbbd
 wEnemySubstituteHP:: db ; cbbe
-
-wUnusedPlayerLockedMove:: db ; cbbf
-	ds 1
+	ds 2
 
 wCurPlayerMove:: db ; cbc1
 wCurEnemyMove:: db ; cbc2
@@ -1348,8 +1338,7 @@ NEXTU ; ceec
 ; movement buffer data
 wMovementBufferCount:: db
 wMovementBufferObject:: db
-wUnusedMovementBufferBank:: db
-wUnusedMovementBufferPointer:: dw
+	ds 3
 wMovementBuffer:: ds 55
 
 NEXTU ; ceec
@@ -1510,7 +1499,7 @@ wPoisonStepDataEnd::
 ENDU ; cf3a
 
 wBoxAlignment:: db
-wUnusedBufferCF3C:: dw
+	ds 2
 wFXAnimID:: dw
 ENDU ; cf3f
 
@@ -1620,7 +1609,7 @@ wMailboxEnd::
 ENDU ; cffc
 
 wListPointer:: dw ; cffc
-wUnusedCFFE:: dw
+	ds 2
 
 
 SECTION "WRAM 1", WRAMX
@@ -1677,7 +1666,7 @@ wPrevWarp:: db ; d041
 wPrevMapGroup:: db ; d042
 wPrevMapNumber:: db ; d043
 
-wUnusedD05A:: db ; d044
+	ds 1
 
 wBGMapAnchor:: dw ; d045
 
@@ -2369,9 +2358,6 @@ wPokedexShowPointerAddr:: dw
 wPokedexShowPointerBank:: db
 
 NEXTU ; dd40
-wUnusedEggHatchFlag:: db
-
-NEXTU ; dd41
 ; enemy party
 wOTPlayerName:: ds NAME_LENGTH
 wOTPlayerID:: dw

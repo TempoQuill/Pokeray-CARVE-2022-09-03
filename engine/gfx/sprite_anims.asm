@@ -813,10 +813,6 @@ DoAnimFrame:
 	push bc
 	farcall ret_e0000
 	pop bc
-	ld hl, wc704
-	ld a, [hl]
-	and $3
-	ret z
 	ld [hl], 0
 	ld e, a
 	ld d, 0
@@ -846,11 +842,9 @@ DoAnimFrame:
 
 .Function8d8c7
 	call .Function8d8e1
-	ld a, [wc717]
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
-	add [hl]
-	ld [hl], a
+	ld a, [hl]
 	cp $c0
 	ret nc
 	cp $a8
@@ -883,16 +877,6 @@ DoAnimFrame:
 	db -4, -7, -9, -10, -9, -7, -4,  0
 
 .UnusedJigglypuff
-	ld a, [wc717]
-
-	ld hl, SPRITEANIMSTRUCT_XCOORD
-	add hl, bc
-	add [hl]
-	ld [hl], a
-	cp $30
-	ret nz
-	xor a
-	ld [wc717], a
 	ret
 
 .NamingScreenCursor
@@ -1091,7 +1075,6 @@ DoAnimFrame:
 	ret
 
 .DummyGameCursor
-	callfar DummyGame_InterpretJoypad_AnimateCursor
 	ret
 
 .TradePokeBall

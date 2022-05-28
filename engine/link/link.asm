@@ -150,10 +150,6 @@ RayToGoldLinkComms:
 	ld [de], a
 	ld hl, wTimeCapsulePartyMon1Species
 	call Function285db
-	ld a, LOW(wOTPartyMonOT)
-	ld [wUnusedCFFE], a
-	ld a, HIGH(wOTPartyMonOT)
-	ld [wUnusedCFFE + 1], a
 	ld de, MUSIC_NONE
 	call PlayMusic
 	ldh a, [hSerialConnectionStatus]
@@ -377,10 +373,6 @@ RayToRayLinkComms:
 	ld de, wOTPartyMons
 	ld bc, wOTPartyDataEnd - wOTPartyMons
 	call CopyBytes
-	ld a, LOW(wOTPartyMonOT)
-	ld [wUnusedCFFE], a
-	ld a, HIGH(wOTPartyMonOT)
-	ld [wUnusedCFFE + 1], a
 	ld de, MUSIC_NONE
 	call PlayMusic
 	ldh a, [hSerialConnectionStatus]

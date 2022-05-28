@@ -199,11 +199,6 @@ CardFlip:
 	ret
 
 DummyNonfunctionalGameCornerGame:
-	call CheckCoinsAndCoinCase
-	ret c
-	ld a, BANK(_DummyGame)
-	ld hl, _DummyGame
-	call StartGameCornerGame
 	ret
 
 StartGameCornerGame:

@@ -847,14 +847,6 @@ _OakPCText4::
 	line "OAK's PC closed."
 	done
 
-_DummyGameYeahText::
-	text " , yeah!"
-	done
-
-_DummyGameDarnText::
-	text "Darn…"
-	done
-
 _ItemsTossOutHowManyText::
 	text "Toss out how many"
 	line "@"
