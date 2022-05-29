@@ -1525,6 +1525,7 @@ Pokedex_PrintListing:
 	and a
 	ret z
 	call Pokedex_PrintNumberIfOldMode
+	call Pokedex_RevertTempSpeciesIfModded ; pretty sure we need this
 	call Pokedex_PlaceDefaultStringIfNotSeen
 	ret c
 	call Pokedex_PlaceCaughtSymbolIfCaught
@@ -1541,11 +1542,59 @@ Pokedex_PrintNumberIfOldMode:
 	push hl
 	ld de, -SCREEN_WIDTH
 	add hl, de
-	ld de, wTempSpecies
+; new mons start at $101 to simplify the Time Capsule -- to compensate,
+; the Pokedex temporarily subtracts 5 from wTempSpecies to print the number
+	; load the upper byte
+	ld de, wTempSpecies + 1
+	ld a, [de]
+	and a ; is it active?
+	dec de
+	call nz .modify ; call if so
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
-	call PrintNum
+	call PrintNum ; print the final number
 	pop hl
 	ret
+
+.modify:
+	ld a, [de]
+	sub 5
+	ld [de], a
+	inc de
+	ld a, [de]
+	sbc 0
+	ld [de], a
+	dec de
+	ret
+
+Pokedex_RevertTempSpeciesIfModded:
+; restore wTempSpecies if it was modified
+	push hl
+	push de
+	ld hl, wTempSpecies + 1
+	ld a, [hld]
+	ld e, [hl]
+	ld d, a
+	and a
+	jr nz, .modify
+	ld a, NEW_MONS
+	cp e
+	jr nc, .modify
+.clean
+	pop de
+	pop hl
+	ret
+
+.modify:
+	ld a, 5
+	add d
+	ld d, a
+	ld a, 0
+	adc e
+	ld e, a
+	ld [hl], e
+	inc hl
+	ld [hl], d
+	jr .clean
 
 Pokedex_PlaceCaughtSymbolIfCaught:
 	call Pokedex_CheckCaught
