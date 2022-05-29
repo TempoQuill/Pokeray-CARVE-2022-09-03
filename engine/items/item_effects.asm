@@ -78,12 +78,12 @@ ItemEffects:
 	dw RestorePPEffect     ; ETHER
 	dw RestorePPEffect     ; MAX_ETHER
 	dw RestorePPEffect     ; ELIXER
-	dw NoEffect            ; RED_SCALE
+	dw EvoStoneEffect      ; SPHERE_STONE
 	dw NoEffect            ; SECRETPOTION
 	dw NoEffect            ; S_S_TICKET
 	dw NoEffect            ; MYSTERY_EGG
 	dw NoEffect            ; ITEM_46
-	dw NoEffect            ; SILVER_WING
+	dw NoEffect            ; NIGHT_ARMOR
 	dw RestoreHPEffect     ; MOOMOO_MILK
 	dw NoEffect            ; QUICK_CLAW
 	dw StatusHealingEffect ; MEDICALBERRY
@@ -112,11 +112,11 @@ ItemEffects:
 	dw NoEffect            ; WT_APRICORN
 	dw NoEffect            ; BLACKBELT_I
 	dw NoEffect            ; BK_APRICORN
-	dw NoEffect            ; ITEM_64
+	dw EvoStoneEffect      ; FLASH_STONE
 	dw NoEffect            ; PINKAPRICORN
 	dw NoEffect            ; BLACKGLASSES
 	dw NoEffect            ; SLOWPOKETAIL
-	dw NoEffect            ; PINK_BOW
+	dw NoEffect            ; TRUSTY_STONE
 	dw NoEffect            ; STICK
 	dw NoEffect            ; SMOKE_BALL
 	dw NoEffect            ; NEVERMELTICE
@@ -132,7 +132,7 @@ ItemEffects:
 	dw NoEffect            ; MIRACLE_SEED
 	dw NoEffect            ; THICK_CLUB
 	dw NoEffect            ; FOCUS_BAND
-	dw NoEffect            ; ITEM_78
+	dw NoEffect            ; PUMP_BOTTLE
 	dw EnergypowderEffect  ; ENERGYPOWDER
 	dw EnergyRootEffect    ; ENERGY_ROOT
 	dw HealPowderEffect    ; HEAL_POWDER

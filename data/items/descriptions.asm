@@ -65,12 +65,12 @@ ItemDescriptions:
 	dw EtherDesc
 	dw MaxEtherDesc
 	dw ElixerDesc
-	dw RedScaleDesc
+	dw SphereStoneDesc
 	dw SecretPotionDesc
 	dw SSTicketDesc
 	dw MysteryEggDesc
 	dw TeruSama6Desc
-	dw SilverWingDesc
+	dw NightArmorDesc
 	dw MoomooMilkDesc
 	dw QuickClawDesc
 	dw PsnCureBerryDesc
@@ -99,11 +99,11 @@ ItemDescriptions:
 	dw WhtApricornDesc
 	dw BlackbeltDesc
 	dw BlkApricornDesc
-	dw TeruSama8Desc
+	dw FlashStoneDesc
 	dw PnkApricornDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
-	dw PinkBowDesc
+	dw TrustyStoneDesc
 	dw StickDesc
 	dw SmokeBallDesc
 	dw NeverMeltIceDesc
@@ -119,7 +119,7 @@ ItemDescriptions:
 	dw MiracleSeedDesc
 	dw ThickClubDesc
 	dw FocusBandDesc
-	dw TeruSama11Desc
+	dw PumpBottleDesc
 	dw EnergyPowderDesc
 	dw EnergyRootDesc
 	dw HealPowderDesc
@@ -291,6 +291,9 @@ ThunderStoneDesc:
 WaterStoneDesc:
 LeafStoneDesc:
 SunStoneDesc:
+FlashStoneDesc:
+SphereStoneDesc:
+TrustyStoneDesc:
 	db   "Evolves specific"
 	next "#MON.@"
 
@@ -428,10 +431,8 @@ DireHitDesc:
 TeruSama4Desc:
 TeruSama5Desc:
 TeruSama6Desc:
-TeruSama8Desc:
 TeruSama9Desc:
 TeruSama10Desc:
-TeruSama11Desc:
 TeruSama12Desc:
 TeruSama13Desc:
 TeruSama14Desc:
@@ -454,7 +455,6 @@ PassDesc:
 MachinePartDesc:
 LostItemDesc:
 MysteryEggDesc:
-RedScaleDesc:
 	db   "?@"
 
 SodaPopDesc:
@@ -530,7 +530,7 @@ SSTicketDesc:
 	db   "A ticket for the"
 	next "S.S.VAPOR.@"
 
-SilverWingDesc:
+; unreferenced
 	db   "A strange, silver-"
 	next "colored feather.@"
 
@@ -645,7 +645,6 @@ SlowpokeTailDesc:
 	db   "Very tasty. Sell"
 	next "high.@"
 
-PinkBowDesc:
 PolkadotBowDesc:
 	db   "Powers up normal-"
 	next "type moves.@"
@@ -906,6 +905,14 @@ BuddingSeedDesc:
 PipeFeatherDesc:
 	db   "A special trading"
 	next "evolution item.@"
+
+NightArmorDesc:
+	db   "Armor that can let"
+	next "the bearer evolve.@"
+
+PumpBottleDesc:
+	db   "A strange airtight"
+	next "water battle.@"
 
 ; unused
 	db   "A TM that teaches"

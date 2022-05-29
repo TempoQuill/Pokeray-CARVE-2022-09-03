@@ -71,12 +71,12 @@
 	const ETHER        ; 3f
 	const MAX_ETHER    ; 40
 	const ELIXER       ; 41
-	const RED_SCALE    ; 42
+	const SPHERE_STONE ; 42
 	const SECRETPOTION ; 43
 	const S_S_TICKET   ; 44
 	const MYSTERY_EGG  ; 45
 	const ITEM_46      ; 46
-	const SILVER_WING  ; 47
+	const NIGHT_ARMOR  ; 47
 	const MOOMOO_MILK  ; 48
 	const QUICK_CLAW   ; 49
 	const MEDICALBERRY ; 4a
@@ -105,11 +105,11 @@
 	const WT_APRICORN  ; 61
 	const BLACKBELT_I  ; 62
 	const BK_APRICORN  ; 63
-	const ITEM_64      ; 64
+	const FLASH_STONE  ; 64
 	const PINKAPRICORN ; 65
 	const BLACKGLASSES ; 66
 	const SLOWPOKETAIL ; 67
-	const PINK_BOW     ; 68
+	const TRUSTY_STONE ; 68
 	const STICK        ; 69
 	const SMOKE_BALL   ; 6a
 	const NEVERMELTICE ; 6b
@@ -125,7 +125,7 @@
 	const MIRACLE_SEED ; 75
 	const THICK_CLUB   ; 76
 	const FOCUS_BAND   ; 77
-	const ITEM_78      ; 78
+	const PUMP_BOTTLE  ; 78
 	const ENERGYPOWDER ; 79
 	const ENERGY_ROOT  ; 7a
 	const HEAL_POWDER  ; 7b
@@ -318,9 +318,7 @@ USE_SCRIPT_VAR EQU $00
 ITEM_FROM_MEM  EQU $ff
 
 ; leftover items from Pokemon Gold
-RED_SCALE    EQU $42
 MYSTERY_EGG  EQU $45
-SILVER_WING  EQU $47
 PARK_BALL    EQU $b1
 RAINBOW_WING EQU $b2
 HM_WHIRLPOOL EQU $fd
