@@ -90,7 +90,7 @@ NidoranMEggMoves:
 	db BEAT_UP
 	db -1 ; end
 
-VulpixEggMoves:
+TrifoxEggMoves:
 	db FAINT_ATTACK
 	db HYPNOSIS
 	db FLAIL
@@ -114,7 +114,7 @@ OddishEggMoves:
 	db CHARM
 	db -1 ; end
 
-ParasEggMoves:
+ParabudEggMoves:
 	db FALSE_SWIPE
 	db SCREECH
 	db COUNTER
@@ -139,7 +139,7 @@ DiglettEggMoves:
 	db BEAT_UP
 	db -1 ; end
 
-MeowthEggMoves:
+CointenEggMoves:
 	db SPITE
 	db CHARM
 	db HYPNOSIS
@@ -165,7 +165,7 @@ MankeyEggMoves:
 	db BEAT_UP
 	db -1 ; end
 
-GrowlitheEggMoves:
+TiruffEggMoves:
 	db BODY_SLAM
 	db SAFEGUARD
 	db CRUNCH
@@ -215,7 +215,7 @@ GeodudeEggMoves:
 	db ROCK_SLIDE
 	db -1 ; end
 
-PonytaEggMoves:
+FolicornEggMoves:
 	db FLAME_WHEEL
 	db THRASH
 	db DOUBLE_KICK
@@ -240,7 +240,7 @@ FarfetchDEggMoves:
 	db FLAIL
 	db -1 ; end
 
-DoduoEggMoves:
+DodaerieEggMoves:
 	db QUICK_ATTACK
 	db SUPERSONIC
 	db HAZE
@@ -257,7 +257,7 @@ SeelEggMoves:
 	db ENCORE
 	db -1 ; end
 
-GrimerEggMoves:
+SmujjEggMoves:
 	db HAZE
 	db MEAN_LOOK
 	db LICK
@@ -342,7 +342,7 @@ ChanseyEggMoves:
 	db HEAL_BELL
 	db -1 ; end
 
-TangelaEggMoves:
+BurgelaEggMoves:
 	db FLAIL
 	db CONFUSION
 	db MEGA_DRAIN
@@ -367,7 +367,7 @@ HorseaEggMoves:
 	db DRAGON_RAGE
 	db -1 ; end
 
-GoldeenEggMoves:
+OrschulEggMoves:
 	db PSYBEAM
 	db HAZE
 	db HYDRO_PUMP
@@ -614,7 +614,7 @@ MisdreavusEggMoves:
 	db DESTINY_BOND
 	db -1 ; end
 
-GirafarigEggMoves:
+SiamaisEggMoves:
 	db TAKE_DOWN
 	db AMNESIA
 	db FORESIGHT
@@ -805,6 +805,73 @@ OrkidEggMoves:
 	db SYNTHESIS
 	db SWEET_SCENT
 	db GROWTH
+	db -1 ; end
+
+FlambearEggMoves:
+	db QUICK_ATTACK
+	db REVERSAL
+	db THRASH
+	db FORESIGHT
+	db -1 ; end
+
+CruzEggMoves:
+	db THRASH
+	db HYDRO_PUMP
+	db ANCIENTPOWER
+	db ROCK_SLIDE
+	db -1 ; end
+
+CrovenEggMoves:
+	db MIRROR_MOVE
+	db SUPERSONIC
+	db FAINT_ATTACK
+	db WING_ATTACK
+	db WHIRLWIND
+	db -1 ; end
+
+MolambinoEggMoves:
+	db TWISTER
+	db HYDRO_PUMP
+	db HAZE
+	db SLAM
+	db BUBBLEBEAM
+	db -1 ; end
+
+GatollEggMoves:
+	db CURSE
+	db SLAM
+	db TWISTER
+	db FALSE_SWIPE
+	db HYPER_BEAM
+	db -1 ; end
+
+BomocaEggMoves:
+	db SURF
+	db WATERFALL
+	db FIRE_SPIN
+	db WHIRLPOOL
+	db SACRED_FIRE
+	db -1 ; end
+
+KotoraEggMoves:
+	db REVERSAL
+	db BIDE
+	db PRESENT
+	db ENCORE
+	db SING
+	db -1 ; end
+
+KurstrawEggMoves:
+	db PSYWAVE
+	db PERISH_SONG
+	db HAZE
+	db PSYCHIC_M
+	db -1 ; end
+
+WolfmanEggMoves:
+	db PERISH_SONG
+	db HAZE
+	db ICY_WIND
 	db -1 ; end
 
 NoEggMoves:

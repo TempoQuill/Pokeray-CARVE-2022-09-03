@@ -260,4 +260,43 @@ MonMenuIcons:
 	db ICON_FOX         ; ORKID
 	db ICON_FOX         ; SYNTIQUE
 	db ICON_FOX         ; PHOTORDEN
+	db ICON_MONSTER     ; FLAMBEAR
+	db ICON_MONSTER     ; VOLBEAR
+	db ICON_MONSTER     ; DYNABEAR
+	db ICON_LAPRAS      ; CRUZ
+	db ICON_LAPRAS      ; AQUACENT
+	db ICON_LAPRAS      ; AQUARIA
+	db ICON_BIRD        ; CROVEN
+	db ICON_BIRD        ; ASTROVEN
+	db ICON_FOX         ; TRIFOX
+	db ICON_ODDISH      ; BURGELA
+	db ICON_FISH        ; NUMPUFF
+	db ICON_FISH        ; ORSCHUL
+	db ICON_LAPRAS      ; MOUNDIVER
+	db ICON_FISH        ; MOLAMBINO
+	db ICON_FISH        ; ANGORE
+	db ICON_SERPENT     ; GROTESS
+	db ICON_BUG         ; PARABUD
+	db ICON_BLOB        ; LYKWYSE
+	db ICON_BIRD        ; DODAERIE
+	db ICON_GHOST       ; SIAMAIS
+	db ICON_FOX         ; COINTEN
+	db ICON_FOX         ; GATOLL
+	db ICON_FOX         ; BELLBOYANT
+	db ICON_EQUINE      ; FOLICORN
+	db ICON_GHOST       ; WHISPEON
+	db ICON_FOX         ; ASSEMBLEON
+	db ICON_SHELL       ; TURBANN
+	db ICON_BLOB        ; SMUJJ
+	db ICON_FOX         ; TIRUFF
+	db ICON_ODDISH      ; BELMITT
+	db ICON_LAPRAS      ; BOMOCA
+	db ICON_PIKACHU     ; KOTORA
+	db ICON_PIKACHU     ; RAITORA
+	db ICON_BIRD        ; MADAME
+	db ICON_HUMANSHAPE  ; KURSTRAW
+	db ICON_HUMANSHAPE  ; PANGSHI
+	db ICON_BUG         ; PLUX
+	db ICON_FOX         ; WOLFMAN
+	db ICON_FOX         ; WARWOLF
 
