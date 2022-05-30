@@ -1,6 +1,6 @@
 	dw PHOTORDEN ; 259
 
-	db 124,  47, 246,  85, 119,  13
+	db 124,  47, 123,  85, 119,  13
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, GRASS ; type

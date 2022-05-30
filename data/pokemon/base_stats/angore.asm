@@ -1,6 +1,6 @@
 	dw ANGORE ; 274
 
-	db  65,  20, 148,  78, 110, 178
+	db  65,  20, 148,  78, 110,  89
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, ELECTRIC ; type

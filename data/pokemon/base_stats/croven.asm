@@ -1,6 +1,6 @@
 	dw CROVEN ; 266
 
-	db 159, 100,  21,  22,  47,  25
+	db  80, 100,  21,  22,  47,  25
 	;   hp  atk  def  spd  sat  sdf
 
 	db DARK, FLYING ; type

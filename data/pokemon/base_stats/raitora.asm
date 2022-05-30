@@ -1,6 +1,6 @@
 	dw RAITORA ; 292
 
-	db 249, 192, 117, 219, 156,  81
+	db 125, 192, 117, 188, 156,  81
 	;   hp  atk  def  spd  sat  sdf
 
 	db ELECTRIC, ELECTRIC ; type

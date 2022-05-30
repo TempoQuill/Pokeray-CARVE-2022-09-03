@@ -1,6 +1,6 @@
 	dw ASTROVEN ; 267
 
-	db 239, 150,  32,  33,  71,  38
+	db 120, 150,  32,  33,  71,  38
 	;   hp  atk  def  spd  sat  sdf
 
 	db DARK, FLYING ; type

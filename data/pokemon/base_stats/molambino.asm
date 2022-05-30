@@ -1,6 +1,6 @@
 	dw MOLAMBINO ; 273
 
-	db  50,  15, 114,  60,  85, 137
+	db  50,  15, 114,  60,  85,  68
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, ELECTRIC ; type

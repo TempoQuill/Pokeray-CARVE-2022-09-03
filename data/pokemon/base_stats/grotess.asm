@@ -1,6 +1,6 @@
 	dw GROTESS ; 275
 
-	db  84,  25, 192, 101, 143, 231
+	db  84,  25, 192, 101, 143, 116
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, ELECTRIC ; type
