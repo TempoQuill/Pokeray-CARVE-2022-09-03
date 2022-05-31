@@ -189,6 +189,8 @@ EMOTE_FROM_MEM EQU -1
 	const_def 1
 	const FRUITTREE_ROUTE_49_1    ; 01
 	const FRUITTREE_ROUTE_49_2    ; 02
+	const FRUITTREE_ROUTE_50_1    ; 03
+	const FRUITTREE_ROUTE_50_2    ; 04
 NUM_FRUIT_TREES EQU const_value - 1
 
 ; describedecoration arguments
