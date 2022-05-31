@@ -48,7 +48,7 @@ TraversalRivalEncounterNorth:
 	iftrue .Water_Starter
 	checkevent EVENT_GOT_CRUZ
 	iftrue .Grass_Starter
-	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
+	loadtrainer RIVAL1, RIVAL1_1_FLAMBEAR
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -57,7 +57,7 @@ TraversalRivalEncounterNorth:
 	sjump .LossScene
 
 .Water_Starter:
-	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
+	loadtrainer RIVAL1, RIVAL1_1_CRUZ
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -66,7 +66,7 @@ TraversalRivalEncounterNorth:
 	sjump .LossScene
 
 .Grass_Starter:
-	loadtrainer RIVAL1, RIVAL1_1_CHIKORITA
+	loadtrainer RIVAL1, RIVAL1_1_ORKID
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic

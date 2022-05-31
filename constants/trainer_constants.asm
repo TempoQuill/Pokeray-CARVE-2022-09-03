@@ -24,11 +24,13 @@ CHRIS EQU __trainer_class__
 	const EMAILCONTACT_ELM
 	const EMAILCONTACT_LARCH
 
-	trainerclass FALKNER ; 1
+	trainerclass JAMES ; 1
 	const FALKNER1
+	const JAMES1
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
+	const CINDY1
 
 	trainerclass BUGSY ; 3
 	const BUGSY1
@@ -49,21 +51,21 @@ CHRIS EQU __trainer_class__
 	const CLAIR1
 
 	trainerclass RIVAL1 ; 9
-	const RIVAL1_1_CHIKORITA
-	const RIVAL1_1_CYNDAQUIL
-	const RIVAL1_1_TOTODILE
-	const RIVAL1_2_CHIKORITA
-	const RIVAL1_2_CYNDAQUIL
-	const RIVAL1_2_TOTODILE
-	const RIVAL1_3_CHIKORITA
-	const RIVAL1_3_CYNDAQUIL
-	const RIVAL1_3_TOTODILE
-	const RIVAL1_4_CHIKORITA
-	const RIVAL1_4_CYNDAQUIL
-	const RIVAL1_4_TOTODILE
-	const RIVAL1_5_CHIKORITA
-	const RIVAL1_5_CYNDAQUIL
-	const RIVAL1_5_TOTODILE
+	const RIVAL1_1_ORKID
+	const RIVAL1_1_FLAMBEAR
+	const RIVAL1_1_CRUZ
+	const RIVAL1_2_ORKID
+	const RIVAL1_2_FLAMBEAR
+	const RIVAL1_2_CRUZ
+	const RIVAL1_3_ORKID
+	const RIVAL1_3_FLAMBEAR
+	const RIVAL1_3_CRUZ
+	const RIVAL1_4_ORKID
+	const RIVAL1_4_FLAMBEAR
+	const RIVAL1_4_CRUZ
+	const RIVAL1_5_ORKID
+	const RIVAL1_5_FLAMBEAR
+	const RIVAL1_5_CRUZ
 
 	trainerclass POKEMON_PROF ; a
 
@@ -131,12 +133,12 @@ CHRIS EQU __trainer_class__
 	trainerclass SUPER_NERD ; 29
 
 	trainerclass RIVAL2 ; 2a
-	const RIVAL2_1_CHIKORITA
-	const RIVAL2_1_CYNDAQUIL
-	const RIVAL2_1_TOTODILE
-	const RIVAL2_2_CHIKORITA
-	const RIVAL2_2_CYNDAQUIL
-	const RIVAL2_2_TOTODILE
+	const RIVAL2_1_ORKID
+	const RIVAL2_1_FLAMBEAR
+	const RIVAL2_1_CRUZ
+	const RIVAL2_2_ORKID
+	const RIVAL2_2_FLAMBEAR
+	const RIVAL2_2_CRUZ
 
 	trainerclass GUITARIST ; 2b
 

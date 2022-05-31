@@ -6,8 +6,8 @@ TrainerPalettes:
 
 PlayerPalette: ; Chris uses the same colors as Cal
 INCBIN "gfx/trainers/cal.gbcpal", top_colors
-INCBIN "gfx/trainers/falkner.gbcpal", top_colors
-INCBIN "gfx/trainers/whitney.gbcpal", top_colors
+INCBIN "gfx/trainers/james.gbcpal", top_colors
+INCBIN "gfx/trainers/cindy.gbcpal", top_colors
 INCBIN "gfx/trainers/bugsy.gbcpal", top_colors
 INCBIN "gfx/trainers/morty.gbcpal", top_colors
 INCBIN "gfx/trainers/pryce.gbcpal", top_colors

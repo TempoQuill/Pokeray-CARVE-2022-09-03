@@ -622,7 +622,7 @@ _CGB_TrainerCard:
 	xor a ; CHRIS
 	call GetTrainerPalettePointer
 	call Load3ColorPalette
-	ld a, FALKNER
+	ld a, JAMES
 	call GetTrainerPalettePointer
 	call Load3ColorPalette
 	ld a, BUGSY
