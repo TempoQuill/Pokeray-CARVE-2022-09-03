@@ -20,3 +20,8 @@ SECTION "Demo Map Scripts 2", ROMX
 
 INCLUDE "maps/equinto/Route50.asm"
 INCLUDE "maps/equinto/TraversalCity.asm"
+
+SECTION "Demo Map Scripts 3", ROMX
+
+INCLUDE "maps/equinto/Route51.asm"
+INCLUDE "maps/equinto/FoliageCity.asm"

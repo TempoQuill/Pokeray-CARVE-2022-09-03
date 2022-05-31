@@ -6,6 +6,7 @@ OutdoorSprites:
 ; entries correspond to map groups
 	dw CottageGroupSprites ; GROUP_COTTAGE
 	dw CottageGroupSprites ; GROUP_TRAVERSAL
+	dw CottageGroupSprites ; GROUP_FOLIAGE
 
 CottageGroupSprites:
 	db SPRITE_SILVER

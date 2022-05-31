@@ -99,7 +99,7 @@ ENDM
 	map_attributes CottageTown, COTTAGE_TOWN, $05, EAST
 	connection EAST, Route49, ROUTE_49, 0
 
-	map_attributes Route49, COTTAGE_TOWN, $05, NORTH, WEST
+	map_attributes Route49, COTTAGE_TOWN, $05, NORTH | WEST
 	connection NORTH, Route50,     ROUTE_50,     -12
 	connection WEST,  CottageTown, COTTAGE_TOWN, 0
 
@@ -116,9 +116,13 @@ ENDM
 	map_attributes Route4951Gate,      ROUTE_49_51_GATE,      $00, 0
 	map_attributes CottageRoute55Gate, COTTAGE_ROUTE_55_GATE, $00, 0
 
-	map_attributes Route50, ROUTE_50, $05, SOUTH, EAST
+	map_attributes Route50, ROUTE_50, $05, SOUTH | EAST
 	connection SOUTH, Route49,       ROUTE_49,       12
 	connection EAST,  TraversalCity, TRAVERSAL_CITY, -9
 
 	map_attributes TraversalCity, TRAVERSAL_CITY, $05, WEST
 	connection WEST, Route50, ROUTE_50, 9
+
+	map_attributes Route51, ROUTE_51, $05, NORTH | EAST
+	connection NORTH, Route_49,      ROUTE_49,       12
+	connection EAST,  FoliageCity,   FOLIAGE_CITY,   0

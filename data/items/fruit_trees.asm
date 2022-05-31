@@ -4,3 +4,5 @@ FruitTreeItems:
 	db MEDICALBERRY ; ROUTE_49_2
 	db BERRY        ; ROUTE_50_1
 	db BITTER_BERRY ; ROUTE_50_2
+	db BERRY        ; ROUTE_51_1
+	db FROSTY_BERRY ; ROUTE_51_2

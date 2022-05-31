@@ -108,6 +108,8 @@ NUM_SPAWNS EQU const_value
 	const_def
 EQUINTO_FLYPOINT EQU const_value
 	const FLY_COTTAGE
+	const FLY_TRAVERSAL
+	const FLY_FOLIAGE
 NUM_FLYPOINTS EQU const_value
 
 MAX_OUTDOOR_SPRITES EQU 11 ; see engine/overworld/overworld.asm

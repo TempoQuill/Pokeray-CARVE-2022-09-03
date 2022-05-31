@@ -49,3 +49,8 @@ ENDM
 	
 	map_const ROUTE_50              15,  9 ; 1
 	map_const TRAVERSAL_CITY        20, 18 ; 2
+
+	newgroup                        ; 3
+
+	map_const ROUTE_51              15,  9 ; 1
+	map_const FOLIAGE_CITY          20, 18 ; 2

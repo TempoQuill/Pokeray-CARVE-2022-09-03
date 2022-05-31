@@ -13,6 +13,7 @@ MapGroupRoofs:
 	db -1             ;  0
 	db ROOF_NEW_BARK  ;  1 (Cottage)
 	db ROOF_NEW_BARK  ;  2 (Traversal)
+	db ROOF_NEW_BARK  ;  3 (Foliage)
 Roofs:
 ; entries correspond to ROOF_* constants
 INCBIN "gfx/tilesets/roofs/new_bark.2bpp"
