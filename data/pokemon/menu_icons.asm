@@ -52,8 +52,8 @@ MonMenuIcons:
 	db ICON_MOTH        ; VENOMOTH
 	db ICON_DIGLETT     ; DIGLETT
 	db ICON_DIGLETT     ; DUGTRIO
-	db ICON_FOX         ; MEOWTH
-	db ICON_FOX         ; PERSIAN
+	db ICON_KOROTA      ; MEOWTH
+	db ICON_KOROTA      ; PERSIAN
 	db ICON_MONSTER     ; PSYDUCK
 	db ICON_MONSTER     ; GOLDUCK
 	db ICON_FIGHTER     ; MANKEY
@@ -163,8 +163,8 @@ MonMenuIcons:
 	db ICON_MONSTER     ; FERALIGATR
 	db ICON_FOX         ; SENTRET
 	db ICON_FOX         ; FURRET
-	db ICON_BIRD        ; HOOTHOOT
-	db ICON_BIRD        ; NOCTOWL
+	db ICON_CROVEN      ; HOOTHOOT
+	db ICON_CROVEN      ; NOCTOWL
 	db ICON_BUG         ; LEDYBA
 	db ICON_BUG         ; LEDIAN
 	db ICON_BUG         ; SPINARAK
@@ -198,7 +198,7 @@ MonMenuIcons:
 	db ICON_MONSTER     ; QUAGSIRE
 	db ICON_FOX         ; ESPEON
 	db ICON_FOX         ; UMBREON
-	db ICON_BIRD        ; MURKROW
+	db ICON_CROVEN      ; MURKROW
 	db ICON_SLOWPOKE    ; SLOWKING
 	db ICON_GHOST       ; MISDREAVUS
 	db ICON_UNOWN       ; UNOWN
@@ -206,7 +206,7 @@ MonMenuIcons:
 	db ICON_EQUINE      ; GIRAFARIG
 	db ICON_BUG         ; PINECO
 	db ICON_BUG         ; FORRETRESS
-	db ICON_SERPENT     ; DUNSPARCE
+	db ICON_MOUNDIVER   ; DUNSPARCE
 	db ICON_BUG         ; GLIGAR
 	db ICON_SERPENT     ; STEELIX
 	db ICON_MONSTER     ; SNUBBULL
@@ -266,13 +266,13 @@ MonMenuIcons:
 	db ICON_LAPRAS      ; CRUZ
 	db ICON_LAPRAS      ; AQUACENT
 	db ICON_LAPRAS      ; AQUARIA
-	db ICON_BIRD        ; CROVEN
-	db ICON_BIRD        ; ASTROVEN
+	db ICON_CROVEN      ; CROVEN
+	db ICON_CROVEN      ; ASTROVEN
 	db ICON_FOX         ; TRIFOX
 	db ICON_ODDISH      ; BURGELA
 	db ICON_FISH        ; NUMPUFF
 	db ICON_FISH        ; ORSCHUL
-	db ICON_LAPRAS      ; MOUNDIVER
+	db ICON_MOUNDIVER   ; MOUNDIVER
 	db ICON_FISH        ; MOLAMBINO
 	db ICON_FISH        ; ANGORE
 	db ICON_SERPENT     ; GROTESS
@@ -280,9 +280,9 @@ MonMenuIcons:
 	db ICON_BLOB        ; LYKWYSE
 	db ICON_BIRD        ; DODAERIE
 	db ICON_GHOST       ; SIAMAIS
-	db ICON_FOX         ; COINTEN
-	db ICON_FOX         ; GATOLL
-	db ICON_FOX         ; BELLBOYANT
+	db ICON_KOROTA      ; COINTEN
+	db ICON_KOROTA      ; GATOLL
+	db ICON_KOROTA      ; BELLBOYANT
 	db ICON_EQUINE      ; FOLICORN
 	db ICON_GHOST       ; WHISPEON
 	db ICON_FOX         ; ASSEMBLEON
@@ -291,8 +291,8 @@ MonMenuIcons:
 	db ICON_FOX         ; TIRUFF
 	db ICON_ODDISH      ; BELMITT
 	db ICON_LAPRAS      ; BOMOCA
-	db ICON_PIKACHU     ; KOTORA
-	db ICON_PIKACHU     ; RAITORA
+	db ICON_KOROTA      ; KOTORA
+	db ICON_KOROTA      ; RAITORA
 	db ICON_BIRD        ; MADAME
 	db ICON_HUMANSHAPE  ; KURSTRAW
 	db ICON_HUMANSHAPE  ; PANGSHI
