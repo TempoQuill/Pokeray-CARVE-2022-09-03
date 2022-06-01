@@ -413,7 +413,7 @@ MaxReviveDesc:
 	next "#MON to max HP.@"
 
 GuardSpecDesc:
-	db   "Blocks outside stat"
+	db   "Blocks enemy stat"
 	next "modifications.@"
 
 SuperRepelDesc:
