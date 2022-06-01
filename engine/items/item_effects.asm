@@ -192,6 +192,24 @@ ItemEffects:
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
 	dw NoEffect            ; SURF_BOARD
+	dw NoEffect            ; BRICK_PIECE
+	dw NoEffect            ; SURF_MAIL
+	dw NoEffect            ; LITEBLUEMAIL
+	dw NoEffect            ; PORTRAITMAIL
+	dw NoEffect            ; LOVELY_MAIL
+	dw NoEffect            ; EON_MAIL
+	dw NoEffect            ; MORPH_MAIL
+	dw NoEffect            ; BLUESKY_MAIL
+	dw NoEffect            ; MUSIC_MAIL
+	dw NoEffect            ; MIRAGE_MAIL
+	dw NoEffect            ; ITEM_BE
+	dw NoEffect            ; ITEM_BF
+	dw NoEffect            ; OLD_AMBER
+	dw NoEffect            ; FURNACE
+	dw NoEffect            ; FRIDGE
+	dw NoEffect            ; OUTLET
+	dw NoEffect            ; STROBE_LIGHT
+	dw NoEffect            ; NEEDLE
 
 SurfBoardEffect:
 	ld a, 1

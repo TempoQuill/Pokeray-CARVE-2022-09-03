@@ -182,6 +182,11 @@ ENDM
 	command curl                    ; af
 	command funnystuff              ; b0
 	command multistatuschance       ; b1
+	command furnace                 ; b2
+	command fridge                  ; b3
+	command outlet                  ; b4
+	command strobelight             ; b5
+	command needle                  ; b6
 
 	const_def -1, -1
 	command endmove                 ; ff

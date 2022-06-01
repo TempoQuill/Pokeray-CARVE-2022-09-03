@@ -181,3 +181,8 @@ BattleCommandPointers:
 	dba BattleCommand_Curl
 	dba BattleCommand_FunnyStuff
 	dba BattleCommand_MultiStatusChance
+	dba BattleCommand_HeldBurn
+	dba BattleCommand_HeldFreeze
+	dba BattleCommand_HeldParalysis
+	dba BattleCommand_HeldConfusion
+	dba BattleCommand_HeldPoison

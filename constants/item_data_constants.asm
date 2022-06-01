@@ -79,15 +79,14 @@ MAIL_STRUCT_LENGTH EQU $30 ; mailmsg struct
 	const_def
 	const HELD_NONE
 	const HELD_BERRY
-	const HELD_2
+	const HELD_INFLICT_PAR
 	const HELD_LEFTOVERS
-	const_skip
-	const HELD_5
+	const HELD_INFLICT_BURN
+	const HELD_INFLICT_CONFUSION
 	const HELD_RESTORE_PP
-	const_skip
+	const HELD_INFLICT_FREEZE
 	const HELD_CLEANSE_TAG
-
-	const_next 10
+	const HELD_INFLICT_POISON
 	const HELD_HEAL_POISON
 	const HELD_HEAL_FREEZE
 	const HELD_HEAL_BURN

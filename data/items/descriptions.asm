@@ -192,11 +192,11 @@ ItemDescriptions:
 	dw TeruSama29Desc
 	dw TeruSama30Desc
 	dw OldAmberDesc
-	dw TeruSama30Desc
-	dw TeruSama30Desc
-	dw TeruSama30Desc
-	dw TeruSama31Desc
-	dw TeruSama31Desc
+	dw FurnaceDesc
+	dw FridgeDesc
+	dw OutletDesc
+	dw StrobeLightDesc
+	dw NeedleDesc
 	dw TeruSama31Desc
 	dw TeruSama31Desc
 	dw TeruSama31Desc
@@ -913,6 +913,26 @@ NightArmorDesc:
 PumpBottleDesc:
 	db   "A strange airtight"
 	next "water battle.@"
+
+FurnaceDesc:
+	db   "An item that may"
+	next "burn the foe.@"
+
+FridgeDesc:
+	db   "An item that may"
+	next "freeze the foe.@"
+
+OutletDesc:
+	db   "An item that may"
+	next "paralyze the foe.@"
+
+StrobeLightDesc:
+	db   "An item that may"
+	next "confuse the foe.@"
+
+NeedleDesc:
+	db   "An item that may"
+	next "poison the foe.@"
 
 ; unused
 	db   "A TM that teaches"

@@ -19,6 +19,11 @@ NormalHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -70,6 +75,11 @@ LeechHit:
 	draintarget
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -154,6 +164,11 @@ Selfdestruct:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -772,6 +787,11 @@ PayDay:
 	payday
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -802,6 +822,11 @@ Bide:
 	applydamage
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -825,6 +850,11 @@ Rampage:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -859,6 +889,11 @@ MultiHit:
 	buildopponentrage
 	endloop
 	raisesub
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -944,6 +979,11 @@ RecoilHit:
 	recoil
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1019,7 +1059,7 @@ FunnyStuff:
 	doturn
 	critical
 	damagestats
-	funnystuff ; present
+	funnystuff
 	damagecalc
 	stab
 	damagevariation
@@ -1028,8 +1068,7 @@ FunnyStuff:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	kingsrock
-	multistatuschance ; tristatuschance
+	multistatuschance
 	endmove
 
 Smokescreen:
@@ -1129,6 +1168,11 @@ SkyAttack:
 	checkfaint
 	buildopponentrage
 	flinchtarget
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1178,6 +1222,11 @@ Rage:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1238,6 +1287,11 @@ RazorWind:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1261,6 +1315,11 @@ Fly:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1299,6 +1358,11 @@ StaticDamage:
 	applydamage
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1315,6 +1379,11 @@ Reversal:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1328,6 +1397,11 @@ Counter:
 	applydamage
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1367,6 +1441,11 @@ Snore:
 	checkfaint
 	buildopponentrage
 	flinchtarget
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1440,6 +1519,11 @@ FalseSwipe:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1475,6 +1559,11 @@ TripleKick:
 	kickcounter
 	endloop
 	raisesub
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1497,6 +1586,11 @@ Thief:
 	thief
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1605,6 +1699,11 @@ Rollout:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1644,6 +1743,11 @@ FuryCutter:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1673,6 +1777,11 @@ Return:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1694,6 +1803,11 @@ Present:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1715,6 +1829,11 @@ Frustration:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1766,6 +1885,11 @@ Magnitude:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1794,6 +1918,11 @@ Pursuit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1815,6 +1944,11 @@ RapidSpin:
 	clearhazards
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1856,6 +1990,11 @@ HiddenPower:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1907,6 +2046,11 @@ MirrorCoat:
 	applydamage
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -1929,6 +2073,11 @@ SkullBash:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endturn
 	defenseup
@@ -2057,6 +2206,11 @@ Solarbeam:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 
@@ -2113,6 +2267,11 @@ BeatUp:
 	endloop
 	beatupfailtext
 	raisesub
+	furnace
+	fridge
+	outlet
+	strobelight
+	needle
 	kingsrock
 	endmove
 

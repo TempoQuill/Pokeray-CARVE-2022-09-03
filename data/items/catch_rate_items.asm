@@ -27,6 +27,5 @@ TimeCapsule_CatchRateItems:
 	db PARK_BALL,    BERRY        ; SOFT_PILLOW
 	db RAINBOW_WING, BERRY        ; LARGE_PIN
 	db ITEM_BE,      BERRY        ; HELIX_FOSSIL
-	db ITEM_C3,      BERRY        ; OUTLET
 	db -1,           BERRY
 	db 0 ; end

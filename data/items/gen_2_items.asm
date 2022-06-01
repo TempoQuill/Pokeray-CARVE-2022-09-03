@@ -3,10 +3,10 @@ TimeCapsule_Gen2Items:
 ; this table will convert constants that've been switched around
 	db ITEM_BF,         TM_DYNAMICPUNCH ; DOME_FOSSIL
 	db OLD_AMBER,       TM_HEADBUTT
-	db ITEM_C1,         TM_CURSE        ; FURNACE
-	db ITEM_C2,         TM_ROLLOUT      ; FRIDGE
-	db ITEM_C4,         TM_ROAR         ; STROBE_LIGHT
-	db ITEM_C5,         TM_TOXIC        ; NEEDLE
+	db FURNACE,         TM_CURSE
+	db FRIDGE,          TM_ROLLOUT
+	db STROBE_LIGHT,    TM_ROAR
+	db NEEDLE,          TM_TOXIC
 	db ITEM_C6,         TM_ZAP_CONNON
 	db ITEM_C7,         TM_ROCK_SMASH
 	db TM_DYNAMICPUNCH, TM_PSYCH_UP

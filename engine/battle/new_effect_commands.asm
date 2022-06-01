@@ -302,6 +302,150 @@ MultiStatusPointer:
 	dba BattleCommand_ConfuseTarget ; confusion
 	dba BattleCommand_FlinchTarget ; flinch
 
+BattleCommand_HeldBurn:
+; furnace
+
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	callfar GetUserItem
+	ld a, b
+	cp HELD_INFLICT_BURN
+	ret nz
+
+	farcall CheckSubstituteOpp
+	ret nz
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVarAddr
+	ld d, h
+	ld e, l
+	farcall GetUserItem
+	call BattleRandom
+	cp c
+	ret nc
+	farcall EndRechargeOpp
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	ld a, 1 << BRN
+	ld [hl], a
+	ret
+
+BattleCommand_HeldFreeze:
+; fridge
+
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	callfar GetUserItem
+	ld a, b
+	cp HELD_INFLICT_FREEZE
+	ret nz
+
+	farcall CheckSubstituteOpp
+	ret nz
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVarAddr
+	ld d, h
+	ld e, l
+	farcall GetUserItem
+	call BattleRandom
+	cp c
+	ret nc
+	farcall EndRechargeOpp
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	ld a, 1 << FRZ
+	ld [hl], a
+	ret
+
+BattleCommand_HeldParalysis:
+; outlet
+
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	callfar GetUserItem
+	ld a, b
+	cp HELD_INFLICT_PAR
+	ret nz
+
+	farcall CheckSubstituteOpp
+	ret nz
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVarAddr
+	ld d, h
+	ld e, l
+	farcall GetUserItem
+	call BattleRandom
+	cp c
+	ret nc
+	farcall EndRechargeOpp
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	ld a, 1 << PAR
+	ld [hl], a
+	ret
+
+BattleCommand_HeldConfusion:
+; strobelight
+
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	callfar GetUserItem
+	ld a, b
+	cp HELD_INFLICT_CONFUSION
+	ret nz
+
+	farcall CheckSubstituteOpp
+	ret nz
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVarAddr
+	ld d, h
+	ld e, l
+	farcall GetUserItem
+	call BattleRandom
+	cp c
+	ret nc
+	farcall EndRechargeOpp
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVarAddr
+	set SUBSTATUS_CONFUSED, [hl]
+	ret
+
+BattleCommand_HeldParalysis:
+; outlet
+
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	callfar GetUserItem
+	ld a, b
+	cp HELD_INFLICT_POISON
+	ret nz
+
+	farcall CheckSubstituteOpp
+	ret nz
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVarAddr
+	ld d, h
+	ld e, l
+	farcall GetUserItem
+	call BattleRandom
+	cp c
+	ret nc
+	farcall EndRechargeOpp
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	ld a, 1 << PSN
+	ld [hl], a
+	ret
+
 AlreadyBurnedText:
 	text "<TARGET>'s"
 	line "already burned!"

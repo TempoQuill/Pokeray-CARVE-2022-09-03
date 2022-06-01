@@ -198,11 +198,11 @@
 	const ITEM_BE      ; be
 	const ITEM_BF      ; bf
 	const OLD_AMBER    ; c0
-	const ITEM_C1      ; c1
-	const ITEM_C2      ; c2
-	const ITEM_C3      ; c3
-	const ITEM_C4      ; c4
-	const ITEM_C5      ; c5
+	const FURNACE      ; c1
+	const FRIDGE       ; c2
+	const OUTLET       ; c3
+	const STROBE_LIGHT ; c4
+	const NEEDLE       ; c5
 	const ITEM_C6      ; c6
 	const ITEM_C7      ; c7
 
