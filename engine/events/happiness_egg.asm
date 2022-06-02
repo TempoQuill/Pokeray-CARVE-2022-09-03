@@ -82,17 +82,22 @@ ChangeHappiness:
 	ld d, 0
 	add hl, de
 	ld a, [hl]
-	cp $64 ; why not $80?
+	cp $80
 	pop de
 
-	ld a, [de]
 	jr nc, .negative
+	ld a, [de]
 	add [hl]
+	call TryDoubleHappinessChanges
+	jr z, .no_double
+	add [hl]
+.no_double
 	jr nc, .done
 	ld a, -1
 	jr .done
 
 .negative
+	ld a, [de]
 	add [hl]
 	jr c, .done
 	xor a
@@ -112,6 +117,20 @@ ChangeHappiness:
 	ret
 
 INCLUDE "data/events/happiness_changes.asm"
+
+TryDoubleHappinessChanges:
+	push af
+	push de
+	push bc
+	push hl
+	farcall GetItemHeldEffect
+	ld a, HELD_DOUBLE_HAPPINESS
+	cp b
+	pop hl
+	pop bc
+	pop de
+	pop af
+	ret
 
 StepHappiness::
 ; Raise the party's happiness by 1 point every other step cycle.

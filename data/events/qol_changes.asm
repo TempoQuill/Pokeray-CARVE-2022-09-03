@@ -1,4 +1,6 @@
-
+; QUALITY OF LIFE parameters
+; Beneficial actions make the pokemon feel safer and more comfortable
+; Events you don't want to happen usually make the pokemon more anxious
 QualityOfLifeChanges:
 ; change if QOL < 100, change if QOL < 200, change otherwise
 	db  +5,  +3,  +2 ; Gained a level

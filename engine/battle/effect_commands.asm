@@ -3737,6 +3737,8 @@ BattleCommand_SleepTarget:
 	inc a
 	ld [de], a
 	call UpdateOpponentInParty
+	ld c, QUALITY_OF_LIFE_STATUS
+	farcall ChangeQualityOfLife
 	call RefreshBattleHuds
 
 	ld hl, FellAsleepText
@@ -3930,7 +3932,10 @@ PoisonOpponent:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	set PSN, [hl]
-	jp UpdateOpponentInParty
+	call UpdateOpponentInParty
+	ld c, QUALITY_OF_LIFE_STATUS
+	farcall ChangeQualityOfLife
+	ret
 
 BattleCommand_DrainTarget:
 ; draintarget
@@ -4066,6 +4071,8 @@ BattleCommand_BurnTarget:
 	call GetBattleVarAddr
 	set BRN, [hl]
 	call UpdateOpponentInParty
+	ld c, QUALITY_OF_LIFE_STATUS
+	farcall ChangeQualityOfLife
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
 	ld de, ANIM_BRN
@@ -4135,6 +4142,10 @@ BattleCommand_FreezeTarget:
 	call GetBattleVarAddr
 	set FRZ, [hl]
 	call UpdateOpponentInParty
+	push bc
+	ld c, QUALITY_OF_LIFE_STATUS
+	farcall ChangeQualityOfLife
+	pop bc
 	ld de, ANIM_FRZ
 	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
@@ -4183,6 +4194,8 @@ BattleCommand_ParalyzeTarget:
 	call GetBattleVarAddr
 	set PAR, [hl]
 	call UpdateOpponentInParty
+	ld c, QUALITY_OF_LIFE_STATUS
+	farcall ChangeQualityOfLife
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 	ld de, ANIM_PAR
@@ -5063,6 +5076,8 @@ BattleCommand_CheckRampage:
 	jr nz, .continue_rampage
 
 	set SUBSTATUS_CONFUSED, [hl]
+	ld c, QUALITY_OF_LIFE_CONFUSION
+	farcall ChangeQualityOfLife
 	call BattleRandom
 	and %00000001
 	inc a
@@ -5371,6 +5386,8 @@ BattleCommand_EndLoop:
 	bit SUBSTATUS_IN_LOOP, [hl]
 	jp nz, .in_loop
 	set SUBSTATUS_IN_LOOP, [hl]
+	ld c, QUALITY_OF_LIFE_LOVE
+	farcall ChangeQualityOfLife
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVarAddr
 	ld a, [hl]
@@ -5946,6 +5963,8 @@ BattleCommand_FinishConfusingTarget:
 
 .got_confuse_count
 	set SUBSTATUS_CONFUSED, [hl]
+	ld c, QUALITY_OF_LIFE_CONFUSION
+	farcall ChangeQualityOfLife
 	; confused for 2-5 turns
 	call BattleRandom
 	and %11
@@ -6048,6 +6067,8 @@ BattleCommand_Paralyze:
 	call GetBattleVarAddr
 	set PAR, [hl]
 	call UpdateOpponentInParty
+	ld c, QUALITY_OF_LIFE_STATUS
+	farcall ChangeQualityOfLife
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 	call UpdateBattleHuds

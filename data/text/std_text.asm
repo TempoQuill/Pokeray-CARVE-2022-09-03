@@ -361,6 +361,38 @@ HappinessText1:
 	line "nice, it'll pout."
 	done
 
+QualityOfLifeText3:
+	text "Wow! Your #MON"
+	line "appears to be very"
+
+	para "comfortable around"
+	line "you!"
+	done
+
+QualityOfLifeText2:
+	text "#MON feel safe"
+	line "when you give them"
+
+	para "helpful items and"
+	line "let them grow!"
+	done
+
+QualityOfLifeText1:
+	text "Oh no! Your #-"
+	line "must be anxious!"
+
+	para "Don't stack battle"
+	line "items so often!"
+
+	para "Status problems"
+	line "are really huge"
+	cont "inconveniences!"
+
+	para "And please tell me"
+	line "you didn't let it"
+	cont "faint!"
+	done
+
 ToolBoxText1:
 	text "A toolbox! You can"
 	line "make your very own"

@@ -128,6 +128,8 @@ DoPoisonStep::
 	jr z, .mon_not_fainted
 	ld c, HAPPINESS_POISONFAINT
 	farcall ChangeHappiness
+	ld c, QUALITY_OF_LIFE_POISON_FAINT
+	farcall ChangeQualityOfLife
 	farcall GetPartyNick
 	ld hl, .PoisonFaintText
 	call PrintText

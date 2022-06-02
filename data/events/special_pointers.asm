@@ -110,4 +110,4 @@ SpecialsPointers::
 	add_special Diploma
 	add_special PrintDiploma
 	add_special MrChrono
-	add_special DummySpecial_c389
+	add_special GetFirstPokemonQualityOfLife

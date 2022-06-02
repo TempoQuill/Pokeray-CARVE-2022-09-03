@@ -155,6 +155,8 @@ TeachTMHM:
 
 	ld c, HAPPINESS_LEARNMOVE
 	callfar ChangeHappiness
+	ld c, QUALITY_OF_LIFE_LEARN_MOVE
+	callfar ChangeQualityOfLife
 	call ConsumeTM
 	jr .learned_move
 

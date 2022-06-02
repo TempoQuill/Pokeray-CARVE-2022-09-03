@@ -346,6 +346,8 @@ HandleBerserkGene:
 	call GetBattleVarAddr
 	push af
 	set SUBSTATUS_CONFUSED, [hl]
+	ld c, QUALITY_OF_LIFE_CONFUSION
+	farcall ChangeQualityOfLife
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVarAddr
 	push hl
@@ -2475,21 +2477,31 @@ UpdateFaintedPlayerMon:
 	ld b, a
 	ld a, [wEnemyMonLevel]
 	cp b
-	jr c, .got_param
+	jr c, .got_param1
 	ld c, HAPPINESS_BEATENBYSTRONGFOE
 
-.got_param
+.got_param1
 	ld a, [wCurBattleMon]
 	ld [wCurPartyMon], a
 	callfar ChangeHappiness
+	ld c, QUALITY_OF_LIFE_FAINT
+	; If TheirLevel > (YourLevel + 30), use a different parameter
+	ld a, [wBattleMonLevel]
+	add 30
+	ld b, a
+	ld a, [wEnemyMonLevel]
+	cp b
+	jr c, .got_param2
+	ld c, QUALITY_OF_LIFE_BODY
+.got_param2
+	callfar ChangeQualityOfLife
 	ld a, [wBattleResult]
 	and BATTLERESULT_BITMASK
 	add LOSE
 	ld [wBattleResult], a
 	ld a, [wWhichMonFaintedFirst]
 	and a
-	ret z
-	ret ; ??????????
+	ret
 
 AskUseNextPokemon:
 	call EmptyBattleTextbox
@@ -4102,6 +4114,8 @@ UseHeldStatusHealingItem:
 	ld [hl], a
 	push bc
 	call UpdateOpponentInParty
+	ld c, QUALITY_OF_LIFE_STATUS
+	farcall ChangeQualityOfLife
 	pop bc
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVarAddr
@@ -6952,6 +6966,8 @@ GiveExperiencePoints:
 	; level up happiness mod
 	ld c, 1
 	callfar ChangeHappiness
+	ld c, 1
+	callfar ChangeQualityOfLife
 	ld a, [wCurBattleMon]
 	ld b, a
 	ld a, [wCurPartyMon]
@@ -7782,6 +7798,8 @@ InitEnemyTrainer:
 	jr z, .skipfaintedmon
 	ld c, HAPPINESS_GYMBATTLE
 	callfar ChangeHappiness
+	ld c, QUALITY_OF_LIFE_GYM_VICTORY
+	callfar ChangeQualityOfLife
 .skipfaintedmon
 	pop bc
 	dec b

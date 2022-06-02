@@ -458,8 +458,32 @@ HappinessCheckScript:
 	closetext
 	end
 
+QualityOfLifeCheckScript:
+	faceplayer
+	opentext
+	special GetFirstPokemonQualityOfLife
+	ifless 50, .Anxious
+	ifless 150, .KindaComfy
+	writetext HappinessText3
+	waitbutton
+	closetext
+	end
+
+.KindaComfy:
+	writetext HappinessText2
+	waitbutton
+	closetext
+	end
+
+.Anxious:
+	writetext HappinessText1
+	waitbutton
+	closetext
+	end
+
 AssemblePokemonScript:
 	opentext
 	writetext ToolBoxText1
 	callasm SearchForItemPokeCombo
+	closetext
 	end

@@ -70,7 +70,10 @@ BattleCommand_Burn:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	set BRN, [hl]
-	jp UpdateOpponentInParty
+	call UpdateOpponentInParty
+	ld c, QUALITY_OF_LIFE_STATUS
+	farcall ChangeQualityOfLife
+	ret
 
 BattleCommand_Freeze:
 	ld hl, DoesntAffectText
@@ -147,7 +150,10 @@ BattleCommand_Freeze:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	set FRZ, [hl]
-	jp UpdateOpponentInParty
+	call UpdateOpponentInParty
+	ld c, QUALITY_OF_LIFE_STATUS
+	farcall ChangeQualityOfLife
+	ret
 
 .check_ice
 	ld de, wEnemyMonType1
@@ -415,6 +421,8 @@ BattleCommand_HeldConfusion:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVarAddr
 	set SUBSTATUS_CONFUSED, [hl]
+	ld c, QUALITY_OF_LIFE_CONFUSION
+	farcall ChangeQualityOfLife
 	ret
 
 BattleCommand_HeldParalysis:
