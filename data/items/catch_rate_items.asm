@@ -19,12 +19,10 @@ TimeCapsule_CatchRateItems:
 	db ITEM_87,      BERRY        ; STADIUM_BAND
 	db ITEM_88,      BERRY        ; BLUE_LEAF
 	db ITEM_89,      BERRY        ; WHITE_LEAF
-	db ITEM_8D,      BERRY        ; WHOPPER
 	db ITEM_95,      BERRY        ; HEAVY_GENE
 	db ITEM_99,      BERRY        ; SLEAK_GENE
 	db ITEM_AB,      BERRY        ; VINE_MAIL
 	db ITEM_B0,      BERRY        ; CHORD_MAIL
-	db PARK_BALL,    BERRY        ; SOFT_PILLOW
 	db RAINBOW_WING, BERRY        ; LARGE_PIN
 	db ITEM_BE,      BERRY        ; HELIX_FOSSIL
 	db -1,           BERRY

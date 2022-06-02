@@ -140,7 +140,7 @@ ItemDescriptions:
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
-	dw TeruSama16Desc
+	dw WhopperDesc
 	dw PipeFeatherDesc
 	dw MetalCoatDesc
 	dw DragonFangDesc
@@ -176,7 +176,7 @@ ItemDescriptions:
 	dw GoldBerryDesc
 	dw SquirtBottleDesc
 	dw TeruSama27Desc
-	dw ParkBallDesc
+	dw SoftPillowDesc
 	dw RainbowWingDesc
 	dw SurfBoardDesc
 	dw BrickPieceDesc
@@ -437,7 +437,6 @@ TeruSama12Desc:
 TeruSama13Desc:
 TeruSama14Desc:
 TeruSama15Desc:
-TeruSama16Desc:
 TeruSama21Desc:
 TeruSama22Desc:
 TeruSama26Desc:
@@ -450,7 +449,6 @@ TeruSama34Desc:
 TeruSama35Desc:
 TeruSama36Desc:
 TeruSama37Desc:
-ParkBallDesc:
 PassDesc:
 MachinePartDesc:
 LostItemDesc:
@@ -933,6 +931,14 @@ StrobeLightDesc:
 NeedleDesc:
 	db   "An item that may"
 	next "poison the foe.@"
+
+SoftPillowDesc:
+	db   "Quickly makes a"
+	next "#MON friendly."
+
+WhopperDesc:
+	db   "Quickly makes a"
+	next "#MON comfy."
 
 ; unused
 	db   "A TM that teaches"

@@ -146,7 +146,7 @@
 	const CHARCOAL     ; 8a
 	const BERRY_JUICE  ; 8b
 	const SCOPE_LENS   ; 8c
-	const ITEM_8D      ; 8d
+	const WHOPPER      ; 8d
 	const PIPE_FEATHER ; 8e
 	const METAL_COAT   ; 8f
 	const DRAGON_FANG  ; 90
@@ -182,7 +182,7 @@
 	const FILLINGBERRY ; ae
 	const SQUIRTBOTTLE ; af
 	const ITEM_B0      ; b0
-	const PARK_BALL    ; b1
+	const SOFT_PILLOW  ; b1
 	const RAINBOW_WING ; b2
 	const SURF_BOARD   ; b3
 	const BRICK_PIECE  ; b4

@@ -153,7 +153,7 @@ ItemEffects:
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
-	dw NoEffect            ; ITEM_8D
+	dw NoEffect            ; WHOPPER
 	dw NoEffect            ; PIPE_FEATHER
 	dw NoEffect            ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
@@ -189,7 +189,7 @@ ItemEffects:
 	dw RestoreHPEffect     ; FILLINGBERRY
 	dw SquirtbottleEffect  ; SQUIRTBOTTLE
 	dw NoEffect            ; ITEM_B0
-	dw PokeBallEffect      ; PARK_BALL
+	dw NoEffect            ; SOFT_PILLOW
 	dw NoEffect            ; RAINBOW_WING
 	dw NoEffect            ; SURF_BOARD
 	dw NoEffect            ; BRICK_PIECE
@@ -1275,6 +1275,8 @@ VitaminEffect:
 
 	ld c, HAPPINESS_USEDITEM
 	farcall ChangeHappiness
+	ld c, QUALITY_OF_LIFE_ITEM
+	farcall ChangeQualityOfLife
 
 	jp UseDisposableItem
 
@@ -1415,6 +1417,10 @@ RareCandyEffect:
 	ld [hl], a
 	ld c, 1
 	farcall ChangeHappiness
+	ld c, 1
+	farcall ChangeQualityOfLife
+	ld c, QUALITY_OF_LIFE_ITEM
+	farcall ChangeQualityOfLife
 
 	ld a, PARTYMENUTEXT_LEVEL_UP
 	call ItemActionText
@@ -1460,6 +1466,8 @@ HealPowderEffect:
 	jr nz, .asm_f01f
 	ld c, HAPPINESS_BITTERPOWDER
 	farcall ChangeHappiness
+	ld c, QUALITY_OF_LIFE_ITEM
+	farcall ChangeQualityOfLife
 
 	call LooksBitterMessage
 
@@ -1595,6 +1603,8 @@ RevivalHerbEffect:
 
 	ld c, HAPPINESS_REVIVALHERB
 	farcall ChangeHappiness
+	ld c, QUALITY_OF_LIFE_REVIVE
+	farcall ChangeQualityOfLife
 	call LooksBitterMessage
 	ld a, 0
 
@@ -1729,6 +1739,8 @@ EnergypowderEnergyRootCommon:
 	jr nz, .skip_happiness
 
 	farcall ChangeHappiness
+	ld c, QUALITY_OF_LIFE_ITEM
+	farcall ChangeQualityOfLife
 	call LooksBitterMessage
 	ld a, 0
 
@@ -2244,6 +2256,8 @@ XItemEffect:
 	ld [wCurPartyMon], a
 	ld c, HAPPINESS_USEDXITEM
 	farcall ChangeHappiness
+	ld c, QUALITY_OF_LIFE_X_ITEM
+	farcall ChangeQualityOfLife
 	ret
 
 INCLUDE "data/items/x_stats.asm"
