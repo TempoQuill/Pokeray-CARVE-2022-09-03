@@ -113,21 +113,21 @@ Rival1Group:
 ;	db "?@", TRAINERTYPE_NORMAL
 ;	db  5, CHIKORITA
 	db "?@", TRAINERTYPE_ITEM
-	traini   5, ORKID, NO_ITEM
+	traini   5, ORKID, FURNACE
 	db -1 ; end
 
 	; RIVAL1 (2)
 ;	db "?@", TRAINERTYPE_NORMAL
 ;	db  5, CYNDAQUIL
 	db "?@", TRAINERTYPE_ITEM
-	traini   5, FLAMBEAR, NO_ITEM
+	traini   5, FLAMBEAR, FURNACE
 	db -1 ; end
 
 	; RIVAL1 (3)
 ;	db "?@", TRAINERTYPE_NORMAL
 ;	db  5, TOTODILE
 	db "?@", TRAINERTYPE_ITEM
-	traini   5, CRUZ, NO_ITEM
+	traini   5, CRUZ, FURNACE
 	db -1 ; end
 
 	; RIVAL1 (4)
