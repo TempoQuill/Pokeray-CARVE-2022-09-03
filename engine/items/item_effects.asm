@@ -62,7 +62,7 @@ ItemEffects:
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
 	dw XItemEffect         ; X_ATTACK
-	dw NoEffect            ; ITEM_32
+	dw NoEffect            ; NAPKIN
 	dw XItemEffect         ; X_DEFEND
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SPECIAL
@@ -146,7 +146,7 @@ ItemEffects:
 	dw NoEffect            ; STARDUST
 	dw NoEffect            ; STAR_PIECE
 	dw BasementKeyEffect   ; BASEMENT_KEY
-	dw NoEffect            ; PASS
+	dw NoEffect            ; FOSSIL_ROCK
 	dw NoEffect            ; ITEM_87
 	dw NoEffect            ; ITEM_88
 	dw NoEffect            ; ITEM_89
@@ -190,7 +190,7 @@ ItemEffects:
 	dw SquirtbottleEffect  ; SQUIRTBOTTLE
 	dw NoEffect            ; ITEM_B0
 	dw NoEffect            ; SOFT_PILLOW
-	dw NoEffect            ; RAINBOW_WING
+	dw NoEffect            ; LARGE_PIN
 	dw NoEffect            ; SURF_BOARD
 	dw NoEffect            ; BRICK_PIECE
 	dw NoEffect            ; SURF_MAIL

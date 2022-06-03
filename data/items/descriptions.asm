@@ -49,7 +49,7 @@ ItemDescriptions:
 	dw SodaPopDesc
 	dw LemonadeDesc
 	dw XAttackDesc
-	dw TeruSama4Desc
+	dw NapkinDesc
 	dw XDefendDesc
 	dw XSpeedDesc
 	dw XSpecialDesc
@@ -133,7 +133,7 @@ ItemDescriptions:
 	dw StardustDesc
 	dw StarPieceDesc
 	dw BasementKeyDesc
-	dw PassDesc
+	dw FossilRockDesc
 	dw TeruSama13Desc
 	dw TeruSama14Desc
 	dw TeruSama15Desc
@@ -177,7 +177,7 @@ ItemDescriptions:
 	dw SquirtBottleDesc
 	dw TeruSama27Desc
 	dw SoftPillowDesc
-	dw RainbowWingDesc
+	dw LargePinDesc
 	dw SurfBoardDesc
 	dw BrickPieceDesc
 	dw SurfMailDesc
@@ -428,7 +428,6 @@ DireHitDesc:
 	db   "Raises critical"
 	next "hit ratio.@"
 
-TeruSama4Desc:
 TeruSama5Desc:
 TeruSama6Desc:
 TeruSama9Desc:
@@ -449,7 +448,6 @@ TeruSama34Desc:
 TeruSama35Desc:
 TeruSama36Desc:
 TeruSama37Desc:
-PassDesc:
 MachinePartDesc:
 LostItemDesc:
 MysteryEggDesc:
@@ -837,7 +835,7 @@ SquirtBottleDesc:
 	db   "A bottle used for"
 	next "watering plants.@"
 
-RainbowWingDesc:
+; unreferenced
 	db   "A mystical feather"
 	next "of rainbow colors.@"
 
@@ -934,11 +932,23 @@ NeedleDesc:
 
 SoftPillowDesc:
 	db   "Quickly makes a"
-	next "#MON friendly."
+	next "#MON friendly.@"
 
 WhopperDesc:
 	db   "Quickly makes a"
-	next "#MON comfy."
+	next "#MON comfy.@"
+
+FossilRockDesc:
+	db   "Might be a fossil"
+	next "of some sort.@"
+
+LargePinDesc:
+	db   "An antiquated pin"
+	next "for secure change.@"
+
+NapkinDesc:
+	db   "Has some writing"
+	next "etched upon it.@"
 
 ; unused
 	db   "A TM that teaches"

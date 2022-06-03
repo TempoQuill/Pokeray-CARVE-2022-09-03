@@ -55,7 +55,7 @@
 	const SODA_POP     ; 2f
 	const LEMONADE     ; 30
 	const X_ATTACK     ; 31
-	const ITEM_32      ; 32
+	const NAPKIN       ; 32
 	const X_DEFEND     ; 33
 	const X_SPEED      ; 34
 	const X_SPECIAL    ; 35
@@ -139,7 +139,7 @@
 	const STARDUST     ; 83
 	const STAR_PIECE   ; 84
 	const BASEMENT_KEY ; 85
-	const PASS         ; 86
+	const FOSSIL_ROCK  ; 86
 	const ITEM_87      ; 87
 	const ITEM_88      ; 88
 	const ITEM_89      ; 89
@@ -183,7 +183,7 @@
 	const SQUIRTBOTTLE ; af
 	const ITEM_B0      ; b0
 	const SOFT_PILLOW  ; b1
-	const RAINBOW_WING ; b2
+	const LARGE_PIN    ; b2
 	const SURF_BOARD   ; b3
 	const BRICK_PIECE  ; b4
 	const SURF_MAIL    ; b5

@@ -13,6 +13,6 @@ ItemPokemonCombinations:
 	item_pokecombo PARAS,     MUSHROOM,    2,  BUDDING_SEED, 1
 	item_pokecombo METABEAK,  GOLD_LEAF,   12, PIPE_FEATHER, 6, SILVER_LEAF,  2
 ;	item_pokecombo FOSSLIX,   BRICK_PIECE, 10, FOSSIL_ROCK,  3
-;	item_pokecombo PARABUD,   MUSHROOM,    1,  BUDDING_SEED, 1
-;	item_pokecombo KURSTRAW,  LARGE_PIN,   1,  POKE_DOLL,    1
-;	item_pokecombo PANGSHI,   NAPKIN,      1,  POKE_DOLL,    1
+	item_pokecombo PARABUD,   MUSHROOM,    1,  BUDDING_SEED, 1
+	item_pokecombo KURSTRAW,  LARGE_PIN,   1,  POKE_DOLL,    1
+	item_pokecombo PANGSHI,   NAPKIN,      1,  POKE_DOLL,    1

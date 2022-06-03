@@ -6,7 +6,6 @@
 ; some of these entries are unused because pokemon can't hold key items
 
 TimeCapsule_CatchRateItems:
-	db ITEM_32,      FILLINGBERRY ; NAPKIN
 	db POKE_FLUTE,   FILLINGBERRY ; POKE_FLUTE
 	db MYSTERY_EGG,  FILLINGBERRY ; DUCKY_AMULET
 	db ITEM_46,      BERRY        ; CORNERTICKET
@@ -15,7 +14,6 @@ TimeCapsule_CatchRateItems:
 	db MACHINE_PART, BERRY
 	db ITEM_81,      BERRY
 	db LOST_ITEM,    BERRY
-	db PASS,         BERRY        ; FOSSIL_ROCK
 	db ITEM_87,      BERRY        ; STADIUM_BAND
 	db ITEM_88,      BERRY        ; BLUE_LEAF
 	db ITEM_89,      BERRY        ; WHITE_LEAF
@@ -23,7 +21,6 @@ TimeCapsule_CatchRateItems:
 	db ITEM_99,      BERRY        ; SLEAK_GENE
 	db ITEM_AB,      BERRY        ; VINE_MAIL
 	db ITEM_B0,      BERRY        ; CHORD_MAIL
-	db RAINBOW_WING, BERRY        ; LARGE_PIN
 	db ITEM_BE,      BERRY        ; HELIX_FOSSIL
 	db -1,           BERRY
 	db 0 ; end
