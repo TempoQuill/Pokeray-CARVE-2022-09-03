@@ -2101,9 +2101,12 @@ Music_StereoPanning:
 	; skip param
 	bc_offset CHANNEL_MUSIC_ADDRESS
 	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	inc hl
+	ld d, [hl]
+	ld e, a
+	inc de
+	ld [hl], d
+	dec hl
+	ld [hl], e
 	ret
 
 .pan_channel
@@ -2190,8 +2193,7 @@ Music_TempoRelative:
 	add hl, de
 	ld e, l
 	ld d, h
-	call SetGlobalTempo
-	ret
+	jp SetGlobalTempo
 
 Music_SFXPriorityOn:
 ; turn sfx priority on

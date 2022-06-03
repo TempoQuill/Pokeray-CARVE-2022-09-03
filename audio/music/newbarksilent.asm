@@ -144,6 +144,8 @@ Music_NewBarkTownSilent_Ch2:
 .mainloop:
 	duty_cycle 2
 	note_type 6, 10, 7
+;	sound_call .sub1
+;	sound_call .sub1
 .loop1:
 	octave 2
 	note D_, 4
@@ -197,6 +199,7 @@ Music_NewBarkTownSilent_Ch2:
 	note C#, 4
 	sound_loop 2. .loop1
 .loop2:
+;	sound_call .sub2
 	note_type 6, 9, 7
 	duty_cycle 2
 	octave 4
@@ -214,6 +217,15 @@ Music_NewBarkTownSilent_Ch2:
 	note D_, 4
 	note C#, 16
 	sound_loop 2. .loop2
+;	sound_call .sub2
+;	volume_envelope 8, 7
+;	octave 5
+;	note B_, 6
+;	note A_, 6
+;	volume_envelope 7, 7
+;	octave 6
+;	note D_, 4
+;	note E_, 16
 	sound_jump .mainloop
 
 Music_NewBarkTownSilent_Ch3:
@@ -229,6 +241,7 @@ Music_NewBarkTownSilent_Ch3:
 	note G_, 2
 	note F#, 2
 	note E_, 2
+;	note G_, 2
 	note D_, 2
 	note F#, 6
 	note D_, 2
@@ -280,6 +293,11 @@ Music_NewBarkTownSilent_Ch3:
 	note G_, 16
 	note A_, 16
 	note G_, 16
+;	note A_, 14
 	note A_, 12
+;	volume_envelope 1, 0
 	vibrato 22, 2, 3
+;	octave 5
+;	note D_, 1
+;	note E_, 1
 	sound_jump .mainloop

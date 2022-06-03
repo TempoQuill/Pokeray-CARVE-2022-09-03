@@ -9,44 +9,40 @@ Music_Portite: ; GO ICHINOSE, DANIEL INGRAM(INTRO), MINAKO HAMANO
 Music_Portite_Ch1:
 	tempo 153
 	volume 7
-	stereo_panning TRUE, TRUE
 	duty_cycle 3
 	vibrato 8, 2, 2
 	note_type 6, 10, 3
 .loop1:
-;	stereo_panning FALSE, TRUE
-;	octave 2
-;	note A_, 4
+	stereo_panning FALSE, TRUE
 	octave 2
-	note G_, 1
-	note A_, 3
+	note A_, 4
 	note A#, 4
 	octave 3
 	note F_, 4
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	octave 2
 	note A#, 4
 	octave 3
 	note C_, 4
 	note F_, 4
-;	stereo_panning FALSE, TRUE
+	stereo_panning FALSE, TRUE
 	octave 2
 	note A#, 8
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	note F_, 4
 	note A#, 4
-;	stereo_panning FALSE, TRUE
+	stereo_panning FALSE, TRUE
 	octave 3
 	note D_, 2
 	note F_, 2
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	octave 2
 	note A#, 1
 	octave 3
 	note D_, 1
 	note F_, 2
 	rest 4
-;	stereo_panning FALSE, TRUE
+	stereo_panning FALSE, TRUE
 	octave 2
 	note A#, 1
 	octave 3
@@ -259,8 +255,7 @@ Music_Portite_Ch1:
 	sound_ret
 
 Music_Portite_Ch2:
-;	stereo_panning TRUE, TRUE
-	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, TRUE
 	duty_cycle 3
 	vibrato 18, 4, 4
 	note_type 6, 12, 3
@@ -282,7 +277,6 @@ Music_Portite_Ch2:
 	rest 4
 	sound_loop 2, .loop1
 .mainloop:
-	stereo_panning TRUE, TRUE
 	volume_envelope 12, 2
 .loop2:
 	transpose 1, 5
@@ -415,8 +409,7 @@ Music_Portite_Ch2:
 	sound_ret
 
 Music_Portite_Ch3:
-;	stereo_panning TRUE, FALSE
-	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, FALSE
 	vibrato 11, 2, 3
 	note_type 12, 2, 3
 	octave 4
@@ -434,11 +427,11 @@ Music_Portite_Ch3:
 	octave 3
 	note F_, 2
 	rest 2
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	note A#, 2
 	rest 2
 .mainloop:
-;	stereo_panning FALSE, TRUE
+	stereo_panning FALSE, TRUE
 	vibrato 11, 1, 3
 	note_type 6, 1, 4
 	sound_call .sub1

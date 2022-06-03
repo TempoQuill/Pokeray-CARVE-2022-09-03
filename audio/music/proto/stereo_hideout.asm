@@ -241,7 +241,6 @@ Music_HavocHideout_Ch2:
 	octave 4
 	note C_, 1
 	note C#, 12
-	stereo_panning TRUE, FALSE
 	octave 2
 	note G_, 2
 	rest 4
@@ -251,7 +250,6 @@ Music_HavocHideout_Ch2:
 	rest 4
 	octave 3
 	note C#, 2
-	stereo_panning TRUE, TRUE
 	note E_, 2
 	note F_, 2
 	note F#, 8
@@ -268,11 +266,9 @@ Music_HavocHideout_Ch2:
 	rest 2
 	octave 3
 	note B_, 14
-	stereo_panning TRUE, FALSE
 	octave 2
 	note B_, 2
 	rest 4
-	stereo_panning FALSE, TRUE
 	duty_cycle 1
 	octave 3
 	note A_, 2
@@ -282,7 +278,6 @@ Music_HavocHideout_Ch2:
 	note E_, 2
 	note F#, 2
 	note A_, 2
-	stereo_panning TRUE, TRUE
 	duty_cycle 0
 	octave 3
 	note E_, 2
@@ -304,7 +299,6 @@ Music_HavocHideout_Ch2:
 	note_type 12, 13, 0
 	note F#, 16
 	duty_cycle 1
-	stereo_panning FALSE, TRUE
 	volume_envelope 13, 1
 	note B_, 2
 	note B_, 2
@@ -314,8 +308,7 @@ Music_HavocHideout_Ch2:
 	sound_jump .mainloop
 
 Music_HavocHideout_Ch3:
-;	stereo_panning TRUE, TRUE
-	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, TRUE
 	note_type 12, 0, 0
 	rest 2
 .mainloop:
@@ -494,23 +487,20 @@ Music_HavocHideout_Ch3:
 
 Music_HavocHideout_Ch4:
 	toggle_noise 3
-	stereo_panning TRUE, TRUE
 	drum_speed 6
 	drum_note 1, 2
 	drum_note 2, 2
 .mainloop:
-;	stereo_panning TRUE, TRUE
-	stereo_panning TRUE, FALSE
-	drum_note 5, 2
-;	stereo_panning TRUE, FALSE
 	stereo_panning TRUE, TRUE
+	drum_note 5, 2
+	stereo_panning TRUE, FALSE
 	drum_note 8, 2
 	drum_note 9, 2
 	drum_note 8, 2
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 3, 2
 	sound_call .sub1
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	drum_note 8, 2
 	drum_note 9, 1
 	drum_note 8, 1
@@ -521,45 +511,45 @@ Music_HavocHideout_Ch4:
 	drum_note 8, 2
 	drum_note 9, 2
 	sound_call .sub1
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 3, 2
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	drum_note 9, 2
 	drum_note 8, 2
 	sound_loop 8, .mainloop
 .loop1:
 	sound_call .sub2
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	drum_note 9, 2
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 1, 2
 	sound_call .sub2
 	drum_note 1, 2
 	drum_note 1, 2
 	sound_loop 3, .loop1
 	sound_call .sub2
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	drum_note 9, 2
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 1, 2
 	drum_note 11, 2
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	drum_note 8, 2
 	drum_note 9, 2
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 2, 2
 	drum_note 1, 2
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	drum_note 8, 2
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 11, 2
 	drum_note 1, 2
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	drum_note 8, 2
 	drum_note 8, 2
 	drum_note 9, 2
 	drum_note 8, 2
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 1, 1
 	drum_note 1, 1
 	drum_note 1, 2
@@ -568,45 +558,41 @@ Music_HavocHideout_Ch4:
 	sound_jump .mainloop
 
 .sub1:
-;	stereo_panning TRUE, TRUE
-	stereo_panning TRUE, FALSE
-	drum_note 5, 2
 	stereo_panning TRUE, TRUE
+	drum_note 5, 2
 	drum_note 3, 2
-	stereo_panning TRUE, FALSE
 	drum_note 5, 2
-;	stereo_panning TRUE, FALSE
-	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, FALSE
 	drum_note 8, 2
 	drum_note 9, 2
 	drum_note 8, 1
 	drum_note 8, 1
 	drum_note 9, 2
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 3, 2
 	sound_ret
 
 .sub2:
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 11, 2
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	drum_note 8, 2
 	drum_note 9, 2
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 2, 2
 	drum_note 1, 2
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	drum_note 8, 2
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 4, 2
 	drum_note 11, 2
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	drum_note 8, 2
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 11, 2
-;	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, FALSE
 	drum_note 9, 2
-;	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, TRUE
 	drum_note 11, 2
 	drum_note 1, 2
 	drum_note 2, 2

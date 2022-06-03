@@ -1,7 +1,7 @@
 Music_RayShadeOpening1:
 ; engine
 ; OCT 2 2019
-	channel_count 1
+	channel_count 3
 	channel 1, Music_RayShadeOpening1_Ch1
 	channel 2, Music_RayShadeOpening1_Ch2
 	channel 3, Music_RayShadeOpening1_Ch3

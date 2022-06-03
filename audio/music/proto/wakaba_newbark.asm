@@ -229,6 +229,7 @@ Wakaba_Ch3:
 	note G_, 2
 	note F#, 2
 	note E_, 2
+;	note G_, 2
 	note D_, 2
 	note F#, 6
 	note D_, 2
@@ -280,6 +281,11 @@ Wakaba_Ch3:
 	note G_, 16
 	note A_, 16
 	note G_, 16
+;	note A_, 14
 	note A_, 12
+;	volume_envelope 1, 0
 	vibrato 22, 2, 3
+;	octave 5
+;	note D_, 1
+;	note E_, 1
 	sound_jump .mainloop

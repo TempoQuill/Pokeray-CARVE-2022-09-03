@@ -1,6 +1,6 @@
 Music_RayShadeOpening2: ; JUNICHI MASUDA, WILLIAM ANDERSON(INTRO)
 ; OCT 2 2019
-	channel_count 1
+	channel_count 4
 	channel 1, Music_RayShadeOpening2_Ch1
 	channel 2, Music_RayShadeOpening2_Ch2
 	channel 3, Music_RayShadeOpening2_Ch3
