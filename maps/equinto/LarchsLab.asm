@@ -565,16 +565,16 @@ LarchsLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 11, 6, COTTAGE_TOWN, 4
-	warp_event 11, 7, COTTAGE_TOWN, 4
+	warp_event 6, 11, COTTAGE_TOWN, 4
+	warp_event 7, 11, COTTAGE_TOWN, 4
 
 	def_coord_events
 	coord_event 5, 6, SCENE_LARCHSLAB_CANT_LEAVE, CantLeaveScene
 	coord_event 5, 7, SCENE_LARCHSLAB_CANT_LEAVE, CantLeaveScene
-	coord_event 8, 7, SCENE_LARCHSLAB_AIDE_GIVES_POTION, PotionScene1
-	coord_event 9, 6, SCENE_LARCHSLAB_AIDE_GIVES_POTION, PotionScene2
-	coord_event 8, 7, SCENE_LARCHSLAB_AIDE_GIVES_POKE_BALLS, PokeBallScene1
-	coord_event 9, 6, SCENE_LARCHSLAB_AIDE_GIVES_POKE_BALLS, PokeBallScene2
+	coord_event 7, 8, SCENE_LARCHSLAB_AIDE_GIVES_POTION, PotionScene1
+	coord_event 6, 9, SCENE_LARCHSLAB_AIDE_GIVES_POTION, PotionScene2
+	coord_event 7, 8, SCENE_LARCHSLAB_AIDE_GIVES_POKE_BALLS, PokeBallScene1
+	coord_event 6, 9, SCENE_LARCHSLAB_AIDE_GIVES_POKE_BALLS, PokeBallScene2
 
 	def_bg_events
 	bg_event  4, 0, BGEVENT_READ, WindowCloseScript
