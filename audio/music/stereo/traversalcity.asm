@@ -398,6 +398,7 @@ Music_TraversalCity_Ch3:
 	octave 4
 	note E_, 4
 	sound_call .sub5
+	octave 4
 	note E_, 4
 	volume_envelope 1, 6
 	octave 3
@@ -414,8 +415,10 @@ Music_TraversalCity_Ch3:
 	note F#, 4
 	stereo_panning TRUE, FALSE
 	sound_call .sub5
+	octave 4
 	note D_, 4
 	sound_call .sub5
+	octave 4
 	note F#, 4
 	volume_envelope 1, 6
 	octave 2
@@ -492,6 +495,7 @@ Music_TraversalCity_Ch3:
 	sound_call .sub6
 	transpose 0, 0
 	sound_call .sub5
+	octave 4
 	note D_, 4
 	sound_call .sub3
 	transpose 0, 2
@@ -594,7 +598,6 @@ Music_TraversalCity_Ch3:
 	volume_envelope 2, 5
 	octave 3
 	note A_, 4
-	octave 4
 	sound_ret
 	
 .sub6:

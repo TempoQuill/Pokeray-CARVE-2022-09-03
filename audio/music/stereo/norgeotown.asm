@@ -714,7 +714,7 @@ Music_NorgeoTown_Ch3:
 
 Music_NorgeoTown_Ch4:
 	toggle_noise 5
-	drum_note 12
+	drum_speed 12
 	rest 2
 .mainloop:
 	sound_call .sub1

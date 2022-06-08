@@ -37,8 +37,8 @@ Music_Portite_Ch1:
 	note A#, 4
 ;	stereo_panning FALSE, TRUE
 	octave 3
-	note D_, 2
-	note F_, 2
+	note D_, 4
+	note F_, 4
 ;	stereo_panning TRUE, FALSE
 	octave 2
 	note A#, 1

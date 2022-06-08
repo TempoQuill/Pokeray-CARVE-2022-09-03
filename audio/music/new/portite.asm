@@ -28,8 +28,8 @@ Music_Portite_Ch1:
 	note F_, 4
 	note A#, 4
 	octave 3
-	note D_, 2
-	note F_, 2
+	note D_, 4
+	note F_, 4
 	octave 2
 	note A#, 1
 	octave 3
