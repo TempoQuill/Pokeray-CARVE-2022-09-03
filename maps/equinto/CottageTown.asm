@@ -1,6 +1,7 @@
 	object_const_def
 	const COTTAGETOWN_YOUNGSTER
 	const COTTAGETOWN_COOLTRAINER_F
+	const COTTAGETOWN_FISHER
 
 CottageTown_MapScripts:
 	def_scene_scripts
@@ -64,6 +65,9 @@ YounsterCatchesYouSceneSouth:
 	special RestartMapMusic
 	end
 
+CottageFisherScript:
+	jumptextfaceplayer CottageTechText
+
 RivalsHouseSign:
 	jumptext RivalHouseText
 
@@ -118,6 +122,17 @@ RuntoYoungsterNorth:
 	step LEFT
 	step LEFT
 	step_end
+
+CottageTechText:
+	text "Wow, is technology"
+	line "advancing!"
+
+	para "You can now make"
+	line "your own #MON"
+
+	para "and they'll look"
+	line "identical!"
+	done
 
 GearGushText:
 	text "That #GEAR!"
@@ -227,3 +242,4 @@ CottageTown_MapEvents:
 	def_object_events
 	object_event 12, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CottageYScript,   -1
 	object_event  9,  3, SPRITE_LASS,      SPRITEMOVEDATA_WALK_UP_DOWN,    1, 0, -1, -1, PAL_NPC_RED,   OBJECTTYPE_SCRIPT, 0, CottageCTFScript, -1
+	object_event 14,  6, SPRITE_FISHER,    SPRITEMOVEDATA_WALK_UP_DOWN,    1, 0, -1, -1, PAL_NPC_BLUE,  OBJECTTYPE_SCRIPT, 0, CottageFisherScript, -1
