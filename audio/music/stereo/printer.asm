@@ -26,6 +26,8 @@ Music_Printer_Ch3:
 	sound_call .sub1
 .mainloop:
 	sound_call .sub2
+	sound_loop 4, .mainloop
+	sound_call .sub3
 	note F#, 1
 	rest 1
 	octave 5
@@ -54,19 +56,15 @@ Music_Printer_Ch3:
 	octave 4
 	note D#, 1
 	rest 1
+.loop1:
 	sound_call .sub2
-	sound_call .sub1
-	note E_, 1
-	rest 1
-	note B_, 1
-	rest 1
-	note E_, 1
-	rest 1
-	note B_, 1
-	rest 1
-	note E_, 1
+	sound_loop 4, .loop1
 	sound_call .sub3
+	sound_call .sub1
+	sound_call .sub2
+	note E_, 1
 	sound_call .sub4
+	sound_call .sub5
 	note B_, 1
 	note A#, 1
 	note B_, 1
@@ -76,7 +74,7 @@ Music_Printer_Ch3:
 	note F#, 1
 	rest 1
 	note G#, 1
-	sound_call .sub3
+	sound_call .sub4
 	note F#, 1
 	rest 1
 	note A_, 1
@@ -122,7 +120,13 @@ Music_Printer_Ch3:
 	rest 1
 	note B_, 1
 	rest 1
-	sound_loop 8, .sub2
+	note E_, 1
+	rest 1
+	note B_, 1
+	rest 1
+	sound_ret
+
+.sub3:
 	note F#, 1
 	rest 1
 	note A_, 1
@@ -133,7 +137,7 @@ Music_Printer_Ch3:
 	rest 1
 	sound_ret
 
-.sub3:
+.sub4:
 	rest 1
 	octave 3
 	note B_, 1
@@ -143,7 +147,7 @@ Music_Printer_Ch3:
 	rest 1
 	note D_, 1
 	rest 1
-.sub3loop1:
+.sub4loop1:
 	note D#, 1
 	rest 1
 	note F#, 1
@@ -154,8 +158,8 @@ Music_Printer_Ch3:
 	octave 4
 	note F#, 1
 	rest 1
-	sound_loop 2, .sub3loop1
-.sub3loop2:
+	sound_loop 2, .sub4loop1
+.sub4loop2:
 	note E_, 1
 	rest 1
 	note G#, 1
@@ -166,8 +170,8 @@ Music_Printer_Ch3:
 	octave 4
 	note G#, 1
 	rest 1
-	sound_loop 2, .sub3loop2
-.sub4:
+	sound_loop 2, .sub4loop2
+.sub5:
 	note F#, 1
 	rest 1
 	note A_, 1

@@ -159,8 +159,9 @@ PokeCenter_Ch1:
 PokeCenter_Ch2:
 	duty_cycle 2
 	note_type 12, 12, 1
+;	note_type 12, 2, 8
 .mainloop:
-	stereo_panning TRUE, FALSE
+;	stereo_panning TRUE, FALSE
 	octave 2
 	note D_, 1
 	rest 5
