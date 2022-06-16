@@ -54,9 +54,9 @@ DoBattle:
 	call SafeLoadTempTilemapToTilemap
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
-	jp z, .tutorial_debug
+	jp z, .auto_debug
 	cp BATTLETYPE_TUTORIAL
-	jp z, .tutorial_debug
+	jp z, .auto_debug
 	xor a
 	ld [wCurPartyMon], a
 .loop2
@@ -115,7 +115,7 @@ DoBattle:
 .not_linked_2
 	jp BattleTurn
 
-.tutorial_debug
+.auto_debug
 	jp BattleMenu
 
 WildFled_EnemyFled_LinkBattleCanceled:
@@ -4610,7 +4610,7 @@ BattleMenu:
 	ld a, [wInputType]
 	or a
 	jr z, .skip_dude_pack_select
-	farcall _DudeAutoInput_DownA
+	farcall _AutoInput_DownA
 .skip_dude_pack_select
 	callfar LoadBattleMenu
 
@@ -4683,12 +4683,7 @@ BattleMenu_Pack:
 	ldh [hBGMapMode], a
 	call _LoadBattleFontsHPBar
 	call ClearSprites
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial2
 	call GetBattleMonBackpic
-
-.tutorial2
 	call GetEnemyMonFrontpic
 	ld a, $1
 	ld [wMenuCursorY], a
@@ -8608,15 +8603,7 @@ InitBackPic:
 
 GetTrainerBackpic:
 ; Load the player character's backpic (6x6) into VRAM starting from vTiles2 tile $31.
-
-; Special exception for Dude.
 	ld hl, ChrisBackpic
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr nz, .ok
-	ld hl, DudeBackpic
-
-.ok:
 	ld de, vTiles2 tile $31
 	ld b, BANK(ChrisBackpic) ; aka BANK(DudeBackpic)
 	ld c, 7 * 7

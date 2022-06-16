@@ -258,6 +258,8 @@ PokeBallEffect:
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	jp z, .catch_without_fail
+	cp BATTLETYPE_DEBUG
+	jp z, .catch_without_fail
 	ld a, [wBallUsedBuffer]
 	cp MASTER_BALL
 	jp z, .catch_without_fail
@@ -523,7 +525,7 @@ PokeBallEffect:
 	ld [wTempSpecies + 1], a
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
-	jp z, .FinishTutorial
+	jp z, .FinishAuto
 
 	ld hl, Text_GotchaMonWasCaught
 	call PrintText
@@ -734,7 +736,7 @@ PokeBallEffect:
 	call LoadStandardFont
 	jr .return_from_capture
 
-.FinishTutorial:
+.FinishAuto:
 	ld hl, Text_GotchaMonWasCaught
 	jr .shake_and_break_free
 
