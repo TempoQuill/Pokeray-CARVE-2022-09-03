@@ -31,7 +31,7 @@ _InitSound::
 .clearsound
 ;	sound channel   1      2      3      4
 	xor a
-	ld [hli], a ; rNR10, rNR20, rNR30, rNR40 ; sweep = 0
+	ld [hli], a ; rNR10,        rNR30        ; sweep = 0
 
 	ld [hli], a ; rNR11, rNR21, rNR31, rNR41 ; length/wavepattern = 0
 	ld a, $8
@@ -355,7 +355,7 @@ UpdateChannels:
 	ldh a, [rNR52]
 	and %10001101 ; ch2 off
 	ldh [rNR52], a
-	ld hl, rNR20
+	ld hl, rNR21 - 1 ; no sweep
 	jp ClearChannel
 
 .ch2_noise_sampling
@@ -496,7 +496,7 @@ UpdateChannels:
 	ldh a, [rNR52]
 	and %10000111 ; ch4 off
 	ldh [rNR52], a
-	ld hl, rNR40
+	ld hl, rNR41 - 1 ; no sweep
 	jp ClearChannel
 
 _CheckSFX:
@@ -2906,12 +2906,12 @@ ClearChannels::
 	ret
 
 ClearChannel:
-; input: hl = beginning hw sound register (rNR10, rNR20, rNR30, rNR40)
+; input: hl = beginning hw sound register (rNR10, rNR30)
 ; output: 00 00 08 00 80
 
 ;	sound channel   1      2      3      4
 	xor a
-	ld [hli], a ; rNR10, rNR20, rNR30, rNR40 ; sweep = 0
+	ld [hli], a ; rNR10,        rNR30        ; sweep = 0
 
 	ld [hli], a ; rNR11, rNR21, rNR31, rNR41 ; length/wavepattern = 0
 	ld a, $8
