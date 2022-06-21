@@ -52,8 +52,8 @@ NurseGoodbyeText:
 	done
 
 NursePokerusText:
-	text "Your #MON ap-"
-	line "pear to have a"
+	text "Your #MON"
+	line "appear to have a"
 	cont "passive virus."
 
 	para "They're healthy and"
@@ -164,7 +164,7 @@ AskNumber1MText:
 	done
 
 AskNumber2MText:
-	text "Register the e-"
+	text "Register his e-"
 	line "mail address?"
 	done
 
@@ -173,7 +173,7 @@ RegisteredNumberFText:
 	text "<PLAYER> registered"
 	line "@"
 	text_ram wStringBuffer3
-	text "'s number."
+	text "'s e-mail."
 	done
 
 NumberAcceptedMText:
@@ -212,7 +212,7 @@ AskNumber1FText:
 	done
 
 AskNumber2FText:
-	text "Register the e-"
+	text "Register her e-"
 	line "mail address?"
 	done
 
@@ -242,7 +242,7 @@ RematchFText:
 
 ReceivedItemText:
 	text "<PLAYER> recieved"
-	line "a @"
+	line "a(n) @"
 	text_ram wStringBuffer4
 	text "."
 	done

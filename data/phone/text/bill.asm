@@ -150,23 +150,25 @@ BillPhoneAssemblyText:
 	para "and I noticed a"
 	line "few of the new"
 
-	para "#MON seemed to"
-	line "be structurally"
-	cont "different."
+	para "#MONs' struc-"
+	line "tures differed"
+	cont "quite a bit. So I"
 
-	para "Found a few items"
+	para "found a few items"
 	line "around me, put 'em"
 	cont "togther, and…"
 
-	para "I literally made a"
-	line "new friend."
+	para "POOF! I literally"
+	line "made a new friend."
 
 	para "I put those tool-"
 	line "boxes there to"
 
 	para "help you do the"
-	line "same. Let me know"
-	cont "what you think!"
+	line "same thing."
+
+	para "Lemme know what"
+	line "you think!"
 
 	para "Buh-bye now!"
 	done
