@@ -6781,8 +6781,10 @@ GiveExperiencePoints:
 	ld a, MON_BUILD
 	call GetPartyParamLocation
 	bit UNIVERSITY_TM_F, [hl]
-	call nz, BoostExp
-	jr nz, .skip_other_utm
+	jr z, .dragon_rage
+	call BoostExp
+	jr .skip_other_utm
+.dragon_rage
 	bit UNIVERSITY_DRAGON_RAGE_F, [hl]
 	call nz, BoostExp2
 .skip_other_utm
