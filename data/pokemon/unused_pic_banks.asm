@@ -11,7 +11,7 @@ BetaMonPicBanks: ; unreferenced
 	db ARTICUNO,  $15 + 5
 	db ARIADOS,   $15 + 6 ; JARANRA in pokegold-spaceworld
 	db ESPEON,    $15 + 7 ; COINTEN in pokegold-spaceworld
-	db OCTILLERY, $15 + 8 ; BOMSEEL in pokegold-spaceworld
+	db OCTILLERY, $15 + 8 ; BOMOCA  in pokegold-spaceworld
 	db LARVITAR,  $15 + 9 ; SNEASEL in pokegold-spaceworld
 	db $ff,       $15 + 10
 	db $ff,       $15 + 11
