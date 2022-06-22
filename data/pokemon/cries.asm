@@ -308,11 +308,11 @@ PokemonCries::
 	mon_cry CRY_ROAR_30,      262,  192 ; WARWOLF
 	mon_cry CRY_H46,         1320,  207 ; PORYSPHIA
 	mon_cry CRY_TANGELA,      280,  418 ; CHOAKING
-	mon_cry CRY_H45,            0,  256 ; SANDSCOUR
-	mon_cry CRY_H45,            0,  256 ; DRAGONISCE
+	mon_cry CRY_MANTINE,       79,  234 ; SANDSCOUR
+	mon_cry CRY_TIGER,        287,  430 ; DRAGONISCE
 	mon_cry CRY_RATTATA,       64,  510 ; RAVERMIN
 	mon_cry CRY_STARYU,      2046,  352 ; STARELLO
-	mon_cry CRY_H45,            0,  256 ; TEAROW
+	mon_cry CRY_GYARADOS,     864,  192 ; TEAROW
 	mon_cry CRY_GYARADOS,     430,   96 ; NOHTYP
 	mon_cry CRY_AMBLER,        14,  320 ; VENOKNIGHT
 	mon_cry CRY_EXEGGCUTE,   1962,  159 ; DUGQUINTET
