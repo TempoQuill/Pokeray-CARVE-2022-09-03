@@ -63,6 +63,7 @@ MOVE_LENGTH EQU const_value
 	const STAT_SPD
 	const STAT_SATK
 NUM_EV_STATS EQU const_value - 1
+NUM_EXP_STATS EQU NUM_EV_STATS
 	const STAT_SDEF
 NUM_STATS EQU const_value - 1
 NUM_BATTLE_STATS EQU NUM_STATS - 1 ; don't count HP

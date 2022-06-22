@@ -149,7 +149,7 @@ RayToGoldLinkComms:
 	jr nz, .party_loop
 	ld [de], a
 	ld hl, wTimeCapsulePartyMon1Species
-	call Function285db
+	call Link_ConvertPartyStructGoldToRay
 	ld de, MUSIC_NONE
 	call PlayMusic
 	ldh a, [hSerialConnectionStatus]
@@ -599,8 +599,7 @@ Link_PrepPartyData_Gold:
 	push de
 	push bc
 	call .ConvertPartyStructRayToGold
-	ld bc, PARTYMON_STRUCT_LENGTH
-	add hl, bc
+	bc_offset PARTYMON_STRUCT_LENGTH
 	pop bc
 	pop de
 	dec c
@@ -613,65 +612,93 @@ Link_PrepPartyData_Gold:
 	jp CopyBytes
 
 .ConvertPartyStructRayToGold:
-	ld d, h
-	ld e, l
+	; de - wTimeCapsulePartyMonx
+	; bc - wPartyMonx
+	ld b, h
+	ld c, l
+	push hl
+	push bc
 	de_offset MON_ITEM
 	ld a, [hl]
 	ld b, a
-	de_offset GOLDMON_ITEM
-	ld a, [hl]
 ; is it a TM or HM?
-	cp ITEM_BF
-; if so, call to update the constant
-	call nc, TimeCapsule_UpdateConstants
-	ld de, wTimeCapsulePlayerData
-	ld hl, 0
-	ld b, GOLDMON_SPECIES
-	ld c, MON_SPECIES
-	ld a, c
-; make a = b
-; inc if negative cp
-; dec if positive cp
-; continue if zero cp
-.convert_mon_loop
-	cp b
-	jr c, .inc
-	jr nz, .dec
-	inc b
-	ld c, a
-	ld a, b
-	cp GOLDMON_STRUCT_LENGTH
-	ret nc
-	ld a, c
-	cp PARTYMON_STRUCT_LENGTH
-	jr nc, .offset
-
-.next_byte
-	inc de
-	inc c
-	ld a, c
-	cp MON_CAUGHT_ITEM
-	jr z, .erase
-	jr .convert_mon_loop
-
-.inc
-	inc a
-	jr .convert_mon_loop
-
-.dec
-	dec a
-	jr .convert_mon_loop
-
-.erase
+	cp TM_DYNAMICPUNCH
+; if so, call to revert the constant
+	call nc, TimeCapsule_ItemReversion
+	pop bc
+	pop hl
+; species
+	call .transfer
+	inc bc
+	ld l, MON_STAT_EV - MON_ITEM
+.copypaste1
+; item
+; moves
+; id
+; exp
+	call .transfer
+	dec l
+	jr nz, .copypaste1
+	ld l, NUM_EV_STATS
+.copypaste2
+; ev to exp
+	; hp
+	; attack
+	; defense
+	; speed
+	; special
 	xor a
 	ld [de], a
-	jr .next_byte
+	inc de
+	call .transfer
+	dec l
+	jr nz, .copypaste2
+	ld l, MON_BUILD - MON_DVS
+.copypaste3
+; dvs
+; pp
+; bond
+; pokerus
+	call .transfer
+	dec l
+	jr nz, .copypaste3
+; misc to caught data
+	inc bc ; build
+	inc bc ; quality of life
+	inc bc ; caught item
+	xor a
+	ld [de], a
+	inc de
+	ld [de], a
+	inc de
+; level
+	call .transfer
+; status
+	call .transfer
+; redundant level (caught item)
+	xor a
+	ld [de], a
+	inc de
+	ld l, PARTYMON_STRUCT_LENGTH - MON_HP
+.copypaste4
+; hp
+; max hp
+; attack
+; defense
+; speed
+; special attack
+; special defense
+	call .transfer
+	dec l
+	jr nz, .copypaste4
+	ret
 
-.offset
-	push de
-	de_offset GOLDMON_STRUCT_LENGTH
-	pop de
-	jr .next_byte
+.transfer:
+	ld a, [bc]
+	inc bc
+	ld [de], a
+	inc de
+	ret
 
 Link_PrepPartyData_Ray:
 	ld de, wLinkData
@@ -784,12 +811,12 @@ Function285d3:
 	jr nz, .loop
 	ret
 
-Function285db:
+Link_ConvertPartyStructGoldToRay:
 	push hl
 	ld d, h
 	ld e, l
 	ld bc, wLinkOTPartyMonTypes
-	ld hl, wcae8
+	ld hl, wCurLinkOTPartyMonTypePointer
 	ld a, c
 	ld [hli], a
 	ld [hl], b
@@ -804,8 +831,7 @@ Function285db:
 	dec c
 	jr nz, .loop
 	pop hl
-	ld bc, PARTY_LENGTH * REDMON_STRUCT_LENGTH
-	add hl, bc
+	offset_bc PARTY_LENGTH * REDMON_STRUCT_LENGTH
 	ld de, wOTPartyMonOT
 	ld bc, PARTY_LENGTH * NAME_LENGTH
 	call CopyBytes
@@ -814,75 +840,98 @@ Function285db:
 	jp CopyBytes
 
 .ConvertToRay:
-	ld d, h
-	ld e, l
+; in
+;	de - wTimeCapsulePartyMonx
+;	bc - wOTPartyMonx
+	ld b, h
+	ld c, l
+	push bc
+	push hl
 	de_offset GOLDMON_ITEM
 	ld a, [hl]
 	ld b, a
-	de_offset MON_ITEM
-	ld a, [hl]
 ; is it a TM or HM from gold?
-	cp ITEM_BF
+	cp TM_DYNAMICPUNCH_GOLD
 ; if so, jump to update the constant, then come back to continue
-	call nc, TimeCapsule_UpdateConstants
-; replace any other item as needed
-	call TimeCapsule_ReplaceTeruSama
-	ld bc, GoldToRayConverter
-	ld de, wTimeCapsulePlayerData
-	ld hl, wTempMon
-	ld c, GOLDMON_SPECIES
-	ld b, MON_SPECIES
-	ld a, c
-; make a = b
-; inc if negative cp
-; dec if positive cp
-; continue if zero cp
-.convert_mon_loop
-	cp b
-	jr c, .inc
-	jr nz, .dec
-	inc b
-	ld c, a
-	ld a, b
-	cp GOLDMON_STRUCT_LENGTH
-	ret nc
-	ld a, c
-	cp PARTYMON_STRUCT_LENGTH
-	jr nc, .offset
-
-.next_byte
+	call nc, TimeCapsule_ItemUpdate
+	pop hl
+	pop bc
+; species
+	call .transfer
+	xor a
+	ld [bc], a
+	inc bc
+	ld l, GOLDMON_STAT_EXP - GOLDMON_ITEM
+.loop_1
+; item
+; moves
+; id
+; exp
+	call .transfer
+	dec l
+	jr nz, .loop_1
+	ld l, NUM_EXP_STATS
+.loop_2
+; exp to ev
+	; hp
+	; attack
+	; defense
+	; speed
+	; special
 	inc de
-	inc c
-	ld a, c
-	cp GOLDMON_UNKNOWN_1
-	jr z, .set_qol
-	jr .convert_mon_loop
-
-.inc
-	inc a
-	jr .convert_mon_loop
-
-.dec
-	dec a
-	jr .convert_mon_loop
-
-.set_qol
-	ld a, [de]
-	cp 0
-	jr nz, .convert_mon_loop
+	call .transfer
+	dec l
+	jr nz, .loop_2
+	ld l, GOLDMON_UNKNOWN_1 - GOLDMON_DVS
+.loop_3
+; dvs
+; pp
+; bond
+; pokerus
+	call .transfer
+	dec l
+	jr nz, .loop_3
+; caught data to misc
+	inc de
+	inc de
+	; build
+	xor a
+	ld [bc], a
+	inc bc
+	; quality of life
 	ld a, BASE_QUALITY_OF_LIFE
-	ld [de], a
-	ld a, c
-	jr .convert_mon_loop
+	ld [bc], a
+	inc bc
+	; caught item
+	xor a
+	ld [bc], a
+	inc bc
+; level
+	call .transfer
+; status
+	call .transfer
+; redundant level (caught item)
+	inc de
+	ld l, GOLDMON_STRUCT_LENGTH - GOLDMON_HP
+.loop_4
+; hp
+; max hp
+; attack
+; defense
+; speed
+; special attack
+; special defense
+	call .transfer
+	dec l
+	jr nz, .loop_4
+	ret
 
-.offset
-	push de
-	ld de, PARTYMON_STRUCT_LENGTH
-	add hl, de
-	pop de
-	jr .next_byte
-
-INCLUDE "data/pokemon/struct_converter.asm"
+.transfer:
+	ld a, [de]
+	inc de
+	ld [bc], a
+	inc bc
+	ret
 
 TimeCapsule_ReplaceTeruSama:
 	ld a, b
@@ -908,13 +957,51 @@ TimeCapsule_ReplaceTeruSama:
 
 INCLUDE "data/items/catch_rate_items.asm"
 
-TimeCapsule_UpdateConstants:
+TimeCapsule_ItemUpdate:
 	ld a, b
 	and a
 	ret z
 	push hl
 	ld hl, TimeCapsule_Gen2Items
-	jp TimeCapsule_ReplaceTeruSama.loop
+.loop
+	ld a, [hli]
+	and a
+	jr z, .end
+	cp b
+	jr z, .found
+	inc hl
+	jr .loop
+
+.found
+	ld b, [hl]
+
+.end
+	pop hl
+	ret
+
+TimeCapsule_ItemReversion:
+	ld a, b
+	and a
+	ret z
+	push hl
+	ld hl, TimeCapsule_Gen2Items
+	inc hl
+.loop
+	ld a, [hld]
+	and a
+	jr z, .end
+	cp b
+	jr z, .found
+	inc hl
+	inc hl
+	inc hl
+	jr .loop
+
+.found
+	ld b, [hl]
+.end
+	pop hl
+	ret
 
 INCLUDE "data/items/gen_2_items.asm"
 

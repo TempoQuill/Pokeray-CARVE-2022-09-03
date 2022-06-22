@@ -600,7 +600,7 @@ wc9bf:: ds 79
 wca0e:: ds 5
 wca13:: ds 113
 wca84:: ds 100
-wcae8:: dw
+wCurLinkOTPartyMonTypePointer:: dw
 wLinkOTPartyMonTypes:: ds 2 * PARTY_LENGTH
 	ds 84
 wcb4a:: ds 84
