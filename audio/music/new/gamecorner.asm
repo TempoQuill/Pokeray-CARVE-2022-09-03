@@ -16,8 +16,8 @@ Music_GameCorner_Ch1:
 	sound_loop 8, .loop1
 .loop2:
 	sound_call .sub1
-	rest 16
 	rest 10
+	rest 16
 	sound_loop 2, .loop2
 .mainloop:
 	volume_envelope 7, 2
