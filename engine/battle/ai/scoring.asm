@@ -394,8 +394,32 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_BURN,             AI_Smart_Burn
 	dbw EFFECT_FREEZE,           AI_Smart_Freeze
 	dbw EFFECT_FUNNY_STUFF,      AI_Smart_FunnyStuff
-	dbw EFFECT_SMOKESCREEN,      AI_Smart_AccuracyDown
+	dbw EFFECT_SMOKESCREEN,      AI_Smart_Smokescreen
 	db -1 ; end
+
+AI_Smart_Smokescreen:
+; accuracy down, but with skewed scoring, depending on poison
+	call AI_Smart_AccuracyDown
+	ld a, [wBattleMonStatus]
+	cp 1 << PSN
+	ret nz
+	; default score
+	ld a, 20
+	push af
+	sub [hl] ; how much did we run off?
+	ld c, a
+	pop af
+	jr c, .negative
+	sra c
+	sub c
+	ld [hl], a
+	ret
+
+.negative
+	sla c
+	sub c
+	ld [hl], a
+	ret
 
 AI_Smart_FunnyStuff:
 ; Greatly discourage Funny Stuff for Rock/Steel-types
