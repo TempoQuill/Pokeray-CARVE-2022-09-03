@@ -19,8 +19,6 @@ TimeCapsule_CatchRateItems:
 	db ITEM_89,      BERRY        ; WHITE_LEAF
 	db ITEM_95,      BERRY        ; HEAVY_GENE
 	db ITEM_99,      BERRY        ; SLEAK_GENE
-	db ITEM_AB,      BERRY        ; VINE_MAIL
-	db ITEM_B0,      BERRY        ; CHORD_MAIL
 	db ITEM_BE,      BERRY        ; HELIX_FOSSIL
 	db -1,           BERRY
 	db 0 ; end

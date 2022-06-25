@@ -82,6 +82,7 @@ INCBIN "gfx/mail/morph_mail_corner.1bpp"
 MailLargeCircleGFX:
 INCBIN "gfx/mail/large_circle.1bpp"
 
+VineMailBorderGFX:
 FlowerMailFlowerGFX:
 INCBIN "gfx/mail/flower_1.1bpp"
 INCBIN "gfx/mail/flower_2.1bpp"
@@ -101,6 +102,7 @@ INCBIN "gfx/mail/flower_mail_border.1bpp"
 LiteBlueMailBorderGFX:
 INCBIN "gfx/mail/litebluemail_border.1bpp"
 
+ChordMailBorderGFX:
 MusicMailBorderGFX:
 INCBIN "gfx/mail/music_mail_border.1bpp"
 

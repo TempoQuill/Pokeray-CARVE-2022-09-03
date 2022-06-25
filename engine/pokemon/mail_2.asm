@@ -104,6 +104,8 @@ MailGFXPointers:
 	dbw BLUESKY_MAIL, LoadBlueSkyMailGFX
 	dbw MUSIC_MAIL,   LoadMusicMailGFX
 	dbw MIRAGE_MAIL,  LoadMirageMailGFX
+	dbw VINE_MAIL,    LoadVineMailGFX
+	dbw CHORD_MAIL,      LoadChordMailGFX
 	db -1
 
 LoadSurfMailGFX:
@@ -461,6 +463,36 @@ Mail_Place6TileRow:
 	jr nz, .loop
 	ret
 
+LoadVineMailGFX:
+	push bc
+	ld hl, vTiles2 tile $31
+	ld de, PortraitMailBorderGFX
+	ld c, 5 * LEN_1BPP_TILE
+	call LoadMailGFX_Color2
+	ld de, PortraitMailUnderlineGFX
+	ld c, 1 * LEN_1BPP_TILE
+	call LoadMailGFX_Color2
+	ld hl, vTiles2 tile $3d
+	ld de, PortraitMailLargePokeballGFX
+	ld c, 4 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld de, PortraitMailSmallPokeballGFX
+	ld c, 1 * LEN_1BPP_TILE
+	call LoadMailGFX_Color2
+
+	call DrawMailBorder2
+	hlcoord 8, 15
+	ld a, $36
+	ld b, $a
+	call Mail_DrawRowLoop
+	call LovelyEonMail_PlaceIcons
+	ld a, $1
+	ld [wUnownLetter], a
+	hlcoord 1, 10
+	call PrepMonFrontpic
+	pop hl
+	jp MailGFX_PlaceMessage
+
 LoadFlowerMailGFX:
 	push bc
 	ld hl, vTiles2 tile $31
@@ -516,6 +548,36 @@ LoadFlowerMailGFX:
 	jp MailGFX_PlaceMessage
 
 LoadPortraitMailGFX:
+	push bc
+	ld hl, vTiles2 tile $31
+	ld de, PortraitMailBorderGFX
+	ld c, 5 * LEN_1BPP_TILE
+	call LoadMailGFX_Color2
+	ld de, PortraitMailUnderlineGFX
+	ld c, 1 * LEN_1BPP_TILE
+	call LoadMailGFX_Color2
+	ld hl, vTiles2 tile $3d
+	ld de, PortraitMailLargePokeballGFX
+	ld c, 4 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld de, PortraitMailSmallPokeballGFX
+	ld c, 1 * LEN_1BPP_TILE
+	call LoadMailGFX_Color2
+
+	call DrawMailBorder2
+	hlcoord 8, 15
+	ld a, $36
+	ld b, $a
+	call Mail_DrawRowLoop
+	call LovelyEonMail_PlaceIcons
+	ld a, $1
+	ld [wUnownLetter], a
+	hlcoord 1, 10
+	call PrepMonFrontpic
+	pop hl
+	jp MailGFX_PlaceMessage
+
+LoadChordMailGFX:
 	push bc
 	ld hl, vTiles2 tile $31
 	ld de, PortraitMailBorderGFX

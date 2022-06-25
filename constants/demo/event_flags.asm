@@ -49,4 +49,6 @@
 ; people
 	const EVENT_PLAYERS_HOUSE_MOM_1
 	const EVENT_PLAYERS_HOUSE_MOM_2          ; 2e
+; Pokecenter events ported from Gold
+	const EVENT_MYSTERY_GIFT_DELIVERY_GUY
 NUM_EVENTS EQU const_value

@@ -613,20 +613,21 @@ Link_PrepPartyData_Gold:
 
 .ConvertPartyStructRayToGold:
 	; de - wTimeCapsulePartyMonx
-	; bc - wPartyMonx
+	; bc - wPartyMon(c - dec)
 	ld b, h
 	ld c, l
-	push hl
 	push bc
+	push hl
 	de_offset MON_ITEM
 	ld a, [hl]
 	ld b, a
 ; is it a TM or HM?
-	cp TM_DYNAMICPUNCH
+	cp ITEM_C6
 ; if so, call to revert the constant
 	call nc, TimeCapsule_ItemReversion
-	pop bc
 	pop hl
+	pop bc
+	push bc
 ; species
 	call .transfer
 	inc bc
@@ -691,6 +692,7 @@ Link_PrepPartyData_Gold:
 	call .transfer
 	dec l
 	jr nz, .copypaste4
+	pop bc
 	ret
 
 .transfer:
@@ -852,7 +854,7 @@ Link_ConvertPartyStructGoldToRay:
 	ld b, a
 ; is it a TM or HM from gold?
 	cp TM_DYNAMICPUNCH_GOLD
-; if so, jump to update the constant, then come back to continue
+; if so, call to update the constant
 	call nc, TimeCapsule_ItemUpdate
 	pop hl
 	pop bc
@@ -934,6 +936,8 @@ Link_ConvertPartyStructGoldToRay:
 	ret
 
 TimeCapsule_ReplaceTeruSama:
+; unreferenced
+; supposed to replace glitch items that were a result from catch rates
 	ld a, b
 	and a
 	ret z
@@ -1588,9 +1592,9 @@ LinkTrade:
 	add hl, bc
 	ld a, [hli]
 	ld [wPlayerTrademonSpecies], a
+	push af
 	ld a, [hl]
 	ld [wPlayerTrademonSpecies + 1], a
-	push af
 	ld a, [wceed]
 	ld hl, wPartyMonOT
 	call SkipNames
@@ -1716,9 +1720,9 @@ LinkTrade:
 ; has otherwise no consequence.
 	ld a, [wCurPartySpecies + 1]
 	and a
-	jr z, .send_checkbyte
 	ld b, 1
 	pop af
+	jr nz, .send_checkbyte
 	ld c, a
 	cp MEW
 	jr z, .send_checkbyte
@@ -1859,7 +1863,7 @@ CheckTimeCapsuleCompatibility:
 ; 0: Party is okay
 ; 1: At least one Pokémon was introduced in Ray/Shade
 ; 2: At least one Pokémon has a move that was introduced in Ray/Shade
-; 3: At least one Pokémon is holding mail
+; 3: At least one Pokémon is holding mail from Ray/Shade
 
 ; If any party Pokémon was introduced in Ray/Shade, don't let it in.
 	ld hl, wPartySpecies
@@ -1867,14 +1871,17 @@ CheckTimeCapsuleCompatibility:
 .loop
 	ld a, [hli]
 	cp NEW_MONS
-	jr nc, .mon_too_new
+	push af
 	ld a, [hli]
+	jr nc, .mon_too_new
 	and a
 	jr nz, .mon_too_new
+	pop af
 	dec b
 	jr nz, .loop
 
-; If any party Pokémon is holding mail, don't let it in.
+; If any party Pokémon is holding newer mail, don't let it in.
+; message gets lost if the item is transformed.
 	ld a, [wPartyCount]
 	ld b, a
 	ld hl, wPartyMon1Item
@@ -1882,10 +1889,13 @@ CheckTimeCapsuleCompatibility:
 	push hl
 	push bc
 	ld d, [hl]
-	farcall ItemIsMail
+	ld a, d
+	cp VINE_MAIL
 	pop bc
 	pop hl
-	jr c, .mon_has_mail
+	jr c, .mon_has_new_mail
+	cp CHORD_MAIL
+	jr c, .mon_has_new_mail
 	ld de, PARTYMON_STRUCT_LENGTH
 	add hl, de
 	dec b
@@ -1911,6 +1921,8 @@ CheckTimeCapsuleCompatibility:
 	jr .done
 
 .mon_too_new
+	ld [wNamedObjectIndexBuffer + 1], a
+	pop af
 	ld [wNamedObjectIndexBuffer], a
 	call GetPokemonName
 	ld a, $1
@@ -1922,19 +1934,19 @@ CheckTimeCapsuleCompatibility:
 	call GetMoveName
 	call CopyName1
 	pop bc
-	call Function29ab3
+	call GetPartyPokemonName
 	ld a, $2
 	jr .done
 
-.mon_has_mail
-	call Function29ab3
+.mon_has_new_mail
+	call GetPartyPokemonName
 	ld a, $3
 
 .done
 	ld [wScriptVar], a
 	ret
 
-Function29ab3:
+GetPartyPokemonName:
 	ld a, [wPartyCount]
 	sub b
 	ld c, a
@@ -1944,8 +1956,7 @@ Function29ab3:
 	add hl, bc
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
-	call GetPokemonName
-	ret
+	jp GetPokemonName
 
 EnterTimeCapsule:
 	ld a, $4

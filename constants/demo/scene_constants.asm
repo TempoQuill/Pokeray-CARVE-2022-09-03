@@ -8,11 +8,11 @@ SCENE_DEFAULT  EQU 0
 ; do-nothing scene 1 when the event finishes.
 SCENE_FINISHED EQU 1
 
-; wPokecenter2FSceneID
-;	const_def 1
-;	const SCENE_POKECENTER2F_LEAVE_TRADE_CENTER       ; 1
-;	const SCENE_POKECENTER2F_LEAVE_COLOSSEUM          ; 2
-;	const SCENE_POKECENTER2F_LEAVE_TIME_CAPSULE       ; 3
+wPokecenter2FSceneID
+	const_def 1
+	const SCENE_POKECENTER2F_LEAVE_TRADE_CENTER       ; 1
+	const SCENE_POKECENTER2F_LEAVE_COLOSSEUM          ; 2
+	const SCENE_POKECENTER2F_LEAVE_TIME_CAPSULE       ; 3
 
 ; wLarchsLabSceneID
 	const_def 1

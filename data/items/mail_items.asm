@@ -9,4 +9,6 @@ MailItems:
 	db BLUESKY_MAIL
 	db MUSIC_MAIL
 	db MIRAGE_MAIL
+	db VINE_MAIL
+	db CHORD_MAIL
 	db -1

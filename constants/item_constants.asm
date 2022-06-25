@@ -176,12 +176,12 @@
 	const GORGEOUS_BOX ; a8
 	const SUN_STONE    ; a9
 	const POLKADOT_BOW ; aa
-	const ITEM_AB      ; ab
+	const VINE_MAIL    ; ab
 	const UP_GRADE     ; ac
 	const BERRY        ; ad
 	const FILLINGBERRY ; ae
 	const SQUIRTBOTTLE ; af
-	const ITEM_B0      ; b0
+	const CHORD_MAIL   ; b0
 	const SOFT_PILLOW  ; b1
 	const LARGE_PIN    ; b2
 	const SURF_BOARD   ; b3
@@ -322,5 +322,8 @@ MYSTERY_EGG EQU $45
 PARK_BALL EQU $b1
 RAINBOW_WING EQU $b2
 TM_DYNAMICPUNCH_GOLD EQU $bf
+TM_ZAP_CANNON_GOLD EQU $c6
+TM_ROCK_SMASH_GOLD EQU $c7
+
 HM_WHIRLPOOL EQU $fd
 HM_WATERFALL EQU $fe
