@@ -111,3 +111,4 @@ SpecialsPointers::
 	add_special PrintDiploma
 	add_special MrChrono
 	add_special GetFirstPokemonQualityOfLife
+	add_special ItemsForMon

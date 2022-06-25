@@ -419,3 +419,15 @@ ToolBoxText4:
 ToolBoxText5:
 	text "Assembling…"
 	done
+
+ToolBoxText6:
+	text "Congrats! You've"
+	line "made a new friend!"
+
+	para "It's a(n)"
+	line "@"
+	text_ram wStringBuffer1
+	text_start
+	text "!"
+	sound_dex_fanfare_20_49
+	done

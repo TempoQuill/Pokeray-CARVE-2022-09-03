@@ -484,6 +484,28 @@ QualityOfLifeCheckScript:
 AssemblePokemonScript:
 	opentext
 	writetext ToolBoxText1
+	yesorno
+	iffalse .decline
 	callasm SearchForItemPokeCombo
+	ifequal 2, .incombinable
+	ifequal 1, .noitem
+	writetext ToolBoxText5
+	special ItemsForMon
+	writetext ToolBoxText6
+	sjump .done
+
+.noitem:
+	writetext ToolBoxText2
+	sjump .done
+
+.incombinable
+	writetext ToolBoxText3
+	sjump .done
+
+.decline:
+	writetext ToolBoxText4
+	; fallthrough
+.done
+	waitbutton
 	closetext
 	end

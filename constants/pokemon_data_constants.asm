@@ -46,11 +46,11 @@ ASM_PARAMETER_LENGTH EQU 10
 	const COMBO_MAGNEMITE ; 0
 	const COMBO_STARYU    ; 1
 	const COMBO_PARAS     ; 2
-;	const COMBO_METABEAK  ; 3
+	const COMBO_METABEAK  ; 3
 ;	const COMBO_FOSSLIX   ; 4
-;	const COMBO_PARABUD   ; 5
-;	const COMBO_KURSTRAW  ; 6
-;	const COMBO_PANGSHI   ; 7
+	const COMBO_PARABUD   ; 5
+	const COMBO_KURSTRAW  ; 6
+	const COMBO_PANGSHI   ; 7
 NUM_ITEM_POKECOMBOS EQU const_value
 
 ; gender ratio constants

@@ -704,7 +704,7 @@ wIntroFrameCounter2:: db  ; 182 b6
 wcb19:: db                ; 183 b7
 ENDU ; cb2c 184 b8
 
-	ds 2
+wAssemblySpecies:: dw ; cb2c
 
 wEnemyTrainerItem1:: db ; cb2e
 wEnemyTrainerItem2:: db ; cb2f
