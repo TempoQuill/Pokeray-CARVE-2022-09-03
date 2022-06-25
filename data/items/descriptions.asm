@@ -170,12 +170,12 @@ ItemDescriptions:
 	dw GorgeousBoxDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
-	dw TeruSama26Desc
+	dw VineMailDesc
 	dw UpGradeDesc
 	dw BerryDesc
 	dw GoldBerryDesc
 	dw SquirtBottleDesc
-	dw TeruSama27Desc
+	dw ChordMailDesc
 	dw SoftPillowDesc
 	dw LargePinDesc
 	dw SurfBoardDesc
@@ -438,8 +438,6 @@ TeruSama14Desc:
 TeruSama15Desc:
 TeruSama21Desc:
 TeruSama22Desc:
-TeruSama26Desc:
-TeruSama27Desc:
 TeruSama29Desc:
 TeruSama30Desc:
 TeruSama32Desc:
@@ -949,6 +947,14 @@ LargePinDesc:
 NapkinDesc:
 	db   "Has some writing"
 	next "etched upon it.@"
+
+VineMailDesc:
+	db   "BURGELA-print mail"
+	next "(HOLD)."
+
+ChordMailDesc:
+	db   "PARBELL-print mail"
+	next "(HOLD)."
 
 ; unused
 	db   "A TM that teaches"

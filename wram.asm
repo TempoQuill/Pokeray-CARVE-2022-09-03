@@ -2134,13 +2134,14 @@ wPlayerState:: db ; d6c8
 wHallOfFameCount:: db ; d6c9
 wTradeFlags:: flag_array NUM_NPC_TRADES ; d6ca
 
-wCottageTownSceneID::                             db ; d6cb
-wPlayersHouse1FSceneID::                          db ; d6cc
-wLarchesHouseSceneID::                            db ; d6cd
-wRoute49HouseSceneID::                            db ; d6ce
-wTraversalCitySceneID::                           db ; d6cf
+wPokecenter2FSceneID::                            db ; d6cb
+wCottageTownSceneID::                             db ; d6cc
+wPlayersHouse1FSceneID::                          db ; d6cd
+wLarchesHouseSceneID::                            db ; d6ce
+wRoute49HouseSceneID::                            db ; d6cf
+wTraversalCitySceneID::                           db ; d6d0
 
-	ds $11f
+	ds $11e
 
 wEventFlags:: flag_array NUM_EVENTS ; d7ef
 

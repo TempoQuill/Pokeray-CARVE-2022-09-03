@@ -2,14 +2,17 @@ TimeCapsule_Gen2Items:
 ; when trading between Ray and Gold
 ; this table will convert constants that've been switched around
 ; unlike catch rate items, these are done two-way
+	; gold                   ray
+	db OUTLET,               ITEM_C6
+	db TM_FRUSTRATION,       ITEM_C7
 	db TM_DYNAMICPUNCH_GOLD, TM_DYNAMICPUNCH ; DOME_FOSSIL
 	db OLD_AMBER,            TM_HEADBUTT
 	db FURNACE,              TM_CURSE
 	db FRIDGE,               TM_ROLLOUT
 	db STROBE_LIGHT,         TM_ROAR
 	db NEEDLE,               TM_TOXIC
-	db ITEM_C6,              TM_ZAP_CONNON
-	db ITEM_C7,              TM_ROCK_SMASH
+	db TM_ZAP_CONNON_GOLD,   TM_ZAP_CONNON
+	db TM_ROCK_SMASH_GOLD,   TM_ROCK_SMASH
 	db TM_DYNAMICPUNCH,      TM_PSYCH_UP
 	db TM_HEADBUTT,          TM_HIDDEN_POWER
 	db TM_CURSE,             TM_SUNNY_DAY
@@ -58,3 +61,4 @@ TimeCapsule_Gen2Items:
 	db TM_THEIF,             HM_SURF
 	db TM_STEEL_WING,        HM_STRENGTH
 	db TM_FIRE_PUNCH,        HM_FLASH
+	db 0, 0 ; end
