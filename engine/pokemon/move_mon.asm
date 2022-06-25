@@ -1704,6 +1704,8 @@ CalcMonStatC:
 	ret
 
 GivePoke::
+; input - wCurPartySpecies
+;       - wCurItem
 	push de
 	push bc
 	xor a ; PARTYMON

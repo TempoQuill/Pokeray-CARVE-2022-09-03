@@ -523,10 +523,9 @@ _PushWindow::
 	ret
 
 _ExitMenu::
-	xor a
+	xor a ; BANK(sWindowStack)
 	ldh [hBGMapMode], a
 
-	xor a ; BANK(sWindowStack)
 	call OpenSRAM
 
 	call GetWindowStackTop
