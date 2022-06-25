@@ -103,6 +103,17 @@ ENDM
 	connection NORTH, Route50,     ROUTE_50,     -12
 	connection WEST,  CottageTown, COTTAGE_TOWN, 0
 
+	map_attributes Route50, ROUTE_50, $05, SOUTH | EAST
+	connection SOUTH, Route49,       ROUTE_49,       12
+	connection EAST,  TraversalCity, TRAVERSAL_CITY, -9
+
+	map_attributes TraversalCity, TRAVERSAL_CITY, $05, WEST
+	connection WEST, Route50, ROUTE_50, 9
+
+	map_attributes Route51, ROUTE_51, $05, NORTH | EAST
+	connection NORTH, Route_49,      ROUTE_49,       12
+	connection EAST,  FoliageCity,   FOLIAGE_CITY,   0
+
 	map_attributes PlayersHouse1F,     PLAYERS_HOUSE_1F,      $00, 0
 	map_attributes PlayersHouse2F,     PLAYERS_HOUSE_2F,      $00, 0
 	map_attributes RivalsHouse1F,      RIVALS_HOUSE_1F,       $00, 0
@@ -115,14 +126,7 @@ ENDM
 	map_attributes ROute49VacuumGate,  ROUTE_49_VACUUM_GATE,  $00, 0
 	map_attributes Route4951Gate,      ROUTE_49_51_GATE,      $00, 0
 	map_attributes CottageRoute55Gate, COTTAGE_ROUTE_55_GATE, $00, 0
-
-	map_attributes Route50, ROUTE_50, $05, SOUTH | EAST
-	connection SOUTH, Route49,       ROUTE_49,       12
-	connection EAST,  TraversalCity, TRAVERSAL_CITY, -9
-
-	map_attributes TraversalCity, TRAVERSAL_CITY, $05, WEST
-	connection WEST, Route50, ROUTE_50, 9
-
-	map_attributes Route51, ROUTE_51, $05, NORTH | EAST
-	connection NORTH, Route_49,      ROUTE_49,       12
-	connection EAST,  FoliageCity,   FOLIAGE_CITY,   0
+	map_attributes Pokecenter2F,       POKECENTER_2F,         $00, 0
+	map_attributes TradeCenter,        TRADE_CENTER,          $00, 0
+	map_attributes Colosseum,          COLOSSEUM,             $00, 0
+	map_attributes TimeCapsule,        TIME_CAPSULE,          $00, 0

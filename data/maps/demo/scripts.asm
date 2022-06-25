@@ -20,6 +20,10 @@ SECTION "Demo Map Scripts 2", ROMX
 
 INCLUDE "maps/equinto/Route50.asm"
 INCLUDE "maps/equinto/TraversalCity.asm"
+INCLUDE "maps/PokeCenter2F.asm"
+INCLUDE "maps/TradeCenter.asm"
+INCLUDE "maps/Colosseum.asm"
+INCLUDE "maps/TimeCapsule.asm"
 
 SECTION "Demo Map Scripts 3", ROMX
 

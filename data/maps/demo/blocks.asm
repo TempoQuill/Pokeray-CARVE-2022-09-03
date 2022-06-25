@@ -48,6 +48,20 @@ Route50_Blocks:
 TraversalCity_Blacks:
 	INCBIN "maps/equinto/TraversalCity.blk"
 
+TraversalPokeCenter1F_Blocks:
+FoliagePokeCenter1F_Blocks:
+	INCBIN "maps/PokeCenter1F.blk"
+
+Pokecenter2F_Blocks:
+	INCBIN "maps/PokeCenter2F.blk"
+
+TradeCenter_Blocks:
+TimeCapsule_Blocks:
+	INCBIN "maps/TradeCenter.blk"
+
+Colosseum_Blocks:
+	INCBIN "maps/Colosseum.blk"
+
 SECTION "Demo Map Blocks 3", ROMX
 
 Route51_Blacks:

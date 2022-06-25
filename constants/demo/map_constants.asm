@@ -49,6 +49,10 @@ ENDM
 	
 	map_const ROUTE_50              15,  9 ; 1
 	map_const TRAVERSAL_CITY        20, 18 ; 2
+	map_const POKECENTER_2F          8,  4 ; 3
+	map_const TRADE_CENTER           5,  4 ; 4
+	map_const COLOSSEUM              5,  4 ; 5
+	map_const TIME_CAPSULE           5,  4 ; 6
 
 	newgroup                        ; 3
 
