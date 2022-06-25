@@ -39,7 +39,7 @@
 	const ICON_SLOWPOKE
 	const ICON_SUDOWOODO
 	const ICON_BIGMON
-	const ICON_KOROTA
+	const ICON_KOTORA
 	const ICON_MOUNDIVER
 	const ICON_CROVEN
 
