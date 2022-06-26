@@ -8,4 +8,4 @@
 
 	page "it natural or by"
 	next "other nearby #-"
-	next "mon in the area.@"
+	next "MON in the area.@"
