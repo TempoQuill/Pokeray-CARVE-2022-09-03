@@ -85,7 +85,6 @@ Music_Surf_Ch1:
 	note G#, 1
 	note G_, 2
 	duty_cycle 2
-	stereo_panning TRUE, TRUE
 	vibrato 0, 1, 3
 	volume_envelope 5, 7
 	octave 5
@@ -96,7 +95,6 @@ Music_Surf_Ch1:
 	note D_, 1
 	note D#, 1
 	duty_cycle 3
-	stereo_panning FALSE, TRUE
 	volume_envelope 3, -1
 	octave 3
 	note D_, 1
@@ -609,7 +607,6 @@ Music_Surf_Ch3:
 	note_type 6, 1, 2
 	note D#, 12
 	rest 6
-	stereo_panning TRUE, FALSE
 	note_type 3, 1, -3
 	note D#, 4
 	note G_, 4
@@ -656,7 +653,6 @@ Music_Surf_Ch3:
 	note D_, 8
 	rest 4
 	vibrato 3, 1, 3
-	stereo_panning TRUE, TRUE
 	volume_envelope 1, -2
 	note G_, 4
 	note G#, 4
