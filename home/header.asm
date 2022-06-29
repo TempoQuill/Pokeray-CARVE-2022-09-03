@@ -18,25 +18,17 @@ Bankswitch::
 SECTION "rst18", ROM0[$0018]
 BankJump:
 	rst Bankswitch
-	rst JumpTable
-	ret
+	jp _JumpTable
 
 SECTION "rst20", ROM0[$0020]
 	rst Lockup
 
 SECTION "rst28", ROM0[$0028]
 JumpTable::
-	push de
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-; SECTION "rst30", ROM0[$0030]
-	ld l, a
-	pop de
-	jp hl
+	jp _JumpTable
+
+SECTION "rst30", ROM0[$0030]
+	rst Lockup
 
 SECTION "rst38", ROM0[$0038]
 Lockup::
