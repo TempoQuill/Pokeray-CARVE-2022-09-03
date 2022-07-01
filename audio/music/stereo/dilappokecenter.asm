@@ -67,7 +67,7 @@ Music_DilapPokeCenter_Ch3:
 	sound_jump Music_DilapPokeCenter_Ch3
 
 .sub1:
-	notetype 12, 1, 0
+	note_type 12, 1, 0
 	octave 5
 	note E_, 1
 	volume_envelope 2, 0

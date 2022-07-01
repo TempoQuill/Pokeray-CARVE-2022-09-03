@@ -275,7 +275,7 @@ Music_ShaggyBattle_Ch1:
 	rest 1
 	note B_, 2
 	octave 4
-	note E_, 4
+	note E_, 2
 	octave 2
 	note B_, 1
 	rest 1

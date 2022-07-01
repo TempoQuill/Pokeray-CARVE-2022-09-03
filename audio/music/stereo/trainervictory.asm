@@ -165,7 +165,6 @@ Music_TrainerVictory_Ch3:
 	rest 1
 	note A_, 2
 	note B_, 2
-	stereo_panning TRUE, FALSE
 	octave 3
 	note C#, 2
 .mainloop:

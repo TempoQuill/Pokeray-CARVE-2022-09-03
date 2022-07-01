@@ -511,7 +511,7 @@ Music_TitleScreen_Ch2:
 	octave 5
 	note C_, 4
 	note C#, 4
-	pitch_offset 1
+	pitch_inc_switch
 	stereo_panning FALSE, TRUE
 	sound_call .sub1
 	note C#, 4
@@ -521,7 +521,7 @@ Music_TitleScreen_Ch2:
 	octave 4
 	note A_, 4
 	stereo_panning TRUE, TRUE
-	pitch_offset 0
+	pitch_inc_switch
 	note_type 12, 11, 0
 	octave 3
 	note B_, 6
@@ -832,16 +832,12 @@ Music_TitleScreen_Ch3:
 	note A_, 2
 	octave 5
 	note D_, 2
-	pitch_inc_switch
 	note A_, 6
-	pitch_inc_switch
 	note G_, 2
 	note F#, 2
 	note D_, 1
 	rest 2
-	pitch_inc_switch
 	note E_, 1
-	pitch_inc_switch
 	note F#, 4
 	note_type 8, 1, 6
 	octave 3
@@ -855,17 +851,13 @@ Music_TitleScreen_Ch3:
 	note A_, 2
 	octave 5
 	note D_, 2
-	pitch_inc_switch
 	note A_, 6
-	pitch_inc_switch
 	note G_, 2
 	note F#, 2
-	pitch_inc_switch
 	note B_, 1
 	rest 2
 	note A_, 1
 	note A_, 4
-	pitch_inc_switch
 	note_type 8, 1, 6
 	octave 3
 	note C_, 4
@@ -880,14 +872,10 @@ Music_TitleScreen_Ch3:
 	octave 5
 	note D_, 2
 	note G_, 6
-	pitch_inc_switch
 	note E_, 2
-	pitch_inc_switch
 	note G_, 2
 	note F#, 1
-	pitch_inc_switch
 	note E_, 1
-	pitch_inc_switch
 	note D_, 6
 	pitch_inc_switch
 	note_type 8, 1, 6
