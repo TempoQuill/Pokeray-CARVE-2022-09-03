@@ -63,6 +63,7 @@ Music_TheEnd_Ch1:
 	note C_, 4
 	note D#, 4
 	note G#, 4
+	stereo_panning TRUE, FALSE
 	volume_envelope 4, 6
 	note G#, 4
 	volume_envelope 2, 7
