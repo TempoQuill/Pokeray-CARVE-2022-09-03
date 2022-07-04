@@ -261,7 +261,7 @@ Music_EquintoLeague_Ch3:
 	note F_, 8
 	sound_call .sub1
 	note B_, 8
-	stereo_panning TRUE, FALSE
+	stereo_panning TRUE, TRUE
 	volume_envelope 1, -3
 	octave 5
 	note D#, 1
@@ -270,7 +270,7 @@ Music_EquintoLeague_Ch3:
 	note F#, 4
 	note G_, 8
 	note G#, 16
-	stereo_panning TRUE, TRUE
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 4
 	sound_call .sub2
 	octave 5

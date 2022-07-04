@@ -336,7 +336,7 @@ Music_StampTown_Ch2:
 	note C#, 2
 	note C_, 2
 	rest 2
-	octave 5
+	octave 3
 	note F_, 1
 	note G_, 1
 	note G#, 2

@@ -405,7 +405,7 @@ Music_Larch_Ch4:
 	toggle_noise 3
 	stereo_panning FALSE, TRUE
 	drum_speed 12
-	rest 4
+	rest 8
 	drum_note 3, 2
 	drum_note 3, 4
 	drum_note 3, 4

@@ -341,7 +341,7 @@ Music_StampTown_Ch2:
 	note C#, 2
 	note C_, 2
 	rest 2
-	octave 5
+	octave 3
 	note F_, 1
 	note G_, 1
 	note G#, 2
@@ -725,6 +725,7 @@ Music_StampTown_Ch3:
 	note F_, 2
 	note_type 6, 1, 4
 	note D#, 12
+	stereo_panning TRUE, FALSE
 	volume_envelope 1, 5
 	octave 2
 	note D#, 2

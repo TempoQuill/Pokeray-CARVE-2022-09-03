@@ -9,7 +9,6 @@ Music_Bicycle:
 Music_Bicycle_Ch1:
 	tempo 144
 	volume 7
-	stereo_panning FALSE, TRUE
 	duty_cycle 3
 	note_type 12, 10, 3
 	rest 4
@@ -95,6 +94,7 @@ Music_Bicycle_Ch1:
 	sound_jump .mainloop
 
 .sub1:
+	stereo_panning FALSE, TRUE
 	volume_envelope 10, 3
 	octave 3
 	note F_, 4

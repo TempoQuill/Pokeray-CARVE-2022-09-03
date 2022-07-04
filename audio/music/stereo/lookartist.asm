@@ -17,9 +17,9 @@ Music_LookArtist_Ch1:
 	note D_, 1
 	note G_, 1
 	note A_, 1
-	stereo_panning FALSE, TRUE
 	volume_envelope 10, 5
 	note B_, 16
+	stereo_panning FALSE, TRUE
 .mainloop:
 	octave 2
 	note G_, 16

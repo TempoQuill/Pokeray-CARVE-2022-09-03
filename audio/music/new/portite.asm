@@ -353,7 +353,7 @@ Music_Portite_Ch2:
 .loop17:
 	sound_call .sub1
 	sound_loop 4, .loop17
-	transpose 0, 8
+	transpose 1, 8
 	sound_call .sub1
 	sound_call .sub1
 	transpose 0, 0
@@ -548,6 +548,7 @@ Music_Portite_Ch3:
 	note E_, 5
 	rest 2
 	volume_envelope 1, 1
+	octave 4
 	note C_, 1
 	rest 1
 	note C_, 1

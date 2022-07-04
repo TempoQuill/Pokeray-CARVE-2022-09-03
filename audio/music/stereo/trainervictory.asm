@@ -93,6 +93,7 @@ Music_TrainerVictory_Ch2:
 	note B_, 2
 	octave 5
 	note C#, 2
+	stereo_panning TRUE, FALSE
 	volume_envelope 12, 7
 	note D_, 12
 .mainloop:
