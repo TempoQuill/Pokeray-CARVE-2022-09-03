@@ -36,7 +36,7 @@ CantLeaveScene:
 	writetext CantLeaveText
 	waitbutton
 	closetext
-	applymovement CantLeaveMovement
+	applymovement PLAYER, CantLeaveMovement
 	end
 
 LarchScript:
@@ -438,15 +438,15 @@ IsThisItText:
 	done
 
 FlambearNameText:
-	text "CYNDAQUIL?"
+	text "FLAMBEAR?"
 	done
 
 CruzNameText:
-	text "TOTODILE?"
+	text "CRUZ?"
 	done
 
 OrkidNameText:
-	text "CHIKORITA?"
+	text "ORKID?"
 	done
 
 PokemonInBallText:
