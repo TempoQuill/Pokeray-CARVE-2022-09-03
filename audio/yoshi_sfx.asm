@@ -347,7 +347,7 @@ Sfx_RBYSing_Ch6:
 	sound_ret
 
 Sfx_EscapeRopeNoSweepFix:
-	channel_count
+	channel_count 1
 	channel 5, Sfx_EscapeRopeNoSweepFix_Ch5
 
 Sfx_EscapeRopeNoSweepFix_Ch5:
@@ -358,4 +358,36 @@ Sfx_EscapeRopeNoSweepFix_Ch5:
 	square_note 15, 8, 7, 1280
 	square_note 15, 4, 7, 1152
 	square_note 15, 1, 7, 1024
+	sound_ret
+
+; new pokeflute effects
+Sfx_PokefluteHome:
+	channel_count 1
+	channel 7, Sfx_PokefluteHome_Ch7
+
+Sfx_PokefluteHome_Ch7:
+	set_music
+	tempo 128
+	vibrato 11, 2, 4
+	note_type 11, 1, 3
+	octave 5
+	note G#, 1
+	note F#, 1
+	note G#, 11
+	sound_ret
+
+Sfx_PokefluteNight:
+	channel_count 1
+	channel 7, Sfx_PokefluteNight_Ch7
+
+Sfx_PokefluteNight_Ch7:
+	set_music
+	tempo 142
+	vibrato 11, 2, 4
+	note_type 6, 2, 7
+	octave 5
+	note D_, 1
+	note B_, 1
+	note A_, 1
+	note D_, 9
 	sound_ret

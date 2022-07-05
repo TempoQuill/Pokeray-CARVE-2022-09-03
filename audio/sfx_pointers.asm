@@ -211,8 +211,9 @@ SFX:
 ; imported
 	dba Sfx_ShootingStar
 	dba Sfx_RBYSing
-	dba Sfx_EscapeRopeNoSweepFix
+	dba Sfx_PokefluteHome
 ; placeholders
+	dba Sfx_LockOn
 	dba Sfx_ShootingStar
 	dba Sfx_ShootingStar
 	dba Sfx_ShootingStar
@@ -232,4 +233,4 @@ SFX:
 	dba Sfx_ShootingStar
 	dba Sfx_ShootingStar
 	dba Sfx_ShootingStar
-	dba Sfx_ShootingStar
+	dba Sfx_PokefluteNight

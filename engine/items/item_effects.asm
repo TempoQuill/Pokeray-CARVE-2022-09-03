@@ -2300,11 +2300,6 @@ PokeFluteEffect:
 	jp z, PrintText
 	ld hl, .PlayedTheFlute
 	call PrintText
-
-	ld a, [wLowHealthAlarm]
-	and 1 << DANGER_ON_F
-	jr nz, .dummy2
-.dummy2
 	ld hl, .FluteWakeUpText
 	jp PrintText
 
@@ -2345,13 +2340,31 @@ PokeFluteEffect:
 	jr nz, .battle
 
 	push de
-	ld de, SFX_POKEFLUTE
+	push af
+	call .get_tune
+	pop af
 	call WaitPlaySFX
 	call WaitSFX
 	pop de
 
 .battle
 	ld hl, .terminator
+	ret
+
+.get_tune
+	ld a, [wMapGroup]
+	and a
+	jr nz, .get_tune_checkday
+	ld a, [wMapNumber]
+	dec a ; are we in COTTAGE_TOWN?
+	ld de, SFX_POKEFLUTE_HOME
+	ret z
+.get_tune_checkday
+	ld a, [wTimeOfDay]
+	bit NITE_F, a
+	ld de, SFX_POKEFLUTE_NIGHT
+	ret z
+	ld de, SFX_POKEFLUTE
 	ret
 
 .terminator
@@ -2375,8 +2388,6 @@ GoodRodEffect:
 
 SuperRodEffect:
 	ld e, $2
-	jr UseRod
-
 UseRod:
 	farcall FishFunction
 	ret

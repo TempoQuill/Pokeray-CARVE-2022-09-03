@@ -211,7 +211,7 @@
 ; imported
 	const SFX_SHOOTING_STAR               ; cf
 	const SFX_RBY_SING                    ; d0
-	const SFX_ESCAPE_ROPE_NO_SWEEP_FIX    ; d1
+	const SFX_POKEFLUTE_HOME              ; d1
 ; placeholder
 	const SFX_LOCK_ON                     ; d2
 	const SFX_FLAIL                       ; d3
@@ -233,3 +233,4 @@
 	const SFX_SPIKES_E2                   ; e3
 	const SFX_RECOVER                     ; e4
 	const SFX_PAY_DAY                     ; e5
+	const SFX_POKEFLUTE_NIGHT             ; e6

@@ -6,7 +6,6 @@
 ; some of these entries are unused because pokemon can't hold key items
 
 TimeCapsule_CatchRateItems:
-	db POKE_FLUTE,   FILLINGBERRY ; POKE_FLUTE
 	db MYSTERY_EGG,  FILLINGBERRY ; DUCKY_AMULET
 	db ITEM_46,      BERRY        ; CORNERTICKET
 	db ITEM_73,      BERRY
