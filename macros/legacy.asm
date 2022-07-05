@@ -98,7 +98,7 @@ ENDM
 sfxtogglenoise EQUS "sfx_toggle_noise"
 
 ; pitch_inc_switch is used to help import Gen 1/Yoshi tracks
-; takes up 1/3 memory of pitch_offset
+; also used in placement of pitch_offset 1/0
 toggle_perfect_pitch: MACRO
 	pitch_inc_switch
 ENDM

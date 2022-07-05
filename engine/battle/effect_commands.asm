@@ -1196,6 +1196,7 @@ BattleCommand_Critical:
 
 .Next
 	and a
+	; new sets of #MON don't benefit from specific CRIT-UP item
 	jr nz, .FocusEnergy
 	ldh a, [hBattleTurn]
 	and a
@@ -1253,10 +1254,11 @@ BattleCommand_Critical:
 	inc c
 
 .ScopeLens:
+; Increased critical chance. Scope Lens and Night Armor have this.
 	push bc
 	call GetUserItem
 	ld a, b
-	cp HELD_CRITICAL_UP ; Increased critical chance. Only Scope Lens has this.
+	cp HELD_CRITICAL_UP
 	pop bc
 	jr nz, .Tally
 
