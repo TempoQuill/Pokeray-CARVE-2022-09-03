@@ -55,7 +55,7 @@ ItemDescriptions:
 	dw XSpecialDesc
 	dw CoinCaseDesc
 	dw ItemfinderDesc
-	dw TeruSama5Desc
+	dw PokeFluteDesc
 	dw ExpShareDesc
 	dw OldRodDesc
 	dw GoodRodDesc
@@ -428,7 +428,6 @@ DireHitDesc:
 	db   "Raises critical"
 	next "hit ratio.@"
 
-TeruSama5Desc:
 TeruSama6Desc:
 TeruSama9Desc:
 TeruSama10Desc:
@@ -950,11 +949,15 @@ NapkinDesc:
 
 VineMailDesc:
 	db   "BURGELA-print mail"
-	next "(HOLD)."
+	next "(HOLD).@"
 
 ChordMailDesc:
 	db   "PARBELL-print mail"
-	next "(HOLD)."
+	next "(HOLD).@"
+
+PokeFluteDesc:
+	db   "Awakens #MON"
+	next "with a tune.@"
 
 ; unused
 	db   "A TM that teaches"
