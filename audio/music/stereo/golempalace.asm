@@ -64,7 +64,7 @@ Music_GolemPalace_Ch1:
 	note A_, 2
 	octave 3
 	note C_, 4
-	octave 3
+	octave 2
 	note B_, 2
 	note G_, 2
 	note E_, 16

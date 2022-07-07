@@ -161,6 +161,7 @@ Music_Surf_Ch1:
 	note G_, 8
 	duty_cycle 3
 	vibrato 0, 0, 0
+	stereo_panning TRUE, TRUE
 	note_type 3, 12, 4
 	octave 2
 	note A#, 1
@@ -288,7 +289,7 @@ Music_Surf_Ch2:
 	note F_, 4
 	note D_, 4
 	octave 1
-	note A#, 1
+	note A#, 4
 	sound_call .sub2
 	sound_call .sub7
 	sound_call .sub6

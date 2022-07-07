@@ -207,6 +207,7 @@ Music_TeamHavocTheme_Ch2:
 	transpose 0, 5
 	sound_call .sub8
 	transpose 0, 0
+	stereo_panning TRUE, TRUE
 	octave 2
 	note C#, 2
 	note F#, 2
@@ -256,8 +257,10 @@ Music_TeamHavocTheme_Ch2:
 	octave 3
 	note D_, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	octave 2
 	note D_, 4
+	stereo_panning FALSE, TRUE
 	note A#, 1
 	octave 3
 	note G_, 1

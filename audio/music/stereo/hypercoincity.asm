@@ -285,10 +285,10 @@ Music_HypercoinCity_Ch2:
 
 Music_HypercoinCity_Ch3:
 	vibrato 26, 2, 4
-	stereo_panning TRUE, TRUE
 	note_type 6, 0, 0
 	rest 12
 .mainloop:
+	stereo_panning TRUE, TRUE
 	sound_call .sub1
 	note D#, 4
 	rest 4
@@ -315,9 +315,9 @@ Music_HypercoinCity_Ch3:
 	note_type 6, 1, -4
 	note A_, 1
 	note A#, 3
-	rest 4
 	octave 5
 	note C#, 4
+	rest 4
 	octave 4
 	note A#, 2
 	octave 5

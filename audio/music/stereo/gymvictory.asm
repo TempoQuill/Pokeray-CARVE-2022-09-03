@@ -350,10 +350,9 @@ Music_GymVictory_Ch3:
 	sound_call .sub3
 	sound_call .sub3
 	sound_call .sub2
-	stereo_panning TRUE, TRUE
 	octave 3
 	note C_, 8
-	stereo_panning FALSE, TRUE
+	stereo_panning TRUE, FALSE
 	octave 4
 	note E_, 1
 	note G_, 1
@@ -362,7 +361,7 @@ Music_GymVictory_Ch3:
 	octave 3
 	note G_, 4
 	note C_, 4
-	stereo_panning FALSE, TRUE
+	stereo_panning TRUE, FALSE
 	octave 4
 	note E_, 1
 	note G_, 1
@@ -370,11 +369,12 @@ Music_GymVictory_Ch3:
 	stereo_panning TRUE, TRUE
 	octave 3
 	note E_, 4
-	stereo_panning FALSE, TRUE
+	stereo_panning TRUE, FALSE
 	octave 4
 	note E_, 1
 	note A#, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	sound_call .sub2
 	sound_call .sub2
 	transpose 0, 2
@@ -386,16 +386,16 @@ Music_GymVictory_Ch3:
 	sound_call .sub2
 	octave 3
 	note F_, 4
-	stereo_panning FALSE, TRUE
+	stereo_panning TRUE, FALSE
 	octave 4
 	note F_, 1
-	stereo_panning TRUE, TRUE
 	octave 5
 	note C_, 1
 	rest 2
+	stereo_panning TRUE, TRUE
 	octave 3
 	note C_, 4
-	stereo_panning FALSE, TRUE
+	stereo_panning TRUE, FALSE
 	octave 4
 	note E_, 1
 	note A#, 1
@@ -403,7 +403,7 @@ Music_GymVictory_Ch3:
 	note F_, 1
 	note A_, 1
 	rest 6
-	stereo_panning TRUE, FALSE
+	stereo_panning FALSE, TRUE
 	note_type 6, 1, -3
 	note A#, 1
 	octave 5
@@ -463,7 +463,7 @@ Music_GymVictory_Ch3:
 .sub2:
 	octave 3
 	note F_, 8
-	stereo_panning FALSE, TRUE
+	stereo_panning TRUE, FALSE
 	octave 4
 	note F_, 1
 	note A_, 1
@@ -472,7 +472,7 @@ Music_GymVictory_Ch3:
 	octave 3
 	note C_, 4
 	note F_, 4
-	stereo_panning FALSE, TRUE
+	stereo_panning TRUE, FALSE
 	octave 4
 	note F_, 1
 	note A_, 1
@@ -480,7 +480,7 @@ Music_GymVictory_Ch3:
 	stereo_panning TRUE, TRUE
 	octave 3
 	note C_, 4
-	stereo_panning FALSE, TRUE
+	stereo_panning TRUE, FALSE
 	octave 4
 	note F_, 1
 	octave 5
@@ -492,7 +492,7 @@ Music_GymVictory_Ch3:
 .sub3:
 	octave 3
 	note C_, 8
-	stereo_panning FALSE, TRUE
+	stereo_panning TRUE, FALSE
 	octave 4
 	note E_, 1
 	note G_, 1
@@ -501,7 +501,7 @@ Music_GymVictory_Ch3:
 	octave 3
 	note G_, 4
 	note C_, 4
-	stereo_panning FALSE, TRUE
+	stereo_panning TRUE, FALSE
 	octave 4
 	note E_, 1
 	note G_, 1
@@ -509,7 +509,7 @@ Music_GymVictory_Ch3:
 	stereo_panning TRUE, TRUE
 	octave 3
 	note G_, 4
-	stereo_panning FALSE, TRUE
+	stereo_panning TRUE, FALSE
 	octave 4
 	note E_, 1
 	note A#, 1

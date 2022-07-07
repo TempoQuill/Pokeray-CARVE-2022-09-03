@@ -286,7 +286,7 @@ Music_Surf_Ch2:
 	note F_, 4
 	note D_, 4
 	octave 1
-	note A#, 1
+	note A#, 4
 	sound_call .sub2
 	sound_call .sub7
 	sound_call .sub6

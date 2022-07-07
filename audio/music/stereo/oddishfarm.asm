@@ -261,6 +261,7 @@ Music_OddishFarm_Ch2:
 	note E_, 4
 	note C_, 16
 	rest 12
+	stereo_panning TRUE, TRUE
 	volume_envelope 13, 3
 	octave 2
 	note E_, 4

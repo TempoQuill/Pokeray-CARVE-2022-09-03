@@ -80,7 +80,7 @@ Music_LookLunatic_Ch2:
 	octave 2
 	note C#, 1
 	rest 1
-	note E_, 1
+	note F#, 1
 	rest 1
 	note A#, 1
 	rest 1

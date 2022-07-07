@@ -38,7 +38,7 @@ Music_Mum_Ch3:
 	note A_, 1
 	note G_, 1
 	note F_, 8
-	volume_envelope 1, 3
+	note_type 12, 1, 3
 .mainloop:
 	octave 2
 	note A#, 1
