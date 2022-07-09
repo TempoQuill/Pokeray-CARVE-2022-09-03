@@ -1843,16 +1843,8 @@ PlayRadio:
 	jp LoadStation_OaksPokemonTalk
 
 PokegearMap:
-	ld a, e
-	and a
-	jr nz, .kanto
 	call LoadTownMapGFX
-	call FillJohtoMap
-	ret
-
-.kanto
-	call LoadTownMapGFX
-	call FillKantoMap
+	call FillTownMap
 	ret
 
 _FlyMap:
@@ -2098,13 +2090,13 @@ FlyMap:
 .NormalFlyMap:
 ; Note that .NoKanto should be modified in tandem with this branch
 	push af
-	ld a, EQUINTO_FLYPOINT ; first Johto flypoint
-	ld [wTownMapPlayerIconLandmark], a ; first one is default (New Bark Town)
+	ld a, EQUINTO_FLYPOINT ; first Equinto flypoint
+	ld [wTownMapPlayerIconLandmark], a ; first one is default (Cottage Town)
 	ld [wStartFlypoint], a
 	ld a, NUM_FLYPOINTS
 	ld [wEndFlypoint], a
 ; Fill out the map
-	call FillJohtoMap
+	call FillTownMap
 	call .MapHud
 	pop af
 	call TownMapPlayerIcon
@@ -2144,12 +2136,7 @@ Pokedex_GetArea:
 	ld c, 4
 	call Request2bpp
 	call LoadTownMapGFX
-	call FillKantoMap
-	call .PlaceString_MonsNest
-	call TownMapPals
-	hlbgcoord 0, 0, vBGMap1
-	call TownMapBGUpdate
-	call FillJohtoMap
+	call FillTownMap
 	call .PlaceString_MonsNest
 	call TownMapPals
 	hlbgcoord 0, 0
@@ -2406,13 +2393,8 @@ TownMapBGUpdate:
 	ldh [hBGMapMode], a
 	ret
 
-FillJohtoMap:
-	ld de, JohtoMap
-	jr FillTownMap
-
-FillKantoMap:
-	ld de, KantoMap
 FillTownMap:
+	ld de, EquintoMap
 	hlcoord 0, 0
 .loop
 	ld a, [de]
@@ -2546,11 +2528,8 @@ LoadTownMapGFX:
 	call DecompressRequest2bpp
 	ret
 
-JohtoMap:
-INCBIN "gfx/pokegear/johto.bin"
-
-KantoMap:
-INCBIN "gfx/pokegear/kanto.bin"
+EquintoMap:
+INCBIN "gfx/pokegear/Equinto.bin"
 
 PokedexNestIconGFX:
 INCBIN "gfx/pokegear/dexmap_nest_icon.2bpp"
@@ -2575,12 +2554,7 @@ Function92264:
 	ld hl, vTiles2 tile $30
 	lb bc, BANK(FlyMapLabelBorderGFX), 6
 	call Request1bpp
-	call FillKantoMap
-	call TownMapBubble
-	call TownMapPals
-	hlbgcoord 0, 0, vBGMap1
-	call TownMapBGUpdate
-	call FillJohtoMap
+	call FillTownMap
 	call TownMapBubble
 	call TownMapPals
 	hlbgcoord 0, 0
@@ -2665,7 +2639,7 @@ Function92264:
 	dec [hl]
 .continue
 	ld a, [wTownMapPlayerIconLandmark]
-	call FillJohtoMap
+	call FillTownMap
 	ld a, SCREEN_HEIGHT_PX
 	ld b, HIGH(vBGMap0)
 	ldh [hWY], a
