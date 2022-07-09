@@ -187,7 +187,13 @@ ItemsForMon:
 	ld [wCurPartySpecies], a
 	ld a, [wAssemblySpecies + 1]
 	ld [wCurPartySpecies + 1], a
-	ld a, 5
+	ld hl, wEquintoBadges
+	ld d, [hl]
+	xor a
+.loop3
+	add 5 ; add 5 N times (highest badge constant set)
+	rr d
+	jr z, .loop3
 	ld [wCurPartyLevel], a
 	xor a
 	ld [wCurItem], a
