@@ -191,9 +191,15 @@ ItemsForMon:
 	ld d, [hl]
 	xor a
 .loop3
-	add 5 ; add 5 N times (highest badge constant set)
 	rr d
-	jr z, .loop3
+	jr z, .endloop
+	add 5 ; add 5 N times (8 badges = level 40)
+	jr .loop3
+.endloop
+	and a
+	jr nz, .gotlevel
+	ld a, 5
+.gotlevel
 	ld [wCurPartyLevel], a
 	xor a
 	ld [wCurItem], a
