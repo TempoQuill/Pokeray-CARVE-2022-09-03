@@ -1122,32 +1122,28 @@ _DaycareDummyText::
 
 _DayCareManIntroText::
 	text "I'm the DAY-CARE"
-	line "MAN. Want me to"
+	line "owner. Want me to"
 	cont "raise a #MON?"
 	done
 
 _DayCareManIntroEggText::
 	text "I'm the DAY-CARE"
-	line "MAN. Do you know"
+	line "owner. Do you know"
 	cont "about EGGS?"
 
-	para "I was raising"
-	line "#MON with my"
-	cont "wife, you see."
+	para "I thought so."
 
-	para "We were shocked to"
-	line "find an EGG!"
-
-	para "How incredible is"
-	line "that?"
+	para "Certain #MON"
+	line "pairs can spawn an"
+	cont "EGG."
 
 	para "So, want me to"
-	line "raise a #MON?"
+	line "raise one?"
 	done
 
 _DayCareLadyIntroText::
 	text "I'm the DAY-CARE"
-	line "LADY."
+	line "co-owner."
 
 	para "Should I raise a"
 	line "#MON for you?"
@@ -1155,21 +1151,18 @@ _DayCareLadyIntroText::
 
 _DayCareLadyIntroEggText::
 	text "I'm the DAY-CARE"
-	line "LADY. Do you know"
-	cont "about EGGS?"
+	line "co-owner. Do you"
+	cont "know about EGGS?"
 
-	para "My husband and I"
-	line "were raising some"
-	cont "#MON, you see."
+	para "I wouldn't expect."
+	line "any less."
 
-	para "We were shocked to"
-	line "find an EGG!"
+	para "Certain #MON"
+	line "spawn an EGG with"
+	cont "the right partner."
 
-	para "How incredible"
-	line "could that be?"
-
-	para "Should I raise a"
-	line "#MON for you?"
+	para "Should I raise one"
+	line "from your party?"
 	done
 
 _WhatShouldIRaiseText::
@@ -1178,8 +1171,8 @@ _WhatShouldIRaiseText::
 	prompt
 
 _OnlyOneMonText::
-	text "Oh? But you have"
-	line "just one #MON."
+	text "Oh? But that's your"
+	line "only #MON."
 	prompt
 
 _CantAcceptEggText::
@@ -1289,17 +1282,10 @@ _FoundAnEggText::
 	para "We were raising"
 	line "your #MON, and"
 
-	para "my goodness, were"
-	line "we surprised!"
-
-	para "Your #MON had"
+	para "your #MON had"
 	line "an EGG!"
 
-	para "We don't know how"
-	line "it got there, but"
-
-	para "your #MON had"
-	line "it. You want it?"
+	para "You want it?"
 	done
 
 _ReceivedEggText::
