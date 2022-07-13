@@ -169,6 +169,11 @@ TitleScreen:
 	ld [hli], a ; wRSTitleScreenOpticalTimer
 	ld [hli], a ; wRSTitleScreenPlegicTimer
 	ld [hl], a ; wRSTitleScreenRearTimer
+	ld hl, wTitleSpriteFrames
+	ld [hli], a ; wTitleSpriteFrames
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a ; wCurrentAnimationZone
 	ld hl, wVramState
 	ld a, [hl]
 	and $f1 ; reset timer flags
