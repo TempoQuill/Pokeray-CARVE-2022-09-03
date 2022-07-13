@@ -2778,9 +2778,6 @@ PlayStereoSFX::
 	bc_offset CHANNEL_STEREO_DELAY
 	ld [hl], a
 
-	bc_offset CHANNEL_FLAGS2
-	set SOUND_STEREO, [hl]
-
 .skip
 	pop de
 

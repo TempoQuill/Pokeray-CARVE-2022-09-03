@@ -105,7 +105,6 @@ NOISE_CHAN_F EQU 2 ; bit set in CHAN5-CHAN7
 	const SOUND_PITCH_OFFSET   ; 4
 	const SOUND_ENV_PTRN       ; 5
 	const SOUND_RELATIVE_PITCH ; 6
-	const SOUND_STEREO         ; 7
 
 ; Flags3
 	const_def
