@@ -1465,26 +1465,24 @@ AI_Smart_Counter:
 
 	ld a, [wLastPlayerCounterMove]
 	and a
-	jr z, .done
+	ret z
 
 	call AIGetEnemyMove
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
-	jr z, .done
+	ret z
 
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
 	cp SPECIAL
-	jr nc, .done
+	ret nc
 
 .encourage
 	call Random
 	cp 39 percent + 1
-	jr c, .done
+	ret c
 
 	dec [hl]
-
-.done
 	ret
 
 .discourage
