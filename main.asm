@@ -323,6 +323,7 @@ INCBIN "gfx/title/hooh_gold.2bpp.lz"
 
 INCLUDE "engine/menus/options_menu.asm"
 INCLUDE "engine/movie/splash.asm"
+INCLUDE "engine/menus/warning_screen.asm"
 INCLUDE "engine/movie/intro.asm"
 
 

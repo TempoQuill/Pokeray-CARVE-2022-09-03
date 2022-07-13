@@ -815,6 +815,7 @@ NUM_TITLESCREENOPTIONS EQU const_value
 
 IntroSequence:
 	callfar SplashScreen
+	callfar WarningScreen
 	; fallthrough
 
 StartTitleScreen:
