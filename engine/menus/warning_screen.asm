@@ -19,7 +19,8 @@ WarningScreen:
 	call DelayFrames
 
 	call ClearTilemapEtc
-	ld de, UnusedDisclaimerText
+	hlcoord 0, 1
+	ld de, DisclaimerText
 	jp PlaceString
 
 	call WaitBGMap
