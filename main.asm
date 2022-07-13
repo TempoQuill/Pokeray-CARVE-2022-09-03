@@ -313,6 +313,7 @@ INCLUDE "engine/pokemon/bills_pc.asm"
 SECTION "bank39", ROMX
 
 CopyrightGFX::
+INCBIN "gfx/splash/copyright_new.2bpp"
 INCBIN "gfx/splash/copyright.2bpp"
 
 TitleScreenGFX3:

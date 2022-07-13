@@ -1070,10 +1070,10 @@ Copyright:
 	call ClearTilemap
 	call LoadFontsExtra
 	ld de, CopyrightGFX
-	ld hl, vTiles2 tile $60
+	ld hl, vTiles2 tile $51
 	lb bc, BANK(CopyrightGFX), 30
 	call Request2bpp
-	hlcoord 2, 7
+	hlcoord 2, 6
 	ld de, CopyrightString
 	jp PlaceString
 
@@ -1089,6 +1089,10 @@ CopyrightString:
 	; ©1995-2000 GAME FREAK inc.
 	next $60, $61, $62, $63, $7a, $7b, $7c, $7d
 	db   $73, $74, $75, $76, $77, $78, $79, $71, $72
+
+	; \©2019-2022 Tempo Quill
+	next $51, $7a, $52, $53, $7a, $54, $55, $7d
+	db   $56, $57, $58, $59, $5a, $5b, $5c
 
 	db "@"
 
