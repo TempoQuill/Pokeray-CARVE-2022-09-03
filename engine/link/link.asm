@@ -25,7 +25,7 @@ LinkCommunications:
 	hlcoord 4, 10
 	ld de, String_PleaseWait
 	call PlaceString
-	ld hl, wce5d
+	ld hl, wce5b
 	xor a ; LOW($5000)
 	ld [hli], a
 	ld [hl], HIGH($5000)
@@ -1302,7 +1302,7 @@ Function2884a:
 	farcall Functionfb6ed
 	jp nc, LinkTrade
 	xor a
-	ld [wce57], a
+	ld [wce56], a
 	ld [wOtherPlayerLinkAction], a
 	hlcoord 0, 12
 	ld b, 4
@@ -1315,7 +1315,7 @@ Function2884a:
 
 .abnormal
 	xor a
-	ld [wce57], a
+	ld [wce56], a
 	ld [wOtherPlayerLinkAction], a
 	ld a, [wceee]
 	ld hl, wOTPartySpecies
@@ -1448,7 +1448,7 @@ LinkMonStatsScreen:
 
 LinkTrade:
 	xor a
-	ld [wce57], a
+	ld [wce56], a
 	ld [wOtherPlayerLinkAction], a
 	hlcoord 0, 12
 	ld b, 4
@@ -2304,7 +2304,7 @@ Link_ResetSerialRegistersAfterLinkClosure:
 Link_EnsureSync:
 	add $d0
 	ld [wPlayerLinkAction], a
-	ld [wce57], a
+	ld [wce56], a
 	ld a, $2
 	ldh [hVBlank], a
 	call DelayFrame

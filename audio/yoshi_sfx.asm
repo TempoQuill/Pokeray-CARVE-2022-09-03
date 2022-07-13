@@ -360,7 +360,7 @@ Sfx_EscapeRopeNoSweepFix_Ch5:
 	square_note 15, 1, 7, 1024
 	sound_ret
 
-; new pokeflute effects
+; new pokeflute effects (curtesy of Jack Getschman)
 Sfx_PokefluteHome:
 	channel_count 1
 	channel 7, Sfx_PokefluteHome_Ch7

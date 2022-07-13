@@ -76,5 +76,5 @@
 
 ; new cries
 	const CRY_EARTHTRON   ; 44
-	const CRY_H45         ; 45
-	const CRY_H46         ; 46
+	const CRY_H45         ; 45 ; from yoshi
+	const CRY_H46         ; 46 ; from yoshi

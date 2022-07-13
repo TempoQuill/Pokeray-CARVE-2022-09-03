@@ -1021,20 +1021,21 @@ wTileAnimBuffer:: ds 1 tiles
 wOtherPlayerLinkMode:: db ; ce51
 wOtherPlayerLinkAction::  ; ce52
 wBattleAction:: db
-	ds 3
-wPlayerLinkAction:: db ; ce56
-wce57:: db
 	ds 2
-wLinkTimeoutFrames:: dw ; ce5b
-wce5d:: dw
+wPlayerLinkAction:: db ; ce55
+wce56:: db
+	ds 2
+wLinkTimeoutFrames:: dw ; ce59
+wce5b:: dw
 
-wMonType:: db ; ce5f
+wMonType:: db ; ce5d
 
-wCurSpecies:: dw ; ce60
+wCurSpecies:: dw ; ce5e
 
-wNamedObjectTypeBuffer:: db ; ce62
+wNamedObjectTypeBuffer:: db ; ce60
+	ds 1
 
-wJumptableIndex:: dw ; ce63
+wJumptableIndex:: dw ; ce62
 
 UNION ; ce64
 ; unidentified

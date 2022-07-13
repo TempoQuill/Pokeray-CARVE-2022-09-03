@@ -155,13 +155,13 @@ Serial_ExchangeByte::
 	and (1 << SERIAL) | (1 << TIMER) | (1 << LCD_STAT) | (1 << VBLANK)
 	cp 1 << SERIAL
 	jr nz, .loop2
-	ld a, [wce5d]
+	ld a, [wce5b]
 	dec a
-	ld [wce5d], a
+	ld [wce5b], a
 	jr nz, .loop2
-	ld a, [wce5d + 1]
+	ld a, [wce5b + 1]
 	dec a
-	ld [wce5d + 1], a
+	ld [wce5b + 1], a
 	jr nz, .loop2
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
@@ -181,9 +181,9 @@ Serial_ExchangeByte::
 	jr nz, .rIE_not_equal_8
 
 	; LOW($5000)
-	ld [wce5d], a
+	ld [wce5b], a
 	ld a, HIGH($5000)
-	ld [wce5d + 1], a
+	ld [wce5b + 1], a
 
 .rIE_not_equal_8
 	ldh a, [hSerialReceive]

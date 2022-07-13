@@ -74,7 +74,7 @@
 	const SPHERE_STONE ; 42
 	const SECRETPOTION ; 43
 	const S_S_TICKET   ; 44
-	const MYSTERY_EGG  ; 45
+	const_skip
 	const ITEM_46      ; 46
 	const NIGHT_ARMOR  ; 47
 	const MOOMOO_MILK  ; 48
