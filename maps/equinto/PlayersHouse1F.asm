@@ -198,8 +198,8 @@ ShowOldAmberText:
 	cont "I heard about."
 
 	para "Show it to LARCH."
-	line "He'll know what to"
-	cont "do with that."
+	line "They'll know what"
+	cont "to do with that."
 	done
 
 CuriousAboutErrandText:
@@ -211,7 +211,7 @@ CuriousAboutErrandText:
 	para "Okay! I think I"
 	line "know who you're"
 	cont "talking about."
-	
+
 	para "You should be very"
 	line "proud about being"
 	cont "a reliable child."

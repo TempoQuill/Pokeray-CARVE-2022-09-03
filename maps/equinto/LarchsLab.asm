@@ -410,8 +410,8 @@ GetEmailText:
 	cont "thing comes up."
 
 	para "PROF.LARCH gave"
-	line "<PLAYER> his e-mail"
-	cont "address!"
+	line "<PLAYER> their e-"
+	cont "mail address!"
 	done
 
 ThinkCarefullyText:

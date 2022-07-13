@@ -55,7 +55,7 @@ LarchWifeText:
 	text "Hi, <PLAY_G>!"
 
 	para "PROF.LARCH is at"
-	line "his lab, like"
+	line "their lab, like"
 	cont "usual."
 	done
 

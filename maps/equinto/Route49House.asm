@@ -159,7 +159,7 @@ PhilReichText1:
 	line "PROF.LARCH, huh?"
 
 	para "That's neat. So,"
-	line "what did he say?"
+	line "what did they say?"
 	done
 
 R49HText_Window:
