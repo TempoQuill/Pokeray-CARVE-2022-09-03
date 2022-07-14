@@ -2124,6 +2124,9 @@ Music_OldPanning:
 ; params: 1
 	call GetMusicByte
 	ld e, a
+	ld hl, wOptions
+	bit STEREO, [hl]
+	ret z
 	ld hl, SpeakerTracks
 	ld a, [wCurChannel]
 	and NUM_MUSIC_CHANS
