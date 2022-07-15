@@ -11,7 +11,7 @@ Music_RBYTradeFanMade_Ch1:
 	duty_cycle 1
 	vibrato 5, 1, 6
 .mainloop:
-	note_type 12, 13, 3
+	note_type 12, 12, 3
 	octave 4
 	note E_, 1
 	rest 1
