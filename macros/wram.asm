@@ -132,8 +132,9 @@ battle_struct: MACRO
 \1Type::
 \1Type1::         db
 \1Type2::         db
+\1Build::         flag_array NUM_BUILD_FLAGS
 \1StructEnd::
-ENDM ; 34
+ENDM ; 35
 
 curbox: MACRO
 \1Count::           db                                           ; 1   1

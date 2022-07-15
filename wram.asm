@@ -25,18 +25,19 @@ wChannel6:: channel_struct wChannel6 ; 251 fb
 wChannel7:: channel_struct wChannel7 ; 301 12d
 wChannel8:: channel_struct wChannel8 ; 351 15f
 
+wFrameSwap:: db ; 401 191
 
-wCurTrackDuty::           db ; 401 191
-wCurTrackVolumeEnvelope:: db ; 402 192
-wCurTrackFrequency::      dw ; 403 193
+wCurTrackDuty::           db ; 402 192
+wCurTrackVolumeEnvelope:: db ; 403 193
+wCurTrackFrequency::      dw ; 404 194
 
 	ds 1
 
-wCurNoteDuration::        db ; 406 196 ; used in Music_PitchSlide and LoadNote
-wCurMusicByte::           db ; 407 197
-wCurChannel::             db ; 408 198
+wCurNoteDuration::        db ; 407 197 ; used in Music_PitchSlide and LoadNote
+wCurMusicByte::           db ; 408 198
+wCurChannel::             db ; 409 199
 
-wVolume:: ; 409 199
+wVolume:: ; 410 19a
 ; corresponds to rNR50
 ; Channel control / ON-OFF / Volume (R/W)
 ;   bit 7 - Vin->SO2 ON/OFF
@@ -45,13 +46,13 @@ wVolume:: ; 409 199
 ;   bit 2-0 - SO1 output level (volume) (# 0-7)
 	db
 
-wSoundOutput:: ; 410 19a
+wSoundOutput:: ; 411 19b
 ; corresponds to rNR51
 ; bit 4-7: ch1-4 so2 on/off
 ; bit 0-3: ch1-4 so1 on/off
 	db
 
-wPitchSweep:: ; 411 19b
+wPitchSweep:: ; 412 19c
 ; corresponds to rNR10
 ; bit 7:   sweep
 ; bit 4-6: sweep time
@@ -59,58 +60,58 @@ wPitchSweep:: ; 411 19b
 ; but 0-2: sweep shift
 	db
 
-wMusicID::             dw ; 412 19c
-wMusicBank::           db ; 414 19e
-wNoiseSampleAddress::  dw ; 415 19f
-wNoiseSampleDelay::    db ; 417 1a1
-wMusicNoiseSampleSet:: db ; 418 1a2
-wSFXNoiseSampleSet::   db ; 419 1a3
+wMusicID::             dw ; 413 19d
+wMusicBank::           db ; 415 19f
+wNoiseSampleAddress::  dw ; 416 1a0
+wNoiseSampleDelay::    db ; 418 1a2
+	ds 1
+wMusicNoiseSampleSet:: db ; 420 1a4
+wSFXNoiseSampleSet::   db ; 421 1a5
 
-wLowHealthAlarm:: ; 420 1a4
+wLowHealthAlarm:: ; 422 1a6
 ; bit 7: on/off
 ; bit 4: pitch
 ; bit 0-3: counter
 	db
 
-wMusicFade:: ; 421 1a5
+wMusicFade:: ; 423 1a5
 ; fades volume over x frames
 ; bit 7: fade in/out
 ; bit 0-5: number of frames for each volume level
 ; $00 = none (default)
 	db
 
-wMusicFadeCount:: db ; 422 1a6
-wMusicFadeID::    dw ; 423 1a7
-wCryPitch::       dw ; 425 1a9
-wCryLength::      dw ; 427 1ab
-wLastVolume::     db ; 429 1ad
-wSoundEventFlag:: db ; 430 1ae
+wMusicFadeCount:: db ; 424 1a8
+wMusicFadeID::    dw ; 425 1a9
+	ds 5
+wCryPitch::       dw ; 432 1b0
+wCryLength::      dw ; 434 1b2
+wLastVolume::     db ; 436 1b4
+wSoundEventFlag:: db ; 437 1b5
+	ds 1
 ; if nonzero, turn off music when playing sfx
-wSFXPriority::    db ; 431 1af
+wSFXPriority::    db ; 439 1b7
 
-wChannel1JumpCondition:: db ; 432 1b0
-wChannel2JumpCondition:: db ; 433 1b1
-wChannel3JumpCondition:: db ; 434 1b2
-wChannel4JumpCondition:: db ; 435 1b3
-wStereoPanningMask::     db ; 436 1b4
+wChannel1JumpCondition:: db ; 440 1b8
+wChannel2JumpCondition:: db ; 441 1b9
+wChannel3JumpCondition:: db ; 442 1ba
+wChannel4JumpCondition:: db ; 443 1bb
+wStereoPanningMask::     db ; 444 1bc
 
-wCryTracks:: ; 437 1b5
+wCryTracks:: ; 445 1bd
 ; plays only in left or right track depending on what side the monster is on
 ; both tracks active outside of battle
 	db
 
-wSFXDuration:: db ; 438 1b6
+wSFXDuration:: db ; 446 1be
 ; id of sfx currently playing
-wCurSFX::      db ; 439 1b7
+wCurSFX::      db ; 447 1bf
 
-wChannelsEnd:: ; 440 1b8
+wChannelsEnd:: ; 448 1c0
 
 wMapMusic::                 db
-wDontPlayMapMusicOnReload:: db ; 441 1b9
-wFrameSwap::                db ; 442 1ba
-wMusicEnd::                    ; 443 1bb
-
-	ds 7
+wDontPlayMapMusicOnReload:: db ; 441 1c1
+wMusicEnd::                    ; 442 1c2
 
 SECTION "WRAM", WRAM0
 
@@ -667,24 +668,16 @@ wBattleAnimTempFrameOAMFlags:: db
 wBattleAnimTempPalette:: db
 ENDU ; ca22
 
-UNION ; ca22
 	ds $32
 wBattleAnimEnd:: ; 50 32
 
-NEXTU ; ca22
+
+	ds $23
+
 wSurfWaveBGEffect:: ds $40
 wSurfWaveBGEffectEnd:: ; 64 40
-ENDU ; ca62
-
-wAssemblyProject:: db
-wAssemblyProjectParams:: ds ASM_PARAMETER_LENGTH
-wAssemblyProjectEnd::
-wAssemblySearchResult:: flag_array NUM_ITEM_POKECOMBOS
 
 wBattleMon:: battle_struct wBattleMon
-wBattleMonBuild:: flag_array NUM_BUILD_FLAGS
-
-	ds 87 ; 47  2f
 
 wBattle::
 wEnemyMoveStruct:: move_struct wEnemyMoveStruct   ; 134 86
@@ -704,7 +697,7 @@ wIntroFrameCounter2:: db  ; 182 b6
 wcb19:: db                ; 183 b7
 ENDU ; cb2c 184 b8
 
-wAssemblySpecies:: dw ; cb2c
+	ds 2
 
 wEnemyTrainerItem1:: db ; cb2e
 wEnemyTrainerItem2:: db ; cb2f
@@ -1674,48 +1667,54 @@ wBGMapAnchor:: dw ; d045
 
 wUsedSprites:: ds SPRITE_GFX_LIST_CAPACITY * 2 ; d047
 wUsedSpritesEnd:: ; d05f
-	ds 30
+	ds 16
 
-wOverworldMapAnchor:: dw ; d07d
-wMetatileStandingY:: db ; d07f
-wMetatileStandingX:: db ; d080
+wOverworldMapAnchor:: dw ; d06f
+wMetatileStandingY:: db ; d071
+wMetatileStandingX:: db ; d072
 
 wMapPartial::
-wMapAttributesBank:: db ; d081
-wMapTileset:: db ; d082
-wEnvironment:: db ; d083
-wMapAttributesPointer:: dw ; d084
+wMapAttributesBank:: db ; d073
+wMapTileset:: db ; d074
+wEnvironment:: db ; d075
+wMapAttributesPointer:: dw ; d076
 wMapPartialEnd::
 
 wMapAttributes::
-wMapBorderBlock:: db ; d086
+wMapBorderBlock:: db ; d078
 ; width/height are in blocks (2x2 walkable tiles, 4x4 graphics tiles)
-wMapHeight:: db ; d087
-wMapWidth:: db ; d088
-wMapBlocksBank:: db ; d089
-wMapBlocksPointer:: dw ; d08a
-wMapScriptsBank:: db ; d08c
-wMapScriptsPointer:: dw ; d08d
-wMapEventsPointer:: dw ; d08f
+wMapHeight:: db ; d079
+wMapWidth:: db ; d07a
+wMapBlocksBank:: db ; d07b
+wMapBlocksPointer:: dw ; d07c
+wMapScriptsBank:: db ; d07e
+wMapScriptsPointer:: dw ; d07f
+wMapEventsPointer:: dw ; d081
 ; bit set
-wMapConnections:: db ; d091
+wMapConnections:: db ; d083
 wMapAttributesEnd::
 
-wNorthMapConnection:: map_connection_struct wNorth ; d092
-wSouthMapConnection:: map_connection_struct wSouth ; d09e
-wWestMapConnection::  map_connection_struct wWest  ; d0aa
-wEastMapConnection::  map_connection_struct wEast  ; d0b6
+wNorthMapConnection:: map_connection_struct wNorth ; d084
+wSouthMapConnection:: map_connection_struct wSouth ; d090
+wWestMapConnection::  map_connection_struct wWest  ; d09c
+wEastMapConnection::  map_connection_struct wEast  ; d0a8
 
 wTileset::
-wTilesetBank:: db ; d0c2
-wTilesetAddress:: dw ; d0c3
-wTilesetBlocksBank:: db ; d0c5
-wTilesetBlocksAddress:: dw ; d0c6
-wTilesetCollisionBank:: db ; d0c8
-wTilesetCollisionAddress:: dw ; d0c9
-wTilesetAnim:: dw ; bank 3f ; d0cb
-wTilesetPalettes:: dw ; bank 3f ; d0cd
+wTilesetBank:: db ; d0b4
+wTilesetAddress:: dw ; d0b5
+wTilesetBlocksBank:: db ; d0b7
+wTilesetBlocksAddress:: dw ; d0b8
+wTilesetCollisionBank:: db ; d0ba
+wTilesetCollisionAddress:: dw ; d0bb
+wTilesetAnim:: dw ; bank 3f ; d0bd
+wTilesetPalettes:: dw ; bank 3f ; d0bf
 wTilesetEnd::
+
+wAssemblyProject:: db ; d0c1
+wAssemblyProjectParams:: ds ASM_PARAMETER_LENGTH ; d0c2
+wAssemblyProjectEnd:: ; d0cc
+wAssemblySearchResult:: flag_array NUM_ITEM_POKECOMBOS
+wAssemblySpecies:: dw ; d0cd
 
 wEvolvableFlags:: flag_array PARTY_LENGTH ; d0cf
 
@@ -1769,8 +1768,7 @@ wLinkBattleRNs:: ds 10 ; d0e1
 wTempEnemyMonSpecies::  dw ; d0eb
 wTempBattleMonSpecies:: dw ; d0ed
 
-wEnemyMon:: battle_struct wEnemyMon ; d0ef
-wEnemyMonBuild:: db ; d111
+wEnemyMon:: battle_struct wEnemyMon ; d0ef]
 wEnemyMonBaseStats:: ds 5 ; d112
 wEnemyMonCatchRate:: db ; d117
 wEnemyMonBaseExp::   db ; d118
