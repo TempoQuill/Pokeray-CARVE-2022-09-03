@@ -1151,12 +1151,12 @@ wce8f:: dw ; ce8f
 
 	ds 2
 
-wMovementByteWasControlSwitch:: db ; ce83
+wMovementByteWasControlSwitch:: db ; ce93
 
-UNION ; ce84
+UNION ; ce94
 wObjectPriorities:: ds NUM_OBJECT_STRUCTS
 
-NEXTU ; ce84
+NEXTU ; ce94
 wMovementPointer:: dw
 	ds 3
 wTempObjectCopyMapObjectIndex:: db
@@ -1256,22 +1256,23 @@ wMenuCursorY:: db ; cee0
 wMenuCursorX:: db ; cee1
 wCursorOffCharacter:: db ; cee2
 wCursorCurrentTile:: dw ; cee3
+	ds 1
 
 wLinkMusic:: dw
 
-wOverworldDelay:: db ; cee7
-wTextDelayFrames:: db ; cee8
-wVBlankOccurred:: db ; cee9
+wOverworldDelay:: db ; cee8
+wTextDelayFrames:: db ; cee9
+wVBlankOccurred:: db ; ceea
 
-wceea:: db
+wceeb:: db
 
-wDefaultSpawnpoint:: db ; ceeb
+wDefaultSpawnpoint:: db ; ceec
 
-UNION ; ceec
+UNION ; ceed
 ; mail temp storage
 wTempMail:: mailmsg wTempMail
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; magnet train
 wMagnetTrain:: ; used only for BANK(wMagnetTrain)
 wMagnetTrainDirection:: db
@@ -1280,19 +1281,19 @@ wMagnetTrainHoldPosition:: db
 wMagnetTrainFinalPosition:: db
 wMagnetTrainPlayerSpriteInitX:: db
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; credits
 wCreditsPos:: dw
 wCreditsTimer:: db
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; mon buffer
 wBufferMonNick:: ds MON_NAME_LENGTH
 wBufferMonOT:: ds NAME_LENGTH
 wBufferMon:: party_struct wBufferMon
 	ds 8
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; mart items
 wMartItem1BCD:: ds 3
 wMartItem2BCD:: ds 3
@@ -1305,7 +1306,7 @@ wMartItem8BCD:: ds 3
 wMartItem9BCD:: ds 3
 wMartItem10BCD:: ds 3
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; town map data
 wTownMapPlayerIconLandmark:: db
 UNION ; ceed
@@ -1315,12 +1316,12 @@ NEXTU ; ceed
 wTownMapCursorCoordinates:: dw
 ENDU ; cef0
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; phone call data
 wPhoneScriptBank:: db
 wPhoneCaller:: dw
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; radio data
 wCurRadioLine:: db
 wNextRadioLine:: db
@@ -1331,18 +1332,18 @@ wOaksPKMNTalkSegmentCounter:: db
 wRadioText:: ds 2 * SCREEN_WIDTH
 wRadioTextEnd::
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; lucky number show
 wLuckyNumberDigitsBuffer:: ds 5
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; movement buffer data
 wMovementBufferCount:: db
 wMovementBufferObject:: db
 	ds 3
 wMovementBuffer:: ds 55
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; box printing
 wWhichBoxMonToPrint:: db
 wFinishedPrintingBox:: db
@@ -1350,17 +1351,17 @@ wAddrOfBoxToPrint:: dw
 wBankOfBoxToPrint:: db
 wWhichBoxToPrint:: db
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; trainer HUD data
 	ds 1
 wPlaceBallsDirection:: db
 wTrainerHUDTiles:: ds 4
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; earthquake data buffer
 wEarthquakeMovementDataBuffer:: ds 5
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; miscellaneous
 wTempDayOfWeek::
 wKeepSevenBiasChance:: ; used in the slots to handle the favoring of 7 symbol streaks
@@ -1369,7 +1370,7 @@ wKeepSevenBiasChance:: ; used in the slots to handle the favoring of 7 symbol st
 wStartFlypoint:: db
 wEndFlypoint:: db
 
-NEXTU ; ceec
+NEXTU ; ceed
 ; unidentified
 wceed:: db
 wceee:: db
@@ -1379,8 +1380,8 @@ wcefa:: ds 2
 wcefc:: ds 1
 wcefd:: ds 44
 
-UNION ; cf28
-; trainer data
+UNION ; cf29
+; trainer data - 16 bytes
 wSeenTrainerBank:: db
 wSeenTrainerDistance:: db
 wSeenTrainerDirection:: db
@@ -1395,40 +1396,40 @@ wScriptAfterPointer:: dw
 wRunningTrainerBattleScript:: db
 wTempTrainerEnd::
 
-NEXTU ; cf28
-; menu items list
+NEXTU ; cf29
+; menu items list - 16 bytes
 wMenuItemsList:: ds 16
 wMenuItemsListEnd::
 
-NEXTU ; cf28
-; fruit tree data
+NEXTU ; cf29
+; fruit tree data - 2 bytes
 wCurFruitTree:: db
 wCurFruit:: db
 
-NEXTU ; cf28
-; item ball data
+NEXTU ; cf29
+; item ball data - 2 bytes
 wItemBallData::
 wItemBallItemID:: db
 wItemBallQuantity:: db
 wItemBallDataEnd::
 
-NEXTU ; cf28
-; hidden item data
+NEXTU ; cf29
+; hidden item data - 3 bytes
 wHiddenItemData::
 wHiddenItemEvent:: dw
 wHiddenItemID:: db
 wHiddenItemDataEnd::
 
-NEXTU ; cf28
-; elevator data
+NEXTU ; cf29
+; elevator data - 4 bytes
 wElevatorData::
 wElevatorPointerBank:: db
 wElevatorPointer:: dw
 wElevatorOriginFloor:: db
 wElevatorDataEnd::
 
-NEXTU ; cf28
-; coord event data
+NEXTU ; cf29
+; coord event data - 6 bytes
 wCurCoordEvent::
 wCurCoordEventSceneID:: db
 wCurCoordEventMapY:: db
@@ -1436,24 +1437,24 @@ wCurCoordEventMapX:: db
 	ds 1
 wCurCoordEventScriptAddr:: dw
 
-NEXTU ; cf28
-; BG event data
+NEXTU ; cf29
+; BG event data - 5 bytes
 wCurBGEvent::
 wCurBGEventYCoord:: db
 wCurBGEventXCoord:: db
 wCurBGEventType:: db
 wCurBGEventScriptAddr:: dw
 
-NEXTU ; cf28
-; mart data
+NEXTU ; cf29
+; mart data - 6 bytes
 wMartType:: db
 wMartPointerBank:: db
 wMartPointer:: dw
 wMartJumptableIndex:: db
 wBargainShopFlags:: db
 
-NEXTU ; cf28
-; player movement data
+NEXTU ; cf29
+; player movement data - 17 bytes
 wCurInput::
 wFacingTileID:: db
 wWalkingIntoNPC:: db
@@ -1468,105 +1469,107 @@ wWalkingTile:: db
 	ds 6
 wPlayerTurningDirection:: db
 
-NEXTU ; cf28
-; std script buffer
+NEXTU ; cf29
+; std script buffer - 4 bytes
 	ds 1
 wJumpStdScriptBuffer:: ds 3
 
-NEXTU ; cf28
-; phone script data
+NEXTU ; cf29
+; phone script data - 18 bytes
 wCheckedTime:: db
 wEMailListIndex:: db
 wNumAvailableCallers:: db
 wAvailableCallers:: ds CONTACT_LIST_SIZE
 
-NEXTU ; cf28
-; phone caller contact
+NEXTU ; cf29
+; phone caller contact - 14 bytes
 	ds 1
 wCallerContact:: ds EMAIL_CONTACT_SIZE
 
-NEXTU ; cf28
+NEXTU ; cf29
 ; backup menu data
 	ds 7
 wMenuCursorBufferBackup:: db
 wMenuScrollPositionBackup:: db
 
-NEXTU ; cf28
+NEXTU ; cf29
 ; poison step data
 wPoisonStepData::
 wPoisonStepFlagSum:: db
 wPoisonStepPartyFlags:: ds PARTY_LENGTH
 wPoisonStepDataEnd::
-ENDU ; cf3a
+ENDU ; cf3b
 
 wBoxAlignment:: db
 	ds 2
 wFXAnimID:: dw
-ENDU ; cf3f
+ENDU ; cf40
 
-wPlaceBallsX:: db ; cf3f
-wPlaceBallsY:: db ; cf40
-wTileAnimationTimer:: db ; cf41
+wPlaceBallsX:: db ; cf40
+wPlaceBallsY:: db ; cf41
+wTileAnimationTimer:: db ; cf42
 
 ; palette backups?
-wBGP:: db ; cf42
-wOBP0:: db ; cf43
-wOBP1:: db ; cf44
+wBGP:: db ; cf43
+wOBP0:: db ; cf44
+wOBP1:: db ; cf45
 
-wNumHits:: db ; cf45
+wNumHits:: db ; cf46
+	ds 1
 
-wMonOrItemNameBuffer:: ds 22 ; cf46
-wTMHMMoveNameBackup:: ds MOVE_NAME_LENGTH ; cf5c
+wMonOrItemNameBuffer:: ds NAME_LENGTH * 2 ; cf48
+wTMHMMoveNameBackup:: ds MOVE_NAME_LENGTH ; cf5e
 
-wStringBuffer1:: ds 19 ; cf69
-wStringBuffer2:: ds 19 ; cf7c
-wStringBuffer3:: ds 19 ; cf8f
-wStringBuffer4:: ds 19 ; cfa2
-wStringBuffer5:: ds 13 ; cfb5
+wStringBuffer1:: ds 19 ; cf6b
+wStringBuffer2:: ds 19 ; cf7e
+wStringBuffer3:: ds 19 ; cf91
+wStringBuffer4:: ds 19 ; cfa3
+wStringBuffer5:: ds 13 ; cfb7
 
-wBattleMenuCursorBuffer:: dw ; cfc2
-wCurBattleMon:: db ; cfc4
-wCurMoveNum:: db ; cfc5
-wLastPocket:: db ; cfc6
+wBattleMenuCursorBuffer:: dw ; cfc4
+wCurBattleMon:: db ; cfc6
+wCurMoveNum:: db ; cfc7
+wLastPocket:: db ; cfc8
 
-wPartyMenuCursor:: db ; cfc7
-wItemsPocketCursor:: db ; cfc8
-wKeyItemsPocketCursor:: db ; cfc9
-wBallsPocketCursor:: db ; cfca
-wTMHMPocketCursor:: db ; cfcb
-wMedicinePocketCursor:: db ; cfcc
-wFruitPocketCursor:: db ; cfcd
-wAssemblyPocketCursor:: db ; cfce
-wEvolutionPocketCursor:: db ; cfcf
+wPartyMenuCursor:: db ; cfc9
+wItemsPocketCursor:: db ; cfca
+wKeyItemsPocketCursor:: db ; cfcb
+wBallsPocketCursor:: db ; cfcc
+wTMHMPocketCursor:: db ; cfcd
 
-wItemsPocketScrollPosition:: db ; cfd0
-wKeyItemsPocketScrollPosition:: db ; cfd1
-wBallsPocketScrollPosition:: db ; cfd2
-wTMHMPocketScrollPosition:: db ; cfd3
-wMedicinePocketScrollPosition:: db ; cfd4
-wFruitPocketScrollPosition:: db ; cfd5
-wAssemblyPocketScrollPosition:: db ; cfd6
-wEvolutionPocketScrollPosition:: db ; cfd7
+wMedicinePocketCursor:: db ; cfce
+wFruitPocketCursor:: db ; cfcf
+wAssemblyPocketCursor:: db ; cfd0
+wEvolutionPocketCursor:: db ; cfd1
 
-; cfd8
+wItemsPocketScrollPosition:: db ; cfd2
+wKeyItemsPocketScrollPosition:: db ; cfd3
+wBallsPocketScrollPosition:: db ; cfd4
+wTMHMPocketScrollPosition:: db ; cfd5
+wMedicinePocketScrollPosition:: db ; cfd6
+wFruitPocketScrollPosition:: db ; cfd7
+wAssemblyPocketScrollPosition:: db ; cfd8
+wEvolutionPocketScrollPosition:: db ; cfd9
+
+; cfda
 wSwitchMon::
 wSwitchItem::
 wMoveSwapBuffer::
 	db
 
-wMenuScrollPosition:: ds 4 ; cfd9
+wMenuScrollPosition:: ds 4 ; cfdb
 
-wQueuedScriptBank:: db ; cfdd
-wQueuedScriptAddr:: dw ; cfde
+wQueuedScriptBank:: db ; cfdf
+wQueuedScriptAddr:: dw ; cfe0
 
-wPredefID:: db ; cfe0
-wPredefTemp:: dw ; cfe1
-wPredefAddress:: dw ; cfe3
-wFarCallBCBuffer:: dw ; cfe5
+wPredefID:: db ; cfe2
+wPredefTemp:: dw ; cfe3
+wPredefAddress:: dw ; cfe5
+wFarCallBCBuffer:: dw ; cfe6
 
-wNumMoves:: db ; cfe7
+wNumMoves:: db ; cfe9
 
-; cfe8
+; cfea
 wFieldMoveSucceeded::
 wItemEffectSucceeded::
 wBattlePlayerAction::
@@ -1574,7 +1577,7 @@ wBattlePlayerAction::
 wSolvedUnownPuzzle::
 	db
 
-wVramState:: ; cfe9
+wVramState:: ; cfeb
 ; bit 0: overworld sprite updating on/off
 ; bit 1-3: Intro anim segments
 ; bit 5: can animate object $0/$4 to music
@@ -1582,36 +1585,34 @@ wVramState:: ; cfe9
 ; bit 7: on when surf initiates
 	db
 
-wBattleResult:: ; cfea
+wBattleResult:: ; cfec
 ; WIN, LOSE, or DRAW
 ; bit 7: box full
 	db
 
 
-wUsingItemWithSelect:: db ; cfeb
+wUsingItemWithSelect:: db ; cfed
 
-UNION ; cfec
+UNION ; cfee
 ; mart data
 wCurMart:: ds 16
 wCurMartEnd::
 
-NEXTU ; cfec
+NEXTU ; cfee
 ; elevator data
 wCurElevator:: db
 wCurElevatorFloors:: db
 
-NEXTU ; cfec
+NEXTU ; cfee
 ; mailbox data
 wCurMessageScrollPosition:: db
 wCurMessageIndex:: db
 wMailboxCount:: db
 wMailboxItems:: ds MAILBOX_CAPACITY
 wMailboxEnd::
-ENDU ; cffc
+ENDU ; cffe
 
-wListPointer:: dw ; cffc
-	ds 2
-
+wListPointer:: dw ; cffe
 
 SECTION "WRAM 1", WRAMX
 
@@ -1971,10 +1972,8 @@ wPlayerData1::
 wPlayerID:: dw
 
 wPlayerName:: ds NAME_LENGTH ; d197
-wMomsName::   ds NAME_LENGTH ; d1a2
-wRivalName::  ds NAME_LENGTH ; d1ad
-wRedsName::   ds NAME_LENGTH ; d1b8
-wGreensName:: ds NAME_LENGTH ; d1c3
+wRivalName::  ds NAME_LENGTH ; d1a2
+	ds 33
 
 wSavedAtLeastOnce:: db ; d1ce
 wSpawnAfterChampion:: db ; d1cf
@@ -2057,12 +2056,12 @@ wMap14Object::  map_object wMap14
 wMap15Object::  map_object wMap15
 wMapObjectsEnd::
 
-wObjectMasks:: ds NUM_OBJECTS ; d51e
+wObjectMasks:: ds NUM_OBJECTS ; d50e
 
-wVariableSprites:: ds $10 ; d52e
+wVariableSprites:: ds $10 ; d51e
 
-wEnteredMapFromContinue:: db ; d53e
-wTimeOfDayPal:: db ; d53f
+wEnteredMapFromContinue:: db ; d52e
+wTimeOfDayPal:: db ; d52f
 wTimeOfDayPalFlags:: db ; d530
 wTimeOfDayPalset:: db ; d531
 wCurTimeOfDay:: db ; d532
@@ -2093,12 +2092,12 @@ wNumKeyItems:: db ; d598
 wKeyItems:: ds MAX_KEY_ITEMS + 1 ; d599
 wKeyItemsEnd:: ; d5af
 
-wNumBalls:: db ; d5af
-wBalls:: ds MAX_BALLS * 2 + 1 ; d5b0
-wBallsEnd:: ; d5c9
+wNumBalls:: db ; d5b3
+wBalls:: ds MAX_BALLS * 2 + 1 ; d5b4
+wBallsEnd:: ; d5cd
 
-wNumMedicine:: db ; d5c9
-wMedicine:: ds MAX_MEDICINE * 2 + 1 ; d5ca
+wNumMedicine:: db ; d5cd
+wMedicine:: ds MAX_MEDICINE * 2 + 1 ; d5ce
 wMedicineEnd::
 
 wNumFruit:: db ; d5f3
@@ -2291,11 +2290,9 @@ wPartyMonNicknamesEnd:: ; dbbc
 	ds 8
 
 wPokedexCaught:: flag_array NUM_POKEMON ; dbc4
-	ds 16
 wEndPokedexCaught::
 
 wPokedexSeen:: flag_array NUM_POKEMON ; dbf4
-	ds 16
 wEndPokedexSeen::
 
 wUnownDex:: ds NUM_UNOWN ; dc24
@@ -2336,7 +2333,7 @@ wBreedMon2Stats:: box_struct wBreedMon2 ; dc90
 wEggNick:: ds MON_NAME_LENGTH ; dcb0
 wEggOT::   ds NAME_LENGTH ; dcbb
 wEggMon::  box_struct wEggMon ; dcc6
-	ds 5
+	ds 49
 
 wSwarmMapGroup:: db ; dd14
 wSwarmMapNumber:: db ; dd15
@@ -2351,9 +2348,7 @@ wRoamMons_CurMapGroup:: db ; dd30
 wRoamMons_LastMapNumber:: db ; dd31
 wRoamMons_LastMapGroup:: db ; dd32
 
-wBestMagikarpLengthFeet:: db ; dd33
-wBestMagikarpLengthInches:: db ; dd34
-wMagikarpRecordHoldersName:: ds NAME_LENGTH ; dd35
+	ds 13
 
 UNION ; dd40
 wPokedexShowPointerAddr:: dw

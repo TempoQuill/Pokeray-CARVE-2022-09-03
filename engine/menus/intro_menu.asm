@@ -176,28 +176,10 @@ SetDefaultBoxNames:
 InitializeNPCNames:
 	ld hl, .Rival
 	ld de, wRivalName
-	call .Copy
-
-	ld hl, .Mom
-	ld de, wMomsName
-	call .Copy
-
-	ld hl, .Red
-	ld de, wRedsName
-	call .Copy
-
-	ld hl, .Green
-	ld de, wGreensName
-
-.Copy:
 	ld bc, NAME_LENGTH
-	call CopyBytes
-	ret
+	jp CopyBytes
 
 .Rival:  db "???@"
-.Red:    db "RED@"
-.Green:  db "GREEN@"
-.Mom:    db "MOM@"
 
 InitializeWorld:
 	call ShrinkPlayer

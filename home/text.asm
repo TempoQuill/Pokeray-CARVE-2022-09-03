@@ -197,11 +197,8 @@ ENDM
 	dict "<SCROLL>",  _ContTextNoPause
 	dict "<_CONT>",   _ContText
 	dict "<PARA>",    Paragraph
-	dict "<MOM>",     PrintMomsName
 	dict "<PLAYER>",  PrintPlayerName
 	dict "<RIVAL>",   PrintRivalName
-	dict "<RED>",     PrintRedsName
-	dict "<GREEN>",   PrintGreensName
 	dict "#",         PlacePOKe
 	dict "<PC>",      PCChar
 	dict "<TM>",      TMChar
@@ -228,11 +225,8 @@ print_name: MACRO
 	jp PlaceCommandCharacter
 ENDM
 
-PrintMomsName:   print_name wMomsName
 PrintPlayerName: print_name wPlayerName
 PrintRivalName:  print_name wRivalName
-PrintRedsName:   print_name wRedsName
-PrintGreensName: print_name wGreensName
 
 TrainerChar:  print_name TrainerCharText
 TMChar:       print_name TMCharText

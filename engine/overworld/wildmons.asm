@@ -561,7 +561,7 @@ CheckEncounterRoamMon:
 	ld hl, wRoamMon1MapGroup
 	ld c, a
 	ld b, 0
-	ld a, 7 ; length of the roam_struct
+	ld a, 8 ; length of the roam_struct
 	call AddNTimes
 	ld a, d
 	cp [hl]
