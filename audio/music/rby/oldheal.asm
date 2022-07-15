@@ -16,7 +16,7 @@ Music_RGOldHeal_Ch1:
 	note G#, 2
 	note E_, 2
 	duty_cycle 3
-	note_type 12, 12, 4
+	note_type 12, 12, 5
 	octave 5
 	note G#, 2
 	note E_, 2
@@ -27,7 +27,7 @@ Music_RGOldHeal_Ch1:
 
 Music_RGOldHeal_Ch2:
 	vibrato 5, 1, 5
-	note_type 12, 13, 3
+	note_type 12, 13, 4
 	duty_cycle 2
 	octave 4
 	note B_, 2
