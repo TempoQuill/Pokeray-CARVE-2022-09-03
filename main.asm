@@ -145,6 +145,7 @@ INCLUDE "engine/link/mystery_gift_2.asm"
 INCLUDE "engine/items/tmhm.asm"
 INCLUDE "engine/pokemon/print_move_description.asm"
 INCLUDE "engine/events/pokerus/pokerus.asm"
+INCLUDE "engine/pokemon/assmebly.asm"
 
 
 SECTION "Effect Commands", ROMX
