@@ -608,6 +608,17 @@ wcb4a:: ds 84
 wcb9e:: ds 130
 
 NEXTU ; c900
+; time capsule mail
+wTimeCapsuleMail::
+wTimeCapsuleMail1:: goldmsg wTimeCapsuleMail1 ; c900
+wTimeCapsuleMail2:: goldmsg wTimeCapsuleMail2 ; c92f
+wTimeCapsuleMail3:: goldmsg wTimeCapsuleMail3 ; c95e
+wTimeCapsuleMail4:: goldmsg wTimeCapsuleMail4 ; c98d
+wTimeCapsuleMail5:: goldmsg wTimeCapsuleMail5 ; c9bc
+wTimeCapsuleMail6:: goldmsg wTimeCapsuleMail6 ; c9eb
+; ca1a
+
+NEXTU ; c900
 ; battle
 wBattleAnimTileDict:: ds 10 ; c900
 

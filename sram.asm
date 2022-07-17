@@ -62,14 +62,14 @@ sBackupMysteryGiftItem:: db ; ac04
 sNumDailyMysteryGiftPartnerIDs:: db ; ac05
 sDailyMysteryGiftPartnerIDs:: ds 5 * 2 ; ac06 ; maximum 5 per day, 2 bytes per ID
 sMysteryGiftDecorationsReceived:: flag_array NUM_NON_TROPHY_DECOS ; ac10
-sMysteryGiftTimer:: db ; ac16
-sMysteryGiftTimerStartDay:: db ; ac17
-sMysteryGiftTrainerHouseFlag:: db ; ac18
-sMysteryGiftPartnerName:: ds NAME_LENGTH ; ac19
-sMysteryGiftTrainer:: ds (1 + 1 + NUM_MOVES) * PARTY_LENGTH + 2 ; ac24
-sBackupMysteryGiftItemEnd:: ; ac4a
+sMysteryGiftTimer:: db ; ac1a
+sMysteryGiftTimerStartDay:: db ; ac1b
+sMysteryGiftTrainerHouseFlag:: db ; ac1c
+sMysteryGiftPartnerName:: ds NAME_LENGTH ; ac1d
+sMysteryGiftTrainer:: ds (1 + 1 + NUM_MOVES) * PARTY_LENGTH + 2 ; ac28
+sBackupMysteryGiftItemEnd:: ; ac4e
 
-	ds $16
+	ds $12
 
 sRTCStatusFlags:: ds 8 ; ac60
 sLuckyNumberDay:: db ; ac68
@@ -79,20 +79,20 @@ sLuckyIDNumber::  dw ; ac69
 SECTION "Backup Save 1", SRAM
 
 sBackupPlayerData3:: ds wPlayerDataEnd - wPlayerData3 ; ac6b
-sBackupPokemonData:: ds wPokemonDataEnd - wPokemonData ; b0e8
-sBackupPlayerData1:: ds wPlayerData1End - wPlayerData ; b5c7
+sBackupPokemonData:: ds wPokemonDataEnd - wPokemonData ; b126
+sBackupPlayerData1:: ds wPlayerData1End - wPlayerData ; b605
 
 
 SECTION "SRAM Stack", SRAM
 
-sStackTop:: dw ; b7ed
-sRTCHaltCheckValue:: db ; b7ef
+sStackTop:: dw ; b828
+sRTCHaltCheckValue:: dw ; b82a
 
 
 SECTION "SRAM Window Stack", SRAM
 
-sWindowStackBottom:: ; b800
-	ds $800 - 1
+sWindowStackBottom:: ; b82c
+	ds $7d3
 sWindowStack::
 sWindowStackTop:: ; bfff
 	ds 1
@@ -107,88 +107,89 @@ sCheckValue1:: db ; a008 ; loaded with SAVE_CHECK_VALUE_1, used to check save co
 sGameData::
 sPlayerData::
 sPlayerData1::  ds wPlayerData1End - wPlayerData1 ; a009
-sPlayerData2::  ds wPlayerData2End - wPlayerData2 ; a22f
-sPlayerData3::  ds wPlayerData3End - wPlayerData3 ; a3d9
-sCurMapData::   ds wCurMapDataEnd - wCurMapData ; a856
-sPokemonData::  ds wPokemonDataEnd - wPokemonData ; a88a
+sPlayerData2::  ds wPlayerData2End - wPlayerData2 ; a22c
+sPlayerData3::  ds wPlayerData3End - wPlayerData3 ; a3a7
+sCurMapData::   ds wCurMapDataEnd - wCurMapData ; a862
+sPokemonData::  ds wPokemonDataEnd - wPokemonData ; a896
 sGameDataEnd::
 
-sChecksum:: dw ; ad69
+sChecksum:: dw ; ad75
 
-sCheckValue2:: db ; ad6b ; loaded with SAVE_CHECK_VALUE_2, used to check save corruption
+sCheckValue2:: db ; ad77 ; loaded with SAVE_CHECK_VALUE_2, used to check save corruption
 
 
 SECTION "Active Box", SRAM
 
-sBox:: curbox sBox ; ad6c
+; CURRENT_BOX EQU 
+sBox:: curbox sBox ; ad78
 
 
 SECTION "Link Battle Data", SRAM
 
 sLinkBattleStats::
-sLinkBattleWins::   dw ; b184
-sLinkBattleLosses:: dw ; b186 
-sLinkBattleDraws::  dw ; b188 
+sLinkBattleWins::   dw ; b19e
+sLinkBattleLosses:: dw ; b1a0 
+sLinkBattleDraws::  dw ; b1a2 
 
 sLinkBattleRecord::
-sLinkBattleRecord1:: link_battle_record sLinkBattleRecord1 ; b18a
-sLinkBattleRecord2:: link_battle_record sLinkBattleRecord2 ; b19c
-sLinkBattleRecord3:: link_battle_record sLinkBattleRecord3 ; b1ae
-sLinkBattleRecord4:: link_battle_record sLinkBattleRecord4 ; b1c0
-sLinkBattleRecord5:: link_battle_record sLinkBattleRecord5 ; b1d2
-sLinkBattleStatsEnd:: ; b1e4
+sLinkBattleRecord1:: link_battle_record sLinkBattleRecord1 ; b1a4
+sLinkBattleRecord2:: link_battle_record sLinkBattleRecord2 ; b1b6
+sLinkBattleRecord3:: link_battle_record sLinkBattleRecord3 ; b1c8
+sLinkBattleRecord4:: link_battle_record sLinkBattleRecord4 ; b1da
+sLinkBattleRecord5:: link_battle_record sLinkBattleRecord5 ; b1ec
+sLinkBattleStatsEnd:: ; b1fe
 
 
 SECTION "SRAM Hall of Fame", SRAM
 
 sHallOfFame::
-sHallOfFame01:: hall_of_fame sHallOfFame01 ; b1e4
-sHallOfFame02:: hall_of_fame sHallOfFame02 ; b24c
-sHallOfFame03:: hall_of_fame sHallOfFame03 ; b2b4
-sHallOfFame04:: hall_of_fame sHallOfFame04 ; b31c
-sHallOfFame05:: hall_of_fame sHallOfFame05 ; b384
-sHallOfFame06:: hall_of_fame sHallOfFame06 ; b3ec
-sHallOfFame07:: hall_of_fame sHallOfFame07 ; b454
-sHallOfFame08:: hall_of_fame sHallOfFame08 ; b4bc
-sHallOfFame09:: hall_of_fame sHallOfFame09 ; b524
-sHallOfFame10:: hall_of_fame sHallOfFame10 ; b58c
-sHallOfFame11:: hall_of_fame sHallOfFame11 ; b5f4
-sHallOfFame12:: hall_of_fame sHallOfFame12 ; b65c
-sHallOfFame13:: hall_of_fame sHallOfFame13 ; b6c4
-sHallOfFame14:: hall_of_fame sHallOfFame14 ; b72c
-sHallOfFame15:: hall_of_fame sHallOfFame15 ; b794
-sHallOfFame16:: hall_of_fame sHallOfFame16 ; b7fc
-sHallOfFame17:: hall_of_fame sHallOfFame17 ; b864
-sHallOfFame18:: hall_of_fame sHallOfFame18 ; b8cc
-sHallOfFame19:: hall_of_fame sHallOfFame19 ; b934
-sHallOfFame20:: hall_of_fame sHallOfFame20 ; b99c
-sHallOfFame21:: hall_of_fame sHallOfFame21 ; ba04
-sHallOfFame22:: hall_of_fame sHallOfFame22 ; ba6c
-sHallOfFame23:: hall_of_fame sHallOfFame23 ; bad4
-sHallOfFame24:: hall_of_fame sHallOfFame24 ; bb3c
-sHallOfFame25:: hall_of_fame sHallOfFame25 ; bba4
-sHallOfFame26:: hall_of_fame sHallOfFame26 ; bc0c
-sHallOfFame27:: hall_of_fame sHallOfFame27 ; bc74
-sHallOfFame28:: hall_of_fame sHallOfFame28 ; bcdc
-sHallOfFame29:: hall_of_fame sHallOfFame29 ; bd44
-sHallOfFame30:: hall_of_fame sHallOfFame30 ; bdac
+sHallOfFame01:: hall_of_fame sHallOfFame01 ; b1fe
+sHallOfFame02:: hall_of_fame sHallOfFame02 ; b266
+sHallOfFame03:: hall_of_fame sHallOfFame03 ; b2ce
+sHallOfFame04:: hall_of_fame sHallOfFame04 ; b336
+sHallOfFame05:: hall_of_fame sHallOfFame05 ; b39e
+sHallOfFame06:: hall_of_fame sHallOfFame06 ; b406
+sHallOfFame07:: hall_of_fame sHallOfFame07 ; b46e
+sHallOfFame08:: hall_of_fame sHallOfFame08 ; b4d6
+sHallOfFame09:: hall_of_fame sHallOfFame09 ; b53e
+sHallOfFame10:: hall_of_fame sHallOfFame10 ; b5a6
+sHallOfFame11:: hall_of_fame sHallOfFame11 ; b60e
+sHallOfFame12:: hall_of_fame sHallOfFame12 ; b676
+sHallOfFame13:: hall_of_fame sHallOfFame13 ; b6de
+sHallOfFame14:: hall_of_fame sHallOfFame14 ; b746
+sHallOfFame15:: hall_of_fame sHallOfFame15 ; b7ae
+sHallOfFame16:: hall_of_fame sHallOfFame16 ; b816
+sHallOfFame17:: hall_of_fame sHallOfFame17 ; b87e
+sHallOfFame18:: hall_of_fame sHallOfFame18 ; b8e6
+sHallOfFame19:: hall_of_fame sHallOfFame19 ; b94e
+sHallOfFame20:: hall_of_fame sHallOfFame20 ; b9b6
+sHallOfFame21:: hall_of_fame sHallOfFame21 ; ba1e
+sHallOfFame22:: hall_of_fame sHallOfFame22 ; ba86
+sHallOfFame23:: hall_of_fame sHallOfFame23 ; baee
+sHallOfFame24:: hall_of_fame sHallOfFame24 ; bb56
+sHallOfFame25:: hall_of_fame sHallOfFame25 ; bbbe
+sHallOfFame26:: hall_of_fame sHallOfFame26 ; bc26
+sHallOfFame27:: hall_of_fame sHallOfFame27 ; bc8e
+sHallOfFame28:: hall_of_fame sHallOfFame28 ; bcf6
+sHallOfFame29:: hall_of_fame sHallOfFame29 ; bd5e
+sHallOfFame30:: hall_of_fame sHallOfFame30 ; bdc6
 sHallOfFameEnd::
 
 
 SECTION "Backup Save 2", SRAM
 
-sBackupPlayerData2:: ds wPlayerData2End - wPlayerData2 ; be14
+sBackupPlayerData2:: ds wPlayerData2End - wPlayerData2 ; be2e
 
 
 SECTION "Boxes 1-7", SRAM
 
 sBox1::  box sBox1 ; a000
-sBox2::  box sBox2 ; a40a
-sBox3::  box sBox3 ; a814
-sBox4::  box sBox4 ; ac1e
-sBox5::  box sBox5 ; b028
-sBox6::  box sBox6 ; b432
-sBox7::  box sBox7 ; b83c
+sBox2::  box sBox2 ; a426
+sBox3::  box sBox3 ; a84c
+sBox4::  box sBox4 ; ac72
+sBox5::  box sBox5 ; b098
+sBox6::  box sBox6 ; b4be
+sBox7::  box sBox7 ; b8e4
 
 SECTION "Boxes 8-14", SRAM
 
@@ -214,7 +215,7 @@ sBox21:: box sBox21
 SECTION "Pokedex", SRAM
 
 sPokedexDataStart:: ; a000
-sPokedexOrder:: ds $300 ; >= NUM_POKEMON
+sPokedexOrder:: ds NUM_POKEMON * 2
 sPokedexOrderEnd:: ; a300
 sDexListingScrollOffset:: db ; offset of the first displayed entry from the start
 sDexListingCursor:: dw ; a301 ; Dex cursor
@@ -242,9 +243,9 @@ sPokedexDataEnd::
 
 SECTION "Backup Save 3", SRAM
 
-sBackupOptions:: ds wOptionsEnd - wOptions ; bc46
-sBackupCheckValue1:: db ; bc4e ; loaded with SAVE_CHECK_VALUE_1, used to check save corruption
-sBackupCurMapData:: ds wCurMapDataEnd - wCurMapData ; bc4f
-sBackupChecksum:: dw ; bc83
-sBackupCheckValue2:: db ; bc85 ; loaded with SAVE_CHECK_VALUE_2, used to check save corruption
-; bc86
+sBackupOptions:: ds wOptionsEnd - wOptions ; bd0a
+sBackupCheckValue1:: db ; bd10 ; loaded with SAVE_CHECK_VALUE_1, used to check save corruption
+sBackupCurMapData:: ds wCurMapDataEnd - wCurMapData ; bd11
+sBackupChecksum:: dw ; bd45
+sBackupCheckValue2:: db ; bd47 ; loaded with SAVE_CHECK_VALUE_2, used to check save corruption
+; bd48

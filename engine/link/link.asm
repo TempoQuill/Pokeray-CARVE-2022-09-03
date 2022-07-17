@@ -150,6 +150,7 @@ RayToGoldLinkComms:
 	ld [de], a
 	ld hl, wTimeCapsulePartyMon1Species
 	call Link_ConvertPartyStructGoldToRay
+	call Link_ConvertMailStructGoldToRay
 	ld de, MUSIC_NONE
 	call PlayMusic
 	ldh a, [hSerialConnectionStatus]
@@ -159,6 +160,27 @@ RayToGoldLinkComms:
 	ld de, MUSIC_ROUTE_30
 	call PlayMusic
 	jp InitTradeMenuDisplay
+
+Link_ConvertMailStructGoldToRay:
+	ld de, wc8f4
+	ld hl, wTimeCapsuleMail
+	ld c, PARTY_LENGTH
+.loop
+	push bc
+	call .convert
+	pop bc
+	dec c
+	jr nz, .loop
+	ret
+
+.convert:
+	ld bc, GOLD_MAIL_STRUCT_LENGTH - 1
+	call CopyBytes
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ret
 
 RayToRayLinkComms:
 	ldh a, [hSerialConnectionStatus]
@@ -604,6 +626,29 @@ Link_PrepPartyData_Gold:
 	pop de
 	dec c
 	jr nz, .mon_loop
+	push de
+	ld a, BANK(sPartyMail)
+	call OpenSRAM
+	ld hl, sPartyMail
+	ld c, PARTY_LENGTH
+	ld de, sTimeCapsulePartyMail
+.mail_loop
+	push bc
+	push hl
+	push de
+	ld b, MAIL_STRUCT_LENGTH - 2
+	call .ConvertMailStructRayToGold
+	pop hl
+	offset_de GOLD_MAIL_STRUCT_LENGTH
+	ld d, h
+	ld e, l
+	pop hl
+	offset_bc MAIL_STRUCT_LENGTH
+	pop bc
+	dec c
+	jr nz, .mail_loop
+	call CloseSRAM
+	pop de
 	ld hl, wPartyMonOT
 	call .copy_ot_nicks
 	ld hl, wPartyMonNicknames
@@ -611,8 +656,23 @@ Link_PrepPartyData_Gold:
 	ld bc, PARTY_LENGTH * NAME_LENGTH
 	jp CopyBytes
 
+.ConvertMailStructRayToGold:
+; unlike the party struct, mail is really simple to convert
+;	bc - length to copy
+;	de - wTimeCapsuleMail
+;	hl - sPartyMail
+	push hl
+	ld bc, MAIL_STRUCT_LENGTH - 2
+	call CopyBytes
+	inc hl
+	ld a, [hl]
+	ld [de], a
+	inc de
+	pop hl
+	ret
+
 .ConvertPartyStructRayToGold:
-	; de - wTimeCapsulePartyMonx
+	; de - wTimeCapsulePartyMon(hl)
 	; bc - wPartyMon(c - dec)
 	ld b, h
 	ld c, l
@@ -740,7 +800,7 @@ Link_PrepPartyData_Ray:
 	ld a, $20
 	call Function285d3
 
-; Copy all the mail messages to wc9f9
+; Copy all the mail messages to wc8f9
 	ld a, BANK(sPartyMail)
 	call OpenSRAM
 	ld hl, sPartyMail
@@ -754,7 +814,7 @@ Link_PrepPartyData_Ray:
 	pop bc
 	dec b
 	jr nz, .loop2
-; Copy the mail data to wcabf
+; Copy the mail data to wc9bf
 	ld hl, sPartyMail
 	ld b, PARTY_LENGTH
 .loop3

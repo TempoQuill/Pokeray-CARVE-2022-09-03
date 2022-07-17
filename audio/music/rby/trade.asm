@@ -8,7 +8,8 @@ Music_RBYTradeFanMade:
 Music_RBYTradeFanMade_Ch1:
 	tempo 144
 	volume 7
-	duty_cycle 1
+	old_panning %1101, %1110
+	duty_cycle 3
 	vibrato 5, 1, 6
 .mainloop:
 	note_type 12, 12, 3

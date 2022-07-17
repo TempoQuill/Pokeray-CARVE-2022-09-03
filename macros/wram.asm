@@ -137,19 +137,18 @@ battle_struct: MACRO
 ENDM ; 35
 
 curbox: MACRO
-\1Count::           db                                           ; 1   1
-\1Species::         ds MONS_PER_BOX * 2 + 1                      ; 13  7
+\1Count::           db                                     ; 1   1
+\1Species::         ds MONS_PER_BOX * 2 + 1                ; 41  21
 \1Mons::
-\1Mon1::            box_struct \1Mon1                            ; 29  32
-\1Mon2::            ds BOXMON_STRUCT_LENGTH * (MONS_PER_BOX - 1) ; 551 608
-\1MonOT::           ds NAME_LENGTH * MONS_PER_BOX                ; 220 220
-\1MonNicknames::    ds MON_NAME_LENGTH * MONS_PER_BOX            ; 220 220
-\1MonNicknamesEnd:: ; 1034 1088
+\1Mon1::            ds BOXMON_STRUCT_LENGTH * MONS_PER_BOX ; 580 640
+\1MonOT::           ds NAME_LENGTH * MONS_PER_BOX          ; 220 220
+\1MonNicknames::    ds MON_NAME_LENGTH * MONS_PER_BOX      ; 220 220
+\1MonNicknamesEnd:: ; 1062 1102
 \1End::
 ENDM
 
 box: MACRO
-	curbox \1 ; 1034 1090
+	curbox \1 ; 1062 1102
 ENDM
 
 map_connection_struct: MACRO
@@ -216,6 +215,17 @@ mailmsg: MACRO
 \1AuthorNationality:: ds 2
 \1AuthorID::   dw
 \1Species::    dw
+\1Type::       db
+\1End::
+ENDM
+
+goldmsg: MACRO
+\1Message::    ds MAIL_MSG_LENGTH
+\1MessageEnd:: ds 1
+\1Author::     ds PLAYER_NAME_LENGTH
+\1AuthorNationality:: ds 2
+\1AuthorID::   dw
+	ds 1
 \1Type::       db
 \1End::
 ENDM
