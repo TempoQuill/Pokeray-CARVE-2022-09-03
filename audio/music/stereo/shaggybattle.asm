@@ -42,7 +42,7 @@ Music_ShaggyBattle_Ch1:
 	octave 4
 	note D_, 2
 	octave 3
-	note G_, 1
+	note A#, 1
 	rest 1
 	sound_loop 2, .loop3
 .loop4:
@@ -486,7 +486,7 @@ Music_ShaggyBattle_Ch2:
 	octave 4
 	note F#, 2
 	sound_call .sub3
-	octave 4
+	octave 3
 	note B_, 2
 	sound_call .sub3
 .loop3:
