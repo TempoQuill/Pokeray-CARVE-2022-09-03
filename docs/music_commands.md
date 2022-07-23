@@ -169,7 +169,7 @@ VARS:
 - Nybble 5 = Octave of destination
 - Nybble 6 = Pitch of destination
 
-NOTE: I've been trying to figure out how to get this to work on channels 2-3/6-7; as such, support has been added for that point in time.  But for now, it still only works on channel 1/5.
+NOTE: Unlike Pokemon Generation 2, pitch slide works on Channels 1-3/5-7 as opposed to just 1/5.
 
 USAGE:
 ```
@@ -391,7 +391,7 @@ USAGE:
 
 ## `F2` **Animate Sprite According to `wFrameSwap`**
 
-NOTE: This is an exclusive command to Ray as the command is empty in Gold.  In the RARITY prototype of Ray and onward, this is the equivalent to `F1` in Yoshi.  It toggles bit zero of `wFrameSwap` near the end of audio RAM.
+NOTE: This is an exclusive command to Ray as the command is empty in Gold.  It's the equivalent to `F1` in Yoshi (`E9` on NES).  It toggles bit zero of `wFrameSwap` near the beginning of global audio RAM.
 
 USAGE:
 ```
@@ -409,7 +409,7 @@ USAGE:
 
 ## `F4-F8` **NOTHING**
 
-NOTE: In gold, the label is `music0x??` in `F1-F8`.
+NOTE: In Gold, the label is `music0x??` in `F1-F8`.
 
 USAGE (if any):
 ```
