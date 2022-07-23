@@ -507,7 +507,7 @@ Music_FireFlowerMenu_Ch2:
 	note B_, 2
 	note A_, 1
 	note G_, 1
-	note A_, 1
+	note A_, 2
 	note B_, 2
 	note G_, 2
 	octave 5
@@ -796,7 +796,7 @@ Music_FireFlowerMenu_Ch3:
 	rest 1
 	note A_, 1
 	note G_, 1
-	note A_, 1
+	note A_, 2
 	note B_, 2
 	note G_, 2
 	octave 4

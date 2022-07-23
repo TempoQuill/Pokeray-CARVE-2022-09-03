@@ -560,7 +560,7 @@ Music_MushroomMenu_Ch2:
 	note F#, 4
 	note D_, 2
 	note B_, 2
-	note A_, 2
+	note A#, 2
 	note B_, 2
 	octave 5
 	note C_, 2
@@ -570,7 +570,7 @@ Music_MushroomMenu_Ch2:
 	note G_, 6
 	note E_, 4
 	note G_, 1
-	note A_, 1
+	note A#, 1
 	note B_, 2
 	note A_, 2
 	note B_, 2
@@ -797,7 +797,7 @@ Music_MushroomMenu_Ch2:
 	note C_, 2
 	octave 3
 	note B_, 2
-	note A_, 2
+	note A#, 2
 	note B_, 2
 	octave 4
 	note E_, 4
@@ -841,7 +841,7 @@ Music_MushroomMenu_Ch2:
 	note C_, 2
 	octave 4
 	note B_, 2
-	note A_, 2
+	note A#, 2
 	note B_, 2
 	octave 5
 	note E_, 4
