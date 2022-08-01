@@ -174,7 +174,8 @@ ROMX $43
 	"Demo Map Scripts 2"
 ROMX $44
 	"Demo Map Scripts 3"
-;	45
+ROMX $45
+	"Demo Map Scripts 4"
 ;	46
 ;	47
 ;	48
@@ -208,6 +209,7 @@ ROMX $63
 	"Demo Map Blocks 1"
 	"Demo Map Blocks 2"
 	"Demo Map Blocks 3"
+	"Demo Map Blocks 4"
 ROMX $64
 	"Text 1"
 ROMX $65
