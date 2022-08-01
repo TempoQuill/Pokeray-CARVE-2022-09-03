@@ -2154,7 +2154,7 @@ wTraversalCitySceneID::                           db ; d6d0
 
 wEventFlags:: flag_array NUM_EVENTS ; d7ef
 
-	ds $d7 ; d7f5
+	ds $d5 ; d7f7
 
 wd8cc:: db
 

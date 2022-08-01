@@ -119,6 +119,8 @@ Route49VacuumGate_MapEvents:
 	def_warp_events
 	warp_event 3, 7, ROUTE_49, 2
 	warp_event 4, 7, ROUTE_49, 2
+	warp_event 3, 0, MT_VACUUM, 17
+	warp_event 4, 0, MT_VACUUM, 17
 
 	def_coord_events
 
