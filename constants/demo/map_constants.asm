@@ -59,4 +59,8 @@ ENDM
 	map_const ROUTE_51              15,  9 ; 1
 	map_const FOLIAGE_CITY          20, 18 ; 2
 
+	newgroup                        ; 4
+
+	map_const MT_VACUUM             15, 55 ; 1
+
 NUM_MAP_GROUPS EQU const_value

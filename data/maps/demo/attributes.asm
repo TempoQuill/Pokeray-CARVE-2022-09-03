@@ -130,3 +130,4 @@ ENDM
 	map_attributes TradeCenter,        TRADE_CENTER,          $00, 0
 	map_attributes Colosseum,          COLOSSEUM,             $00, 0
 	map_attributes TimeCapsule,        TIME_CAPSULE,          $00, 0
+	map_attributes MtVacuum,           MT_VACUUM,             $17, 0

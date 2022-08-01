@@ -69,3 +69,8 @@ Route51_Blacks:
 
 FoliageCity_Blocks:
 	INCBIN "maps/equinto/FoliageCity.blk"
+
+SECTION "Demo Map Blocks 4", ROMX
+
+MtVacuum_Blocks:
+	INCBIN "maps/equinto/MtVacuum.blk"

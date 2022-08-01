@@ -29,3 +29,7 @@ SECTION "Demo Map Scripts 3", ROMX
 
 INCLUDE "maps/equinto/Route51.asm"
 INCLUDE "maps/equinto/FoliageCity.asm"
+
+SECTION "Demo Map Scripts 3", ROMX
+
+INCLUDE "maps/equinto/MtVacuum.asm"
