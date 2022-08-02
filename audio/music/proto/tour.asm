@@ -34,7 +34,7 @@ Tour_Ch1:
 	sound_call .sub1
 	note E_, 6
 	sound_call .sub1
-	note E_, 6
+	note E_, 4
 	sound_call .sub2
 	note A_, 4
 	octave 5
