@@ -183,7 +183,7 @@ Katsu12_Ch3:
 	volume_envelope 1, 4
 	octave 3
 	note F#, 4
-	sound_jump .mainloop
+	sound_jump Katsu12_Ch3
 
 .sub1:
 	rest 1
