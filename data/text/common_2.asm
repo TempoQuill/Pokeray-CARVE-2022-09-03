@@ -704,7 +704,9 @@ _OakPCText3::
 	done
 
 _OakRating01::
-	text "Look for #MON"
+	text "No good!"
+
+	para "Look for #MON"
 	line "in grassy areas!"
 	done
 
@@ -715,10 +717,9 @@ _OakRating02::
 	done
 
 _OakRating03::
-	text "You're getting"
-	line "good at this."
+	text "You're progressing!"
 
-	para "But you have a"
+	para "But you've got a"
 	line "long way to go."
 	done
 
@@ -740,24 +741,28 @@ _OakRating05::
 
 _OakRating06::
 	text "To evolve, some"
-	line "#MON grow,"
+	line "#MON grow."
 
-	para "others use the"
-	line "effects of STONES."
+	para "Others use the"
+	line "effects of ITEMS."
 	done
 
 _OakRating07::
-	text "Have you gotten a"
-	line "fishing ROD? You"
+	text "Well, well, well!"
+	line "You've caught as"
 
-	para "can catch #MON"
-	line "by fishing."
+	para "many as 150 if not"
+	line "more!"
+
+	para "Why don't you stop"
+	line "and use some rods!"
 	done
 
 _OakRating08::
-	text "Excellent! You"
-	line "seem to like col-"
-	cont "lecting things!"
+	text "Awesome!"
+
+	para "Do you like to"
+	line "collect things?"
 	done
 
 _OakRating09::
@@ -783,30 +788,33 @@ _OakRating11::
 	done
 
 _OakRating12::
-	text "Have you met KURT?"
-	line "His custom #-"
-	cont "BALLS should help."
+	text "I never thought"
+	line "you'd pass 250 so"
+
+	para "soon! This is a"
+	line "farcry compared to"
+
+	para "what JOHTO could"
+	line "offer! Keep at it!"
 	done
 
 _OakRating13::
-	text "Wow. You've found"
-	line "more #MON than"
+	text "Stop by the #-"
+	line "MON CENTERS here!"
 
-	para "the last #DEX"
-	line "research project."
+	para "Make new friends"
+	line "using toolboxes!"
 	done
 
 _OakRating14::
-	text "Are you trading"
-	line "your #MON?"
-
-	para "It's tough to do"
-	line "this alone!"
+	text "Spectacular! Now,"
+	line "trade with some"
+	cont "friends!"
 	done
 
 _OakRating15::
 	text "Wow! You've hit"
-	line "200! Your #DEX"
+	line "300! Your #DEX"
 	cont "is looking great!"
 	done
 
@@ -814,12 +822,12 @@ _OakRating16::
 	text "You've found so"
 	line "many #MON!"
 
-	para "You've really"
-	line "helped my studies!"
+	para "You've helped PROF."
+	line "OAK so much!"
 	done
 
 _OakRating17::
-	text "Magnificent! You"
+	text "Stunning! You"
 	line "could become a"
 
 	para "#MON professor"
@@ -835,10 +843,10 @@ _OakRating18::
 	done
 
 _OakRating19::
-	text "Whoa! A perfect"
-	line "#DEX! I've"
+	text "A perfect score!"
+	line "This only happened"
 
-	para "dreamt about this!"
+	para "once in JOHTO!"
 	line "Congratulations!"
 	done
 

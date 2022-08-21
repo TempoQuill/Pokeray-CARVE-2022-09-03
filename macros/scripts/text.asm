@@ -73,9 +73,9 @@ text_pause: MACRO
 	db TX_PAUSE
 ENDM
 
-	const TX_SOUND_DEX_FANFARE_50_79 ; $0b
-sound_dex_fanfare_50_79: MACRO
-	db TX_SOUND_DEX_FANFARE_50_79
+	const TX_SOUND_LEVEL_UP ; $0b
+sound_level_up: MACRO
+	db TX_SOUND_LEVEL_UP
 ENDM
 
 	const TX_DOTS ; $0c
@@ -89,9 +89,9 @@ text_waitbutton: MACRO
 	db TX_WAIT_BUTTON
 ENDM
 
-	const TX_SOUND_DEX_FANFARE_20_49 ; $0e
-sound_dex_fanfare_20_49: MACRO
-	db TX_SOUND_DEX_FANFARE_20_49
+	const TX_SOUND_GEN_1_DEX_REWARD ; $0e
+sound_gen_1_dex_reward: MACRO
+	db TX_SOUND_GEN_1_DEX_REWARD
 ENDM
 
 	const TX_SOUND_ITEM ; $0f
@@ -104,14 +104,14 @@ sound_egg: MACRO
 	db TX_SOUND_EGG
 ENDM
 
-	const TX_SOUND_DEX_FANFARE_80_109 ; $11
-sound_dex_fanfare_80_109: MACRO
-	db TX_SOUND_DEX_FANFARE_80_109
+	const TX_SOUND_TRADE_COMPLETE ; $11
+sound_trade_complete: MACRO
+	db TX_SOUND_TRADE_COMPLETE
 ENDM
 
-	const TX_SOUND_FANFARE ; $12
-sound_fanfare: MACRO
-	db TX_SOUND_FANFARE
+	const TX_SOUND_DEX_REWARD ; $12
+sound_dex_reward: MACRO
+	db TX_SOUND_DEX_REWARD
 ENDM
 
 	const TX_SOUND_SLOT_MACHINE_START ; $13

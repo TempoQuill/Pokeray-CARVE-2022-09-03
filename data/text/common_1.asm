@@ -850,7 +850,7 @@ Text_NPCTraded::
 	text_end
 
 _NPCTradeFanfareText::
-	sound_dex_fanfare_80_109
+	sound_trade_complete
 	text_pause
 	text_end
 

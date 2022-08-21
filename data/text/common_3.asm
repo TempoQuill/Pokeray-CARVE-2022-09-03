@@ -111,7 +111,7 @@ _LearnedMoveText::
 	line "@"
 	text_ram wStringBuffer2
 	text "!@"
-	sound_dex_fanfare_50_79
+	sound_level_up
 	text_promptbutton
 	text_end
 
@@ -357,7 +357,7 @@ _PPRestoredText::
 _SentTrophyHomeText::
 	text "There was a trophy"
 	line "inside!@"
-	sound_dex_fanfare_50_79
+	sound_level_up
 	text_start
 
 	para "@"

@@ -549,14 +549,14 @@ TextCommands::
 	dw TextCommand_START_ASM     ; TX_START_ASM
 	dw TextCommand_DECIMAL       ; TX_DECIMAL
 	dw TextCommand_PAUSE         ; TX_PAUSE
-	dw TextCommand_SOUND         ; TX_SOUND_DEX_FANFARE_50_79
+	dw TextCommand_SOUND         ; TX_SOUND_LEVEL_UP
 	dw TextCommand_DOTS          ; TX_DOTS
 	dw TextCommand_WAIT_BUTTON   ; TX_WAIT_BUTTON
-	dw TextCommand_SOUND         ; TX_SOUND_DEX_FANFARE_20_49
+	dw TextCommand_SOUND         ; TX_SOUND_GEN_1_DEX_REWARD
 	dw TextCommand_SOUND         ; TX_SOUND_ITEM
 	dw TextCommand_SOUND         ; TX_SOUND_EGG
-	dw TextCommand_SOUND         ; TX_SOUND_DEX_FANFARE_80_109
-	dw TextCommand_SOUND         ; TX_SOUND_FANFARE
+	dw TextCommand_SOUND         ; TX_SOUND_TRADE_COMPLETE
+	dw TextCommand_SOUND         ; TX_SOUND_DEX_REWARD
 	dw TextCommand_SOUND         ; TX_SOUND_SLOT_MACHINE_START
 	dw TextCommand_STRINGBUFFER  ; TX_STRINGBUFFER
 	dw TextCommand_DAY           ; TX_DAY
@@ -776,12 +776,12 @@ TextCommand_CRY:: ; unreferenced
 	ret
 
 TextSFX::
-	dbw TX_SOUND_DEX_FANFARE_50_79,  SFX_LEVEL_UP
-	dbw TX_SOUND_FANFARE,            SFX_PL_LONG
-	dbw TX_SOUND_DEX_FANFARE_20_49,  SFX_GEN_1_DEX_REWARD
+	dbw TX_SOUND_LEVEL_UP,           SFX_LEVEL_UP
+	dbw TX_SOUND_DEX_REWARD,         SFX_DEX_REWARD
+	dbw TX_SOUND_GEN_1_DEX_REWARD,   SFX_GEN_1_DEX_REWARD
 	dbw TX_SOUND_ITEM,               SFX_ITEM
 	dbw TX_SOUND_EGG,                SFX_EVO_DITTY
-	dbw TX_SOUND_DEX_FANFARE_80_109, SFX_TRADE_COMPLETE
+	dbw TX_SOUND_TRADE_COMPLETE,     SFX_TRADE_COMPLETE
 	dbw TX_SOUND_SLOT_MACHINE_START, SFX_DEX_UPDATE
 	dbw TX_SOUND_CAUGHT_MON,         SFX_CAUGHT_MON
 	db -1

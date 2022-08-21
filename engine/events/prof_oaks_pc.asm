@@ -48,6 +48,9 @@ Rate:
 	call PrintText
 	call JoyWaitAorB
 	ld a, [wceee]
+	ld c, a
+	ld a, [wceee + 1]
+	ld b, a
 	ld hl, OakRatings
 	call FindOakRating
 	push de
@@ -78,10 +81,12 @@ FindOakRating:
 ; return sound effect in de
 ; return text pointer in hl
 	nop
-	ld c, a
+;	ld c, a
 .loop
 	ld a, [hli]
 	cp c
+	ld a, [hli]
+	cp b
 	jr nc, .match
 rept 4
 	inc hl

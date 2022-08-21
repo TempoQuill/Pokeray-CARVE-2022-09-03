@@ -112,7 +112,7 @@ ApproachPhilMovement:
 EeveeGaveDexText:
 	text "EEVEE gave you a"
 	line "#DEX!"
-	sound_dex_fanfare_80_109
+	sound_trade_complete
 	done
 
 InitialEntranceText1:

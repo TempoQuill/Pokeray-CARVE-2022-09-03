@@ -237,7 +237,7 @@ RivalDonatedGearText:
 
 	para "<PLAYER> recieved"
 	line "the #GEAR!"
-	sound_dex_fanfare_20_49
+	sound_gen_1_dex_reward
 	done
 
 NoNeedToExplainThisText:

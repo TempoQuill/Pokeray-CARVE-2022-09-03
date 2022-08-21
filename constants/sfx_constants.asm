@@ -5,7 +5,8 @@
 	const SFX_EVO_DITTY                   ; 02
 	const SFX_GEN_1_DEX_REWARD            ; 03
 	const SFX_TRADE_COMPLETE              ; 04
-	const SFX_PL_LONG                     ; 05
+	const SFX_DEX_REWARD                  ; 05
+;	const SFX_PL_LONG                     ; 05
 	const SFX_CAUGHT_MON                  ; 06
 	const SFX_KEY_ITEM                    ; 07
 	const SFX_PL_SHORT                    ; 08
