@@ -479,17 +479,6 @@ Script_pocketisfull:
 Script_specialsound::
 	farcall CheckItemPocket
 	ld a, [wItemAttributeParamBuffer]
-;	cp TM_HM
-;	ld de, SFX_GET_TM
-;	jr z, .play
-;	cp BALL
-;	ld de, SFX_3RD_PLACE
-;	jr z, .play
-;	cp KEY_ITEM
-;	ld de, SFX_TRADE_COMPLETE
-;	jr z, .play
-;	ld de, SFX_ITEM
-;.play
 	dec a
 	ld e, a
 	ld d, 0
