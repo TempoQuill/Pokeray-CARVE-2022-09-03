@@ -223,7 +223,7 @@ AlphabeticalPokedexOrder:
 	dw NOCTOWL
 	dw NOHTYP
 	dw NUMPUFF
-	dw NYMOON
+	dw LAROON
 	dw OCTILLERY
 	dw ODDISH
 	dw OMANOVA

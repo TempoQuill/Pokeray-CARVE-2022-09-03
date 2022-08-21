@@ -366,7 +366,7 @@ PokemonCries::
 	mon_cry CRY_H45,            0,  256 ; HYROGRYPH
 	mon_cry CRY_H45,            0,  256 ; AEROGLYPH
 	mon_cry CRY_H45,            0,  256 ; GRYPHUUM
-	mon_cry CRY_H45,            0,  256 ; NYMOON
+	mon_cry CRY_H45,            0,  256 ; LAROON
 	mon_cry CRY_H45,            0,  256 ; SOULITIN
 	mon_cry CRY_H45,            0,  256 ; CRYSALTY
 	mon_cry CRY_H45,            0,  256 ; MAGNEVEN

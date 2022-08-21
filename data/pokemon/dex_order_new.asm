@@ -163,7 +163,7 @@ NewPokedexOrder:
 	dw PINSIR
 	dw PLUX
 	dw HERACROSS
-	dw NYMOON
+	dw LAROON
 	dw SOULITIN
 	dw CRYSALTY
 	; industrious

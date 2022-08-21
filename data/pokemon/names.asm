@@ -357,7 +357,7 @@ PokemonNames::
 	db "HYROGRYPH@"
 	db "AEROGLYPH@"
 	db "GRYPHUUM@@"
-	db "NYMOON@@@@"
+	db "LAROON@@@@"
 	db "SOULITIN@@"
 	db "CRYSALTY@@"
 	db "MAGNEVEN@@"
