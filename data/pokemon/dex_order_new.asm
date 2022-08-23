@@ -164,8 +164,8 @@ NewPokedexOrder:
 	dw PLUX
 	dw HERACROSS
 	dw LAROON
-	dw SOULITIN
-	dw CRYSALTY
+	dw CADITIN
+	dw CHRYSALTY
 	; industrious
 	dw KOFFING
 	dw WEEZING

@@ -377,8 +377,8 @@ EQUINTO_MONS    EQU 1
 	const AEROGLYPH  ; 165
 	const GRYPHUUM   ; 166
 	const LAROON     ; 167
-	const SOULITIN   ; 168
-	const CRYSALTY   ; 169
+	const CADITIN    ; 168
+	const CHRYSALTY  ; 169
 	const MAGNEVEN   ; 16a
 	const DONKRANK   ; 16b
 	const CANAUTIC   ; 16c

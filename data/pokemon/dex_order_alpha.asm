@@ -37,6 +37,7 @@ AlphabeticalPokedexOrder:
 	dw BULBASAUR
 	dw BURGELA
 	dw BUTTERFREE
+	dw CADITIN
 	dw CANAUTIC
 	dw CATERPIE
 	dw CELEBI
@@ -48,6 +49,7 @@ AlphabeticalPokedexOrder:
 	dw CHIKORITA
 	dw CHINCHOU
 	dw CHOAKING
+	dw CHRYSALTY
 	dw CLEFABLE
 	dw CLEFAIRY
 	dw CLEFFA
@@ -62,7 +64,6 @@ AlphabeticalPokedexOrder:
 	dw CROCONAW
 	dw CROVEN
 	dw CRUZ
-	dw CRYSALTY
 	dw CUBONE
 	dw CYNDAQUIL
 	dw DAWNESP
@@ -165,6 +166,7 @@ AlphabeticalPokedexOrder:
 	dw KURSTRAW
 	dw LANTURN
 	dw LAPRAS
+	dw LAROON
 	dw LARVITAR
 	dw LEDIAN
 	dw LEDIURY
@@ -223,7 +225,6 @@ AlphabeticalPokedexOrder:
 	dw NOCTOWL
 	dw NOHTYP
 	dw NUMPUFF
-	dw LAROON
 	dw OCTILLERY
 	dw ODDISH
 	dw OMANOVA
@@ -317,7 +318,6 @@ AlphabeticalPokedexOrder:
 	dw SNORLAX
 	dw SNUBBULL
 	dw SOLCHIC
-	dw SOULITIN
 	dw SPEAROW
 	dw SPINARAK
 	dw SQUIRTLE
