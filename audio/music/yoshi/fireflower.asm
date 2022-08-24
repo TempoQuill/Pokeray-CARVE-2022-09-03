@@ -934,8 +934,6 @@ Music_FireFlowerMenu_Ch4:
 	frame_swap
 	rest 8
 	frame_swap
-	rest 8
-	frame_swap
 	rest 2
 	frame_swap
 	rest 2
