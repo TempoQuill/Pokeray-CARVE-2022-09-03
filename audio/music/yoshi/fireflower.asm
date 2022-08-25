@@ -652,7 +652,7 @@ Music_FireFlowerMenu_Ch3:
 	note C_, 2
 	note E_, 2
 	note D_, 2
-	note F_, 2
+	note G_, 2
 	note C_, 2
 	note E_, 2
 	note D_, 1
