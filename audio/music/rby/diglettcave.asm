@@ -193,8 +193,8 @@ Music_DiglettCave_Ch1:
 
 Music_DiglettCave_Ch2:
 	duty_cycle 1
-	note_type 12, 12, 3
 .mainloop:
+	note_type 12, 12, 3
 	rest 16
 	rest 16
 	rest 16
