@@ -11,7 +11,7 @@
 	db 20 ; step cycles to hatch
 INCBIN "gfx/pokemon/dodaerie/front.dimensions"
 	db GROWTH_MEDIUM_FAST ; growth rate
-	dn EGG_FLYING, EGG_FLYING ; egg groups
+	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
 	tmhm CURSE, TOXIC, HIDDEN_POWER, SNORE, PROTECT, ENDURE, FRUSTRATION, RETURN, MUD_SLAP, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, SWIFT, REST, ATTRACT, THIEF, STEEL_WING, FLY
