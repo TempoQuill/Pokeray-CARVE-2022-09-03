@@ -70,6 +70,17 @@
 	const MUSIC_ROCKET_HIDEOUT               ; 40 ; HAVOC_HIDEOUT
 	const MUSIC_VS_MENU_1                    ; 41 ; TRADE_MENU_1
 	const MUSIC_VS_MENU_2                    ; 42 ; TRADE_MENU_2
+; chaos exclusive
+;	const MUSIC_ZACH_ENCOUNTER               ; 43
+;	const MUSIC_GORDON_ENCOUNTER             ; 44
+;	const MUSIC_EQUINE_TRIO_BATTLE           ; 45
+;	const MUSIC_CHAOS_INTRO__SRB_THEME       ; 46
+;	const MUSIC_PILOT_TUGERE__WBA_THEME      ; 47
+;	const MUSIC_MOBILE_CONNECTION_BALLAD     ; 48
+;	const MUSIC_AT_THE_BATTLE_TOWER          ; 49
+;	const MUSIC_FIND_A_PROFILE_OPTION        ; 4a
+;	const MUSIC_BATTLE_TOWER_LOBBY           ; 4b
+;	const MUSIC_POKEMON_COMMUNICATION_CENTER ; 4c
 FINAL_MUSIC_TRACK EQU const_value - 1
 NUM_MUSIC_IDS EQU FINAL_MUSIC_TRACK
 
