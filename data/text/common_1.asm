@@ -1154,7 +1154,7 @@ _DayCareLadyIntroEggText::
 	line "co-owner. Do you"
 	cont "know about EGGS?"
 
-	para "I wouldn't expect."
+	para "I wouldn't expect"
 	line "any less."
 
 	para "Certain #MON"
@@ -1336,7 +1336,7 @@ _EggPhotoText::
 	done
 
 _NameRaterHelloText::
-	text "Hello, hello! I'm"
+	text "Hello-HELLO! I am"
 	line "the NAME RATER."
 
 	para "I rate the names"
@@ -1356,21 +1356,19 @@ _NameRaterBetterNameText::
 	text "Hm… @"
 	text_ram wStringBuffer1
 	text "…"
-	line "That's a fairly"
-	cont "decent name."
+	line "That's a fair name,"
 
-	para "But, how about a"
-	line "slightly better"
-	cont "nickname?"
+	para "but, how about a"
+	line "little spruce-up?"
 
 	para "Want me to give it"
 	line "a better name?"
 	done
 
 _NameRaterWhatNameText::
-	text "All right. What"
+	text "Very well. What"
 	line "name should we"
-	cont "give it, then?"
+	cont "come up with?"
 	prompt
 
 _NameRaterFinishedText::
@@ -1399,8 +1397,8 @@ _NameRaterPerfectNameText::
 	done
 
 _NameRaterEggText::
-	text "Whoa… That's just"
-	line "an EGG."
+	text "Um… That's just an"
+	line "EGG."
 	done
 
 _NameRaterSameNameText::
@@ -1490,7 +1488,7 @@ _ComeBackText::
 	line "back!"
 	done
 
-PlayerPickedUpPowerBallMoney:
+_PlayerPickedUpPowerBallMoney:
 	text "<PLAYER> was given"
 	line "¥@"
 	text_decimal wPayDayMoney, 3, 6
