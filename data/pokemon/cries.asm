@@ -355,7 +355,7 @@ PokemonCries::
 	mon_cry CRY_H45,            0,  256 ; KICLOUD
 	mon_cry CRY_H45,            0,  256 ; APPUCK
 	mon_cry CRY_H45,            0,  256 ; SEWMA
-	mon_cry CRY_H45,            0,  256 ; ANIMAWAY
+	mon_cry CRY_H45,            0,  256 ; ANIMADISE
 	mon_cry CRY_H45,            0,  256 ; MARLOON
 	mon_cry CRY_H45,            0,  256 ; ASSISDRA
 	mon_cry CRY_H45,            0,  256 ; SCOOTEN

@@ -207,7 +207,7 @@ NewPokedexOrder:
 	dw PSYDUCK
 	dw GOLDUCK
 	dw EMPEDUCK
-	dw ANIMAWAY
+	dw ANIMADISE
 	; fighters
 	dw MACHOP
 	dw MACHOKE

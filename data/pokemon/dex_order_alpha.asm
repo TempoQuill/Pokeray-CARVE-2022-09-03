@@ -12,7 +12,7 @@ AlphabeticalPokedexOrder:
 	dw ALREM
 	dw AMPHAROS
 	dw ANGORE
-	dw ANIMAWAY
+	dw ANIMADISE
 	dw APPUCK
 	dw AQUACENT
 	dw AQUARIA

@@ -365,7 +365,7 @@ EQUINTO_MONS    EQU 1
 	const KICLOUD    ; 159
 	const APPUCK     ; 15a
 	const SEWMA      ; 15b
-	const ANIMAWAY   ; 15c
+	const ANIMADISE  ; 15c
 	const MARLOON    ; 15d
 	const ASSISDRA   ; 15e
 	const SCOOTEN    ; 15f

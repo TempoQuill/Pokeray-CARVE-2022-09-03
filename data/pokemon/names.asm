@@ -346,7 +346,7 @@ PokemonNames::
 	db "KICLOUD@@@"
 	db "APPUCK@@@@"
 	db "SEWMA@@@@@"
-	db "ANIMAWAY@@"
+	db "ANIMADISE@"
 	db "MARLOON@@@"
 	db "ASSISDRA@@"
 	db "SCOOTEN@@@"
