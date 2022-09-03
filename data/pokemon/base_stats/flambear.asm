@@ -14,5 +14,5 @@ INCBIN "gfx/pokemon/flambear/front.dimensions"
 	dn EGG_GROUND, EGG_GROUND ; egg groups
 
 	; tm/hm learnset
-	tmhm CUT, STRENGTH, FLASH
+	tmhm HEADBUTT, CURSE, ROCK_SMASH, HIDDEN_POWER, SNORE, FRUSTRATION, RETURN, DIG, MUD_SLAP, SLEEP_TALK, SWIFT, DETECT, REST, ATTRACT, CUT, STRENGTH, FLASH
 	; end

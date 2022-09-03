@@ -14,5 +14,5 @@ INCBIN "gfx/pokemon/molambino/front.dimensions"
 	dn EGG_WATER_2, EGG_WATER_3 ; egg groups
 
 	; tm/hm learnset
-	tmhm SURF
+	tmhm CURSE, TOXIC, HIDDEN_POWER, BLIZZARD, ICY_WIND, RAIN_DANCE, FRUSTRATION, IRON_TAIL, RETURN, DOUBLE_TEAM, SWAGGER, SLUDGE_BOMB, SWIFT, REST, SURF
 	; end
